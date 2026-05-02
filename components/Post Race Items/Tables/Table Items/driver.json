@@ -1,0 +1,83 @@
+[
+    {
+        "ComponentName": "DriverLine",
+        "BlockType": "stack",
+        "Orientation": "Horizontal",
+        "Background": "{darkPurple}",
+        "Width": "*",
+        "Triggers": [
+            { "Trigger": "TeamColor_BackgroundP1" },
+            { "Trigger": "CarColor_BackgroundP1" }
+        ],
+        "Items": [
+            {
+                "BlockType": "shape",
+                "Height": "{TableLineHeight}",
+                "Width": 5,
+                "ShapeOptions": {
+                    "Fill": "{white}"
+                },
+                "Triggers": [
+                    { "Trigger": "TeamColor_ShapeFill" },
+                    { "Trigger": "CarColor_ShapeFill" }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                "Style": "DriverLineStyle",
+                "Triggers": [
+                    { "Trigger": "TeamColor_ForegroundP1" },
+                    { "Trigger": "CarColor_ForegroundP1" }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "RaceNumberLine",
+        "BlockType": "dock",
+        "Orientation": "Horizontal",
+        "Background": "{darkPurple}",
+        "Width": 78,
+        "Triggers": [
+            { "Trigger": "TeamColor_BackgroundP1" },
+            { "Trigger": "CarColor_BackgroundP1" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[{Item.Driver.RaceNumber}]",
+                "Style": "DriverLineStyle",
+                "FontName": "{RaceNumberFont}",
+                "HorizontalAlignment": "Center",
+                "Triggers": [
+                    { "Trigger": "TeamColor_ForegroundP1" },
+                    { "Trigger": "CarColor_ForegroundP1" }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "tableLogo",
+        "BlockType": "dock",
+        "Height": "{TableLineHeight}",
+        "Width": 58,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TeamColor_Background" },
+            { "Trigger": "CarColor_Background" }
+        ],
+        "Items": [
+            {
+                "BlockType": "image",
+                "Height": 40,
+                "HorizontalAlignment": "Center",
+                "VerticalAlignment": "Center",
+                "Triggers": [
+                    { "Trigger": "Car_LogotypeDefault" },
+                    { "Trigger": "Team_LogotypeVendor" }
+                ]
+            }
+        ]
+    }
+]

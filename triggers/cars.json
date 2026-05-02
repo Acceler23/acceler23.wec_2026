@@ -1,0 +1,44 @@
+[
+    {
+        "TriggerName": "CarColor_ShapeFill",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Car.Color, Converter=EmptyObjectToFalse}",
+        "Property": "ShapeOptions.Fill",
+        "Value": "{Item.Car.Color}"
+    },
+    {
+        "TriggerName": "CarColor_Background",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Car.Color, Converter=EmptyObjectToFalse}",
+        "Property": "Background",
+        "Value": "{Item.Car.Color}"
+    },
+    {
+        "TriggerName": "Car_LogotypeDefault",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.LogotypePath}"
+    },
+    {
+        "TriggerName": "CarColor_BackgroundP1",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Position}",
+        "ConditionAndValue": 1,
+        "Property": "Background",
+        "Value": "{Item.Car.Color}"
+    },
+    {
+        "TriggerName": "CarColor_ForegroundP1",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Position}",
+        "ConditionAndValue": 1,
+        "Property": "Foreground",
+        "Value": "{Item.Car.SecondaryColor}"
+    },
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "TriggerName": "TeamColor_ShapeFill",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.Color, Converter=EmptyObjectToFalse}",
+        "Property": "ShapeOptions.Fill",
+        "Value": "{Item.Team.Color}"
+    },
+    {
+        "TriggerName": "TeamColor_Background",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.Color, Converter=EmptyObjectToFalse}",
+        "Property": "Background",
+        "Value": "{Item.Team.Color}"
+    },
+    {
+        "TriggerName": "Team_LogotypeDefault",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Team.LogotypePath}"
+    },
+    {
+        "TriggerName": "Team_LogotypeVendor",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Team.Car.Vendor.LogotypePath}"
+    },
+    {
+        "TriggerName": "TeamColor_BackgroundP1",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Position}",
+        "ConditionAndValue": 1,
+        "Property": "Background",
+        "Value": "{Item.Team.Color}"
+    },
+    {
+        "TriggerName": "TeamColor_ForegroundP1",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Position}",
+        "ConditionAndValue": 1,
+        "Property": "Foreground",
+        "Value": "{Item.Team.SecondaryColor}"
+    },
+]

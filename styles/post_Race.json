@@ -1,0 +1,20 @@
+[
+    /*{
+        "StyleName": "TableLineStyle",
+        "Foreground": "{white}",
+        "HorizontalAlignment": "Center",
+        "VerticalAlignment": "Center",
+        "Height": "{TableLineHeight}",
+        "FontSize": "{TableFontSizeDefalt}"
+    },*/
+    {
+        "StyleName": "DriverLineStyle",
+        //"StyleBasedOn": "TableLineStyle",
+        "HorizontalAlignment": "Left",
+        "Padding": "20, 0",
+        "Foreground": "{white}",
+        "VerticalAlignment": "Center",
+        "Height": "{TableLineHeight}",
+        "FontSize": "{TableFontSizeDefalt}"
+    }
+]

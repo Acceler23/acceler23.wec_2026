@@ -1,0 +1,22 @@
+{
+    "BlockRoot": {
+        "BlockType": "dock",
+        "Orientation": "Horizontal",
+        "Margin": "{RenderMarginRace}",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "HorizontalAlignment": "Right",
+                "VerticalAlignment": "Center",
+                "BackgroundImage": "PostRace/TableShade",
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "PostRaceTable_Results",
+                        "Margin": "60, 0, 115, 0"
+                    }
+                ]
+            }
+        ]
+    }
+}

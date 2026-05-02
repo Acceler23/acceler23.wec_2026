@@ -1,0 +1,12 @@
+{
+    "Categories": [],
+    "Properties": [
+        {
+            "Name": "TablePage",
+            "PublicName": "Table Page",
+            "Type": "Integer",
+            "MinimumValue": 1,
+            "DefaultValue": 1
+        }
+    ]
+}

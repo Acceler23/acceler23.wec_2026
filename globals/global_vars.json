@@ -1,0 +1,26 @@
+{
+    //colors
+    "white":        "#ffffff",
+    "black":        "#000000",
+    "lightBlue":    "#0abdfd",
+    "darkPurple":   "#0e0132",
+
+    //post race vars
+    "PostRaceWidth": 1920,
+    "PostRaceHeight": 1080,
+    "TableLineHeight": 50,
+    "RenderMarginRace": "60, 55, 110, 57",
+
+    "PostRaceTableheight": 968,
+    "PostRaceTableWidth": 1373,
+
+    //fonts
+    "FontNameDefault": "Archivo_SemiExpanded-Italic",
+    "FontSizeDefault": 20,
+
+    "TableFontSizeDefalt": 26,
+    "TableFontDefault": "Archivo_SemiExpanded-Italic",
+    "RaceNumberFont": "Archivo-BlackItalic",
+    "DataTableFont": "Archivo-SemiBoldItalic",
+    "P1FontTable": "Archivo_Condensed-BlackItalic"
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "ComponentName": "SessionTimeTable",
+        "BlockType": "dock",
+        "Background": "{darkPurple}",
+        "Width": 145,
+        "Triggers": [
+            { "Trigger": "TeamColor_BackgroundP1" },
+            { "Trigger": "CarColor_BackgroundP1" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "{Item.Time, Converter=StringToUpperString}",
+                "Foreground": "{white}",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "PaddingRight": 15,
+                "Height": "{TableLineHeight}",
+                "FontSize": "{TableFontSizeDefalt}",
+                "FontName": "{DataTableFont}",
+                "Triggers": [
+                    {
+                        "Condition": "{Item.Position}",
+                        "ConditionValue": 1,
+                        "ConditionAnd": "{Session.SessionType}",
+                        "ConditionAndValue": "Race",
+                        "Property": "Source",
+                        "Value": "{Item.LapsCount} [LAPS]"
+                    },
+                    { "Trigger": "TeamColor_ForegroundP1" },
+                    { "Trigger": "CarColor_ForegroundP1" }
+                ]
+            }
+        ]
+    }
+]

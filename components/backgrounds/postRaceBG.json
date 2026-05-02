@@ -1,0 +1,16 @@
+{
+    "ComponentName": "postRace_bg",
+    "BlockType": "canvas",
+    "Width": "{PostRaceWidth}",
+    "Height": "{PostRaceHeight}",
+    "Items": [
+        {
+            "BlockType": "shape",
+            "Width": "{PostRaceWidth}",
+            "Height": "{PostRaceHeight}",
+            "ShapeOptions": {
+                "Fill": "#1E3361"
+            }
+        }
+    ]
+}

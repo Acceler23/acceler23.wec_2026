@@ -1,0 +1,50 @@
+{
+    "ComponentName": "PositionLine",
+    "BlockType": "stack",
+    "Width": 63,
+    "Items": [
+        {
+            "BlockType": "text",
+            "RenderIf": "{Item.Position, Converter=NumberNotEquals, Parameter=1}",
+            "Source": "{Item.Position}",
+            "Width": "*",
+            "Foreground": "{white}",
+            "Background": "{darkPurple}",
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "Height": "{TableLineHeight}",
+            "FontSize": "{TableFontSizeDefalt}"
+        },
+        {
+            "BlockType": "dock",
+            "Width": 63,
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Height": "{TableLineHeight}",
+                    "RenderIf": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+                    "HorizontalAlignment": "Center",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "1",
+                            "Foreground": "{white}",
+                            "FontSize": 45,
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Center",
+                            "FontName": "{P1FontTable}"
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "[st]",
+                            "Foreground": "{white}",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Center",
+                            "FontName": "{TableFontDefault}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
