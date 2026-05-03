@@ -1,0 +1,97 @@
+{
+    "ComponentName": "FastestLap",
+    "BlockType": "canvas",
+    "Width": 1200,
+    "Height": 50,
+    "Background": "{purple}",
+    "Items": [
+        {
+            "BlockType": "image",
+            "Source": "linearShade",
+            "Width": 1200,
+            "Height": 50,
+            "Colorize": {
+                "Color": "{lightPurple}"
+            }
+        },
+        {
+            "BlockType": "image",
+            "Source": "clock",
+            "Height": 32,
+            "PositionX": 20,
+            "PositionY": 8
+        },
+        {
+            "BlockType": "dock",
+            "Orientation": "Horizontal",
+            "PositionX": 55,
+            "Width": 1145,
+            "Spacing": 20,
+            "Height": 50,
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Top",
+                    "Spacing": 20,
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Right",
+                            "Source": "{Item.FastestLapTime}",
+                            "FontSize": "{TableFontSizeDefalt}",
+                            "FontName": "{FastestLapFont}",
+                            "Foreground": "{white}",
+                            "MarginTop": 11,
+                            "Width": 140
+                        },
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Right",
+                            "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                            "FontSize": "{TableFontSizeDefalt}",
+                            "FontName": "{FastestLapFont}",
+                            "Foreground": "{white}",
+                            "MarginTop": 11
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Horizontal",
+                    "HorizontalAlignment": "Center",
+                    "Spacing": 5,
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Right",
+                            "Source": "{Item.Driver.RaceNumber}",
+                            "FontSize": "{TableFontSizeDefalt}",
+                            "FontName": "{TableFontDefault}",
+                            "Foreground": "{white}",
+                            "MarginTop": 11
+                        },
+                        {
+                            "BlockType": "shape",
+                            "MarginTop": 12,
+                            "Height": 26,
+                            "Width": 3,
+                            "ShapeOptions": {
+                                "Fill": "{white}"
+                            }
+                        },
+                        {
+                            "BlockType": "text",
+                            "HorizontalAlignment": "Right",
+                            "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                            "FontSize": "{TableFontSizeDefalt}",
+                            "FontName": "{TableFontDefault}",
+                            "Foreground": "{white}",
+                            "MarginTop": 11
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

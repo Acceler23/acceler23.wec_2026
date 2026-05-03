@@ -1,0 +1,103 @@
+[
+    {
+        "ComponentName": "SessionHeadTable",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Spacing": -10,
+        "Width": 1142,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Spacing": -2,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Session.SessionType, Converter=StringToUpperString}]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{white}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[CLASSIFICATION]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{white}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[RESULTS]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{lightBlue}"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "image",
+                        "Source": "rolex",
+                        "Height": 70,
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Top",
+                        "MarginRight": 20
+                    }
+                ]
+            },
+            {
+                "BlockType": "shape",
+                "Opacity": 80,
+                "Width": 1142,
+                "Height": 3,
+                "ShapeOptions": {
+                    "Fill": "{lightBlue}",
+                    "ShapeType": "ellipse"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "MarginTop": 44,
+                "Height": 40,
+                "HorizontalAlignment": "Right",
+                "Width": 1125,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Session.RacingClass.Name, Converter=StringToUpperString}]",
+                        "Background": "{Session.RacingClass.Color}",
+                        "Foreground": "{Session.RacingClass.SecondaryColor}",
+                        "FontName": "{MulticalssFont}",
+                        "Height": 40,
+                        "FontSize": 29,
+                        "Margin": "8,2,0,0",
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Left",
+                        "Padding": "7,5,7,0"
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                        "Foreground": "{white}",
+                        "FontName": "{TrackNameFont}",
+                        "Height": 40,
+                        "FontSize": 29,
+                        "Margin": "0,2,0,0",
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Right",
+                        "Padding": "7,5,7,0"
+                    }
+                ]
+            }
+        ]
+    }
+]

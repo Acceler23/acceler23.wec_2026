@@ -1,7 +1,7 @@
 [
     {
         "ComponentName": "PostRaceTable_Results",
-        "BlockType": "dock",
+        "BlockType": "stack",
         "Orientation": "Horizontal",
         "Height": 590,
         "Width": 1200,

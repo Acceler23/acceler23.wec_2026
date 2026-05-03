@@ -3,17 +3,40 @@
         "BlockType": "dock",
         "Orientation": "Horizontal",
         "Margin": "{RenderMarginRace}",
+        "Width": "{PostRaceWidth}",
+        "MaxHeight": "{PostRaceHeight}",
         "Items": [
             {
                 "BlockType": "stack",
                 "HorizontalAlignment": "Right",
                 "VerticalAlignment": "Center",
                 "BackgroundImage": "PostRace/TableShade",
+                "Orientation": "Vertical",
+                //"Width": 1370,
+                "Height": 965,
                 "Items": [
                     {
                         "BlockType": "component",
+                        "Component": "SessionHeadTable",
+                        "Margin": "115, 55, 115, 0"
+                    },
+                    {
+                        "BlockType": "component",
                         "Component": "PostRaceTable_Results",
-                        "Margin": "60, 0, 115, 0"
+                        "Margin": "60, 25, 115, 0"
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "Margin": "60, 20, 115, 0",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Session.Drivers}",
+                            "FilterMember": "Driver.Name",
+                            "FilterMemberValue": "{Session.FastestLapDriver.Name}",
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "FastestLap"
+                            }
+                        }
                     }
                 ]
             }
