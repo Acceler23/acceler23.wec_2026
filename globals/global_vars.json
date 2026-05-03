@@ -23,7 +23,7 @@
     "TableFontSizeDefalt": 26,
     "TableFontDefault": "Archivo_SemiExpanded-Italic",
     "RaceNumberFont": "Archivo-BlackItalic",
-    "DataTableFont": "Archivo-SemiBoldItalic",
+    "DataTableFont": "Archivo-BoldItalic",
     "FastestLapFont": "Archivo-BoldItalic",
     "P1FontTable": "Archivo_Condensed-BlackItalic",
     "TrackNameFont": "DrukWide-MediumItalic-Trial",
@@ -31,4 +31,6 @@
     "TableHeaderFont": "Druk-MediumItalic-Trial",
 
     "MulticalssFont": "DrukWide-MediumItalic-Trial",
+
+    "TableBottomFont": "Archivo_Expanded-SemiBold"
 }

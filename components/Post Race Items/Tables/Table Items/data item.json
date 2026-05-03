@@ -3,7 +3,7 @@
         "ComponentName": "SessionTimeTable",
         "BlockType": "dock",
         "Background": "{darkPurple}",
-        "Width": 145,
+        "MinWidth": 150,
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
             { "Trigger": "CarColor_BackgroundP1" }

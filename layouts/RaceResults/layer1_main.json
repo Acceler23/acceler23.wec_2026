@@ -37,6 +37,11 @@
                                 "Component": "FastestLap"
                             }
                         }
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "TableBottom",
+                        "Margin": "115, 9, 115, 0"
                     }
                 ]
             }

@@ -22,11 +22,11 @@
             "PositionY": 8
         },
         {
-            "BlockType": "dock",
+            "BlockType": "stack",
             "Orientation": "Horizontal",
             "PositionX": 55,
-            "Width": 1145,
-            "Spacing": 20,
+            "Width": 900,
+            "Spacing": 70,
             "Height": 50,
             "Items": [
                 {
@@ -59,7 +59,7 @@
                 {
                     "BlockType": "stack",
                     "Orientation": "Horizontal",
-                    "HorizontalAlignment": "Center",
+                    "HorizontalAlignment": "Right",
                     "Spacing": 5,
                     "Items": [
                         {
@@ -83,13 +83,39 @@
                         {
                             "BlockType": "text",
                             "HorizontalAlignment": "Right",
-                            "Source": "{Item.Driver.Name, Converter=StringToUpperString}",
+                            "Source": "{Item.Team.FullName, Converter=StringToUpperString}",
                             "FontSize": "{TableFontSizeDefalt}",
                             "FontName": "{TableFontDefault}",
                             "Foreground": "{white}",
-                            "MarginTop": 11
+                            "MarginTop": 11,
+                            "Triggers": [
+                                {
+                                    "Condition": "{Season.LineupsBasedType}",
+                                    "ConditionValue": "Cars",
+                                    "Property": "Source",
+                                    "Value": "[{Item.Car.Name, Converter=StringToUpperString}]"
+                                }
+                            ]
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "PositionX": 900,
+            "Width": 250,
+            "Orientation": "Horizontal",
+            "RenderIf": "{Item.FastestLapNumLap}",
+            "Items": [
+                {
+                    "BlockType": "text",
+                    "HorizontalAlignment": "Right",
+                    "Source": "[LAP] {Item.FastestLapNumLap}",
+                    "FontSize": "{TableFontSizeDefalt}",
+                    "FontName": "{FastestLapFont}",
+                    "Foreground": "{white}",
+                    "MarginTop": 11
                 }
             ]
         }
