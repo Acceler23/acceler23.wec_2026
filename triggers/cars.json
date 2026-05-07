@@ -41,4 +41,11 @@
         "Property": "Foreground",
         "Value": "{Item.Car.SecondaryColor}"
     },
+    {
+        "TriggerName": "Car_FullName",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "Property": "Source",
+        "Value": "[{Item.Car.FullName, Converter=StringToUpperString}]"
+    },
 ]

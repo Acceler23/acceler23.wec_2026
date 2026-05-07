@@ -1,0 +1,8 @@
+[
+    {
+        "TriggerName": "DriverImage_PlaceHolder",
+        "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+        "Property": "Source",
+        "Value": "driver_placeholder"
+    }
+]

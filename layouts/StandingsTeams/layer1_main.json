@@ -1,0 +1,58 @@
+{
+    "BlockRoot": {
+        "BlockType": "dock",
+        "Orientation": "Horizontal",
+        "Margin": "{RenderMarginRace}",
+        "Width": "{PostRaceWidth}",
+        "MaxHeight": "{PostRaceHeight}",
+        "Spacing": 28,
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "StandingCard_Driver",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                //"Margin": "60, 60, 0, 60"
+            },
+            {
+                "BlockType": "stack",
+                "HorizontalAlignment": "Right",
+                "VerticalAlignment": "Center",
+                "BackgroundImage": "PostRace/TableShade",
+                "BackgroundImageOpacity": 60,
+                "Orientation": "Vertical",
+                //"Margin": "30, 60, 112, 60",
+                "Width": 1370,
+                "Height": 968,
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "StandingsHeadTable",
+                        "Margin": "115, 57, 115, 0",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "subHeader": "[TEAMS' CHAMPIONSHIP]"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "PostRaceTable_Standings",
+                        "Margin": "74, 0, 96, 0",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderDriver": false,
+                                "renderTeam": true
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "TableBottom",
+                        "Margin": "70, 46, 115, 0"
+                    }
+                ]
+            }
+        ]
+    }
+}

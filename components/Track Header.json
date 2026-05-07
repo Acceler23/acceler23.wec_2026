@@ -1,0 +1,222 @@
+[
+    {
+        "ComponentName": "TrackHeader_Session",
+        "BlockType": "canvas",
+        "Width": 341,
+        "Items": [
+            {
+                "BlockType": "image",
+                "PositionY": 63,
+                "PositionX": 30,
+                "Source": "trackHeader_cut",
+                "Colorize": {
+                    "Color": "{lightBlue}"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 30,
+                "PositionY": 42,
+                "Width": 105,
+                "Height": 25,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 24,
+                        "Source": "{Season.AlternativeLogotypePath}",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "PositionX": 140,
+                "PositionY": 42,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "Spacing": 3,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{white}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{lightBlue}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[CHAMPIONSHIP]",
+                        "FontName": "{SeasonFontHeader}",
+                        "FontSize": 12,
+                        "Foreground": "{white}",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Session.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Foreground": "{white}",
+                "FontName": "{TrackHeaderFont}",
+                "VerticalAlignment": "Center",
+                "FontSize": "{TrackNameSize}",
+                "Height": 95,
+                "Width": 270,
+                "PositionX": 30,
+                "PositionY": 73,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "VerticalAlignment": "Center"
+                }
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Event.Date, Converter=DateToYear}",
+                "Foreground": "{darkPurple}",
+                "FontName": "{TrackHeaderFont}",
+                "FontSize": 20,
+                "Width": 90,
+                "Padding": "5",
+                "PositionX": 35,
+                "PositionY": 171,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Center",
+                    "VerticalAlignment": "Center"
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "TrackHeader_Standings",
+        "BlockType": "canvas",
+        "Width": 341,
+        "Items": [
+            {
+                "BlockType": "image",
+                "PositionY": 63,
+                "PositionX": 30,
+                "Source": "trackHeader_cut",
+                "Colorize": {
+                    "Color": "{lightBlue}"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 30,
+                "PositionY": 42,
+                "Width": 105,
+                "Height": 25,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 24,
+                        "Source": "{Season.AlternativeLogotypePath}",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "PositionX": 140,
+                "PositionY": 42,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "Spacing": 3,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{white}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{lightBlue}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[CHAMPIONSHIP]",
+                        "FontName": "{SeasonFontHeader}",
+                        "FontSize": 12,
+                        "Foreground": "{white}",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Standings.LastEvent.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Foreground": "{white}",
+                "FontName": "{TrackHeaderFont}",
+                "VerticalAlignment": "Center",
+                "FontSize": "{TrackNameSize}",
+                "Height": 95,
+                "Width": 270,
+                "PositionX": 30,
+                "PositionY": 73,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "VerticalAlignment": "Center"
+                }
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Standings.LastEvent.Date, Converter=DateToYear}",
+                "Foreground": "{darkPurple}",
+                "FontName": "{TrackHeaderFont}",
+                "FontSize": 20,
+                "Width": 90,
+                "Padding": "5",
+                "PositionX": 35,
+                "PositionY": 171,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Center",
+                    "VerticalAlignment": "Center"
+                }
+            }
+        ]
+    }
+]

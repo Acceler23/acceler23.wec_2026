@@ -4,7 +4,7 @@
         "BlockType": "stack",
         "Orientation": "Horizontal",
         "Height": 590,
-        "Width": 1200,
+        "Width": 1198,
         "Items": [
             {
                 "BlockType": "itemstack",
@@ -51,6 +51,7 @@
             {
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
+                "RenderIf": "<renderDriver>",
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -59,6 +60,36 @@
                     "ItemTemplate": {
                         "BlockType": "component",
                         "Component": "DriverLine"
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "RenderIf": "<renderDriverQualy>",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Session.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "DriverLineQualy"
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "RenderIf": "<renderTeam>",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Session.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "TeamLine"
                     }
                 }
             },
@@ -90,6 +121,118 @@
                     "ItemTemplate": {
                         "BlockType": "component",
                         "Component": "SessionTimeTable"
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "PostRaceTable_Standings",
+        "BlockType": "stack",
+        "Orientation": "Horizontal",
+        "Height": 590,
+        "Width": 1200,
+        "Items": [
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "PositionLine"
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "tableLogo"
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "RaceNumberLine"
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "RenderIf": "<renderDriver>",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "DriverLine"
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "RenderIf": "<renderTeam>",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "TeamLine"
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Width": "*",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "tableSpacer",
+                        "Width": "*"
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "HorizontalAlignment": "Right",
+                "Spacing": 10,
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                    "Limit": 10,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "StandingPointsTable"
                     }
                 }
             }

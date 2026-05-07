@@ -1,0 +1,45 @@
+{
+    "Name": "Europe English",
+    "Id": "en-EU",
+    "Strings": {
+        "WEC EDIÇÃO 2": "WEC EDICAO 2",
+        
+        "Alpine Short": "ALP",
+        "Aston Martin Short": "AST",
+        "BMW Short": "BMW",
+        "Cadillac Short": "CAD",
+        "Chevrolet Short": "COR",
+        "Duqueine Short": "DUQ",
+        "Ferrari Short": "FER",
+        "Ford Motor Short": "FOR",
+        "Genesis Short": "GEN",
+        "Ginetta Cars Short": "GIN",
+        "Glickenhaus Short": "GLI",
+        "Isotta Fraschini Short": "ISO",
+        "Lamborghini Short": "LAM",
+        "Lexus Short": "LEX",
+        "Ligier Short": "LIG",
+        "McLaren Short": "MCL",
+        "Mercedes-Benz Short": "MER",
+        "Oreca Short": "ORE",
+        "Peugeot Short": "PEU",
+        "Porsche AG Short": "POR",
+        "Toyota Short": "TOY",
+        "Vanwall Short": "VAN",
+
+
+        "CHAMPIONSHIP": "CHAMPIONSHIP",
+        "CLASSIFICATION": "CLASSIFICATION",
+        "FIAWEC": "FIAWEC",
+        "FIAWEC_OFFICIAL": "FIAWEC_OFFICIAL",
+        "HYPERPOLE": "HYPERPOLE",
+        "LAP": "LAP",
+        "LAPS": "LAPS",
+        "OVERALL": "OVERALL",
+        "QUALIFICATION": "QUALIFYING",
+        "QUALIFIED FOR": "QUALIFIED FOR",
+        "RESULTS": "RESULTS",
+        "THE OFFICIAL STREAMING APP": "THE OFFICIAL STREAMING APP",
+        "st": "st"
+    }
+}

@@ -2,12 +2,12 @@
     "ComponentName": "TableBottom",
     "BlockType": "dock",
     "Orientation": "Vertical",
-    "Width": 1142,
+    "Width": 1228,
     "Items": [
         {
             "BlockType": "shape",
             "Opacity": 80,
-            "Width": 1142,
+            "Width": 1228,
             "Height": 3,
             "ShapeOptions": {
                 "Fill": "{lightBlue}",
@@ -17,8 +17,8 @@
         {
             "BlockType": "dock",
             "Orientation": "Horizontal",
-            "MarginTop": 15,
-            "Width": 1142,
+            "MarginTop": 20,
+            "Width": 1228,
             "Height": 22,
             "Items": [
                 {
@@ -38,7 +38,7 @@
                             "Source": "[THE OFFICIAL STREAMING APP]",
                             "Foreground": "{white}",
                             "FontName": "{TableBottomFont}",
-                            "FontSize": 16,
+                            "FontSize": 18,
                             "VerticalAlignment": "Center"
                         }
                     ]
@@ -47,50 +47,51 @@
                     "BlockType": "stack",
                     "Orientation": "Horizontal",
                     "HorizontalAlignment": "Right",
+                    "MarginRight": 60,
                     "Items": [
                         {
                             "BlockType": "image",
                             "Source": "instagram",
-                            "Height": 22
+                            "Height": 20
                         },
                         {
                             "BlockType": "text",
                             "Source": "[FIAWEC_OFFICIAL]",
                             "Foreground": "{white}",
                             "FontName": "{TableBottomFont}",
-                            "FontSize": 16,
+                            "FontSize": 18,
                             "VerticalAlignment": "Center",
-                            "MarginLeft": 5
+                            "MarginLeft": 8
                         },
                         {
                             "BlockType": "image",
                             "Source": "youtube",
-                            "Height": 22,
-                            "MarginLeft": 30
+                            "Height": 20,
+                            "MarginLeft": 32
                         },
                         {
                             "BlockType": "text",
                             "Source": "[FIAWEC]",
                             "Foreground": "{white}",
                             "FontName": "{TableBottomFont}",
-                            "FontSize": 16,
+                            "FontSize": 18,
                             "VerticalAlignment": "Center",
-                            "MarginLeft": 5
+                            "MarginLeft": 8
                         },
                         {
                             "BlockType": "image",
                             "Source": "tiktok",
-                            "Height": 22,
-                            "MarginLeft": 30
+                            "Height": 20,
+                            "MarginLeft": 32
                         },
                         {
                             "BlockType": "text",
                             "Source": "[FIAWEC]",
                             "Foreground": "{white}",
                             "FontName": "{TableBottomFont}",
-                            "FontSize": 16,
+                            "FontSize": 18,
                             "VerticalAlignment": "Center",
-                            "MarginLeft": 5
+                            "MarginLeft": 8
                         }
                     ]
                 }

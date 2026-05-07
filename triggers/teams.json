@@ -49,4 +49,11 @@
         "Property": "Foreground",
         "Value": "{Item.Team.SecondaryColor}"
     },
+    {
+        "TriggerName": "Team_FullName",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "Property": "Source",
+        "Value": "[{Item.Team.FullName, Converter=StringToUpperString}]"
+    },
 ]

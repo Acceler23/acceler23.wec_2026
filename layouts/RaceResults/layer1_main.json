@@ -5,33 +5,50 @@
         "Margin": "{RenderMarginRace}",
         "Width": "{PostRaceWidth}",
         "MaxHeight": "{PostRaceHeight}",
+        "Spacing": 28,
         "Items": [
+            {
+                "BlockType": "component",
+                "Component": "RaceCard",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                //"Margin": "60, 60, 0, 60"
+            },
             {
                 "BlockType": "stack",
                 "HorizontalAlignment": "Right",
                 "VerticalAlignment": "Center",
                 "BackgroundImage": "PostRace/TableShade",
+                "BackgroundImageOpacity": 60,
                 "Orientation": "Vertical",
-                //"Width": 1370,
-                "Height": 965,
+                //"Margin": "30, 60, 112, 60",
+                "Width": 1370,
+                "Height": 968,
                 "Items": [
                     {
                         "BlockType": "component",
-                        "Component": "SessionHeadTable",
-                        "Margin": "115, 55, 115, 0"
+                        "Component": "RaceHeadTable",
+                        "Margin": "115, 57, 115, 0"
                     },
                     {
                         "BlockType": "component",
                         "Component": "PostRaceTable_Results",
-                        "Margin": "60, 25, 115, 0"
+                        "Margin": "57, 24, 118, 0",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderDriver": true,
+                                "renderDriverQualy": false,
+                                "renderTeam": false
+                            }
+                        }
                     },
                     {
                         "BlockType": "itemstack",
-                        "Margin": "60, 20, 115, 0",
+                        "Margin": "57, 22, 120, 0",
                         "ItemStackOptions": {
                             "ItemSource": "{Session.Drivers}",
-                            "FilterMember": "Driver.Name",
-                            "FilterMemberValue": "{Session.FastestLapDriver.Name}",
+                            "FilterMember": "Driver.{DriverName}",
+                            "FilterMemberValue": "{Session.FastestLapDriver.{DriverName}}",
                             "ItemTemplate": {
                                 "BlockType": "component",
                                 "Component": "FastestLap"
@@ -41,7 +58,14 @@
                     {
                         "BlockType": "component",
                         "Component": "TableBottom",
-                        "Margin": "115, 9, 115, 0"
+                        "Margin": "70, 9, 115, 0",
+                        "Triggers": [
+                            {
+                                "Condition": "{Session.FastestLapDriver.Name, Converter=EmptyObjectToTrue}",
+                                "Property": "Margin",
+                                "Value": "70, 81, 115, 0"
+                            }
+                        ]
                     }
                 ]
             }

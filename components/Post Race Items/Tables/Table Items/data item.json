@@ -3,7 +3,7 @@
         "ComponentName": "SessionTimeTable",
         "BlockType": "dock",
         "Background": "{darkPurple}",
-        "MinWidth": 150,
+        "MinWidth": 146,
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
             { "Trigger": "CarColor_BackgroundP1" }
@@ -19,6 +19,9 @@
                 "Height": "{TableLineHeight}",
                 "FontSize": "{TableFontSizeDefalt}",
                 "FontName": "{DataTableFont}",
+                "TextOptions": {
+                    "FontStyle": "BoldItalic"
+                },
                 "Triggers": [
                     {
                         "Condition": "{Item.Position}",
@@ -28,6 +31,36 @@
                         "Property": "Source",
                         "Value": "{Item.LapsCount} [LAPS]"
                     },
+                    { "Trigger": "TeamColor_ForegroundP1" },
+                    { "Trigger": "CarColor_ForegroundP1" }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "StandingPointsTable",
+        "BlockType": "dock",
+        "Background": "{darkPurple}",
+        "MinWidth": 100,
+        "Triggers": [
+            { "Trigger": "TeamColor_BackgroundP1" },
+            { "Trigger": "CarColor_BackgroundP1" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "{Item.Points, Converter=StringToUpperString}",
+                "Foreground": "{white}",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "PaddingRight": 15,
+                "Height": "{TableLineHeight}",
+                "FontSize": "{TableFontSizeDefalt}",
+                "FontName": "{DataTableFont}",
+                "TextOptions": {
+                    "FontStyle": "BoldItalic"
+                },
+                "Triggers": [
                     { "Trigger": "TeamColor_ForegroundP1" },
                     { "Trigger": "CarColor_ForegroundP1" }
                 ]

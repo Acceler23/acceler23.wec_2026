@@ -1,5 +1,8 @@
 {
-    "Categories": [],
+    "Categories": [
+        {"Name": "Drivers"},
+        {"Name": "Global Options"}
+    ],
     "Properties": [
         {
             "Name": "TablePage",
@@ -7,6 +10,42 @@
             "Type": "Integer",
             "MinimumValue": 1,
             "DefaultValue": 1
-        }
+        },
+        {
+            "Category": "Drivers",
+            "Name": "DriverName",
+            "PublicName": "Driver Name",
+            "Type": "Enum",
+            "EnumValues": [
+                "Name",
+                "InGameName",
+                "DiscordName",
+                "SteamName",
+                "BadgeText",
+                "Description"
+            ],
+            "DefaultValue": "Name"
+        },
+        {
+            "Category": "Drivers",
+            "Name": "CarNumber",
+            "PublicName": "Car Number as",
+            "Type": "Enum",
+            "EnumValues": [
+                "Driver.RaceNumber",
+                "Driver.TextBadge",
+                "Driver.Description",
+                "Team.Abbreviation"
+            ],
+            "DefaultValue": "Driver.RaceNumber"
+        },
+        {
+            "Name": "TrackNameSize",
+            "PublicName": "Card Track Name Size",
+            "Category": "Global Options",
+            "Type": "Integer",
+            "DefaultValue": 30,
+            "MinimumValue": 10
+        },
     ]
 }

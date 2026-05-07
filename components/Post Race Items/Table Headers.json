@@ -1,6 +1,6 @@
 [
     {
-        "ComponentName": "SessionHeadTable",
+        "ComponentName": "RaceHeadTable",
         "BlockType": "stack",
         "Orientation": "Vertical",
         "Spacing": -10,
@@ -95,6 +95,294 @@
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Right",
                         "Padding": "7,5,7,0"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "QualyHeadTable",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Spacing": -10,
+        "Width": 1142,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Spacing": -2,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Session.SessionType, Converter=StringToUpperString}]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{white}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Session.RacingClass.Name, Converter=StringToUpperString}]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{white}",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Session.RacingClass.Name, Converter=EmptyObjectToTrue}",
+                                        "Property": "Source",
+                                        "Value": "[OVERALL]"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[CLASSIFICATION]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{white}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[RESULTS]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{lightBlue}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "shape",
+                "Opacity": 80,
+                "Width": 1142,
+                "Height": 3,
+                "ShapeOptions": {
+                    "Fill": "{lightBlue}",
+                    "ShapeType": "ellipse"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "MarginTop": 20,
+                "Height": 64,
+                "HorizontalAlignment": "Right",
+                "Width": 1125,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Session.RacingClass.Name, Converter=StringToUpperString}]",
+                        "Background": "{Session.RacingClass.Color}",
+                        "Foreground": "{Session.RacingClass.SecondaryColor}",
+                        "FontName": "{MulticalssFont}",
+                        "Height": 40,
+                        "FontSize": 29,
+                        "Margin": "8,2,0,0",
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Left",
+                        "Padding": "7,5,7,0"
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                        "Foreground": "{white}",
+                        "FontName": "{TrackNameFont}",
+                        "Height": 40,
+                        "FontSize": 29,
+                        "Margin": "0,2,0,0",
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Right",
+                        "Padding": "7,5,7,0",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "{Session.QualType}",
+                                "ConditionValue": "Regular",
+                                "ConditionOr": "{Session.QualType}",
+                                "ConditionOrValue": "Q2",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "{Session.QualType}",
+                                "ConditionValue": "Q1",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ],
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[QUALIFIED FOR]",
+                                "Foreground": "{white}",
+                                "FontName": "{TrackNameFont}",
+                                "Height": 40,
+                                "FontSize": 29,
+                                "Margin": "0,5,20,0",
+                                "VerticalAlignment": "Center",
+                                "HorizontalAlignment": "Right",
+                                "Padding": "7,5,7,0"
+                            },
+                            {
+                                "BlockType": "canvas",
+                                "Orientation": "Horizontal",
+                                "BackgroundImage": "PostRace/hyperpole_bg",
+                                "Height": 62,
+                                "Width": 427,
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[HYPERPOLE]",
+                                        "Foreground": "{white}",
+                                        "FontName": "{TrackNameFont}",
+                                        "FontSize": 29,
+                                        "PositionX": 45,
+                                        "PositionY": 18,
+                                        "Padding": "5"
+                                    },
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "rolex_clean",
+                                        "PositionX": 333,
+                                        "PositionY": 10,
+                                        "Height": 43
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "StandingsHeadTable",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Spacing": -10,
+        "Width": 1142,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Spacing": -15,
+                        "MarginLeft": 15,
+                        "Items": [
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "Spacing": -2,
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}]",
+                                        "FontName": "{TableHeaderFont}",
+                                        "FontSize": 80,
+                                        "Padding": "5",
+                                        "Foreground": "{white}"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Standings.RacingClass.Name, Converter=StringToUpperString}]",
+                                        "FontName": "{TableHeaderFont}",
+                                        "FontSize": 80,
+                                        "Padding": "5",
+                                        "Foreground": "{white}"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Season.Name, Converter=StringToUpperString}]",
+                                        "FontName": "{TableHeaderFont}",
+                                        "FontSize": 80,
+                                        "Padding": "5",
+                                        "Foreground": "{white}"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "<subHeader>",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{lightBlue}"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "image",
+                        "Source": "rolex",
+                        "Height": 80,
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center",
+                        "MarginRight": 10,
+                        "MarginTop": -10
+                    }
+                ]
+            },
+            {
+                "BlockType": "shape",
+                "Opacity": 80,
+                "Width": 1130,
+                "Height": 3,
+                "ShapeOptions": {
+                    "Fill": "{lightBlue}",
+                    "ShapeType": "ellipse"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "MarginTop": 10,
+                "Height": 60,
+                "HorizontalAlignment": "Right",
+                "Width": 1125,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "MinWidth": 110,
+                        "Height": 60,
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[Points]",
+                                "Foreground": "{white}",
+                                "FontName": "{DataTableFont}",
+                                "TextOptions": {
+                                    "FontStyle": "BoldItalic"
+                                },
+                                "FontSize": 25,
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "Padding": "7,5,7,0"
+                            }
+                        ]
                     }
                 ]
             }

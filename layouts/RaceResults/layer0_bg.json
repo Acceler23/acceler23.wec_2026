@@ -1,6 +1,6 @@
 {
     "BlockRoot": {
         "BlockType": "component",
-        "Component": "postRace_bg"
+        "Component": "SessionPostRace_bg"
     }
 }

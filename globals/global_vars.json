@@ -11,7 +11,7 @@
     "PostRaceWidth": 1920,
     "PostRaceHeight": 1080,
     "TableLineHeight": 50,
-    "RenderMarginRace": "60, 58, 110, 57",
+    "RenderMarginRace": "63, 56, 112, 60",
 
     "PostRaceTableheight": 968,
     "PostRaceTableWidth": 1373,
@@ -19,18 +19,23 @@
     //fonts
     "FontNameDefault": "Archivo_SemiExpanded-Italic",
     "FontSizeDefault": 20,
+    "TableFontSizeDefalt": 28,
 
-    "TableFontSizeDefalt": 26,
+    "SeasonFontHeader": "Archivo-Bold",
+
     "TableFontDefault": "Archivo_SemiExpanded-Italic",
     "RaceNumberFont": "Archivo-BlackItalic",
-    "DataTableFont": "Archivo-BoldItalic",
-    "FastestLapFont": "Archivo-BoldItalic",
+    "DataTableFont": "Archivo-ItallicBold",
+    "FastestLapFont": "Archivo-ItallicBold",
     "P1FontTable": "Archivo_Condensed-BlackItalic",
     "TrackNameFont": "DrukWide-MediumItalic-Trial",
+    "TrackHeaderFont": "DrukWide-BoldItalic-Trial",
 
+    "CardIndoFont": "Druk-MediumItalic-Trial",
+    "CardTeamNameFont": "Archivo-BlackItalic",
     "TableHeaderFont": "Druk-MediumItalic-Trial",
 
     "MulticalssFont": "DrukWide-MediumItalic-Trial",
 
-    "TableBottomFont": "Archivo_Expanded-SemiBold"
+    "TableBottomFont": "Archivo-SemiBold"
 }
