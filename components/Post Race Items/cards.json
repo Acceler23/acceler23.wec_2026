@@ -168,7 +168,7 @@
                                         "Condition": "{Season.LineupsBasedType}",
                                         "ConditionValue": "Teams",
                                         "Property": "Source",
-                                        "Value": "Card_Images/wec/{Item.Team.Car.UniqueId}.png"
+                                        "Value": "Card_Images/wec/{Session.Track.CircuitOrigin}/{Item.Team.Car.UniqueId}.png"
                                     }
                                 ]
                             }
@@ -278,6 +278,7 @@
                         "Items": [
                             {
                                 "BlockType": "text",
+                                //"Source": "Card_Images/wec/{Session.Track.CircuitOrigin}/{Item.Car.UniqueId}.png",
                                 "Source": "{Item.Team.FullName, Converter=StringToUpperString}",
                                 "Width": 301,
                                 "Foreground": "{white}",

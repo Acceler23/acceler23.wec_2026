@@ -67,14 +67,16 @@
     {
         "TriggerName": "WEC_Team_ForegroundP1",
         "Condition": "{WEC_color}",
-        "ConditionAnd": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+        "ConditionAnd": "{Item.Position, Converter=StringAdd, Parameter={Season.LineupsBasedType}}",
+        "ConditionAndValue": "1Teams",
         "Property": "Foreground",
         "Value": "{{Item.Team.Car.Vendor.Name}_SecondColor}"
     },
     {
         "TriggerName": "WEC_Car_ForegroundP1",
         "Condition": "{WEC_color}",
-        "ConditionAnd": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+        "ConditionAnd": "{Item.Position, Converter=StringAdd, Parameter={Season.LineupsBasedType}}",
+        "ConditionAndValue": "1Cars",
         "Property": "Foreground",
         "Value": "{{Item.Car.Vendor.Name}_SecondColor}"
     },
@@ -83,14 +85,16 @@
     {
         "TriggerName": "WEC_Team_BackgroundP1",
         "Condition": "{WEC_color}",
-        "ConditionAnd": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+        "ConditionAnd": "{Item.Position, Converter=StringAdd, Parameter={Season.LineupsBasedType}}",
+        "ConditionAndValue": "1Teams",
         "Property": "Background",
         "Value": "{{Item.Team.Car.Vendor.Name}_Color}"
     },
     {
         "TriggerName": "WEC_Car_BackgroundP1",
         "Condition": "{WEC_color}",
-        "ConditionAnd": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+        "ConditionAnd": "{Item.Position, Converter=StringAdd, Parameter={Season.LineupsBasedType}}",
+        "ConditionAndValue": "1Cars",
         "Property": "Background",
         "Value": "{{Item.Car.Vendor.Name}_Color}"
     },

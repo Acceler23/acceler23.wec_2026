@@ -151,6 +151,13 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "Spacing": 10,
+                "Triggers": [
+                    {
+                        "Condition": "<renderTeam>",
+                        "Property": "ItemStackOptions.ItemSource",
+                        "Value": "{Standings.Teams}"
+                    }
+                ],
                 "ItemStackOptions": {
                     "ItemSource": "{Standings.Drivers}",
                     "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
@@ -165,6 +172,13 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "Spacing": 10,
+                "Triggers": [
+                    {
+                        "Condition": "<renderTeam>",
+                        "Property": "ItemStackOptions.ItemSource",
+                        "Value": "{Standings.Teams}"
+                    }
+                ],
                 "ItemStackOptions": {
                     "ItemSource": "{Standings.Drivers}",
                     "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
@@ -179,6 +193,13 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "Spacing": 10,
+                "Triggers": [
+                    {
+                        "Condition": "<renderTeam>",
+                        "Property": "ItemStackOptions.ItemSource",
+                        "Value": "{Standings.Teams}"
+                    }
+                ],
                 "ItemStackOptions": {
                     "ItemSource": "{Standings.Drivers}",
                     "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
@@ -193,6 +214,13 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "Spacing": 10,
+                "Triggers": [
+                    {
+                        "Condition": "<renderTeam>",
+                        "Property": "ItemStackOptions.ItemSource",
+                        "Value": "{Standings.Teams}"
+                    }
+                ],
                 "ItemStackOptions": {
                     "ItemSource": "{Standings.Drivers}",
                     "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
@@ -224,7 +252,7 @@
                 "RenderIf": "<renderTeam>",
                 "Spacing": 10,
                 "ItemStackOptions": {
-                    "ItemSource": "{Standings.Drivers}",
+                    "ItemSource": "{Standings.Teams}",
                     "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
                     "Limit": 10,
                     "ItemTemplate": {
@@ -238,6 +266,13 @@
                 "Orientation": "Vertical",
                 "Width": "*",
                 "Spacing": 10,
+                "Triggers": [
+                    {
+                        "Condition": "<renderTeam>",
+                        "Property": "ItemStackOptions.ItemSource",
+                        "Value": "{Standings.Teams}"
+                    }
+                ],
                 "ItemStackOptions": {
                     "ItemSource": "{Standings.Drivers}",
                     "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
@@ -254,6 +289,13 @@
                 "Orientation": "Vertical",
                 "HorizontalAlignment": "Right",
                 "Spacing": 10,
+                "Triggers": [
+                    {
+                        "Condition": "<renderTeam>",
+                        "Property": "ItemStackOptions.ItemSource",
+                        "Value": "{Standings.Teams}"
+                    }
+                ],
                 "ItemStackOptions": {
                     "ItemSource": "{Standings.Drivers}",
                     "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",

@@ -55,7 +55,7 @@
         "Items": [
             {
                 "BlockType": "text",
-                "Source": "{Item.Points, Converter=StringToUpperString}",
+                "Source": "{Item.Points, Converter=NumberZeroToEmpty}",
                 "Foreground": "{white}",
                 "HorizontalAlignment": "Left",
                 "VerticalAlignment": "Center",
@@ -71,6 +71,21 @@
                     { "Trigger": "CarColor_ForegroundP1" },
                     { "Trigger": "WEC_Team_ForegroundP1" },
                     { "Trigger": "WEC_Car_ForegroundP1" },
+                ]
+            },
+            {
+                "BlockType": "shape",
+                "Opacity": 0,
+                "Height": 50,
+                "Width": 10,
+                "ShapeOptions": {
+                    "Fill": "{darkPurple}"
+                },
+                "Triggers": [
+                    { "Trigger": "TeamColor_ShapeFill" },
+                    { "Trigger": "CarColor_ShapeFill" },
+                    { "Trigger": "WEC_Team_ShapeMain" },
+                    { "Trigger": "WEC_Car_ShapeMain" }
                 ]
             }
         ]

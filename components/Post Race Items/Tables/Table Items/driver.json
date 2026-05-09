@@ -121,7 +121,7 @@
     {
         "ComponentName": "tableColorShape",
         "BlockType": "shape",
-        "Height": "{TableLineHeight}",
+        "Height": 50,
         "Width": 5,
         "ShapeOptions": {
             "Fill": "{white}"
@@ -130,7 +130,7 @@
             { "Trigger": "TeamColor_ShapeFill" },
             { "Trigger": "CarColor_ShapeFill" },
             { "Trigger": "WEC_Team_ShapeMain" },
-            { "Trigger": "WEC_Car_ShapeMain" },
+            { "Trigger": "WEC_Car_ShapeMain" }
         ]
     },
     {
