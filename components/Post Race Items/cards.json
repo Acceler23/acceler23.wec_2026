@@ -278,7 +278,6 @@
                         "Items": [
                             {
                                 "BlockType": "text",
-                                //"Source": "Card_Images/wec/{Session.Track.CircuitOrigin}/{Item.Car.UniqueId}.png",
                                 "Source": "{Item.Team.FullName, Converter=StringToUpperString}",
                                 "Width": 301,
                                 "Foreground": "{white}",
