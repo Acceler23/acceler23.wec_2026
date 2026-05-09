@@ -1,0 +1,474 @@
+{
+    "BlockRoot": {
+        "BlockType": "dock",
+        "Orientation": "Horizontal",
+        "Margin": "{RenderMarginRace}",
+        "Width": "{PostRaceWidth}",
+        "MaxHeight": "{PostRaceHeight}",
+        "Spacing": 28,
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "QualyCard",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                //"Margin": "60, 60, 0, 60"
+            },
+            {
+                "BlockType": "stack",
+                "HorizontalAlignment": "Right",
+                "VerticalAlignment": "Center",
+                "BackgroundImage": "PostRace/TableShade",
+                "BackgroundImageOpacity": 70,
+                "Orientation": "Vertical",
+                //"Margin": "30, 60, 112, 60",
+                "Width": 1370,
+                "Height": 968,
+                "Items": [
+                    {
+                        "Margin": "115, 57, 115, 0",
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Spacing": -10,
+                        "Width": 1142,
+                        "Items": [
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Horizontal",
+                                        "HorizontalAlignment": "Left",
+                                        "VerticalAlignment": "Center",
+                                        "Spacing": -2,
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[QUALYFING TIMES]",
+                                                "FontName": "{TableHeaderFont}",
+                                                "FontSize": 80,
+                                                "Padding": "5",
+                                                "Foreground": "{white}"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[CLASSIFICATION]",
+                                                "FontName": "{TableHeaderFont}",
+                                                "FontSize": 80,
+                                                "Padding": "5",
+                                                "Foreground": "{lightBlue}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "shape",
+                                "Opacity": 80,
+                                "Width": 1142,
+                                "Height": 3,
+                                "ShapeOptions": {
+                                    "Fill": "{lightBlue}",
+                                    "ShapeType": "ellipse"
+                                }
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "MarginTop": 20,
+                                "Height": 64,
+                                "HorizontalAlignment": "Right",
+                                "Width": 1125,
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Session.RacingClass.Name, Converter=StringToUpperString}]",
+                                        //"Background": "{Session.RacingClass.Color}",
+                                        "Foreground": "{Session.RacingClass.SecondaryColor}",
+                                        "FontName": "{MulticalssFont}",
+                                        "BackgroundImage": "PostRace/logo_bg",
+                                        "ColorizeBackground": {
+                                            "Color": "{Session.RacingClass.Color}"
+                                        },
+                                        "Height": 40,
+                                        "FontSize": 29,
+                                        "Margin": "9,2,0,0",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Padding": "7,5,7,5"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                                        "Foreground": "{white}",
+                                        "FontName": "{TrackNameFont}",
+                                        "Height": 40,
+                                        "FontSize": 29,
+                                        "Margin": "0,2,0,0",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Right",
+                                        "Padding": "7,5,7,0"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Margin": "57, 0, 118, 0",
+                        "Orientation": "Horizontal",
+                        "Height": 614,
+                        "Width": 1198,
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "H",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                "Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "PositionLine"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "H",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                "Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "tableLogo"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "H",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                "Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "RaceNumberLine"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Width": 2,
+                                                "Height": 24,
+                                                "Source": "H",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                "Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "tableColorShape"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "H",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                "Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "ShortCarName"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Width": "*",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "H",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                "Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "DriverLine"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Width": "*",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Width": "*",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "H",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                "Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TableSpacer",
+                                                "Width": "*"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "RenderIf": "{Item.QualQ1Time, Converter=EmptyObjectToFalse}",
+                                        "Width": "*",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "[Q1]",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                //"Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "GeneralDataTable",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "data": "{Item.QualQ1Time}"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "RenderIf": "{Item.QualQ2Time, Converter=EmptyObjectToFalse}",
+                                        "Width": "*",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "[Q2]",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                //"Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "GeneralDataTable",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "data": "{Item.QualQ2Time}"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Right",
+                                "Spacing": 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "IndexStart": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=10}",
+                                    "Limit": 10,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "RenderIf": "{Item.QualQ3Time, Converter=EmptyObjectToFalse}",
+                                        "Width": "*",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Height": 24,
+                                                "Source": "[Q3]",
+                                                "Foreground": "{white}",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 20,
+                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                //"Opacity": 0
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "GeneralDataTable",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "data": "{Item.QualQ3Time}"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "TableBottom",
+                        "Margin": "70, 81, 115, 0"
+                    }
+                ]
+            }
+        ]
+    }
+}

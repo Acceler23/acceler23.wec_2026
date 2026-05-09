@@ -1,4 +1,5 @@
 [
+    //Race Head
     {
         "ComponentName": "RaceHeadTable",
         "BlockType": "stack",
@@ -94,12 +95,17 @@
                         "Margin": "0,2,0,0",
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Right",
-                        "Padding": "7,5,7,0"
+                        "Padding": "7,5,7,0",
+
+                        "Triggers": [
+                            { "Trigger": "WEC_TrackName_Session" }
+                        ]
                     }
                 ]
             }
         ]
     },
+    //Qualy Head
     {
         "ComponentName": "QualyHeadTable",
         "BlockType": "stack",
@@ -124,7 +130,15 @@
                                 "FontName": "{TableHeaderFont}",
                                 "FontSize": 80,
                                 "Padding": "5",
-                                "Foreground": "{white}"
+                                "Foreground": "{white}",
+                                "Triggers": [
+                                    {
+                                        "ConditionOr": "{Session.SessionTypeString}",
+                                        "ConditionOrValue": "Q2",
+                                        "Property": "Source",
+                                        "Value": "[HYPERPOLE]"
+                                    }
+                                ]
                             },
                             {
                                 "BlockType": "text",
@@ -182,15 +196,19 @@
                     {
                         "BlockType": "text",
                         "Source": "[{Session.RacingClass.Name, Converter=StringToUpperString}]",
-                        "Background": "{Session.RacingClass.Color}",
+                        //"Background": "{Session.RacingClass.Color}",
                         "Foreground": "{Session.RacingClass.SecondaryColor}",
                         "FontName": "{MulticalssFont}",
+                        "BackgroundImage": "PostRace/logo_bg",
+                        "ColorizeBackground": {
+                            "Color": "{Session.RacingClass.Color}"
+                        },
                         "Height": 40,
                         "FontSize": 29,
-                        "Margin": "8,2,0,0",
+                        "Margin": "9,2,0,0",
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Left",
-                        "Padding": "7,5,7,0"
+                        "Padding": "7,5,7,5"
                     },
                     {
                         "BlockType": "text",
@@ -206,13 +224,14 @@
                         "RenderIf": false,
                         "Triggers": [
                             {
-                                "Condition": "{Session.QualType}",
+                                "Condition": "{Session.SessionTypeString}",
                                 "ConditionValue": "Regular",
-                                "ConditionOr": "{Session.QualType}",
+                                "ConditionOr": "{Session.SessionTypeString}",
                                 "ConditionOrValue": "Q2",
                                 "Property": "RenderIf",
                                 "Value": true
-                            }
+                            },
+                            { "Trigger": "WEC_TrackName_Session" }
                         ]
                     },
                     {
@@ -222,8 +241,10 @@
                         "RenderIf": false,
                         "Triggers": [
                             {
-                                "Condition": "{Session.QualType}",
+                                "Condition": "{Session.SessionTypeString}",
                                 "ConditionValue": "Q1",
+                                "ConditionAnd": "{TablePage}",
+                                "ConditionAndValue": 1,
                                 "Property": "RenderIf",
                                 "Value": true
                             }
@@ -268,11 +289,48 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "RenderIf": false,
+                        "MarginTop": 10,
+                        "Triggers": [
+                            {
+                                "Condition": "{Session.SessionTypeString}",
+                                "ConditionValue": "Q1",
+                                "ConditionAnd": "{TablePage, Converter=NumberGreater, Parameter=1}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ],
+                        "Items": [
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "BackgroundImage": "PostRace/eliminated_bg",
+                                "Height": 51,
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[ELIMINATED]",
+                                        "Foreground": "{white}",
+                                        "FontName": "{TrackNameFont}",
+                                        "FontSize": 20,
+                                        "Padding": "30, 15, 30, 15",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Center"
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ]
             }
         ]
     },
+    //Standing Head
     {
         "ComponentName": "StandingsHeadTable",
         "BlockType": "stack",
@@ -385,6 +443,73 @@
                         ]
                     }
                 ]
+            }
+        ]
+    },
+    //Calendar Head
+    {
+        "ComponentName": "CalendarHeadTable",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Spacing": -10,
+        "Width": 1142,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Spacing": -2,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{white}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.Name, Converter=StringToUpperString}]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{white}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[CALENDAR]",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{lightBlue}"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "image",
+                        "Source": "rolex",
+                        "Height": 70,
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Top",
+                        "MarginRight": 20
+                    }
+                ]
+            },
+            {
+                "BlockType": "shape",
+                "Opacity": 80,
+                "Width": 1142,
+                "Height": 3,
+                "ShapeOptions": {
+                    "Fill": "{lightBlue}",
+                    "ShapeType": "ellipse"
+                }
             }
         ]
     }

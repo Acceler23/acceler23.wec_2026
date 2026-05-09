@@ -1,0 +1,177 @@
+{
+    "ComponentName": "CalendarPostRaceItem",
+    "BlockType": "canvas",
+    "Height": 65,
+    "Width": 1224,
+    "Items": [
+        {
+            "BlockType": "shape",
+            "Height": 65,
+            "Width": 1224,
+            "RenderIf": true,
+            "ShapeOptions": {
+                "Fill": "{darkPurple}"
+            },
+            "Triggers": [
+                {
+                    "Condition": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=1}",
+                    "ConditionValue": "{Item.Position}",
+                    "Property": "RenderIf",
+                    "Value": false
+                }
+            ]
+        },
+        {
+            "BlockType": "image",
+            "Source": "PostRace/calendarItem_back.png",
+            "RenderIf": false,
+            "Height": 65,
+            "Width": 1224,
+            "Colorize": {
+                "Color": "{lightBlue}"
+            },
+            "Triggers": [
+                {
+                    "Condition": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=1}",
+                    "ConditionValue": "{Item.Position}",
+                    "Property": "RenderIf",
+                    "Value": true
+                }
+            ]
+        },
+        {
+            "BlockType": "text",
+            "Source": "[R]{Item.Position}",
+            "Foreground": "{white}",
+            "PositionX": 62,
+            "Height": 65,
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Left",
+            "FontSize": 27,
+            "Padding": "0, 2",
+            "Triggers": [
+                {
+                    "Condition": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=1}",
+                    "ConditionValue": "{Item.Position}",
+                    "Setters": [
+                        {
+                            "Property": "FontName",
+                            "Value": "{CountryFont}"
+                        },
+                        {
+                            "Property": "FontSize",
+                            "Value": 37
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "PositionX": 157,
+            "Height": 65,
+            "Width": 47,
+            "Items": [
+                {
+                    "BlockType": "image",
+                    "Source": "{Item.Track.Nation.LogotypePath}",
+                    "Width": 47,
+                    "VerticalAlignment": "Center",
+                    "HorizontalAlignment": "Center"
+                }
+            ]
+        },
+        {
+            "BlockType": "dock",
+            "Orientation": "Horizontal",
+            "Width": 880,
+            "Height": 65,
+            "PositionX": 260,
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Center",
+                    "Items": [
+                        {
+                            "BlockType": "text",
+                            "Source": "[{Item.Track.CountryName, Converter=StringToUpperString}]",
+                            "FontName": "{CountryFont}",
+                            "Foreground": "{white}",
+                            "FontSize": 26,
+                            "Padding": "0, 2"
+                        },
+                        {
+                            "BlockType": "text",
+                            "Source": "[{Item.Track.CircuitFullName, Converter=StringToUpperString}]",
+                            "Foreground": "{white}",
+                            "FontSize": 18,
+                            "Padding": "0, 2",
+                            "Triggers": [
+                                {
+                                    "Condition": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=1}",
+                                    "ConditionValue": "{Item.Position}",
+                                    "Setters": [
+                                        {
+                                            "Property": "FontName",
+                                            "Value": "{CountryFont}"
+                                        },
+                                        {
+                                            "Property": "FontSize",
+                                            "Value": 18
+                                        }
+                                    ]
+                                },
+                                { "Trigger": "WEC_TrackName_Calendar" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "text",
+                    "Source": "[day {Item.Date, Converter=DateToDayOfMonth}] [{Item.Date, Converter=DateToMonthInWords}]",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    "Foreground": "{white}",
+                    "FontSize": 27,
+                    "Padding": "0, 2",
+                    "Triggers": [
+                        {
+                            "Condition": "{Season.SeasonCurrentNumberEvent, Converter=NumberAdd, Parameter=1}",
+                            "ConditionValue": "{Item.Position}",
+                            "Setters": [
+                                {
+                                    "Property": "FontName",
+                                    "Value": "{CountryFont}"
+                                },
+                                {
+                                    "Property": "FontSize",
+                                    "Value": 28
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType": "shape",
+            "Height": 65,
+            "Opacity": 60,
+            "Width": 1224,
+            "RenderIf": true,
+            "ShapeOptions": {
+                "Fill": "{darkPurple}"
+            },
+            "Triggers": [
+                {
+                    "Condition": "{Item.CompletedStatus}",
+                    "ConditionValue": "InFuture",
+                    "Property": "RenderIf",
+                    "Value": false
+                }
+            ]
+        },
+    ]
+}

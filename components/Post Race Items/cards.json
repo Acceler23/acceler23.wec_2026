@@ -1,4 +1,5 @@
 [
+    //Race Card
     {
         "ComponentName": "RaceCard",
         "BlockType": "canvas",
@@ -217,13 +218,10 @@
                         "Width": 341,
                         "Height": 95,
                         "Triggers": [
-                            {
-                                "Condition": "{Season.LineupsBasedType}",
-                                "ConditionValue": "Teams",
-                                "ConditionAnd": "{Item.Team.Color, Converter=EmptyObjectToFalse}",
-                                "Property": "ColorizeBackground.Color",
-                                "Value": "{Item.Team.Color}"
-                            }
+                            { "Trigger": "CarColor_ImageBg" },
+                            { "Trigger": "TeamColor_ImageBg" },
+                            { "Trigger": "WEC_Team_ImageBG" },
+                            { "Trigger": "WEC_Car_ImageBG" },
                         ],
                         "ColorizeBackground": {
                             "Color": "{Item.Car.Color}"
@@ -241,19 +239,25 @@
                                         "Height": 70,
                                         "VerticalAlignment": "Center",
                                         "Triggers": [
-                                            {
-                                                "Trigger": "Team_LogotypeDefault"
-                                            }
+                                            { "Trigger": "Car_LogotypeDefault" },
+                                            { "Trigger": "Team_LogotypeVendor" },
+                                            { "Trigger": "WEC_Team_Logotype" },
+                                            { "Trigger": "WEC_Car_Logotype" },
                                         ]
                                     },
                                     {
                                         "BlockType": "text",
                                         "Source": "{Item.{CarNumber}}",
                                         "FontName": "{RaceNumberFont}",
-                                        "Foreground": "{Item.Car.SecondaryColor}",
                                         "VerticalAlignment": "Center",
                                         "FontSize": 80,
-                                        "Padding": "10"
+                                        "Padding": "10",
+                                        "Triggers": [
+                                            { "Trigger": "TeamColor_ForegroundP1" },
+                                            { "Trigger": "CarColor_ForegroundP1" },
+                                            { "Trigger": "WEC_Team_ForegroundP1" },
+                                            { "Trigger": "WEC_Car_ForegroundP1" },
+                                        ]
                                     }
                                 ]
                             }
@@ -325,6 +329,7 @@
             }
         ]
     },
+    //Qualy Card
     {
         "ComponentName": "QualyCard",
         "BlockType": "canvas",
@@ -481,9 +486,10 @@
                                                 "Height": 60,
                                                 "VerticalAlignment": "Center",
                                                 "Triggers": [
-                                                    {
-                                                        "Trigger": "Team_LogotypeDefault"
-                                                    }
+                                                    { "Trigger": "Car_LogotypeDefault" },
+                                                    { "Trigger": "Team_LogotypeVendor" },
+                                                    { "Trigger": "WEC_Team_Logotype" },
+                                                    { "Trigger": "WEC_Car_Logotype" },
                                                 ]
                                             },
                                             {
@@ -539,6 +545,7 @@
             }
         ]
     },
+    //Standing Card - Driver
     {
         "ComponentName": "StandingCard_Driver",
         "BlockType": "canvas",
@@ -641,12 +648,13 @@
                                             {
                                                 "BlockType": "image",
                                                 "Source": "{Item.Car.Vendor.LogotypePath}",
-                                                "Height": 90 ,
+                                                "Height": 90,
                                                 "VerticalAlignment": "Center",
                                                 "Triggers": [
-                                                    {
-                                                        "Trigger": "Team_LogotypeDefault"
-                                                    }
+                                                    { "Trigger": "Car_LogotypeDefault" },
+                                                    { "Trigger": "Team_LogotypeVendor" },
+                                                    { "Trigger": "WEC_Team_Logotype" },
+                                                    { "Trigger": "WEC_Car_Logotype" },
                                                 ]
                                             },
                                             {
@@ -655,7 +663,7 @@
                                                 "FontName": "{RaceNumberFont}",
                                                 "Foreground": "{white}",
                                                 "VerticalAlignment": "Center",
-                                                "FontSize": 90 ,
+                                                "FontSize": 90,
                                                 "Padding": "10"
                                             }
                                         ]
@@ -703,5 +711,118 @@
                 "FontSize": 12
             }
         ]
+    },
+    //Calendar Card
+    {
+        "ComponentName": "CalendarCard",
+        "BlockType": "itemstack",
+        "ItemStackOptions": {
+            "ItemSource": "{Events.Events}",
+            "Limit": 1,
+            "TakeItemIndex": "{Season.SeasonCurrentNumberEvent}",
+            "ItemTemplate": {
+                "BlockType": "canvas",
+                "Height": 968,
+                "Width": 341,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "PostRace/card_back",
+                        "Height": 968,
+                        "Width": 341,
+                        "PositionZ": 1,
+                        "Colorize": {
+                            "Color": "{darkPurple}"
+                        }
+                    },
+                    {
+                        "BlockType": "dock",
+                        "PositionZ": 1,
+                        "Height": 968,
+                        "Width": 341,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "Card_Images/track/{Item.Track.CircuitOrigin}.png",
+                                "Height": 968
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "image",
+                        "Source": "PostRace/card_back_shade",
+                        "Height": 968,
+                        "Width": 341,
+                        "PositionZ": 2,
+                        "Colorize": {
+                            "Color": "{darkPurple}"
+                        }
+                    },
+                    {
+                        "BlockType": "image",
+                        "Source": "PostRace/card_back_highlight",
+                        "Height": 968,
+                        "Width": 341,
+                        "PositionZ": 3,
+                        "Colorize": {
+                            "Color": "{lightBlue}"
+                        }
+                    },
+                    {
+                        "BlockType": "component",
+                        "Component": "TrackHeader_Calendar",
+                        "PositionZ": 4
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[ROUND] {Item.Position}",
+                        "PositionY": 240,
+                        "PositionZ": 4,
+                        "Width": 341,
+                        "HorizontalAlignment": "Center",
+                        "FontName": "{TableHeaderFont}",
+                        "FontSize": 80,
+                        "Padding": "5",
+                        "Foreground": "{lightBlue}"
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "PositionY": 775,
+                        "PositionZ": 4,
+                        "Width": 341,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[day {Item.Date, Converter=DateToDayOfMonth}] [Card {Item.Date, Converter=DateToMonthInWords}]",
+                                "HorizontalAlignment": "Center",
+                                "FontName": "{TableHeaderFont}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "Foreground": "{white}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[RACE STARTS AT]",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Foreground": "{white}",
+                                "FontSize": 23,
+                                "Padding": "0, 2"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{Item.DateLocal, Converter=DateToTime} ([LOCAL TIME])",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Foreground": "{white}",
+                                "FontSize": 23,
+                                "Padding": "0, 2"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
     }
 ]

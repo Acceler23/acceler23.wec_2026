@@ -38,5 +38,37 @@
                 "Source": "Track_images/{Standings.LastEvent.Track.CircuitOrigin}.png"
             }
         ]
+    },
+    {
+        "ComponentName": "CalendarPostRace_bg",
+        "BlockType": "canvas",
+        "Width": "{PostRaceWidth}",
+        "Height": "{PostRaceHeight}",
+        "Items": [
+            {
+                "BlockType": "shape",
+                "Width": "{PostRaceWidth}",
+                "Height": "{PostRaceHeight}",
+                "ShapeOptions": {
+                    "Fill": "#1E3361"
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "HorizontalAlignment": "Center",
+                "VerticalAlignment": "Top",
+                "Spacing": 12,
+                "ItemStackOptions": {
+                    "ItemSource": "{Events.Events}",
+                    "IndexStart": "{Season.SeasonCurrentNumberEvent}",
+                    "Limit": 1,
+                    "ItemTemplate": {
+                        "BlockType": "image",
+                        "Source": "Track_images/{Item.Track.CircuitOrigin}.png"
+                    }
+                }
+            }
+        ]
     }
 ]

@@ -2,8 +2,7 @@
     "Name": "Europe English",
     "Id": "en-EU",
     "Strings": {
-        "WEC EDIÇÃO 2": "WEC EDICAO 2",
-        
+        //Cars
         "Alpine Short": "ALP",
         "Aston Martin Short": "AST",
         "BMW Short": "BMW",
@@ -27,7 +26,10 @@
         "Toyota Short": "TOY",
         "Vanwall Short": "VAN",
 
+        //Country
+        "UNITED STATES OF AMERICA": "USA",
 
+        //Text
         "CHAMPIONSHIP": "CHAMPIONSHIP",
         "CLASSIFICATION": "CLASSIFICATION",
         "FIAWEC": "FIAWEC",
@@ -40,6 +42,66 @@
         "QUALIFIED FOR": "QUALIFIED FOR",
         "RESULTS": "RESULTS",
         "THE OFFICIAL STREAMING APP": "THE OFFICIAL STREAMING APP",
-        "st": "st"
+        "st": "st",
+
+        //days
+        "day 01": "1",
+        "day 02": "2",
+        "day 03": "3",
+        "day 04": "4",
+        "day 05": "5",
+        "day 06": "6",
+        "day 07": "7",
+        "day 08": "8",
+        "day 09": "9",
+        "day 10": "10",
+        "day 11": "11",
+        "day 12": "12",
+        "day 13": "13",
+        "day 14": "14",
+        "day 15": "15",
+        "day 16": "16",
+        "day 17": "17",
+        "day 18": "18",
+        "day 19": "19",
+        "day 20": "20",
+        "day 21": "21",
+        "day 22": "22",
+        "day 23": "23",
+        "day 24": "24",
+        "day 25": "25",
+        "day 26": "26",
+        "day 27": "27",
+        "day 28": "28",
+        "day 29": "29",
+        "day 30": "30",
+        "day 31": "31",
+
+        //months
+        "January": "January",
+        "February": "February",
+        "March": "March",
+        "April": "April",
+        "May": "May",
+        "June": "June",
+        "July": "July",
+        "August": "August",
+        "September": "September",
+        "October": "October",
+        "November": "November",
+        "December": "December",
+
+        "Card January": "JANUARY",
+        "Card February": "FEBRUARY",
+        "Card March": "MARCH",
+        "Card April": "APRIL",
+        "Card May": "MAY",
+        "Card June": "JUNE",
+        "Card July": "JULY",
+        "Card August": "AUGUST",
+        "Card September": "SEPTEMBER",
+        "Card October": "OCTOBER",
+        "Card November": "NOVEMBER",
+        "Card December": "DECEMBER"
     }
 }

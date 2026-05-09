@@ -6,7 +6,9 @@
         "MinWidth": 146,
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
-            { "Trigger": "CarColor_BackgroundP1" }
+            { "Trigger": "CarColor_BackgroundP1" },
+            { "Trigger": "WEC_Team_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" },
         ],
         "Items": [
             {
@@ -32,7 +34,9 @@
                         "Value": "{Item.LapsCount} [LAPS]"
                     },
                     { "Trigger": "TeamColor_ForegroundP1" },
-                    { "Trigger": "CarColor_ForegroundP1" }
+                    { "Trigger": "CarColor_ForegroundP1" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" },
                 ]
             }
         ]
@@ -44,7 +48,9 @@
         "MinWidth": 100,
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
-            { "Trigger": "CarColor_BackgroundP1" }
+            { "Trigger": "CarColor_BackgroundP1" },
+            { "Trigger": "WEC_Team_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" },
         ],
         "Items": [
             {
@@ -62,7 +68,44 @@
                 },
                 "Triggers": [
                     { "Trigger": "TeamColor_ForegroundP1" },
-                    { "Trigger": "CarColor_ForegroundP1" }
+                    { "Trigger": "CarColor_ForegroundP1" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" },
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "GeneralDataTable",
+        "BlockType": "dock",
+        "Background": "{darkPurple}",
+        "MinWidth": 100,
+        "Triggers": [
+            { "Trigger": "TeamColor_BackgroundP1" },
+            { "Trigger": "CarColor_BackgroundP1" },
+            { "Trigger": "WEC_Team_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" },
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "<data>",
+                "Foreground": "{white}",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "PaddingRight": 15,
+                "Padding": "20, 0",
+                "Height": "{TableLineHeight}",
+                "FontSize": "{TableFontSizeDefalt}",
+                "FontName": "{DataTableFont}",
+                "TextOptions": {
+                    "FontStyle": "BoldItalic"
+                },
+                "Triggers": [
+                    { "Trigger": "TeamColor_ForegroundP1" },
+                    { "Trigger": "CarColor_ForegroundP1" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" },
                 ]
             }
         ]

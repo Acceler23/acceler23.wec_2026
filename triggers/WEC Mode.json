@@ -1,0 +1,187 @@
+[
+    //background color
+    {
+        "TriggerName": "WEC_Team_ColorBG",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "Background",
+        "Value": "{{Item.Team.Car.Vendor.Name}_Color}"
+    },
+    {
+        "TriggerName": "WEC_Car_ColorBG",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "Background",
+        "Value": "{{Item.Car.Vendor.Name}_Color}"
+    },
+
+    //bg image color
+    {
+        "TriggerName": "WEC_Team_ImageBG",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "ColorizeBackground.Color",
+        "Value": "{{Item.Team.Car.Vendor.Name}_Color}"
+    },
+    {
+        "TriggerName": "WEC_Car_ImageBG",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "ColorizeBackground.Color",
+        "Value": "{{Item.Car.Vendor.Name}_Color}"
+    },
+
+    //shape main color
+    {
+        "TriggerName": "WEC_Team_ShapeMain",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "ShapeOptions.Fill",
+        "Value": "{{Item.Team.Car.Vendor.Name}_Color}"
+    },
+    {
+        "TriggerName": "WEC_Car_ShapeMain",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "ShapeOptions.Fill",
+        "Value": "{{Item.Car.Vendor.Name}_Color}"
+    },
+
+    //foreground color
+    {
+        "TriggerName": "WEC_Team_Foreground",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "Foreground",
+        "Value": "{{Item.Team.Car.Vendor.Name}_SecondColor}"
+    },
+    {
+        "TriggerName": "WEC_Car_Foreground",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "Foreground",
+        "Value": "{{Item.Car.Vendor.Name}_SecondColor}"
+    },
+
+    //P1 foreground color
+    {
+        "TriggerName": "WEC_Team_ForegroundP1",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+        "Property": "Foreground",
+        "Value": "{{Item.Team.Car.Vendor.Name}_SecondColor}"
+    },
+    {
+        "TriggerName": "WEC_Car_ForegroundP1",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+        "Property": "Foreground",
+        "Value": "{{Item.Car.Vendor.Name}_SecondColor}"
+    },
+
+    //P1 Background color
+    {
+        "TriggerName": "WEC_Team_BackgroundP1",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+        "Property": "Background",
+        "Value": "{{Item.Team.Car.Vendor.Name}_Color}"
+    },
+    {
+        "TriggerName": "WEC_Car_BackgroundP1",
+        "Condition": "{WEC_color}",
+        "ConditionAnd": "{Item.Position, Converter=NumberEquals, Parameter=1}",
+        "Property": "Background",
+        "Value": "{{Item.Car.Vendor.Name}_Color}"
+    },
+
+    //vendor logo
+    {
+        "TriggerName": "WEC_Team_Logotype",
+        "Condition": "{WEC_logos}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "Source",
+        "Value": "{Item.Team.Car.Vendor.LogotypePath}"
+    },
+    {
+        "TriggerName": "WEC_Car_Logotype",
+        "Condition": "{WEC_logos}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.LogotypePath}"
+    },
+
+    //track name
+    {
+        "TriggerName": "WEC_TrackName_Session",
+        "Condition": "{WEC_Tracks}",
+        "Property": "Source",
+        "Value": "{{Session.Track.CircuitOrigin}_EventName}"
+    },
+    {
+        "TriggerName": "WEC_TrackName_CardHead_Session",
+        "Condition": "{WEC_Tracks}",
+        "Setters": [
+            {
+                "Property": "Source",
+                "Value": "{{Session.Track.CircuitOrigin}_EventName}"
+            },
+            {
+                "Property": "FontSize",
+                "Value": "{{Session.Track.CircuitOrigin}_FontSize}"
+            },
+            {
+                "Property": "TextOptions.LineSpacing",
+                "Value": "{{Session.Track.CircuitOrigin}_LineSpace}"
+            }
+        ]
+    },
+    {
+        "TriggerName": "WEC_TrackName_Standings",
+        "Condition": "{WEC_Tracks}",
+        "Property": "Source",
+        "Value": "{{Standings.LastEvent.Track.CircuitOrigin}_EventName}"
+    },
+    {
+        "TriggerName": "WEC_TrackName_CardHead_Standings",
+        "Condition": "{WEC_Tracks}",
+        "Setters": [
+            {
+                "Property": "Source",
+                "Value": "{{Standings.LastEvent.Track.CircuitOrigin}_EventName}"
+            },
+            {
+                "Property": "FontSize",
+                "Value": "{{Standings.LastEvent.Track.CircuitOrigin}_FontSize}"
+            },
+            {
+                "Property": "TextOptions.LineSpacing",
+                "Value": "{{Standings.LastEvent.Track.CircuitOrigin}_LineSpace}"
+            }
+        ]
+    },
+    {
+        "TriggerName": "WEC_TrackName_Calendar",
+        "Condition": "{WEC_Tracks}",
+        "Property": "Source",
+        "Value": "{{Item.Track.CircuitOrigin}_EventName}"
+    },
+    {
+        "TriggerName": "WEC_TrackName_CardHead_Calendar",
+        "Condition": "{WEC_Tracks}",
+        "Setters": [
+            {
+                "Property": "Source",
+                "Value": "{{Item.Track.CircuitOrigin}_EventName}"
+            },
+            {
+                "Property": "FontSize",
+                "Value": "{{Item.Track.CircuitOrigin}_FontSize}"
+            },
+            {
+                "Property": "TextOptions.LineSpacing",
+                "Value": "{{Item.Track.CircuitOrigin}_LineSpace}"
+            }
+        ]
+    },
+]

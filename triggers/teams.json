@@ -16,6 +16,14 @@
         "Value": "{Item.Team.Color}"
     },
     {
+        "TriggerName": "TeamColor_ImageBg",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.Color, Converter=EmptyObjectToFalse}",
+        "Property": "ColorizeBackground.Color",
+        "Value": "{Item.Team.Color}"
+    },
+    {
         "TriggerName": "Team_LogotypeDefault",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Teams",
@@ -29,7 +37,7 @@
         "ConditionValue": "Teams",
         "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
         "Property": "Source",
-        "Value": "{Item.Team.Car.Vendor.LogotypePath}"
+        "Value": "{Item.Team.LogotypePath}"
     },
     {
         "TriggerName": "TeamColor_BackgroundP1",

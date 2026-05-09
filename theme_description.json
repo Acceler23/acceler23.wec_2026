@@ -4,6 +4,7 @@
   "Author": "Acceler23",
   "Description": "Theme based on the 2026 FIA WEC media",
   "Version": "1.0.0",
+  "DefaultLocalizationId": "en-EU",
   "DisableUnspecifiedLocalization": false,
   "Links": [],
   "ForceLiveriesLoading": true,
@@ -38,7 +39,7 @@
       "Variant": "Light",
       "UseFallbackSource": true,
       "UseFallbackVariant": true,
-      "SetVariantByDefault": true
+      "SetVariantByDefault": false
     },
     {
       "Category": "Team",
@@ -59,7 +60,7 @@
       "Variant": "Light",
       "UseFallbackSource": true,
       "UseFallbackVariant": true,
-      "SetVariantByDefault": true
+      "SetVariantByDefault": false
     },
     {
       "Category": "Vendor",
@@ -73,14 +74,14 @@
       "Variant": "Light",
       "UseFallbackSource": true,
       "UseFallbackVariant": true,
-      "SetVariantByDefault": true
+      "SetVariantByDefault": false
     },
     {
       "Category": "Championship",
       "Variant": "Alternative",
       "UseFallbackSource": true,
       "UseFallbackVariant": true,
-      "SetVariantByDefault": true
+      "SetVariantByDefault": false
     }
   ]
 }

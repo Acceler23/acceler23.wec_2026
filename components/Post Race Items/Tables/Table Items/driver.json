@@ -7,28 +7,20 @@
         "Width": "*",
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
-            { "Trigger": "CarColor_BackgroundP1" }
+            { "Trigger": "CarColor_BackgroundP1" },
+            { "Trigger": "WEC_Team_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" },
         ],
         "Items": [
-            {
-                "BlockType": "shape",
-                "Height": "{TableLineHeight}",
-                "Width": 5,
-                "ShapeOptions": {
-                    "Fill": "{white}"
-                },
-                "Triggers": [
-                    { "Trigger": "TeamColor_ShapeFill" },
-                    { "Trigger": "CarColor_ShapeFill" }
-                ]
-            },
             {
                 "BlockType": "text",
                 "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
                 "Style": "DriverLineStyle",
                 "Triggers": [
                     { "Trigger": "TeamColor_ForegroundP1" },
-                    { "Trigger": "CarColor_ForegroundP1" }
+                    { "Trigger": "CarColor_ForegroundP1" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" },
                 ]
             }
         ]
@@ -41,21 +33,11 @@
         "Width": "*",
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
-            { "Trigger": "CarColor_BackgroundP1" }
+            { "Trigger": "CarColor_BackgroundP1" },
+            { "Trigger": "WEC_Team_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" },
         ],
         "Items": [
-            {
-                "BlockType": "shape",
-                "Height": "{TableLineHeight}",
-                "Width": 5,
-                "ShapeOptions": {
-                    "Fill": "{white}"
-                },
-                "Triggers": [
-                    { "Trigger": "TeamColor_ShapeFill" },
-                    { "Trigger": "CarColor_ShapeFill" }
-                ]
-            },
             {
                 "BlockType": "text",
                 "Source": "[{Item.Team.FullName, Converter=StringToUpperString}]",
@@ -64,38 +46,30 @@
                     { "Trigger": "TeamColor_ForegroundP1" },
                     { "Trigger": "CarColor_ForegroundP1" },
                     { "Trigger": "Team_FullName" },
-                    { "Trigger": "Car_FullName" }
+                    { "Trigger": "Car_FullName" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" },
                 ]
             }
         ]
     },
     {
-        "ComponentName": "DriverLineQualy",
+        "ComponentName": "ShortCarName",
         "BlockType": "stack",
         "Orientation": "Horizontal",
         "Background": "{darkPurple}",
         "Width": "*",
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
-            { "Trigger": "CarColor_BackgroundP1" }
+            { "Trigger": "CarColor_BackgroundP1" },
+            { "Trigger": "WEC_Team_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" },
         ],
         "Items": [
             {
-                "BlockType": "shape",
-                "Height": "{TableLineHeight}",
-                "Width": 5,
-                "ShapeOptions": {
-                    "Fill": "{white}"
-                },
-                "Triggers": [
-                    { "Trigger": "TeamColor_ShapeFill" },
-                    { "Trigger": "CarColor_ShapeFill" }
-                ]
-            },
-            {
                 "BlockType": "text",
                 "Width": 80,
-                "Source": "[{Item.Car.Vendor.Name} Short]",
+                "Source": "[{Item.Team.Car.Vendor.Name} Short]",
                 "Style": "DriverLineStyle",
                 "FontName": "{CardTeamNameFont}",
                 "TextOptions": {
@@ -104,21 +78,14 @@
                 "Triggers": [
                     { "Trigger": "TeamColor_ForegroundP1" },
                     { "Trigger": "CarColor_ForegroundP1" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" },
                     {
                         "Condition": "{Season.LineupsBasedType}",
                         "ConditionValue": "Teams",
                         "Property": "Source",
-                        "Value": "[{Item.Team.Car.Vendor.Name} Short]"
+                        "Value": "[{Item.Car.Vendor.Name} Short]"
                     }
-                ]
-            },
-            {
-                "BlockType": "text",
-                "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
-                "Style": "DriverLineStyle",
-                "Triggers": [
-                    { "Trigger": "TeamColor_ForegroundP1" },
-                    { "Trigger": "CarColor_ForegroundP1" }
                 ]
             }
         ]
@@ -131,7 +98,9 @@
         "Width": 78,
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
-            { "Trigger": "CarColor_BackgroundP1" }
+            { "Trigger": "CarColor_BackgroundP1" },
+            { "Trigger": "WEC_Team_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" },
         ],
         "Items": [
             {
@@ -142,9 +111,26 @@
                 "HorizontalAlignment": "Center",
                 "Triggers": [
                     { "Trigger": "TeamColor_ForegroundP1" },
-                    { "Trigger": "CarColor_ForegroundP1" }
+                    { "Trigger": "CarColor_ForegroundP1" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" },
                 ]
             }
+        ]
+    },
+    {
+        "ComponentName": "tableColorShape",
+        "BlockType": "shape",
+        "Height": "{TableLineHeight}",
+        "Width": 5,
+        "ShapeOptions": {
+            "Fill": "{white}"
+        },
+        "Triggers": [
+            { "Trigger": "TeamColor_ShapeFill" },
+            { "Trigger": "CarColor_ShapeFill" },
+            { "Trigger": "WEC_Team_ShapeMain" },
+            { "Trigger": "WEC_Car_ShapeMain" },
         ]
     },
     {
@@ -152,10 +138,15 @@
         "BlockType": "dock",
         "Height": "{TableLineHeight}",
         "Width": 58,
-        "Background": "{white}",
+        "BackgroundImage": "PostRace/logo_bg",
+        "ColorizeBackground": {
+            "Color": "{white}"
+        },
         "Triggers": [
-            { "Trigger": "TeamColor_Background" },
-            { "Trigger": "CarColor_Background" }
+            { "Trigger": "CarColor_ImageBg" },
+            { "Trigger": "TeamColor_ImageBg" },
+            { "Trigger": "WEC_Team_ImageBG" },
+            { "Trigger": "WEC_Car_ImageBG" },
         ],
         "Items": [
             {
@@ -165,7 +156,9 @@
                 "VerticalAlignment": "Center",
                 "Triggers": [
                     { "Trigger": "Car_LogotypeDefault" },
-                    { "Trigger": "Team_LogotypeVendor" }
+                    { "Trigger": "Team_LogotypeVendor" },
+                    { "Trigger": "WEC_Team_Logotype" },
+                    { "Trigger": "WEC_Car_Logotype" },
                 ]
             }
         ]

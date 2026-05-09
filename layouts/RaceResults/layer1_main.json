@@ -19,7 +19,7 @@
                 "HorizontalAlignment": "Right",
                 "VerticalAlignment": "Center",
                 "BackgroundImage": "PostRace/TableShade",
-                "BackgroundImageOpacity": 60,
+                "BackgroundImageOpacity": 70,
                 "Orientation": "Vertical",
                 //"Margin": "30, 60, 112, 60",
                 "Width": 1370,
@@ -37,7 +37,6 @@
                         "ComponentOptions": {
                             "Vars": {
                                 "renderDriver": true,
-                                "renderDriverQualy": false,
                                 "renderTeam": false
                             }
                         }

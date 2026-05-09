@@ -16,6 +16,14 @@
         "Value": "{Item.Car.Color}"
     },
     {
+        "TriggerName": "CarColor_ImageBg",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Car.Color, Converter=EmptyObjectToFalse}",
+        "Property": "ColorizeBackground.Color",
+        "Value": "{Item.Car.Color}"
+    },
+    {
         "TriggerName": "Car_LogotypeDefault",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Cars",

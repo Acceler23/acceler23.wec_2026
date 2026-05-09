@@ -6,33 +6,24 @@
         "Background": "{darkPurple}",
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
-            { "Trigger": "CarColor_BackgroundP1" }
+            { "Trigger": "CarColor_BackgroundP1" },
+            { "Trigger": "WEC_Team_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" },
         ],
         "Items": [
             {
                 "BlockType": "shape",
+                "Opacity": 0,
                 "Height": 50,
                 "Width": 10,
                 "ShapeOptions": {
                     "Fill": "{darkPurple}"
                 },
                 "Triggers": [
-                    {
-                        "Condition": "{Season.LineupsBasedType}",
-                        "ConditionValue": "Teams",
-                        "ConditionAnd": "{Item.Position}",
-                        "ConditionAndValue": 1,
-                        "Property": "ShapeOptions.Fill",
-                        "Value": "{Item.Team.Color}"
-                    },
-                    {
-                        "Condition": "{Season.LineupsBasedType}",
-                        "ConditionValue": "Cars",
-                        "ConditionAnd": "{Item.Position}",
-                        "ConditionAndValue": 1,
-                        "Property": "ShapeOptions.Fill",
-                        "Value": "{Item.Car.Color}"
-                    }
+                    { "Trigger": "TeamColor_ShapeFill" },
+                    { "Trigger": "CarColor_ShapeFill" },
+                    { "Trigger": "WEC_Team_ShapeMain" },
+                    { "Trigger": "WEC_Car_ShapeMain" },
                 ]
             }
         ]
