@@ -511,7 +511,7 @@
             },
             {
                 "BlockType": "text",
-                "Source": "[FASTEST DRIVER]",
+                "Source": "[POLE POSITION]",
                 "FontName": "{CardIndoFont}",
                 "FontSize": 55,
                 "Width": 341,
@@ -522,12 +522,10 @@
                 "PositionY": 650,
                 "Triggers": [
                     {
-                        "Condition": "{Session.QualType}",
-                        "ConditionValue": "Regular",
-                        "ConditionOr": "{Session.QualType}",
-                        "ConditionOrValue": "Q2",
+                        "Condition": "{Session.SessionTypeString}",
+                        "ConditionValue": "Q1",
                         "Property": "Source",
-                        "Value": "[POLE POSITION]"
+                        "Value": "[FASTEST DRIVER]"
                     }
                 ]
             },

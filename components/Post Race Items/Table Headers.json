@@ -133,8 +133,8 @@
                                 "Foreground": "{white}",
                                 "Triggers": [
                                     {
-                                        "ConditionOr": "{Session.SessionTypeString}",
-                                        "ConditionOrValue": "Q2",
+                                        "Condition": "{Session.SessionTypeString}",
+                                        "ConditionValue": "Q2",
                                         "Property": "Source",
                                         "Value": "[HYPERPOLE]"
                                     }
