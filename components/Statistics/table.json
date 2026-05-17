@@ -512,13 +512,8 @@
                     "Header": "[With]",
                     "Template": {
                         "BlockType": "component",
-                        "Component": "Generic_Stats",
-                        "RenderIf": "{ShowBestLapTyres_Stats}",
-                        "ComponentOptions": {
-                            "Vars": {
-                                "data": "{Item.FastestLapTyres}"
-                            }
-                        }
+                        "Component": "Tyre_FL_Stats",
+                        "RenderIf": "{ShowBestLapTyres_Stats}"
                     }
                 },
                 {
