@@ -13,6 +13,13 @@
                         "Orientation": "Vertical",
                         "Items": [
                             {
+                                "BlockType": "component",
+                                "Component": "TrackHeader_StatsSession",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Top",
+                                "MarginBottom": 40
+                            },
+                            {
                                 "BlockType": "dock",
                                 "Background": "{lightBlue}",
                                 "Padding": "2",
