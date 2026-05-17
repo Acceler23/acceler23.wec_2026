@@ -32,12 +32,20 @@
         "Value": "{Item.Team.LogotypePath}"
     },
     {
+        "TriggerName": "Team_LogotypeDark",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Team.DarkLogotypePath}"
+    },
+    {
         "TriggerName": "Team_LogotypeVendor",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Teams",
         "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
         "Property": "Source",
-        "Value": "{Item.Team.LogotypePath}"
+        "Value": "{Item.Team.Car.Vendor.LogotypePath}"
     },
     {
         "TriggerName": "TeamColor_BackgroundP1",

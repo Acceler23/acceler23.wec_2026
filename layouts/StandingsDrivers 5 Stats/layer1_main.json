@@ -1,0 +1,180 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Margin": "50, 48",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "dock",
+                                "Background": "{lightBlue}",
+                                "Padding": "2",
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Background": "{white}",
+                                        "Padding": "16",
+                                        "Items": [
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "StandingsHead_stats",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "standType": "[DRIVERS' CHAMPIONSHIP STATISTICS]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "Statistics_Stats",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "Default",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ],
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "TeamReverse": true,
+                                                        "isTeam": false
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "RaceDetails_Stats",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "RaceDetails",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ],
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "TeamReverse": true,
+                                                        "isTeam": false
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "QualDetails_Stats",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "QualDetails",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ],
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "TeamReverse": true,
+                                                        "isTeam": false
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "ParticipationDetails_Stats",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "ParticipationDetails",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ],
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "TeamReverse": true,
+                                                        "isTeam": false
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "PenaltiesDetails_Stats",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "PenaltiesDetails",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ],
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "TeamReverse": true,
+                                                        "isTeam": false
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "PositionsDetails_Stats",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "PositionsDetails",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ],
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "TeamReverse": true,
+                                                        "isTeam": false
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "DeepRatingsDetails_Stats",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "DeepRatingsDetails",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ],
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "TeamReverse": true,
+                                                        "isTeam": false
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -97,7 +97,7 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Event.Date, Converter=DateToYear}",
+                "Source": "{Event.DateLocal, Converter=DateToYear}",
                 "Foreground": "{darkPurple}",
                 "FontName": "{TrackHeaderFont}",
                 "FontSize": 20,
@@ -211,7 +211,7 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Standings.LastEvent.Date, Converter=DateToYear}",
+                "Source": "{Standings.LastEvent.DateLocal, Converter=DateToYear}",
                 "Foreground": "{darkPurple}",
                 "FontName": "{TrackHeaderFont}",
                 "FontSize": 20,
@@ -325,8 +325,350 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Item.Date, Converter=DateToYear}",
+                "Source": "{Item.DateLocal, Converter=DateToYear}",
                 "Foreground": "{darkPurple}",
+                "FontName": "{TrackHeaderFont}",
+                "FontSize": 20,
+                "Width": 90,
+                "Padding": "5",
+                "PositionX": 35,
+                "PositionY": 171,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Center",
+                    "VerticalAlignment": "Center"
+                }
+            }
+        ]
+    },
+    //calendar Inverted
+    {
+        "ComponentName": "TrackHeader_CalendarInverted",
+        "BlockType": "canvas",
+        //"Width": 341,
+        "Items": [
+            {
+                "BlockType": "image",
+                "PositionY": 21,
+                "PositionX": 0,
+                "Source": "trackHeader_cut",
+                "Colorize": {
+                    "Color": "{lightBlue}"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 0,
+                "PositionY": 0,
+                "Width": 105,
+                "Height": 25,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 24,
+                        "Source": "{Season.AlternativeLogotypePath}",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "PositionX": 110,
+                "PositionY": 0,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "Spacing": 3,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{darkPurple}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{lightBlue}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[CHAMPIONSHIP]",
+                        "FontName": "{SeasonFontHeader}",
+                        "FontSize": 12,
+                        "Foreground": "{darkPurple}",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Item.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Foreground": "{darkPurple}",
+                "FontName": "{TrackHeaderFont}",
+                "VerticalAlignment": "Center",
+                "FontSize": "{TrackNameSize}",
+                "Height": 95,
+                "Width": 270,
+                "PositionX": 0,
+                "PositionY": 31,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "VerticalAlignment": "Center"
+                },
+                "Triggers": [
+                    { "Trigger": "WEC_TrackName_CardHead_Calendar" }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Item.DateLocal, Converter=DateToYear}",
+                "Foreground": "{white}",
+                "FontName": "{TrackHeaderFont}",
+                "FontSize": 20,
+                "Width": 90,
+                "Padding": "5",
+                "PositionX": 5,
+                "PositionY": 129,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Center",
+                    "VerticalAlignment": "Center"
+                }
+            }
+        ]
+    },
+    //Stats Session
+    {
+        "ComponentName": "TrackHeader_StatsSession",
+        "BlockType": "canvas",
+        //"Width": 341,
+        "Items": [
+            {
+                "BlockType": "image",
+                "PositionY": 63,
+                "PositionX": 30,
+                "Source": "trackHeader_cut",
+                "Colorize": {
+                    "Color": "{lightBlue}"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 30,
+                "PositionY": 42,
+                "Width": 105,
+                "Height": 25,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 24,
+                        "Source": "{Season.AlternativeLogotypePath}",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "PositionX": 140,
+                "PositionY": 42,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "Spacing": 3,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{darkPurple}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{lightBlue}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[CHAMPIONSHIP]",
+                        "FontName": "{SeasonFontHeader}",
+                        "FontSize": 12,
+                        "Foreground": "{darkPurple}",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Session.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Foreground": "{darkPurple}",
+                "FontName": "{TrackHeaderFont}",
+                "VerticalAlignment": "Center",
+                "FontSize": "{TrackNameSize}",
+                "Height": 95,
+                "Width": 270,
+                "PositionX": 30,
+                "PositionY": 73,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "VerticalAlignment": "Center"
+                },
+                "Triggers": [
+                    { "Trigger": "WEC_TrackName_CardHead_Session" }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Event.DateLocal, Converter=DateToYear}",
+                "Foreground": "{white}",
+                "FontName": "{TrackHeaderFont}",
+                "FontSize": 20,
+                "Width": 90,
+                "Padding": "5",
+                "PositionX": 35,
+                "PositionY": 171,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Center",
+                    "VerticalAlignment": "Center"
+                }
+            }
+        ]
+    },
+    //Stats Standings
+    {
+        "ComponentName": "TrackHeader_StatsStandings",
+        "BlockType": "canvas",
+        //"Width": 341,
+        "Items": [
+            {
+                "BlockType": "image",
+                "PositionY": 63,
+                "PositionX": 30,
+                "Source": "trackHeader_cut",
+                "Colorize": {
+                    "Color": "{lightBlue}"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 30,
+                "PositionY": 42,
+                "Width": 105,
+                "Height": 25,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 24,
+                        "Source": "{Season.AlternativeLogotypePath}",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "PositionX": 140,
+                "PositionY": 42,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "Spacing": 3,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{darkPurple}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
+                                "FontName": "{SeasonFontHeader}",
+                                "FontSize": 12,
+                                "Foreground": "{lightBlue}",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[CHAMPIONSHIP]",
+                        "FontName": "{SeasonFontHeader}",
+                        "FontSize": 12,
+                        "Foreground": "{darkPurple}",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Standings.LastEvent.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Foreground": "{darkPurple}",
+                "FontName": "{TrackHeaderFont}",
+                "VerticalAlignment": "Center",
+                "FontSize": "{TrackNameSize}",
+                "Height": 95,
+                "Width": 270,
+                "PositionX": 30,
+                "PositionY": 73,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "VerticalAlignment": "Center"
+                },
+                "Triggers": [
+                    { "Trigger": "WEC_TrackName_CardHead_Standings" }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Standings.LastEvent.DateLocal, Converter=DateToYear}",
+                "Foreground": "{white}",
                 "FontName": "{TrackHeaderFont}",
                 "FontSize": 20,
                 "Width": 90,

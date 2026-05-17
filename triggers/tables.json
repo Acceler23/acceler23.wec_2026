@@ -1,5 +1,8 @@
 [
     {
-        
+        "TriggerName": "TableStatsBg",
+        "Condition": "{Item.Index, Converter=NumberIsEven}",
+        "Property": "Background",
+        "Value": "{babyBlue}"
     }
 ]

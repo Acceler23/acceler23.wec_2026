@@ -2,10 +2,13 @@
     //colors
     "white":        "#ffffff",
     "black":        "#000000",
+    "gray":         "#c7c7c7",
     "lightBlue":    "#0abdfd",
     "purple":       "#47165a",
     "lightPurple":  "#912e90",
-    "darkPurple":   "#0e0132",
+    "babyBlue":     "#d9f5ff",
+    "darkPurple":   "#0a0032",
+    "red":          "#e21e19",
 
     //car colors
     "Alpine_Color": "#0f66f1",
@@ -22,6 +25,10 @@
     "Peugeot_Color": "#bedb18",
     "Porsche AG_Color": "#FFFFFF",
     "Toyota_Color": "#000000",
+    "Oreca_Color": "#397ec8",
+    "Ginetta Cars_Color": "ee7f13",
+    "Ligier_Color": "#1b2235",
+    "Duqueine_Color": "#32cd32",
 
     "Alpine_SecondColor": "#FFFFFF",
     "Aston Martin_SecondColor": "#FFFFFF",
@@ -29,39 +36,40 @@
     "Cadillac_SecondColor": "#000000",
     "Chevrolet_SecondColor": "#000000",
     "Ferrari_SecondColor": "#FFFFFF",
+    "Ford Motor_SecondColor": "#FFFFFF",
     "Genesis_SecondColor": "#FFFFFF",
     "Lexus_SecondColor": "#000000",
     "McLaren_SecondColor": "#FFFFFF",
     "Mercedes_SecondColor": "#FFFFFF",
     "Peugeot_SecondColor": "#000000",
-    "Porsche_SecondColor": "#000000",
+    "Porsche AG_SecondColor": "#000000",
     "Toyota_SecondColor": "#FFFFFF",
+    "Oreca_SecondColor": "#FFFFFF",
+    "Ginetta Cars_SecondColor": "#FFFFFF",
+    "Ligier_SecondColor": "#FFFFFF",
+    "Duqueine_SecondColor": "#FFFFFF",
 
-    //Event Names
-    "COTA_EventName": "LONE STAR LE MANS (COTA)",
-    "Bahrain_EventName": "BAPCO ENERGIES 8 HOURS OF BAHRAIN",
-    "Fuji_EventName": "6 HOURS OF FUJI",
-    "Imola_EventName": "6 HOURS OF IMOLA",
-    "Interlagos_EventName": "ROLEX 6 HOURS OF SAO PAULO",
-    "Le Mans_EventName": "24 HOURS OF LE MANS",
-    "Losail_EventName": "QATAR 1812KM",
-    "Monza_EventName": "6 HOURS OF MONZA",
-    "Portimao_EventName": "6 HOURS OF PORTIMAO",
-    "Sebring_EventName": "1000 MILES OF SEBRING",
-    "Spa-Francorchamps_EventName": "TOTALENERGIES 6 HOURS OF SPA-FRANCORCHAMPS",
-
+    //tyres
+    "Soft_color": "#bbbbbb",
+    "Medium_color": "#ffe80f",
+    "Hard_color": "#f21d23",
+    "Wet_color": "#54b8d8",
+    
     //Event Font Size
-    "COTA_FontSize": 20,
+    "COTA_FontSize": 25,
     "Bahrain_FontSize": 20,
-    "Fuji_FontSize": 20,
+    "Barcelona_FontSize": 27,
+    "Fuji_FontSize": 36,
     "Imola_FontSize": 32,
-    "Interlagos_FontSize": 20,
-    "Le Mans_FontSize": 20,
-    "Losail_FontSize": 20,
-    "Monza_FontSize": 20,
-    "Portimao_FontSize": 20,
-    "Sebring_FontSize": 20,
-    "Spa-Francorchamps_FontSize": 19,
+    "Interlagos_FontSize": 29,
+    "Le Mans_FontSize": 29,
+    "Losail_FontSize": 42,
+    "Monza_FontSize": 32,
+    "Portimao_FontSize": 29,
+    "Paul Ricard_FontSize": 29,
+    "Sebring_FontSize": 28,
+    "Silverstone_FontSize": 24,
+    "Spa-Francorchamps_FontSize": 18,
 
     //Event Line Space
     "COTA_LineSpace": 1,
@@ -75,6 +83,22 @@
     "Portimao_LineSpace": 1,
     "Sebring_LineSpace": 1,
     "Spa-Francorchamps_LineSpace": 1,
+
+    //Track Corners
+    "COTA_Corners": "11 [Left] / 9 [Right]",
+    "Bahrain_Corners": "7 [Left] / 8 [Right]",
+    "Barcelona_Corners": "6 [Left] / 8 [Right]",
+    "Fuji_Corners": "6 [Left] / 10 [Right]",
+    "Imola_Corners": "12 [Left] / 9 [Right]",
+    "Interlagos_Corners": "8 [Left] / 7 [Right]",
+    "Le Mans_Corners": "18 [Left] / 20 [Right]",
+    "Losail_Corners": "6 [Left] / 10 [Right]",
+    "Monza_Corners": "4 [Left] / 7 [Right]",
+    "Portimao_Corners": "7 [Left] / 9 [Right]",
+    "Paul Ricard_Corners": "6 [Left] / 9 [Right]",
+    "Sebring_Corners": "7 [Left] / 10 [Right]",
+    "Silverstone_Corners": "7 [Left] / 11 [Right]",
+    "Spa-Francorchamps_Corners": "9 [Left] / 11 [Right]",
 
     //post race vars
     "PostRaceWidth": 1920,
@@ -107,5 +131,14 @@
 
     "MulticalssFont": "DrukWide-MediumItalic-Trial",
 
-    "TableBottomFont": "Archivo-SemiBold"
+    "TableBottomFont": "Archivo-SemiBold",
+
+    "Font_StatsHead": "Archivo-Bold",
+    "Font_StatsLine": "Archivo_SemiExpanded-Regular",
+
+    "Font_CalendarNextHead": "DrukTextWide-Medium-Trial",
+    "Font_CalendarNextSubHead": "Archivo_SemiExpanded-Bold",
+    "Font_CalendarNextDateHead": "Archivo-SemiBold",
+    "Font_CalendarNextSessionName": "Archivo_SemiExpanded-Regular",
+    "Font_CalendarNextSessionTime": "Archivo_SemiExpanded-Italic",
 }

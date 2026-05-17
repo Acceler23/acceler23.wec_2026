@@ -1,0 +1,743 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Margin": "50, 48",
+        "Items": [
+            {
+                "BlockType": "itemstack",
+                "Triggers": [
+                    {
+                        "Condition": "{CalendarNextOnly}",
+                        "Property": "ItemStackOptions.TakeItemIndex",
+                        "Value": "{Season.SeasonCurrentNumberEvent}"
+                    },
+                    {
+                        "Condition": "{CalendarNextOnly, Converter=BoolReverse}",
+                        "Property": "ItemStackOptions.TakeItemIndex",
+                        "Value": "{CalendarEventNum, Converter=NumberSubtract, Parameter=1}"
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Events.Events}",
+                    "TakeItemIndex": "{Season.SeasonCurrentNumberEvent}",
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "{Item.Track.CircuitFullName, Converter=StringToUpperString}",
+                                "FontName": "{Font_CalendarNextHead}",
+                                "FontSize": 64,
+                                "Width": 1288,
+                                "Foreground": "{darkPurple}",
+                                "Padding": "0, 10",
+                                "TextOptions": {
+                                    "Wrap": true,
+                                    "TextAlignment": "Center"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[STARTING] [day {Item.DateLocal, Converter=DateToDayOfMonth}] [Card {Item.DateLocal, Converter=DateToMonthInWords}] [{Item.DateLocal, Converter=DateToYear}]",
+                                "FontName": "{Font_CalendarNextSubHead}",
+                                "FontSize": 24,
+                                "Foreground": "{lightBlue}",
+                                "Padding": "0, 10",
+                                "HorizontalAlignment": "Center",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Width": 1288,
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Center",
+                                "PaddingTop": 30,
+                                "Spacing": 30,
+                                "Items": [
+                                    {
+                                        "BlockType": "itemstack",
+                                        "ItemStackOptions": {
+                                            "ItemSource": "{Item.Practices}",
+                                            "ItemTemplate": {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 267,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                        "Width": 267,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkPurple}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                        "Source": "[PRACTICE]",
+                                                        "FontName": "{Font_CalendarNextDateHead}",
+                                                        "FontSize": 24,
+                                                        "Foreground": "{darkPurple}",
+                                                        "Padding": "16, 16, 16, 40"
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.SessionType}]",
+                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{darkPurple}",
+                                                        "Padding": "16, 0, 16, 5",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[TBC]",
+                                                        "FontName": "{Font_CalendarNextSessionTime}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{red}",
+                                                        "Padding": "16, 5, 16, 5",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Italic"
+                                                        },
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Item.CompletedStatus}",
+                                                                "ConditionValue": "Completed",
+                                                                "ConditionAnd": "{Item.IsLiveData}",
+                                                                "Setters": [
+                                                                    {
+                                                                        "Property": "Source",
+                                                                        "Value": "{Item.LiveStartDateLocal, Converter=DateToTime}"
+                                                                    },
+                                                                    {
+                                                                        "Property": "Foreground",
+                                                                        "Value": "{lightBlue}"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "HorizontalAlignment": "Left",
+                                                        "Background": "{darkPurple}",
+                                                        "Width": 235,
+                                                        "Height": 37,
+                                                        "Margin": "16,5",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "stack",
+                                                                "Orientation": "Horizontal",
+                                                                "Width": 231,
+                                                                "Height": 33,
+                                                                "Background": "{white}",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Center",
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "Source": "[LIVE]",
+                                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                                        "Width": 231,
+                                                                        "FontSize": 12,
+                                                                        "Foreground": "{darkPurple}",
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Triggers": [
+                                                                            {
+                                                                                "Condition": "{Item.CompletedStatus}",
+                                                                                "ConditionValue": "Completed",
+                                                                                "Property": "Source",
+                                                                                "Value": "[RESULTS]"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "itemstack",
+                                        "Orientation": "Vertical",
+                                        "RenderIf": "{Season.IsHaveMulticlassConfiguration}",
+                                        "ItemStackOptions": {
+                                            "ItemSource": "{Season.MulticlassConfiguration.RacingClasses}",
+                                            "ItemTemplate": {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "Orientation": "Vertical",
+                                                        "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                        "Width": 267,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "shape",
+                                                                "Width": 267,
+                                                                "Height": 2,
+                                                                "ShapeOptions": {
+                                                                    "Fill": "{darkPurple}"
+                                                                }
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                                "Source": "[QUALIFYING]",
+                                                                "FontName": "{Font_CalendarNextDateHead}",
+                                                                "FontSize": 24,
+                                                                "Foreground": "{darkPurple}",
+                                                                "Padding": "16, 16, 16, 40"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "Orientation": "Vertical",
+                                                        "RenderIf": "{CalendarQualNum, Converter=NumberEquals, Parameter=0}",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "[Qualifying] - [{Item.Name}]",
+                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                "FontSize": 16,
+                                                                "Foreground": "{darkPurple}",
+                                                                "Padding": "16, 0, 16, 5",
+                                                                "TextOptions": {
+                                                                    "FontStyle": "Bold"
+                                                                },
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "[TBC]",
+                                                                "FontName": "{Font_CalendarNextSessionTime}",
+                                                                "FontSize": 16,
+                                                                "Foreground": "{red}",
+                                                                "Padding": "16, 5, 16, 5",
+                                                                "TextOptions": {
+                                                                    "FontStyle": "Italic"
+                                                                }
+                                                            },
+                                                            {
+                                                                "BlockType": "dock",
+                                                                "HorizontalAlignment": "Left",
+                                                                "Background": "{darkPurple}",
+                                                                "Width": 235,
+                                                                "Height": 37,
+                                                                "Margin": "16, 5, 16, 25",
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "stack",
+                                                                        "Orientation": "Horizontal",
+                                                                        "Width": 231,
+                                                                        "Height": 33,
+                                                                        "Background": "{white}",
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Items": [
+                                                                            {
+                                                                                "BlockType": "text",
+                                                                                "Source": "[RESULTS]",
+                                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                                "Width": 231,
+                                                                                "FontSize": 12,
+                                                                                "Foreground": "{darkPurple}",
+                                                                                "HorizontalAlignment": "Center",
+                                                                                "VerticalAlignment": "Center"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "Orientation": "Vertical",
+                                                        "RenderIf": "{CalendarQualNum, Converter=NumberGreater, Parameter=0}",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "[Qualifying 1] - [{Item.Name}]",
+                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                "FontSize": 16,
+                                                                "Foreground": "{darkPurple}",
+                                                                "Padding": "16, 0, 16, 5",
+                                                                "TextOptions": {
+                                                                    "FontStyle": "Bold"
+                                                                },
+                                                                "Triggers": [
+                                                                    {
+                                                                        "Condition": "{Qualy_Rename}",
+                                                                        "Property": "Source",
+                                                                        "Value": "[Qualifying] - [{Item.Name}]"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "[TBC]",
+                                                                "FontName": "{Font_CalendarNextSessionTime}",
+                                                                "FontSize": 16,
+                                                                "Foreground": "{red}",
+                                                                "Padding": "16, 5, 16, 5",
+                                                                "TextOptions": {
+                                                                    "FontStyle": "Italic"
+                                                                }
+                                                            },
+                                                            {
+                                                                "BlockType": "dock",
+                                                                "HorizontalAlignment": "Left",
+                                                                "Background": "{darkPurple}",
+                                                                "Width": 235,
+                                                                "Height": 37,
+                                                                "Margin": "16, 5, 16, 25",
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "stack",
+                                                                        "Orientation": "Horizontal",
+                                                                        "Width": 231,
+                                                                        "Height": 33,
+                                                                        "Background": "{white}",
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Items": [
+                                                                            {
+                                                                                "BlockType": "text",
+                                                                                "Source": "[RESULTS]",
+                                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                                "Width": 231,
+                                                                                "FontSize": 12,
+                                                                                "Foreground": "{darkPurple}",
+                                                                                "HorizontalAlignment": "Center",
+                                                                                "VerticalAlignment": "Center"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "Orientation": "Vertical",
+                                                        "RenderIf": "{CalendarQualNum, Converter=NumberGreater, Parameter=1}",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "[Qualifying 2] - [{Item.Name}]",
+                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                "FontSize": 16,
+                                                                "Foreground": "{darkPurple}",
+                                                                "Padding": "16, 0, 16, 5",
+                                                                "TextOptions": {
+                                                                    "FontStyle": "Bold"
+                                                                },
+                                                                "Triggers": [
+                                                                    {
+                                                                        "Condition": "{Qualy_Rename}",
+                                                                        "Property": "Source",
+                                                                        "Value": "[Hyperpole] - [{Item.Name}]"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "[TBC]",
+                                                                "FontName": "{Font_CalendarNextSessionTime}",
+                                                                "FontSize": 16,
+                                                                "Foreground": "{red}",
+                                                                "Padding": "16, 5, 16, 5",
+                                                                "TextOptions": {
+                                                                    "FontStyle": "Italic"
+                                                                }
+                                                            },
+                                                            {
+                                                                "BlockType": "dock",
+                                                                "HorizontalAlignment": "Left",
+                                                                "Background": "{darkPurple}",
+                                                                "Width": 235,
+                                                                "Height": 37,
+                                                                "Margin": "16, 5, 16, 25",
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "stack",
+                                                                        "Orientation": "Horizontal",
+                                                                        "Width": 231,
+                                                                        "Height": 33,
+                                                                        "Background": "{white}",
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Items": [
+                                                                            {
+                                                                                "BlockType": "text",
+                                                                                "Source": "[RESULTS]",
+                                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                                "Width": 231,
+                                                                                "FontSize": 12,
+                                                                                "Foreground": "{darkPurple}",
+                                                                                "HorizontalAlignment": "Center",
+                                                                                "VerticalAlignment": "Center"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "itemstack",
+                                        "RenderIf": "{Season.IsHaveMulticlassConfiguration, Converter=BoolReverse}",
+                                        "ItemStackOptions": {
+                                            "ItemSource": "{Item.Quals}",
+                                            "ItemTemplate": {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 267,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                        "Width": 267,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkPurple}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                        "Source": "[QUALIFYING]",
+                                                        "FontName": "{Font_CalendarNextDateHead}",
+                                                        "FontSize": 24,
+                                                        "Foreground": "{darkPurple}",
+                                                        "Padding": "16, 16, 16, 40"
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.SessionType}]",
+                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{darkPurple}",
+                                                        "Padding": "16, 0, 16, 5",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        },
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Qualy_Rename}",
+                                                                "ConditionAnd": "{Item.SessionTypeString}",
+                                                                "ConditionAndValue": "Q1",
+                                                                "Property": "Source",
+                                                                "Value": "[QUALIFYING]"
+                                                            },
+                                                            {
+                                                                "Condition": "{Qualy_Rename}",
+                                                                "ConditionAnd": "{Item.SessionTypeString}",
+                                                                "ConditionAndValue": "Q2",
+                                                                "Property": "Source",
+                                                                "Value": "[HYPERPOLE]"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[TBC]",
+                                                        "FontName": "{Font_CalendarNextSessionTime}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{red}",
+                                                        "Padding": "16, 5, 16, 5",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Italic"
+                                                        },
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Item.CompletedStatus}",
+                                                                "ConditionValue": "Completed",
+                                                                "ConditionAnd": "{Item.IsLiveData}",
+                                                                "Setters": [
+                                                                    {
+                                                                        "Property": "Source",
+                                                                        "Value": "{Item.LiveStartDateLocal, Converter=DateToTime}"
+                                                                    },
+                                                                    {
+                                                                        "Property": "Foreground",
+                                                                        "Value": "{lightBlue}"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "HorizontalAlignment": "Left",
+                                                        "Background": "{darkPurple}",
+                                                        "Width": 235,
+                                                        "Height": 37,
+                                                        "Margin": "16,5",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "stack",
+                                                                "Orientation": "Horizontal",
+                                                                "Width": 231,
+                                                                "Height": 33,
+                                                                "Background": "{white}",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Center",
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "Source": "[LIVE]",
+                                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                                        "Width": 231,
+                                                                        "FontSize": 12,
+                                                                        "Foreground": "{darkPurple}",
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Triggers": [
+                                                                            {
+                                                                                "Condition": "{Item.CompletedStatus}",
+                                                                                "ConditionValue": "Completed",
+                                                                                "Property": "Source",
+                                                                                "Value": "[RESULTS]"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "itemstack",
+                                        "Height": "*",
+                                        "Background": "{babyBlue}",
+                                        "ItemStackOptions": {
+                                            "ItemSource": "{Item.Races}",
+                                            "ItemTemplate": {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "Width": 267,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                        "Width": 267,
+                                                        "Height": 2,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkPurple}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
+                                                        "Source": "[RACE]",
+                                                        "FontName": "{Font_CalendarNextDateHead}",
+                                                        "FontSize": 24,
+                                                        "Foreground": "{lightBlue}",
+                                                        "Padding": "16, 16, 16, 40"
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.SessionType}]",
+                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{darkPurple}",
+                                                        "Padding": "16, 0, 16, 5",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[TBC]",
+                                                        "FontName": "{Font_CalendarNextSessionTime}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{red}",
+                                                        "Padding": "16, 5, 16, 5",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Italic"
+                                                        },
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Item.CompletedStatus}",
+                                                                "ConditionValue": "Completed",
+                                                                "ConditionAnd": "{Item.IsLiveData}",
+                                                                "Setters": [
+                                                                    {
+                                                                        "Property": "Source",
+                                                                        "Value": "{Item.LiveStartDateLocal, Converter=DateToTime}"
+                                                                    },
+                                                                    {
+                                                                        "Property": "Foreground",
+                                                                        "Value": "{lightBlue}"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "HorizontalAlignment": "Left",
+                                                        "Background": "{darkPurple}",
+                                                        "Width": 235,
+                                                        "Height": 37,
+                                                        "Margin": "16,5",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "stack",
+                                                                "Orientation": "Horizontal",
+                                                                "Width": 231,
+                                                                "Height": 33,
+                                                                "Background": "{babyBlue}",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Center",
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "Source": "[LIVE]",
+                                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                                        "Width": 231,
+                                                                        "FontSize": 12,
+                                                                        "Foreground": "{darkPurple}",
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Triggers": [
+                                                                            {
+                                                                                "Condition": "{Item.CompletedStatus}",
+                                                                                "ConditionValue": "Completed",
+                                                                                "Property": "Source",
+                                                                                "Value": "[RESULTS]"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Right",
+                                        //"MarginLeft": 60,
+                                        "Items": [
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TrackHeader_CalendarInverted",
+                                                //"MarginLeft": -30,
+                                                //"MarginTop": -40
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[TRACK INFO]",
+                                                "FontName": "{Font_CalendarNextHead}",
+                                                "FontSize": 16,
+                                                "Foreground": "{darkPurple}",
+                                                "Padding": "0, 40, 0, 0",
+                                            },
+                                            {
+                                                "BlockType": "dock",
+                                                "PaddingTop": 32,
+                                                "Width": 350,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "image",
+                                                        "Source": "{Item.Track.AlternativeLogotypePath}",
+                                                        "Width": 300,
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Center"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Horizontal",
+                                                "Spacing": 10,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[Length]",
+                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{darkPurple}",
+                                                        "Padding": "0, 5, 0, 0",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "{Item.Track.Length, Converter=NumberGroupWithSeparator, Parameter=.} [Km]",
+                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{lightBlue}",
+                                                        "Padding": "0, 5, 0, 0",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Horizontal",
+                                                "Spacing": 10,
+                                                "Height": 40,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "{Item.Track.NumberTurns} [Turns]",
+                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{darkPurple}",
+                                                        "Padding": "0, 5, 0, 0",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "{{Item.Track.Name}_Corners}",
+                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontSize": 16,
+                                                        "Foreground": "{lightBlue}",
+                                                        "Padding": "0, 5, 0, 0",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

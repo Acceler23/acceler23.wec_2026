@@ -1,0 +1,262 @@
+[
+    {
+        "ComponentName": "Generic_Stats",
+        "BlockType": "dock",
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Style": "TableStats_Line",
+                "Source": "<data>"
+            }
+        ]
+    },
+    {
+        "ComponentName": "Gap_Stats",
+        "BlockType": "dock",
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Style": "TableStats_Line",
+                "Source": "{Item.Time}",
+                "Triggers": [
+                    {
+                        "Condition": "{Item.Position}",
+                        "ConditionValue": 1,
+                        "Property": "Source",
+                        "Value": "-"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "Interval_Stats",
+        "BlockType": "dock",
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Style": "TableStats_Line",
+                "Source": "{Item.IntervalRace}",
+                "Triggers": [
+                    {
+                        "Condition": "{Item.Position}",
+                        "ConditionValue": 1,
+                        "Property": "Source",
+                        "Value": "-"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "PosJump_Stats",
+        "BlockType": "dock",
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Style": "TableStats_Line",
+                "Source": "{Item.PositionJump}",
+                "Triggers": [
+                    {
+                        "Condition": "{Item.PositionJump, Converter=NumberEquals, Parameter=0}",
+                        "Property": "Source",
+                        "Value": "-"
+                    },
+                    {
+                        "Condition": "{Item.PositionJump, Converter=NumberLess, Parameter=0}",
+                        "Property": "Source",
+                        "Value": "-{Item.PositionJump, Converter=NumberAbs}"
+                    },
+                    {
+                        "Condition": "{Item.PositionJump, Converter=NumberGreater, Parameter=0}",
+                        "Property": "Source",
+                        "Value": "+{Item.PositionJump, Converter=NumberAbs}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "PointsProg_Stats",
+        "BlockType": "dock",
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Style": "TableStats_Line",
+                "Source": "-",
+                "Triggers": [
+                    {
+                        "Condition": "{Item.IsParticipiedEvent}",
+                        "Property": "Source",
+                        "Value": "0"
+                    },
+                    {
+                        "Condition": "{Item.Points}",
+                        "Property": "Source",
+                        "Value": "{Item.Points}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "PointsTotal_Stats",
+        "BlockType": "dock",
+        "Height": 67,
+        "Width": 95,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Style": "TableStats_Line",
+                "Foreground": "{lightBlue}",
+                "Source": "0",
+                "Triggers": [
+                    {
+                        "Condition": "{Item.Points}",
+                        "Property": "Source",
+                        "Value": "{Item.Points}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "Tyre_FL_Stats",
+        "BlockType": "dock",
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "image",
+                "Style": "TableStats_Line",
+                "Height": 30,
+                "Source": "logotypes/tyres/{Item.FastestLapTyres}_outer.png"
+            }
+        ]
+    },
+    {
+        "ComponentName": "Stats_Stats",
+        "BlockType": "stack",
+        "Height": 67,
+        "Background": "{white}",
+        "Padding": "20, 0",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Style": "TableStats_Line",
+                "Source": "<{data.Value}>"
+            },
+            {
+                "BlockType": "itemstack",
+                "Height": 67,
+                "ItemStackOptions": {
+                    "ItemSource": "<{data.Stints}>",
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Height": "{TableLineHeight}",
+                        "VerticalAlignment": "Center",
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "logotypes/tyres/{Item.Tyres}_outer.png",
+                                "VerticalAlignment": "Center",
+                                "Height": 30
+                            },
+                            {
+                                "BlockType": "text",
+                                "Style": "TableStats_Line",
+                                "Source": "{Item.Laps}",
+                                "VerticalAlignment": "Center",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.IsPercentage}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "{Item.Percentage, Converter=StringAdd, Parameter=%}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "LeaderCut_stintStat",
+        "BlockType": "canvas",
+        "PaddingRight": 20,
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "shape",
+                "Height": 10,
+                "Width": 3,
+                "ShapeOptions": {
+                    "Fill": "{lightBlue}"
+                }
+            },
+            {
+                "BlockType": "shape",
+                "PositionY": 24,
+                "Height": 20,
+                "Width": 3,
+                "ShapeOptions": {
+                    "Fill": "{lightBlue}"
+                }
+            },
+            {
+                "BlockType": "shape",
+                "PositionY": 57,
+                "Height": 10,
+                "Width": 3,
+                "ShapeOptions": {
+                    "Fill": "{lightBlue}"
+                }
+            }
+        ]
+    }
+]

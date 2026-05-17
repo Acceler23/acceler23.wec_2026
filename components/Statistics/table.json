@@ -1,0 +1,3359 @@
+[
+    //race
+    {
+        "ComponentName": "TableSessionRace_SimpleStats",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Session.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[Started]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowStarted_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.GridPosition}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Laps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowLaps_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.LapsCount}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Lead \nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowLeadLaps_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.LeadLaps, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Lead \ndistance]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowLeadDistance_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.LeadDistance, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Race \ndistance (%)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowRaceDistancePercentage_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDistancePercentage, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total time]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowTotalTime_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.AbsoluteTime}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty (s)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPenalty_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltyTimeTotal, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty \n(pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPenalty_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltyPosTotal, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Gap]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Gap_Stats",
+                        "RenderIf": "{ShowGap_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Interval]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Interval_Stats",
+                        "RenderIf": "{ShowInterval_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Max. \n(km/h)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowMaxSpeed_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.MaxSpeed, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best lap]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLap_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapTime, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[On]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLap_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapNumLap, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[With]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Tyre_FL_Stats",
+                        "RenderIf": "{ShowBestLapTyres_Stats}"
+                    }
+                },
+                {
+                    "Header": "[S1]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLapSector_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapSector1}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[S2]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLapSector_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapSector2}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[S3]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLapSector_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapSector3}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Driver \npoints]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPoints_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DriverPoints, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Team \npoints]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPoints_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.TeamPoints, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+    //stints
+    {
+        "ComponentName": "TableSessionRace_Stints",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Session.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[Started]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowStarted_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.GridPosition}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Laps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowLaps_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.LapsCount}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Stints]",
+                    "Template": {
+                        "BlockType": "itemstack",
+                        "Orientation": "Horizontal",
+                        "Height": 67,
+                        "VerticalAlignment": "Center",
+                        "Background": "{white}",
+                        "Spacing": -10,
+                        "Triggers": [
+                            { "Trigger": "TableStatsBg" }
+                        ],
+                        "ItemStackOptions": {
+                            "ItemSource": "{Item.Stints}",
+                            "ItemTemplate": {
+                                "BlockType": "canvas",
+                                "VerticalAlignment": "Center",
+                                //"Height": 31,
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Laps}",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Center",
+                                        "Style": "TableStats_Line",
+                                        "PositionZ": 2,
+                                        "Height": 26,
+                                        "Width": 26,
+                                        "Foreground": "{{Item.TyresInfo.Name}_color}",
+                                        "BackgroundImage": "logotypes/tyres/tyre_ring.png",
+                                        "ColorizeBackground": {
+                                            "Color": "{{Item.TyresInfo.Name}_color}"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "shape",
+                                        "VerticalAlignment": "Center",
+                                        "PositionY": 5,
+                                        "PositionX": 10,
+                                        "PositionZ": 1,
+                                        "Height": 26,
+                                        "Width": "{{Item.Laps, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=31}",
+                                        "ShapeOptions": {
+                                            "Fill": "{{Item.TyresInfo.Name}_color}"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LeaderCut_stintStat"
+                    }
+                }
+            ]
+        }
+    },
+    //qualy
+    {
+        "ComponentName": "TableSessionQual_SimpleStats",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Session.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Best lap]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLap_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapTime, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Laps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowLaps_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.LapsCount}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[With]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLapTyres_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapTyres}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty (s)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPenalty_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltyTimeTotal, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty \n(pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPenalty_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltyPosTotal, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Gap]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Gap_Stats",
+                        "RenderIf": "{ShowGap_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Max. \n(km/h)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowMaxSpeed_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.MaxSpeed, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best lap \nnumber]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLap_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapNumLap, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[S1]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLapSector_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapSector1}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[S2]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLapSector_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapSector2}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[S3]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestLapSector_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.FastestLapSector3}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Q1 \ntime]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowQualies_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualQ1Time}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Q2 \ntime]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowQualies_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualQ2Time}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Q3 \ntime]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowQualies_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualQ3Time}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Driver \npoints]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPoints_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DriverPoints, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Team \npoints]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPoints_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.TeamPoints, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+    //standings
+    //points progression
+    {
+        "ComponentName": "PointsProgression_Stats",
+        "BlockType": "table",
+        "Triggers": [
+            {
+                "Condition": "<isTeam>",
+                "Property": "TableOptions.ItemsSource",
+                "Value": "{Standings.Teams}"
+            }
+        ],
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[Manufacturer]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LogoAlt_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Teams_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsDriver>"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "MultiColumnHeadersSource": "{Standings.Events}",
+                    "MultiColumnItemsSource": "{Item.Events}",
+                    "MultiColumnHeaderTemplate": {
+                        "BlockType": "dock",
+                        "Width": 40,
+                        "Height": 28,
+                        "Margin": "5",
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{Item.Track.Nation.LogotypePath}",
+                                "Width": 38,
+                                "VerticalAlignment": "Center",
+                                "HorizontalAlignment": "Center",
+                                "Background": "{black}",
+                                "Padding": "2",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.CompletedStatus}",
+                                        "ConditionValue": "InFuture",
+                                        "Property": "Opacity",
+                                        "Value": 50
+                                    },
+                                    {
+                                        "Condition": "{Item.CompletedStatus}",
+                                        "ConditionValue": "Skipped",
+                                        "Setters": [
+                                            {
+                                                "Property": "Colorize.Color",
+                                                "Value": "#aaff0000"
+                                            },
+                                            {
+                                                "Property": "Colorize.ColorBlendingMode",
+                                                "Value": "Darken"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PointsProg_Stats"
+                    }
+                },
+                {
+                    "Header": "[Total \npoints]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PointsTotal_Stats"
+                    }
+                }
+            ]
+        }
+    },
+    //Generic
+    {
+        "ComponentName": "Statistics_Stats",
+        "BlockType": "table",
+        "Triggers": [
+            {
+                "Condition": "<isTeam>",
+                "Property": "TableOptions.ItemsSource",
+                "Value": "{Standings.Teams}"
+            }
+        ],
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Manufacturer]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LogoAlt_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Teams_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsDriver>"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Total \npoints]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PointsTotal_Stats"
+                    }
+                },
+                {
+                    "Header": "[Gap to \nleader]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowGapLeader_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PointsToLeaderDiff}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Gap to \nabove]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowGapLeader_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PointsToAboveDiff}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best \nchamp pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowChampBestPos_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ChampionshipDetails.BestChampionshipPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Rounds \nleading]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowChampRoundsLeading_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ChampionshipDetails.RoundsLeading, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best \npossible pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowChampPossiblePos_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ChampionshipDetails.BestPossiblePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Events \ndiscarded]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowEventDiscarded_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DiscardingDetails.DiscardedEventsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Races \ndiscarded]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowRaceDiscarded_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DiscardingDetails.DiscardedRacesCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Points \ndiscarded]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowPointsDiscarded_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DiscardingDetails.TotalDiscardedPoints, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[P1s]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowCountPodiums_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountP1, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[P2s]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowCountPodiums_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountP2, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[P3s]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowCountPodiums_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountP3, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best \npos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowCountBestPos_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.BestPos, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Podiums]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowCountBestPos_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountTop3, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top 5s]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowCountBestPos_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountTop5, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top 10s]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowCountBestPos_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountTop10, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Races]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowRaceCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RacesCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Qualys]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowQualyCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best \nqualy]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestQualy_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.BestPosQual, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Fastest \nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowRaceFastestLapCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Driver of \nthe day]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowRaceDriverDayCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDriverDayCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best \nmoment]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowBestMomentCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceBestMomentCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Most laps \nlead]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowRaceMostLapsLedCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceMostLapsLedCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[DNFs]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowNotFinishedCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountDnf, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[DNSs]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowNotFinishedCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountDns, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[DSQs]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{ShowNotFinishedCount_Stats}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.CountNotClassified, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    //Race Details
+    {
+        "ComponentName": "RaceDetails_Stats",
+        "BlockType": "table",
+        "Triggers": [
+            {
+                "Condition": "<isTeam>",
+                "Property": "TableOptions.ItemsSource",
+                "Value": "{Standings.Teams}"
+            }
+        ],
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Manufacturer]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LogoAlt_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Teams_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsDriver>"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Fastest \nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.FastestLapWinsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Fastest \nlap pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageFastestLapPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Fastest \nlap gap]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageFastestLapGapToLeader, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top speed \n(km/h)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.BestMaxSpeed, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Avg top \nspeed (km/h)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageMaxSpeed, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top speed \nposition]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageMaxSpeedPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top speed \ngap (km/h)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageMaxSpeedGapToLeaderKmh, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top \nspeeds]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.MaxSpeedWinsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total \novertakes]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalOvertakes, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average \novertakes]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageOvertakesPerRace, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best \novertakes]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.BestOvertakesInRace, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total \npositions lost]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalPositionsLost, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average \npositions lost]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AveragePositionsLostPerRace, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total \nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalLaps, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[%]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.LapCompletionPercent, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Possible \nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalPossibleLaps, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Lead \nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalLeadLaps, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Lead \ndistance]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalLeadDistance, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Lead \ndistance (km)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "Triggers": [
+                            {
+                                "Condition": "{Item.RaceDetails.TotalLeadDistanceKm}",
+                                "ConditionValue": "0",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ],
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalLeadDistanceKm, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Pit \nstops]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalPitStops, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Avg \nstops]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AveragePitStopsPerRace, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total \nstints]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalStintCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total \nstint laps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalStintLaps, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Avg \nstint laps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageStintLaps}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Most \nused tyre]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "[{Item.RaceDetails.MostUsedTyre.Name}]"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+    //Qual Details
+    {
+        "ComponentName": "QualDetails_Stats",
+        "BlockType": "table",
+        "Triggers": [
+            {
+                "Condition": "<isTeam>",
+                "Property": "TableOptions.ItemsSource",
+                "Value": "{Standings.Teams}"
+            }
+        ],
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Manufacturer]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LogoAlt_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Teams_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsDriver>"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Best \nqualy pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.BestQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Worst \nqualy pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.WorstQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average \nqualy pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.AverageQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Pole \npositions]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.PoleCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Front \nrows]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.FrontRowCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top 3 \npositions]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.CountTop3, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top 5 \npositions]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.CountTop5, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Top 10 \npositions]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.CountTop10, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total \nquals]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.TotalQualsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total \nmain quals]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.QualDetails.TotalMajorQualsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+    //Participation Details
+    {
+        "ComponentName": "ParticipationDetails_Stats",
+        "BlockType": "table",
+        "Triggers": [
+            {
+                "Condition": "<isTeam>",
+                "Property": "TableOptions.ItemsSource",
+                "Value": "{Standings.Teams}"
+            }
+        ],
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Manufacturer]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LogoAlt_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Teams_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsDriver>"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Events]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.EventsParticipated, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[%]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.EventCompletionRatePercent, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Events \nexpected]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalEventsExpected, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Races]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalRacesCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Races \nfinished]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalRacesFinished, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[%]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.RaceCompletionRatePercent, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Main \nraces]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalMajorRacesCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Main races \nfinished]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalMajorRacesFinished, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[%]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.MajorRaceCompletionRatePercent, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Quals]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalQualsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Main \nquals]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalMajorQualsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Practices]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalPracticesCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Sessions]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.ParticipationDetails.TotalSessionsParticipated, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+    //Penalties Details
+    {
+        "ComponentName": "PenaltiesDetails_Stats",
+        "BlockType": "table",
+        "Triggers": [
+            {
+                "Condition": "<isTeam>",
+                "Property": "TableOptions.ItemsSource",
+                "Value": "{Standings.Teams}"
+            }
+        ],
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Manufacturer]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LogoAlt_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Teams_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsDriver>"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Penalty \npoints]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.TotalPenaltyPoints, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty \ngame (s)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.TotalPenaltySecsIngame, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty \nstewards (s)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.TotalPenaltySecsStewards, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty \nseconds]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.TotalPenaltyTime, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty \ngame (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.TotalPenaltyPosIngame, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty \nstewards (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.TotalPenaltyPosStewards, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Penalty \nspositions]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.TotalPenaltyPositions, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[DNFs]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.DnfCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[DSQs]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PenaltiesDetails.DsqCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+    //Positions Details
+    {
+        "ComponentName": "PositionsDetails_Stats",
+        "BlockType": "table",
+        "Triggers": [
+            {
+                "Condition": "<isTeam>",
+                "Property": "TableOptions.ItemsSource",
+                "Value": "{Standings.Teams}"
+            }
+        ],
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Manufacturer]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LogoAlt_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Teams_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsDriver>"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Average \npos change]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.AveragePositionChange, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average \npoints (main)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.AveragePointsPerMajorRace, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Scoring \nmain races]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.ScoringMajorRacesCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Total \nmain races]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.TotalMajorRacesForScoring, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[%]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.ScoringRatePercent, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best main \nrace pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.BestMajorRacePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Worst main \nrace pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.WorstMajorRacePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average main \nrace pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.AverageMajorRacePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best all \nrace pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.BestAllRacePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Worst all \nrace pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.WorstAllRacePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average all \nrace pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.AverageAllRacePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best main \nqual pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.BestMajorQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Worst main \nqual pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.WorstMajorQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average main \nqual pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.AverageMajorQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best all \nqual pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.BestAllQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Worst all \nqual pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.WorstAllQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average all \nqual pos]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.PositionsDetails.AverageAllQualPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+    //Deep Ratings Details
+    {
+        "ComponentName": "DeepRatingsDetails_Stats",
+        "BlockType": "table",
+        "Triggers": [
+            {
+                "Condition": "<isTeam>",
+                "Property": "TableOptions.ItemsSource",
+                "Value": "{Standings.Teams}"
+            }
+        ],
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[+/-]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "PosJump_Stats",
+                        "RenderIf": "{ShowPosJump_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Manufacturer]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LogoAlt_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Teams_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringNotEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsDriver>"
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats",
+                        "RenderIf": false,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "ConditionAnd": "{Standings.RacingClass.FirstFactor.CarClass.Name, Converter=StringEquals, Parameter=GT3}",
+                                "Property": "RenderIf",
+                                "Value": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": true,
+                        "Triggers": [
+                            {
+                                "Condition": "<isTeam>",
+                                "Property": "RenderIf",
+                                "Value": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Header": "[Pace (%)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.RacePaceRating.ValueOutOf100, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Pace (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.RacePacePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average \npace (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.RacePaceAveragePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Pace \n(races)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.RacePaceRatingsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Pace \n(change)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.RacePaceRatingChange, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Consistency (%)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.ConsistencyRating.ValueOutOf100, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Consistency (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.ConsistencyPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average \nconsistency (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.ConsistencyAveragePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Consistency \n(races)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.ConsistencyRatingsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Consistency \n(change)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.ConsistencyRatingChange, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Attack (%)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{Item.DeepRatingsDetails.AttackRating.Value}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.AttackRating.ValueOutOf100, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Attack (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.AttackPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average \nattack (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.AttackAveragePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Attack \n(races)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.AttackRatingsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Attack \n(change)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.AttackRatingChange, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Defense (%)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "RenderIf": "{Item.DeepRatingsDetails.DefenseRating.Value}",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.DefenseRating.ValueOutOf100, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Defense (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.DefensePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average \ndefense (pos)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.DefenseAveragePosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Defense \n(races)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.DefenseRatingsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Defense \n(change)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.DeepRatingsDetails.DefenseRatingChange, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+    //Statistics Pro Details
+    {
+        "ComponentName": "StatisticsPro_Stats",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Statistics.Drivers}",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_Stats"
+                    }
+                },
+                {
+                    "Header": "[Man.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Logo_Stats",
+                        "RenderIf": "<IsSession>"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Drivers]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats"
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column0.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value0"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column1.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value1"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column2.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value2"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column3.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value3"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column4.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value4"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column5.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value5"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column6.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value6"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column7.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value7"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column8.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value8"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column9.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value9"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[{Statistics.Column10.Header}]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Stats_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "Item.Value10"
+                            }
+                        }
+                    }
+                },
+            ]
+        }
+    },
+]

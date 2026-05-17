@@ -14,7 +14,7 @@
         "Items": [
             {
                 "BlockType": "text",
-                "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
+                "Source": "[{Item.Driver.{DriverName}, Converter=StringToUpperString}]",
                 "Style": "DriverLineStyle",
                 "Triggers": [
                     { "Trigger": "TeamColor_ForegroundP1" },
@@ -69,7 +69,7 @@
             {
                 "BlockType": "text",
                 "Width": 80,
-                "Source": "[{Item.Team.Car.Vendor.Name} Short]",
+                "Source": "[{Item.Car.Vendor.Name} Short]",
                 "Style": "DriverLineStyle",
                 "FontName": "{CardTeamNameFont}",
                 "TextOptions": {
@@ -84,7 +84,7 @@
                         "Condition": "{Season.LineupsBasedType}",
                         "ConditionValue": "Teams",
                         "Property": "Source",
-                        "Value": "[{Item.Car.Vendor.Name} Short]"
+                        "Value": "[{Item.Team.Car.Vendor.Name} Short]"
                     }
                 ]
             }
@@ -114,6 +114,21 @@
                     { "Trigger": "CarColor_ForegroundP1" },
                     { "Trigger": "WEC_Team_ForegroundP1" },
                     { "Trigger": "WEC_Car_ForegroundP1" },
+                    {
+                        "Condition": "<isTeam>",
+                        "ConditionAnd": "{Season.LineupsBasedType}",
+                        "ConditionAndValue": "Teams",
+                        "Setters": [
+                            {
+                                "Property": "Source",
+                                "Value": "[{Item.Team.Abbreviation}]"
+                            },
+                            {
+                                "Property": "FontSize",
+                                "Value": 20
+                            }
+                        ]
+                    }
                 ]
             }
         ]
@@ -157,8 +172,8 @@
                 "Triggers": [
                     { "Trigger": "Car_LogotypeDefault" },
                     { "Trigger": "Team_LogotypeVendor" },
-                    { "Trigger": "WEC_Team_Logotype" },
                     { "Trigger": "WEC_Car_Logotype" },
+                    { "Trigger": "WEC_Team_Logotype" },
                 ]
             }
         ]

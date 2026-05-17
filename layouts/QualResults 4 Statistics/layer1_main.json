@@ -1,0 +1,153 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Margin": "50, 48",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "TrackHeader_StatsSession",
+                "HorizontalAlignment": "Center",
+                "VerticalAlignment": "Top",
+                "MarginBottom": 40
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "component",
+                        "Component": "SessionList_Stats",
+                        "MarginTop": 64,
+                        "MarginRight": 8,
+                        "ComponentOptions": {
+                            "Vars": {
+                                "session": "{Session.SessionTypeString}"
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Width": 988,
+                                "MarginBottom": 32,
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "Background": "{darkPurple}",
+                                        "HorizontalAlignment": "Left",
+                                        "VerticalAlignment": "Center",
+                                        "Padding": "2",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Event.DateLocal, Converter=DateToYear}",
+                                                "Foreground": "{darkPurple}",
+                                                "Style": "Stats_Header",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Width": 296,
+                                                "Height": 40,
+                                                "Background": "{white}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "stack",
+                                        "Background": "{darkPurple}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Padding": "2",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{Event.Track.LocationName, Converter=StringToUpperString}]",
+                                                "Foreground": "{darkPurple}",
+                                                "Style": "Stats_Header",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Width": 296,
+                                                "Height": 40,
+                                                "Background": "{white}"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "stack",
+                                        "Background": "{darkPurple}",
+                                        "HorizontalAlignment": "Right",
+                                        "VerticalAlignment": "Center",
+                                        "Padding": "2",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[OVERALL]",
+                                                "Foreground": "{darkPurple}",
+                                                "Style": "Stats_Header",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Width": 296,
+                                                "Height": 40,
+                                                "Background": "{white}",
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Session.IsHaveRacingClass}",
+                                                        "Property": "Source",
+                                                        "Value": "[{Session.RacingClass.Name, Converter=StringToUpperString}]"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Background": "{lightBlue}",
+                                "Padding": "2",
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Background": "{white}",
+                                        "Padding": "16",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[OVERALL] - [FINAL]",
+                                                "Style": "Stats_Header",
+                                                "FontSize": 24,
+                                                "MarginBottom": 24,
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Session.IsHaveRacingClass}",
+                                                        "Property": "Source",
+                                                        "Value": "[{Session.RacingClass.Name}] - [FINAL]"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TableSessionQual_SimpleStats",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -2,6 +2,8 @@
     "Name": "Europe English",
     "Id": "en-EU",
     "Strings": {
+        "WEC EDIÇÃO 2": "WEC EDICAO 2",
+
         //Cars
         "Alpine Short": "ALP",
         "Aston Martin Short": "AST",
@@ -29,6 +31,44 @@
         //Country
         "UNITED STATES OF AMERICA": "USA",
 
+        //statistics
+        "DRIVERS' AvgPointsPerRace": "DRIVERS' AVERAGE POINTS",
+        "DRIVERS' AvgRacePosition": "DRIVERS' AVERAGE RACE POSITION",
+        "DRIVERS' AvgQualPosition": "DRIVERS' AVERAGE QUALIFICATION POSITION",
+        "DRIVERS' AvgPositionChange": "DRIVERS' AVERAGE POSITION CHANGE",
+        "DRIVERS' TotalOvertakes": "DRIVERS' TOTAL OVERTAKES",
+        "DRIVERS' AvgOvertakesPerRace": "DRIVERS' AVERAGE OVERTAKES PER RACE",
+        "DRIVERS' TotalPositionsLost": "DRIVERS' TOTAL POSITIONS LOST",
+        "DRIVERS' FinishRate": "DRIVERS' FINISHES PERCENTAGE",
+        "DRIVERS' LapCompletionRate": "DRIVERS' LAP COMPLETION RATE",
+        "DRIVERS' FastestLapCount": "DRIVERS' FASTEST LAPS",
+        "DRIVERS' AvgFastestLapPosition": "DRIVERS' AVERAGE FASTEST LAP POSITION",
+        "DRIVERS' BestMaxSpeed": "DRIVERS' BEST MAX SPEED",
+        "DRIVERS' AvgMaxSpeed": "DRIVERS' AVERAGE MAX SPEED",
+        "DRIVERS' PenaltyPointsTotal": "DRIVERS' PENALTY POINTS",
+        "DRIVERS' AvgPenaltyTimePerRace": "DRIVERS' AVERAGE PENALTY TIME PER RACE",
+        "DRIVERS' PenaltyTimeTotal": "DRIVERS' TOTAL PENALTY TIME",
+        "DRIVERS' PenaltyTimeIngameTotal": "DRIVERS' TOTAL PENALTY TIME INGAME",
+        "DRIVERS' PenaltyTimeIngameAvg": "DRIVERS' AVERAGE PENALTY TIME INGAME",
+        "DRIVERS' PenaltyTimeStewardTotal": "DRIVERS' TOTAL PENALTY TIME STEWARD",
+        "DRIVERS' PenaltyTimeStewardAvg": "DRIVERS' AVERAGE PENALTY TIME STEWARD",
+        "DRIVERS' DnfCount": "DRIVERS' DNF COUNT",
+        "DRIVERS' TyreCompoundUsage": "DRIVERS' TYRE COMPOUND USAGE",
+        "DRIVERS' AvgPitStopsPerRace": "DRIVERS' AVERAGE PIT STOPS PER RACE",
+        "DRIVERS' AvgStintLength": "DRIVERS' AVERAGE STINT LENGTH",
+        "DRIVERS' LeadLaps": "DRIVERS' LEAD LAPS",
+        "DRIVERS' LeadDistanceKm": "DRIVERS' LEAD DISTANCE (KM)",
+        "DRIVERS' RoundsLeadingChampionship": "DRIVERS' ROUNDS LEADING CHAMPIONSHIP",
+
+        "DRIVERS' LongestStints": "DRIVERS' LONGEST STINTS",
+        "DRIVERS' PureRacePace": "DRIVERS' PURE RACE PACE",
+        "DRIVERS' FastestLaps": "DRIVERS' FASTEST LAPS",
+        "DRIVERS' RaceConsistency": "DRIVERS' RACE CONSISTENCY",
+        "DRIVERS' AttackRating": "DRIVERS' ATTACK RATING",
+        "DRIVERS' DefenseRating": "DRIVERS' DEFENSE RATING",
+        "DRIVERS' TopBattles": "DRIVERS' TOP BATTLES",
+
+
         //Text
         "CHAMPIONSHIP": "CHAMPIONSHIP",
         "CLASSIFICATION": "CLASSIFICATION",
@@ -43,6 +83,27 @@
         "RESULTS": "RESULTS",
         "THE OFFICIAL STREAMING APP": "THE OFFICIAL STREAMING APP",
         "st": "st",
+        "Qualification": "Qualifying",
+        "Practice": "Free Practice",
+        "Practice 1": "Free Practice 1",
+        "Practice 2": "Free Practice 2",
+        "Practice 3": "Free Practice 3",
+
+        //event name
+        "cota": "LONE STAR LE MANS (COTA)",
+        "bahrain": "BAPCO ENERGIES 8 HOURS OF BAHRAIN",
+        "barcelona": "4 HOURS OF BARCELONA",
+        "fuji": "6 HOURS OF FUJI",
+        "imola": "6 HOURS OF IMOLA",
+        "interlagos": "ROLEX 6 HOURS OF SAO PAULO",
+        "le mans": "24 HOURS OF LE MANS",
+        "losail": "QATAR 1812KM",
+        "monza": "6 HOURS OF MONZA",
+        "portimao": "6 HOURS OF PORTIMAO",
+        "paul ricard": "4 HOURS LE CASTELLET",
+        "sebring": "1000 MILES OF SEBRING",
+        "silverstone": "GOODYEAR 4 HOURS OF SILVERSTONE",
+        "spa-francorchamps": "TOTALENERGIES 6 HOURS OF SPA-FRANCORCHAMPS",
 
         //days
         "day 01": "1",

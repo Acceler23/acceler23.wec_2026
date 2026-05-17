@@ -1,0 +1,57 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Margin": "50, 48",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "dock",
+                                "Background": "{lightBlue}",
+                                "Padding": "2",
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Background": "{white}",
+                                        "Padding": "16",
+                                        "Items": [
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "StandingsHead_stats",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "standType": "[DRIVERS' CHAMPIONSHIP]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "PointsProgression_Stats",
+                                                "ComponentOptions": {
+                                                    "Vars": {
+                                                        "TeamReverse": true,
+                                                        "isTeam": false
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

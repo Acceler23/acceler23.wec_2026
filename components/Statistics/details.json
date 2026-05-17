@@ -1,0 +1,287 @@
+[
+    //session
+    {
+        "ComponentName": "SessionList_Stats",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Spacing": 8,
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[day {Event.DateLocal, Converter=DateToDayOfMonth}] [Card {Event.DateLocal, Converter=DateToMonthInWords}] [{Event.DateLocal, Converter=DateToYear}]",
+                "Style": "Stats_Header",
+                "FontSize": 16
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 8,
+                "ItemStackOptions": {
+                    "ItemSource": "{Event.Races}",
+                    "Reverse": true,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Width": 292,
+                        "Height": 37,
+                        "Orientation": "Horizontal",
+                        "Triggers": [
+                            {
+                                "Condition": "<session>",
+                                "ConditionValue": "{Item.SessionTypeString}",
+                                "Property": "Background",
+                                "Value": "{babyBlue}"
+                            }
+                        ],
+                        "Items": [
+                            {
+                                "BlockType": "shape",
+                                "Height": 37,
+                                "Width": 2,
+                                "ShapeOptions": {
+                                    "Fill": "{gray}"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "<session>",
+                                        "ConditionValue": "{Item.SessionTypeString}",
+                                        "Property": "ShapeOptions.Fill",
+                                        "Value": "{lightBlue}"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Item.SessionTypeString, Converter=StringToUpperString}]",
+                                "Style": "Stats_Header",
+                                "FontSize": 14,
+                                "VerticalAlignment": "Center"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 8,
+                "ItemStackOptions": {
+                    "ItemSource": "{Event.Quals}",
+                    "Reverse": true,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Width": 292,
+                        "Height": 37,
+                        "Orientation": "Horizontal",
+                        "Triggers": [
+                            {
+                                "Condition": "<session>",
+                                "ConditionValue": "{Item.SessionTypeString}",
+                                "Property": "Background",
+                                "Value": "{babyBlue}"
+                            }
+                        ],
+                        "Items": [
+                            {
+                                "BlockType": "shape",
+                                "Height": 37,
+                                "Width": 2,
+                                "ShapeOptions": {
+                                    "Fill": "{gray}"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "<session>",
+                                        "ConditionValue": "{Item.SessionTypeString}",
+                                        "Property": "ShapeOptions.Fill",
+                                        "Value": "{lightBlue}"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Item.SessionTypeString, Converter=StringToUpperString}]",
+                                "Style": "Stats_Header",
+                                "FontSize": 14,
+                                "VerticalAlignment": "Center",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Session.IsHaveRacingClass}",
+                                        "Property": "Source",
+                                        "Value": "[{Item.SessionTypeString, Converter=StringToUpperString}] - [{Session.RacingClass.Name, Converter=StringToUpperString}]"
+                                    },
+                                    {
+                                        "Condition": "{Qualy_Rename}",
+                                        "ConditionAnd": "{Item.SessionTypeString}",
+                                        "ConditionAndValue": "Q1",
+                                        "Property": "Source",
+                                        "Value": "[QUALIFYING]"
+                                    },
+                                    {
+                                        "Condition": "{Qualy_Rename}",
+                                        "ConditionAnd": "{Item.SessionTypeString}",
+                                        "ConditionAndValue": "Q2",
+                                        "Property": "Source",
+                                        "Value": "[HYPERPOLE]"
+                                    },
+                                    {
+                                        "Condition": "{Session.IsHaveRacingClass}",
+                                        "ConditionAnd": "{Item.SessionTypeString, Converter=StringAdd, Parameter={Qualy_Rename}}",
+                                        "ConditionAndValue": "Q1True",
+                                        "Property": "Source",
+                                        "Value": "[QUALIFYING] - [{Session.RacingClass.Name, Converter=StringToUpperString}]"
+                                    },
+                                    {
+                                        "Condition": "{Session.IsHaveRacingClass}",
+                                        "ConditionAnd": "{Item.SessionTypeString, Converter=StringAdd, Parameter={Qualy_Rename}}",
+                                        "ConditionAndValue": "Q2True",
+                                        "Property": "Source",
+                                        "Value": "[HYPERPOLE] - [{Session.RacingClass.Name, Converter=StringToUpperString}]"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 8,
+                "ItemStackOptions": {
+                    "ItemSource": "{Event.Practices}",
+                    "Reverse": true,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Width": 292,
+                        "Height": 37,
+                        "Orientation": "Horizontal",
+                        "Triggers": [
+                            {
+                                "Condition": "<session>",
+                                "ConditionValue": "{Item.SessionTypeString}",
+                                "Property": "Background",
+                                "Value": "{babyBlue}"
+                            }
+                        ],
+                        "Items": [
+                            {
+                                "BlockType": "shape",
+                                "Height": 37,
+                                "Width": 2,
+                                "ShapeOptions": {
+                                    "Fill": "{gray}"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "<session>",
+                                        "ConditionValue": "{Item.SessionTypeString}",
+                                        "Property": "ShapeOptions.Fill",
+                                        "Value": "{lightBlue}"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Item.SessionTypeString, Converter=StringToUpperString}]",
+                                "Style": "Stats_Header",
+                                "FontSize": 14,
+                                "VerticalAlignment": "Center"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    //stangings head
+    {
+        "ComponentName": "StandingsHead_stats",
+        "BlockType": "stack",
+        "Orientation": "Horizontal",
+        "HorizontalAlignment": "Left",
+        "Spacing": -5,
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[{Season.LeagueInfo.LeagueShortName, Converter=StringToUpperString}]",
+                "Style": "Stats_Header",
+                "FontSize": 24,
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center"
+            },
+            {
+                "BlockType": "text",
+                "Source": "[{Standings.RacingClass.Name, Converter=StringToUpperString}]",
+                "Style": "Stats_Header",
+                "FontSize": 24,
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center"
+            },
+            {
+                "BlockType": "text",
+                "Source": "[{Season.Name, Converter=StringToUpperString}]",
+                "Style": "Stats_Header",
+                "FontSize": 24,
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center"
+            },
+            {
+                "BlockType": "text",
+                "Source": "<standType>",
+                "Style": "Stats_Header",
+                "FontSize": 24,
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center"
+            }
+        ]
+    },
+    //statistics head
+    {
+        "ComponentName": "StatisticssHead_stats",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "HorizontalAlignment": "Left",
+        "Spacing": -10,
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "Spacing": -5,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
+                        "Style": "Stats_Header",
+                        "FontSize": 24,
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center"
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Statistics.RacingClass.Name, Converter=StringToUpperString}]",
+                        "Style": "Stats_Header",
+                        "FontSize": 24,
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center"
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Season.Name, Converter=StringToUpperString}]",
+                        "Style": "Stats_Header",
+                        "FontSize": 24,
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[DRIVERS' {Statistics.StatisticsTypeString}]",
+                "Style": "Stats_Header",
+                "FontSize": 24,
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center"
+            }
+        ]
+    }
+]

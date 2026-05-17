@@ -1,0 +1,242 @@
+[
+    {
+        "ComponentName": "Position_Stats",
+        "BlockType": "dock",
+        "Width": 45,
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "{Item.Position}",
+                "Style": "Stats_Header",
+                "FontSize": 24,
+                "Padding": "5",
+                "HorizontalAlignment": "Center",
+                "VerticalAlignment": "Center",
+                
+                "Triggers": [
+                    {
+                        "Condition": "{PositionIndex}",
+                        "Property": "Source",
+                        "Value": "{Item.Index, Converter=NumberAdd, Parameter=1}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "LiveryLine_Stats",
+        "BlockType": "dock",
+        "Width": 216,
+        "Height": 67,
+        "Orientation": "Horizontal",
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Height": 67,
+                "Width": 97,
+                "Padding": "5",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 50,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeDark" },
+                            { "Trigger": "Team_LogotypeDark" },
+                            { "Trigger": "WEC_Car_GrayLogotype" },
+                            { "Trigger": "WEC_Team_GrayLogotype" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Height": 67,
+                "Width": 97,
+                "Padding": "5",
+                "HorizontalAlignment": "Right",
+                "VerticalAlignment": "Center",
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Item.LiveryPath}",
+                        "Width": 96,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Center"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "Number_Stats",
+        "BlockType": "dock",
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "#[{Item.{CarNumber}, Converter=StringToUpperString}]",
+                "Style": "TableStats_Line"
+            }
+        ]
+    },
+    {
+        "ComponentName": "Team_Stats",
+        "BlockType": "dock",
+        "Width": 165,
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                //"Source": "[{Item.Team.FullName, Converter=StringToUpperString}]",
+                "Style": "TableStats_Line",
+                "Width": 165,
+                "Triggers": [
+                    { "Trigger": "Team_FullName" },
+                    { "Trigger": "Car_FullName" },
+                ],
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "HorizontalAlignment": "Left"
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "Driver_Stats",
+        "BlockType": "dock",
+        "Width": 165,
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[{Item.Driver.{DriverName}, Converter=StringToUpperString}]",
+                "Style": "TableStats_Line",
+                "Width": 155,
+                "PaddingRight": 10,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "HorizontalAlignment": "Left"
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "Teams_Stats",
+        "BlockType": "dock",
+        "Width": 165,
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[{Item.Team.Name, Converter=StringToUpperString}]",
+                "Style": "TableStats_Line",
+                "Width": 155,
+                "PaddingRight": 10,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "HorizontalAlignment": "Left"
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "Logo_Stats",
+        "BlockType": "dock",
+        "Width": 110,
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Height": 67,
+                "Width": 110,
+                "Padding": "5",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 50,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeDark" },
+                            { "Trigger": "Team_LogotypeDark" },
+                            { "Trigger": "WEC_Car_GrayLogotype" },
+                            { "Trigger": "WEC_Team_GrayLogotype" },
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "LogoAlt_Stats",
+        "BlockType": "dock",
+        "Width": 110,
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Height": 67,
+                "Width": 110,
+                "Padding": "5",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 50,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeDark" },
+                            { "Trigger": "Team_LogotypeDark" },
+                            { "Trigger": "WEC_Car_DarkLogotype" },
+                            { "Trigger": "WEC_Team_DarkLogotype" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

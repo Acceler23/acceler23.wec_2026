@@ -32,6 +32,14 @@
         "Value": "{Item.Car.Vendor.LogotypePath}"
     },
     {
+        "TriggerName": "Car_LogotypeDark",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.DarkLogotypePath}"
+    },
+    {
         "TriggerName": "CarColor_BackgroundP1",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Cars",
@@ -54,6 +62,6 @@
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Cars",
         "Property": "Source",
-        "Value": "[{Item.Car.FullName, Converter=StringToUpperString}]"
+        "Value": "[{Item.Car.Name, Converter=StringToUpperString}]"
     },
 ]

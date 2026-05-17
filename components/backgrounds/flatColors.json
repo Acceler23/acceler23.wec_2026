@@ -1,0 +1,9 @@
+[
+    {
+        "ComponentName": "white_bg",
+        "BlockType": "shape",
+        "ShapeOptions": {
+            "Fill": "{white}"
+        }
+    }
+]

@@ -3,7 +3,7 @@
   "Name": "FIA WEC 2026",
   "Author": "Acceler23",
   "Description": "Theme based on the 2026 FIA WEC media",
-  "Version": "1.0.0",
+  "Version": "1.1.0",
   "DefaultLocalizationId": "en-EU",
   "DisableUnspecifiedLocalization": false,
   "Links": [],
@@ -18,12 +18,17 @@
     [
       "Alternative",
       "Dark",
-      "Light"
+      "Light",
+      "Grayed"
     ],
     "Vendor": [
       "Alternative",
       "Dark",
-      "Light"
+      "Light",
+      "Grayed"
+    ],
+    "Track": [
+      "Alternative"
     ]
   },
   "LogotypeBehaviours": [
@@ -49,6 +54,13 @@
       "SetVariantByDefault": false
     },
     {
+      "Category": "Team",
+      "Variant": "Grayed",
+      "UseFallbackSource": true,
+      "UseFallbackVariant": true,
+      "SetVariantByDefault": false
+    },
+    {
       "Category": "Vendor",
       "Variant": "Alternative",
       "UseFallbackSource": true,
@@ -70,6 +82,13 @@
       "SetVariantByDefault": false
     },
     {
+      "Category": "Vendor",
+      "Variant": "Grayed",
+      "UseFallbackSource": true,
+      "UseFallbackVariant": true,
+      "SetVariantByDefault": false
+    },
+    {
       "Category": "Championship",
       "Variant": "Light",
       "UseFallbackSource": true,
@@ -78,6 +97,13 @@
     },
     {
       "Category": "Championship",
+      "Variant": "Alternative",
+      "UseFallbackSource": true,
+      "UseFallbackVariant": true,
+      "SetVariantByDefault": false
+    },
+    {
+      "Category": "Track",
       "Variant": "Alternative",
       "UseFallbackSource": true,
       "UseFallbackVariant": true,

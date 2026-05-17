@@ -431,6 +431,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Item.Time}",
+                                                //"Source": "{Session.SessionTypeString}",
                                                 "FontName": "{DataTableFont}",
                                                 "Foreground": "{white}",
                                                 "VerticalAlignment": "Center",
@@ -792,7 +793,7 @@
                         "Items": [
                             {
                                 "BlockType": "text",
-                                "Source": "[day {Item.Date, Converter=DateToDayOfMonth}] [Card {Item.Date, Converter=DateToMonthInWords}]",
+                                "Source": "[day {Item.DateLocal, Converter=DateToDayOfMonth}] [Card {Item.DateLocal, Converter=DateToMonthInWords}]",
                                 "HorizontalAlignment": "Center",
                                 "FontName": "{TableHeaderFont}",
                                 "FontSize": 80,

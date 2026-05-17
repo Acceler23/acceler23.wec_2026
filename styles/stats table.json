@@ -1,0 +1,31 @@
+[
+    {
+        "StyleName": "Stats_Header",
+        "FontName": "{Font_StatsHead}",
+        "Foreground": "{darkPurple}",
+        "FontSize": 15,
+        "Padding": "5",
+        "TextOptions": {
+            "FontStyle": "Bold"
+        }
+    },
+    {
+        "StyleName": "TableStats_Header",
+        "FontName": "{Font_StatsLine}",
+        "Foreground": "{darkPurple}",
+        "FontSize": 15,
+        "Padding": "5",
+        "TextOptions": {
+            "TextAlignment": "Center"
+        }
+    },
+    {
+        "StyleName": "TableStats_Line",
+        "FontName": "{Font_StatsLine}",
+        "Foreground": "{darkPurple}",
+        "FontSize": 15,
+        "Padding": "5",
+        "HorizontalAlignment": "Center",
+        "VerticalAlignment": "Center"
+    }
+]

@@ -1,12 +1,4 @@
 [
-    /*{
-        "StyleName": "TableLineStyle",
-        "Foreground": "{white}",
-        "HorizontalAlignment": "Center",
-        "VerticalAlignment": "Center",
-        "Height": "{TableLineHeight}",
-        "FontSize": "{TableFontSizeDefalt}"
-    },*/
     {
         "StyleName": "DriverLineStyle",
         //"StyleBasedOn": "TableLineStyle",
@@ -15,6 +7,9 @@
         "Foreground": "{white}",
         "VerticalAlignment": "Center",
         "Height": "{TableLineHeight}",
-        "FontSize": "{TableFontSizeDefalt}"
+        "FontSize": "{TableFontSizeDefalt}",
+        "TextOptions": {
+            "FontStyle": "Italic"
+        },
     }
 ]

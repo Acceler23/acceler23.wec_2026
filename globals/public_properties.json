@@ -1,8 +1,11 @@
 {
     "Categories": [
-        {"Name": "WEC Mode"},
-        {"Name": "Drivers"},
-        {"Name": "Global Options"},
+        { "Name": "WEC Mode" },
+        { "Name": "Drivers" },
+        { "Name": "Global Options" },
+        { "Name": "Calendar" },
+        { "Name": "Open Session Statistics" },
+        { "Name": "Open Standings Statistics" },
     ],
     "Properties": [
         {
@@ -12,27 +15,38 @@
             "MinimumValue": 1,
             "DefaultValue": 1
         },
+
+        //WEC Mode
         {
             "Category": "WEC Mode",
-            "Name": "WEC_color",
+            "Name": "Recolor_WEC",
             "PublicName": "WEC Colors",
             "Type": "Bool",
             "DefaultValue": false
         },
         {
             "Category": "WEC Mode",
-            "Name": "WEC_logos",
+            "Name": "ReplaceLogos",
             "PublicName": "WEC Logotypes",
             "Type": "Bool",
             "DefaultValue": false
         },
         {
             "Category": "WEC Mode",
-            "Name": "WEC_Tracks",
+            "Name": "Track_Rename",
             "PublicName": "WEC Event Name",
             "Type": "Bool",
             "DefaultValue": false
         },
+        {
+            "Category": "WEC Mode",
+            "Name": "Qualy_Rename",
+            "PublicName": "WEC Qualy Names (Statistics only)",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+
+        //Drivers
         {
             "Category": "Drivers",
             "Name": "DriverName",
@@ -61,6 +75,8 @@
             ],
             "DefaultValue": "Driver.RaceNumber"
         },
+
+        //Global Options
         {
             "Name": "TrackNameSize",
             "PublicName": "Card Track Name Size",
@@ -68,6 +84,318 @@
             "Type": "Integer",
             "DefaultValue": 30,
             "MinimumValue": 10
+        },
+        {
+            "Name": "PositionIndex",
+            "PublicName": "Replace Position",
+            "Category": "Global Options",
+            "Type": "Bool",
+            "Description": "NOT RECOMMENDED, Use only if positions are shown as null or 0",
+            "DefaultValue": false
+        },
+
+        //Calendar
+        {
+            "Name": "CalendarNextOnly",
+            "PublicName": "Show Only Next Event",
+            "Category": "Calendar",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "CalendarEventNum",
+            "PublicName": "Calendar Event To Render",
+            "Category": "Calendar",
+            "Type": "Integer",
+            "MinimumValue": 1,
+            "DefaultValue": 1
+        },
+        {
+            "Name": "CalendarQualNum",
+            "PublicName": "Qualifying Number to Render",
+            "Category": "Calendar",
+            "Type": "Integer",
+            "MinimumValue": 1,
+            "DefaultValue": 1
+        },
+
+        //Statistics
+        {
+            "Name": "ShowPosJump_Stats",
+            "PublicName": "Show Position Jump in Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "RenderStints",
+            "PublicName": "Show Stints in Statistics",
+            "Category": "Open Session Statistics",
+            "Description": "Activating it will only render tyre stints, no other statistic will be shown",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowStarted_Stats",
+            "PublicName": "Show Started in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowDriver_Stats",
+            "PublicName": "Show Driver in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowTeam_Stats",
+            "PublicName": "Show Team/Car in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowLaps_Stats",
+            "PublicName": "Show Laps in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowLeadLaps_Stats",
+            "PublicName": "Show Lead Laps in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowLeadDistance_Stats",
+            "PublicName": "Show Lead Distance in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowRaceDistancePercentage_Stats",
+            "PublicName": "Show Race Distance Percentage in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowTotalTime_Stats",
+            "PublicName": "Show Total Time in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowGap_Stats",
+            "PublicName": "Show Gap in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowInterval_Stats",
+            "PublicName": "Show Interval in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowMaxSpeed_Stats",
+            "PublicName": "Show Max Speed in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowBestLap_Stats",
+            "PublicName": "Show Best Lap in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowBestLapTyres_Stats",
+            "PublicName": "Show Best Lap Tyres in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowBestLapSector_Stats",
+            "PublicName": "Show Best Lap Sector in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowPenalty_Stats",
+            "PublicName": "Show Penalties in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowPoints_Stats",
+            "PublicName": "Show Points in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowQualies_Stats",
+            "PublicName": "Show Qualifying Times in Stats",
+            "Category": "Open Session Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+
+        //Standings Statistics
+        {
+            "Name": "StandingsStatsEnum",
+            "PublicName": "Show in Standings Statistics",
+            "Category": "Open Standings Statistics",
+            "Type": "Enum",
+            "EnumValues": [
+                "Default",
+                "RaceDetails",
+                "QualDetails",
+                "ParticipationDetails",
+                "PenaltiesDetails",
+                "PositionsDetails",
+                "DeepRatingsDetails"
+            ],
+            "DefaultValue": "Default"
+        },
+        {
+            "Name": "ShowGapLeader_Stats",
+            "PublicName": "Show Gap to Leader in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowGapAbove_Stats",
+            "PublicName": "Show Gap to Above in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowChampBestPos_Stats",
+            "PublicName": "Show Best Championship Position in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowChampRoundLead_Stats",
+            "PublicName": "Show Rounds Leading in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowChampPossiblePos_Stats",
+            "PublicName": "Show Best Possible Position in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowEventDiscarded_Stats",
+            "PublicName": "Show Discarded Events in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowRaceDiscarded_Stats",
+            "PublicName": "Show Discarded Races in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowPointsDiscarded_Stats",
+            "PublicName": "Show Discarded Points in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowCountPodiums_Stats",
+            "PublicName": "Show Count of Podiums in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowCountBestPos_Stats",
+            "PublicName": "Show Count of Best Positions in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": true
+        },
+        {
+            "Name": "ShowRaceCount_Stats",
+            "PublicName": "Show Race Count in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowQualyCount_Stats",
+            "PublicName": "Show Qualifying Count in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowBestQualy_Stats",
+            "PublicName": "Show Best Qualifying Position in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowRaceFastestLapCount_Stats",
+            "PublicName": "Show Fastest Lap Count in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowRaceDriverDayCount_Stats",
+            "PublicName": "Show Driver of the Day Count in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowRaceBestMomentCount_Stats",
+            "PublicName": "Show Best Moment Count in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowRaceMostLapsLedCount_Stats",
+            "PublicName": "Show Most Laps Led Count in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "ShowNotFinishedCount_Stats",
+            "PublicName": "Show Not Finished Count in Stats",
+            "Category": "Open Standings Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
         },
     ]
 }

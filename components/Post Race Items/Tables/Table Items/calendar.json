@@ -130,7 +130,7 @@
                 },
                 {
                     "BlockType": "text",
-                    "Source": "[day {Item.Date, Converter=DateToDayOfMonth}] [{Item.Date, Converter=DateToMonthInWords}]",
+                    "Source": "[day {Item.DateLocal, Converter=DateToDayOfMonth}] [{Item.DateLocal, Converter=DateToMonthInWords}]",
                     "HorizontalAlignment": "Right",
                     "VerticalAlignment": "Center",
                     "Foreground": "{white}",

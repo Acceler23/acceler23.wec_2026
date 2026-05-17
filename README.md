@@ -2,8 +2,11 @@ ALL RIGHTS RESERVED TO FIAWEC
 
 _____________THEME OPTIONS_____________
 
-1 Table Page
-    Cicles Between pages of all the renders 
+1   General   
+    1 Table Page
+        Cicles Between pages of all the renders 
+    2 Show Position Jump in Statistcs
+        Only apply for statistics renders
 
 2 WEC Mode
     1 WEC Colors
@@ -22,6 +25,21 @@ _____________THEME OPTIONS_____________
 4 Global Options
     1 Card Track Name Size
         Font Size for the Track Name that appears on the left side
+    2 Replace Positions
+        NOT RECOMENDED. It replaces the Position item for a math equasion
+
+5 Calendar
+    1 Show Only Next Event
+        Apply to calendar render for the next race information
+    2 Calendar event to Render
+        Indicates what round you want to render from the calendar
+    3 Qualyfing Number to Render
+        Only Apply for Multiclass Seasons, 0=Single Qualy; 1=Q1; 2=Q2
+
+6 Open Session Statistics
+    Choose what type of data will be rendered
+7 Open Standings Statistics
+    Choose what type of data will be rendered
 
 
 _____________Custom Images_____________
