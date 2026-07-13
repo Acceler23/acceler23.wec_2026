@@ -1,0 +1,127 @@
+[
+    {
+        "ComponentName": "Media_RaceSession_P1",
+        "BlockType": "canvas",
+        "Height": 1500,
+        "Width": 1200,
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "MediaRace_Logos",
+                "PositionY": 44
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_HeaderRace",
+                "PositionY": 255
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_ClassHead_Race",
+                "PositionX": 30,
+                "PositionY": 548
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "PositionX": 66,
+                "PositionY": 700,
+                "Spacing": 13,
+                "ItemStackOptions": {
+                    "ItemSource": "{Session.Drivers}",
+                    "IndexEnd": 3,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "MediaTable_RaceItem",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderType2": "<renderType>"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "MediaSession_BottomPages",
+                "PositionX": 0,
+                "PositionY": 1465
+            }
+        ]
+    },
+    {
+        "ComponentName": "Media_Standings_P1",
+        "BlockType": "canvas",
+        "Height": 1500,
+        "Width": 1200,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Width": 1200,
+                "Items": [
+                    {
+                        "BlockType": "dock",
+                        "HorizontalAlignment": "Center",
+                        "BackgroundImage": "Media_items/standing/logo_bg.png",
+                        "Height": 152,
+                        "Width": 616,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{Season.LightLogotypePath}",
+                                "Height": 140,
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_HeaderStandings",
+                "PositionY": 238
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_ClassHead_Standing",
+                "PositionY": 520,
+                "PositionX": 30
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "PositionX": 35,
+                "PositionY": 700,
+                "Spacing": 18,
+                "Triggers": [
+                    {
+                        "Condition": "<renderType>",
+                        "ConditionValue": "team",
+                        "Property": "ItemStackOptions.ItemSource",
+                        "Value": "{Standings.Teams}"
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexEnd": 3,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "MediaTable_StandingItem",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderType2": "<renderType>"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "MediaStandings_BottomPages",
+                "PositionX": 0,
+                "PositionY": 1465
+            }
+        ]
+    }
+]

@@ -1,0 +1,610 @@
+[
+    // fastest lap
+    {
+        "ComponentName": "TableStandingSingle_FastestLap",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "OrderByDescending": "RaceDetails.FastestLapWinsCount",
+            "OrderBy2": "RaceDetails.AverageFastestLapGapToLeader",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_SingleStats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "position": "{Item.Index, Converter=NumberAdd, Parameter=1}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Position\nin track]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageFastestLapPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Fastests\nlap count]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.FastestLapWinsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average\ngap]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageFastestLapGapToLeader}"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    // Max Speed
+    {
+        "ComponentName": "TableStandingSingle_MaxSpeed",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "OrderByDescending": "RaceDetails.MaxSpeedWinsCount",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_SingleStats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "position": "{Item.Index, Converter=NumberAdd, Parameter=1}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Position\nin track]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageMaxSpeedPosition, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Max\nspeed]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.MaxSpeedWinsCount, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Speed\n(Km/h)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.BestMaxSpeed, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average\nmax speed]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageMaxSpeed}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Gap]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageMaxSpeedGapToLeaderKmh}"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    // Overtakes
+    {
+        "ComponentName": "TableStandingSingle_Overtakes",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "OrderByDescending": "RaceDetails.TotalOvertakes",
+            "OrderBy2": "RaceDetails.TotalPositionsLost",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_SingleStats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "position": "{Item.Index, Converter=NumberAdd, Parameter=1}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Overtakes]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalOvertakes, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average\novertakes]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AverageOvertakesPerRace, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Best\novertakes]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.BestOvertakesInRace}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Lost\npositions]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalPositionsLost, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average\nlost positions]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AveragePositionsLostPerRace, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    // laps
+    {
+        "ComponentName": "TableStandingSingle_Laps",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "OrderByDescending": "RaceDetails.TotalLaps",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_SingleStats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "position": "{Item.Index, Converter=NumberAdd, Parameter=1}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Total\nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalLaps, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Possible\nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalPossibleLaps, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[%]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.LapCompletionPercent}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Season\ncoverage]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.SeasonLapCoveragePercent}"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    // lead
+    {
+        "ComponentName": "TableStandingSingle_LeadLaps",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "OrderByDescending": "RaceDetails.TotalLeadLaps",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_SingleStats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "position": "{Item.Index, Converter=NumberAdd, Parameter=1}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Lead\nlaps]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalLeadLaps, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Lead\ndistance]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalLeadDistance, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Lead\ndistance (Km)]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalLeadDistanceKm, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    // pits
+    {
+        "ComponentName": "TableStandingSingle_Pits",
+        "BlockType": "table",
+        "TableOptions": {
+            "ItemsSource": "{Standings.Drivers}",
+            "OrderByDescending": "RaceDetails.TotalPitStops",
+            "HeaderTemplate": {
+                "BlockType": "text",
+                "Style": "TableStats_Header"
+            },
+            "Columns": [
+                {
+                    "Header": "[Pos.]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Position_SingleStats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "position": "{Item.Index, Converter=NumberAdd, Parameter=1}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Competitors]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "LiveryLine_Stats"
+                    }
+                },
+                {
+                    "Header": "[N°]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Number_Stats"
+                    }
+                },
+                {
+                    "Header": "[Driver]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Driver_Stats",
+                        "RenderIf": "{ShowDriver_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Team]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Team_Stats",
+                        "RenderIf": "{ShowTeam_Stats}"
+                    }
+                },
+                {
+                    "Header": "[Pits]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.TotalPitStops, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                },
+                {
+                    "Header": "[Average\npits per race]",
+                    "Template": {
+                        "BlockType": "component",
+                        "Component": "Generic_Stats",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "data": "{Item.RaceDetails.AveragePitStopsPerRace, Converter=NumberZeroToEmpty}"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+]

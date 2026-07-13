@@ -150,30 +150,36 @@
     },
     {
         "ComponentName": "tableLogo",
-        "BlockType": "dock",
-        "Height": "{TableLineHeight}",
-        "Width": 58,
-        "BackgroundImage": "PostRace/logo_bg",
-        "ColorizeBackground": {
-            "Color": "{white}"
-        },
-        "Triggers": [
-            { "Trigger": "CarColor_ImageBg" },
-            { "Trigger": "TeamColor_ImageBg" },
-            { "Trigger": "WEC_Team_ImageBG" },
-            { "Trigger": "WEC_Car_ImageBG" },
-        ],
+        "BlockType": "canvas",
         "Items": [
             {
-                "BlockType": "image",
-                "Height": 40,
-                "HorizontalAlignment": "Center",
-                "VerticalAlignment": "Center",
+                "BlockType": "dock",
+                "Height": "{TableLineHeight}",
+                "Width": 58,
+                "BackgroundImage": "PostRace/logo_bg",
+                "ColorizeBackground": {
+                    "Color": "{white}"
+                },
                 "Triggers": [
-                    { "Trigger": "Car_LogotypeDefault" },
-                    { "Trigger": "Team_LogotypeVendor" },
-                    { "Trigger": "WEC_Car_Logotype" },
-                    { "Trigger": "WEC_Team_Logotype" },
+                    { "Trigger": "CarColor_ImageBg" },
+                    { "Trigger": "TeamColor_ImageBg" },
+                    { "Trigger": "WEC_Team_ImageBG" },
+                    { "Trigger": "WEC_Car_ImageBG" },
+                ],
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 40,
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeVendor" },
+                            { "Trigger": "WEC_Car_Logotype" },
+                            { "Trigger": "WEC_Team_Logotype" },
+                        ]
+                    }
                 ]
             }
         ]

@@ -1,0 +1,8 @@
+[
+    {
+        "TriggerName": "StandingsName_Multiclass",
+        "Condition": "{Standings.IsHaveRacingClass}",
+        "Property": "Source",
+        "Value": "[{Standings.RacingClass.Name, Converter=StringToUpperString}]"
+    }
+]

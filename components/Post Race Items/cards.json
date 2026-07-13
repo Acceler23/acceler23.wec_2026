@@ -240,6 +240,7 @@
                                         "VerticalAlignment": "Center",
                                         "Triggers": [
                                             { "Trigger": "Car_LogotypeDefault" },
+                                            { "Trigger": "Team_LogotypeDefault" },
                                             { "Trigger": "Team_LogotypeVendor" },
                                             { "Trigger": "WEC_Team_Logotype" },
                                             { "Trigger": "WEC_Car_Logotype" },
@@ -488,6 +489,7 @@
                                                 "VerticalAlignment": "Center",
                                                 "Triggers": [
                                                     { "Trigger": "Car_LogotypeDefault" },
+                                                    { "Trigger": "Team_LogotypeDefault" },
                                                     { "Trigger": "Team_LogotypeVendor" },
                                                     { "Trigger": "WEC_Team_Logotype" },
                                                     { "Trigger": "WEC_Car_Logotype" },
@@ -651,6 +653,7 @@
                                                 "VerticalAlignment": "Center",
                                                 "Triggers": [
                                                     { "Trigger": "Car_LogotypeDefault" },
+                                                    { "Trigger": "Team_LogotypeDefault" },
                                                     { "Trigger": "Team_LogotypeVendor" },
                                                     { "Trigger": "WEC_Team_Logotype" },
                                                     { "Trigger": "WEC_Car_Logotype" },

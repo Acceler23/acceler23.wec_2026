@@ -267,7 +267,14 @@
                 "ParticipationDetails",
                 "PenaltiesDetails",
                 "PositionsDetails",
-                "DeepRatingsDetails"
+                "DeepRatingsDetails",
+                "Fastest Lap",
+                "Max Speed",
+                "Overtakes",
+                "Laps",
+                "Lead Laps",
+                "Pit Stops",
+                "Stints"
             ],
             "DefaultValue": "Default"
         },

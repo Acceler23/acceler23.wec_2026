@@ -40,12 +40,36 @@
         "Value": "{Item.Team.DarkLogotypePath}"
     },
     {
+        "TriggerName": "Team_LogotypeLight",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Team.LightLogotypePath}"
+    },
+    {
         "TriggerName": "Team_LogotypeVendor",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Teams",
         "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
         "Property": "Source",
         "Value": "{Item.Team.Car.Vendor.LogotypePath}"
+    },
+    {
+        "TriggerName": "Team_LogotypeVendorLight",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Team.Car.Vendor.LightLogotypePath}"
+    },
+    {
+        "TriggerName": "Team_LogotypeVendorDark",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Team.Car.Vendor.DarkLogotypePath}"
     },
     {
         "TriggerName": "TeamColor_BackgroundP1",
@@ -71,5 +95,13 @@
         "ConditionValue": "Teams",
         "Property": "Source",
         "Value": "[{Item.Team.FullName, Converter=StringToUpperString}]"
+    },
+    {
+        "TriggerName": "TeamColor_ImageColorize",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "ConditionAnd": "{Item.Team.Color, Converter=EmptyObjectToFalse}",
+        "Property": "Colorize.Color",
+        "Value": "{Item.Team.Color}"
     },
 ]

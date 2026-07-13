@@ -1,0 +1,27 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "Media_RaceSession_P1",
+                "RenderIf": "{TablePage, Converter=NumberEquals, Parameter=1}",
+                "ComponentOptions": {
+                    "Vars": {
+                        "renderType": "team"
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_RaceSession_P2",
+                "RenderIf": "{TablePage, Converter=NumberGreater, Parameter=1}",
+                "ComponentOptions": {
+                    "Vars": {
+                        "renderType": "team"
+                    }
+                }
+            }
+        ]
+    }
+}

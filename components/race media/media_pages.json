@@ -1,0 +1,96 @@
+[
+    {
+        "ComponentName": "Media_RaceSession_P2",
+        "BlockType": "canvas",
+        "Height": 1500,
+        "Width": 1200,
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "Media_ClassHead_Race",
+                "PositionX": 30,
+                "PositionY": 69
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "PositionX": 66,
+                "PositionY": 200,
+                "Spacing": 13,
+                "Triggers": [
+                    { "Trigger": "MediaTablePage" }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Session.Drivers}",
+                    "IndexStart": 4,
+                    "Limit": 7,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "MediaTable_RaceItem",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderType2": "<renderType>"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "MediaSession_BottomPages",
+                "PositionX": 0,
+                "PositionY": 1465
+            }
+        ]
+    },
+    {
+        "ComponentName": "Media_Standings_P2",
+        "BlockType": "canvas",
+        "Height": 1500,
+        "Width": 1200,
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "Media_ClassHead_Standing",
+                "PositionX": 30,
+                "PositionY": 69
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "PositionX": 30,
+                "PositionY": 195,
+                "Spacing": 18,
+                "Triggers": [
+                    { "Trigger": "MediaTablePage" },
+                    {
+                        "Condition": "<renderType>",
+                        "ConditionValue": "team",
+                        "Property": "ItemStackOptions.ItemSource",
+                        "Value": "{Standings.Teams}"
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": 4,
+                    "Limit": 7,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "MediaTable_StandingItem",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "renderType2": "<renderType>"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "MediaStandings_BottomPages",
+                "PositionX": 0,
+                "PositionY": 1465
+            }
+        ]
+    }
+]

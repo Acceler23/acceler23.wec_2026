@@ -40,6 +40,14 @@
         "Value": "{Item.Car.Vendor.DarkLogotypePath}"
     },
     {
+        "TriggerName": "Car_LogotypeLight",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.LightLogotypePath}"
+    },
+    {
         "TriggerName": "CarColor_BackgroundP1",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Cars",
@@ -63,5 +71,13 @@
         "ConditionValue": "Cars",
         "Property": "Source",
         "Value": "[{Item.Car.Name, Converter=StringToUpperString}]"
+    },
+    {
+        "TriggerName": "CarColor_ImageColorize",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "ConditionAnd": "{Item.Car.Color, Converter=EmptyObjectToFalse}",
+        "Property": "Colorize.Color",
+        "Value": "{Item.Car.Color}"
     },
 ]

@@ -166,6 +166,84 @@
                                                         "isTeam": false
                                                     }
                                                 }
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TableStandingSingle_FastestLap",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "Fastest Lap",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TableStandingSingle_MaxSpeed",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "Max Speed",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TableStandingSingle_Overtakes",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "Overtakes",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TableStandingSingle_Laps",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "Laps",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TableStandingSingle_LeadLaps",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "Lead Laps",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "component",
+                                                "Component": "TableStandingSingle_Pits",
+                                                "RenderIf": false,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{StandingsStatsEnum}",
+                                                        "ConditionValue": "Pit Stops",
+                                                        "Property": "RenderIf",
+                                                        "Value": true
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }

@@ -4,5 +4,11 @@
         "Condition": "{Item.Index, Converter=NumberIsEven}",
         "Property": "Background",
         "Value": "{babyBlue}"
+    },
+    {
+        "TriggerName": "MediaTablePage",
+        "Condition": "{TablePage, Converter=NumberGreater, Parameter=1}",
+        "Property": "ItemStackOptions.IndexStart",
+        "Value": "{{{TablePage, Converter=NumberSubtract, Parameter=2}, Converter=NumberMultiply, Parameter=7}, Converter=NumberAdd, Parameter=4}"
     }
 ]

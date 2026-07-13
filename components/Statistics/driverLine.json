@@ -29,6 +29,35 @@
         ]
     },
     {
+        "ComponentName": "Position_SingleStats",
+        "BlockType": "dock",
+        "MinWidth": 45,
+        "Height": 67,
+        "Background": "{white}",
+        "Triggers": [
+            { "Trigger": "TableStatsBg" }
+        ],
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "<position>",
+                "Style": "Stats_Header",
+                "FontSize": 24,
+                "Padding": "5",
+                "HorizontalAlignment": "Center",
+                "VerticalAlignment": "Center",
+                
+                "Triggers": [
+                    {
+                        "Condition": "{PositionIndex}",
+                        "Property": "Source",
+                        "Value": "{Item.Index, Converter=NumberAdd, Parameter=1}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "ComponentName": "LiveryLine_Stats",
         "BlockType": "dock",
         "Width": 216,
@@ -55,6 +84,7 @@
                         "Triggers": [
                             { "Trigger": "Car_LogotypeDark" },
                             { "Trigger": "Team_LogotypeDark" },
+                            { "Trigger": "Team_LogotypeVendorDark" },
                             { "Trigger": "WEC_Car_GrayLogotype" },
                             { "Trigger": "WEC_Team_GrayLogotype" }
                         ]
@@ -197,6 +227,7 @@
                         "Triggers": [
                             { "Trigger": "Car_LogotypeDark" },
                             { "Trigger": "Team_LogotypeDark" },
+                            { "Trigger": "Team_LogotypeVendorDark" },
                             { "Trigger": "WEC_Car_GrayLogotype" },
                             { "Trigger": "WEC_Team_GrayLogotype" },
                         ]
@@ -231,6 +262,7 @@
                         "Triggers": [
                             { "Trigger": "Car_LogotypeDark" },
                             { "Trigger": "Team_LogotypeDark" },
+                            { "Trigger": "Team_LogotypeVendorDark" },
                             { "Trigger": "WEC_Car_DarkLogotype" },
                             { "Trigger": "WEC_Team_DarkLogotype" }
                         ]

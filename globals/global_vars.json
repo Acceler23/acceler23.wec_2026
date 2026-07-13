@@ -149,4 +149,18 @@
     "Font_CalendarNextDateHead": "Archivo-SemiBold",
     "Font_CalendarNextSessionName": "Archivo_SemiExpanded-Regular",
     "Font_CalendarNextSessionTime": "Archivo_SemiExpanded-Italic",
+
+    "Font_MediaHeader": "DrukWide-SuperItalic-Trial",
+    "Font_MediaPosition": "Druk-Medium-Trial",
+    "Font_MediaNumberation": "Archivo_ExtraCondensed-Thin",
+    "Font_MediaNumber": "Archivo_SemiExpanded-SemiBoldItalic",
+    "Font_MediaDriverName": "Archivo_SemiExpanded-Bold",
+
+    "Font_MediaNextRace": "Druk-MediumItalic-Trial",
+    "Font_MediaNextRaceDate": "Druk-HeavyItalic-Trial",
+    "Font_MediaNextRaceAlt": "Archivo-BoldItalic",
+    "Font_MediaBottomPages": "Archivo-BoldItalic",
+    "Font_MediaParts": "Archivo-ItallicBold",
+    "Font_MediaPTStext": "DrukWide-BoldItalic-Trial",
+    "Font_MediaPoints": "DrukWide-MediumItalic-Trial"
 }

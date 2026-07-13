@@ -1,0 +1,383 @@
+[
+    {
+        "ComponentName": "MediaRace_Logos",
+        "BlockType": "canvas",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/trackHead.png"
+            },
+            {
+                "BlockType": "dock",
+                "Height": 105,
+                "Width": 180,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Height": 90
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Height": 105,
+                "Width": 240,
+                "PositionX": 180,
+                "PositionY": 5,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Session.Track.LightLogotypePath}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Height": 100
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "Media_HeaderRace",
+        "BlockType": "dock",
+        "Orientation": "Vertical",
+        "Width": 1200,
+        "Spacing": -11,
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[RACE]",
+                "FontName": "{Font_MediaHeader}",
+                "Foreground": "{white}",
+                "FontSize": 115,
+                "Padding": "5",
+                "HorizontalAlignment": "Center",
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            },
+            {
+                "BlockType": "text",
+                "Source": "[RESULTS]",
+                "FontName": "{Font_MediaHeader}",
+                "Foreground": "{lightBlue}",
+                "FontSize": 115,
+                "Padding": "5",
+                "HorizontalAlignment": "Center",
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "Media_HeaderStandings",
+        "BlockType": "dock",
+        "Orientation": "Vertical",
+        "Width": 1200,
+        "Spacing": -11,
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[OVERALL]",
+                "FontName": "{Font_MediaHeader}",
+                "Foreground": "{white}",
+                "FontSize": 115,
+                "Padding": "5",
+                "HorizontalAlignment": "Center",
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                },
+                "Triggers": [
+                    {
+                        "Trigger": "StandingsName_Multiclass"
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[STANDINGS]",
+                "FontName": "{Font_MediaHeader}",
+                "Foreground": "{lightBlue}",
+                "FontSize": 115,
+                "Padding": "5",
+                "HorizontalAlignment": "Center",
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "Media_ClassHead_Race",
+        "BlockType": "canvas",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/classHead.png"
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 580,
+                "PositionY": 2,
+                "Height": 97,
+                "Width": 529,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.GrayedLogotypePath}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Width": 600,
+                        "Colorize": {
+                            "Color": "#010c22",
+                            "ColorBlendingMode": "Darken"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[{Session.RacingClass.Name, Converter=StringToUpperString}]",
+                "Foreground": "{white}",
+                "FontName": "{MulticalssFont}",
+                "FontSize": 28,
+                "Padding": "5",
+                "PositionX": 116,
+                "PositionY": 32,
+                "Triggers": [
+                    {
+                        "Condition": "{Session.RacingClass.Name, Converter=EmptyObjectToTrue}",
+                        "Property": "Source",
+                        "Value": "[OVERALL]"
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[LAST]",
+                "Foreground": "{lightBlue}",
+                "FontName": "{MulticalssFont}",
+                "FontSize": 28,
+                "Padding": "5",
+                "PositionX": 600,
+                "PositionY": 32
+            },
+            {
+                "BlockType": "stack",
+                "PositionX": 725,
+                "PositionY": 12,
+                "Height": 90,
+                "Width": 365,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Session.SessionName, Converter=StringToUpperString}]",
+                        "FontName": "{Font_MediaNextRaceDate}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "FontSize": 57,
+                        "Foreground": "{white}",
+                        "Padding": "5",
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        }
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": ":",
+                        "FontName": "{Font_MediaNextRaceAlt}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
+                        "FontSize": 40,
+                        "Foreground": "{white}",
+                        "Padding": "2,25,2,5",
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        }
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[day {Event.Date, Converter=DateToDayOfMonth}] [Card {Event.Date, Converter=DateToMonthInWords}]",
+                        "FontName": "{Font_MediaNextRaceDate}",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center",
+                        "FontSize": 57,
+                        "Foreground": "{white}",
+                        "Padding": "5",
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "image",
+                "Source": "Media_items/classHead_arrow.png"
+            },
+        ]
+    },
+    {
+        "ComponentName": "Media_ClassHead_Standing",
+        "BlockType": "canvas",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/classHead.png"
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 580,
+                "PositionY": 2,
+                "Height": 97,
+                "Width": 529,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.GrayedLogotypePath}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Width": 600,
+                        "Colorize": {
+                            "Color": "#010c22",
+                            "ColorBlendingMode": "Darken"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "PositionX": 116,
+                "PositionY": 32,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[OVERALL]",
+                        "Foreground": "{white}",
+                        "FontName": "{MulticalssFont}",
+                        "FontSize": 28,
+                        "Padding": "5",
+                        "Triggers": [
+                            { "Trigger": "StandingsName_Multiclass" }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[PT]{TablePage}",
+                        "Foreground": "{white}",
+                        "FontName": "{Font_MediaParts}",
+                        "FontSize": 13,
+                        "Padding": "5",
+                        "VerticalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[NEXT]",
+                "Foreground": "{lightBlue}",
+                "FontName": "{MulticalssFont}",
+                "FontSize": 28,
+                "Padding": "5",
+                "PositionX": 600,
+                "PositionY": 32
+            },
+            {
+                "BlockType": "stack",
+                "PositionX": 725,
+                "PositionY": 12,
+                "Height": 90,
+                "Width": 365,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[RACE]",
+                        "FontName": "{Font_MediaNextRaceDate}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "FontSize": 57,
+                        "Foreground": "{white}",
+                        "Padding": "5",
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        }
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": ":",
+                        "FontName": "{Font_MediaNextRaceAlt}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
+                        "FontSize": 40,
+                        "Foreground": "{white}",
+                        "Padding": "2,25,2,5",
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        }
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Center",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Standings.Events}",
+                            "TakeItemIndex": "{Season.SeasonCurrentNumberEvent}",
+                            "ItemTemplate": {
+                                "BlockType": "text",
+                                "Source": "[day {Item.Date, Converter=DateToDayOfMonth}] [Card {Item.Date, Converter=DateToMonthInWords}]",
+                                "FontName": "{Font_MediaNextRaceDate}",
+                                "HorizontalAlignment": "Right",
+                                "VerticalAlignment": "Center",
+                                "FontSize": 57,
+                                "Foreground": "{white}",
+                                "Padding": "5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            }
+                        }
+                    },
+                ]
+            },
+            {
+                "BlockType": "image",
+                "Source": "Media_items/classHead_arrow.png"
+            }
+        ]
+    },
+    {
+        "ComponentName": "MediaSession_BottomPages",
+        "BlockType": "dock",
+        "Width": 1145,
+        "PositionY": 1465,
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "{TablePage} / {{Session.DriversCount, Converter=NumberDivide, Parameter=7}, Converter=NumberAdd, Parameter=1}",
+                "Foreground": "{white}",
+                "HorizontalAlignment": "Right",
+                "Opacity": 50,
+                "FontName": "{Font_MediaBottomPages}"
+            }
+        ]
+    },
+    {
+        "ComponentName": "MediaStandings_BottomPages",
+        "BlockType": "dock",
+        "Width": 1145,
+        "PositionY": 1465,
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "{TablePage} / {{Season.GridSize, Converter=NumberDivide, Parameter=7}, Converter=NumberAdd, Parameter=1}",
+                "Foreground": "{white}",
+                "HorizontalAlignment": "Right",
+                "Opacity": 50,
+                "FontName": "{Font_MediaBottomPages}"
+            }
+        ]
+    }
+]

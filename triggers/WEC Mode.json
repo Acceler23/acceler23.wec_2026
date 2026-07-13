@@ -136,11 +136,25 @@
         "Value": "{Item.Team.Car.Vendor.DarkLogotypePath}"
     },
     {
-        "TriggerName": "WEC_Car_DarkLogotype",
+        "TriggerName": "WEC_Car_LightLogotype",
         "Condition": "{ReplaceLogos}",
         "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
         "Property": "Source",
-        "Value": "{Item.Car.Vendor.DarkLogotypePath}"
+        "Value": "{Item.Car.Vendor.LightLogotypePath}"
+    },
+    {
+        "TriggerName": "WEC_Team_LightLogotype",
+        "Condition": "{ReplaceLogos}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "Source",
+        "Value": "{Item.Team.Car.Vendor.LightLogotypePath}"
+    },
+    {
+        "TriggerName": "WEC_Car_LightLogotype",
+        "Condition": "{ReplaceLogos}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.LightLogotypePath}"
     },
 
     //track name
@@ -172,7 +186,7 @@
         "TriggerName": "WEC_TrackName_Standings",
         "Condition": "{Track_Rename}",
         "Property": "Source",
-        "Value": "[{Standings.Track.CircuitOrigin, Converter=StringToLowerString}]"
+        "Value": "[{Standings.LastEvent.Track.CircuitOrigin, Converter=StringToLowerString}]"
     },
     {
         "TriggerName": "WEC_TrackName_CardHead_Standings",
@@ -180,7 +194,7 @@
         "Setters": [
             {
                 "Property": "Source",
-                "Value": "[{Standings.Track.CircuitOrigin, Converter=StringToLowerString}]"
+                "Value": "[{Standings.LastEvent.Track.CircuitOrigin, Converter=StringToLowerString}]"
             },
             {
                 "Property": "FontSize",
@@ -215,5 +229,19 @@
                 "Value": "{{Item.Track.CircuitOrigin}_LineSpace}"
             }
         ]
+    },
+    {
+        "TriggerName": "WEC_TeamColor_ImageColorize",
+        "Condition": "{Recolor_WEC}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "Colorize.Color",
+        "Value": "{{Item.Team.Car.Vendor.Name}_Color}"
+    },
+    {
+        "TriggerName": "WEC_CarColor_ImageColorize",
+        "Condition": "{Recolor_WEC}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "Colorize.Color",
+        "Value": "{{Item.Car.Vendor.Name}_Color}"
     },
 ]

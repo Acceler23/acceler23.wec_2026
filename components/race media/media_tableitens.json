@@ -1,0 +1,372 @@
+[
+    {
+        "ComponentName": "MediaTable_RaceItem",
+        "BlockType": "canvas",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/race/odd_bg.png",
+                "Width": 1058,
+                "Height": 165,
+                "Triggers": [
+                    {
+                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                        "Property": "Source",
+                        "Value": "Media_items/race/even_bg.png"
+                    }
+                ]
+            },
+            {
+                "BlockType": "image",
+                "Source": "Media_items/race/colorShape.png",
+                "Width": 1058,
+                "Height": 165,
+                "Triggers": [
+                    { "Trigger": "CarColor_ImageColorize" },
+                    { "Trigger": "TeamColor_ImageColorize" },
+                    { "Trigger": "WEC_CarColor_ImageColorize" },
+                    { "Trigger": "WEC_TeamColor_ImageColorize" }
+                ],
+                "Colorize": {
+                    "Color": "{white}"
+                }
+            },
+            {
+                "BlockType": "image",
+                "Source": "Media_items/race/star.png",
+                "Width": 1058,
+                "Height": 165
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 23,
+                "PositionY": 10,
+                "Height": 147,
+                "Width": 154,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "P{Item.Position}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Top",
+                        "Foreground": "{white}",
+                        "FontName": "{Font_MediaPosition}",
+                        "FontSize": 94,
+                        "PaddingTop": 93,
+                        "Triggers": [
+                            {
+                                "Condition": "{Item.IsFinished, Converter=BoolReverse}",
+                                "Property": "Source",
+                                "Value": "[{Item.Status, Converter=StringToUpperString}]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "PositionX": 240,
+                "PositionY": 12,
+                "Width": 140,
+                "Height": 148,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[N°]",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Foreground": "{white}",
+                        "FontName": "{Font_MediaNumberation}",
+                        "FontSize": 25,
+                        "Opacity": 80
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "{Item.{CarNumber}}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Foreground": "{white}",
+                        "FontName": "{Font_MediaNumber}",
+                        "FontSize": 40,
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 395,
+                "PositionY": 23,
+                "Height": 125,
+                "Width": 198,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Item.Car.Vendor.LightLogotypePath}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Height": 90,
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeLight" },
+                            { "Trigger": "Team_LogotypeLight" },
+                            { "Trigger": "Team_LogotypeVendorLight" },
+                            { "Trigger": "WEC_Car_LightLogotype" },
+                            { "Trigger": "WEC_Team_LightLogotype" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 640,
+                "PositionY": 23,
+                "Height": 125,
+                "Width": 312,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Width": 312,
+                        "Height": 125,
+                        "FontSize": 24,
+                        "FontName": "{Font_MediaDriverName}",
+                        "Foreground": "{white}",
+                        "Padding": "5",
+                        "TextOptions": {
+                            "FontStyle": "Bold",
+                            "Wrap": true
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "<renderType2>",
+                                "ConditionValue": "driver",
+                                "Property": "Source",
+                                "Value": "{Item.Driver.{DriverName}, Converter=StringToUpperString}"
+                            },
+                            {
+                                "Condition": "<renderType2>",
+                                "ConditionValue": "team",
+                                "ConditionAnd": "{Season.LineupsBasedType}",
+                                "ConditionAndValue": "Teams",
+                                "Property": "Source",
+                                "Value": "{Item.Team.FullName, Converter=StringToUpperString}"
+                            },
+                            {
+                                "Condition": "<renderType2>",
+                                "ConditionValue": "team",
+                                "ConditionAnd": "{Season.LineupsBasedType}",
+                                "ConditionAndValue": "Cars",
+                                "Property": "Source",
+                                "Value": "{Item.Car.Name, Converter=StringToUpperString}"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "MediaTable_StandingItem",
+        "BlockType": "canvas",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/standing/odd_bg.png",
+                "Width": 1105,
+                "Height": 161,
+                "Triggers": [
+                    {
+                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                        "Property": "Source",
+                        "Value": "Media_items/standing/even_bg.png"
+                    }
+                ]
+            },
+            {
+                "BlockType": "image",
+                "Source": "Media_items/standing/colorShape.png",
+                "Width": 1105,
+                "Height": 161,
+                "Triggers": [
+                    { "Trigger": "CarColor_ImageColorize" },
+                    { "Trigger": "TeamColor_ImageColorize" },
+                    { "Trigger": "WEC_CarColor_ImageColorize" },
+                    { "Trigger": "WEC_TeamColor_ImageColorize" }
+                ],
+                "Colorize": {
+                    "Color": "{white}"
+                }
+            },
+            {
+                "BlockType": "image",
+                "Source": "Media_items/standing/star.png",
+                "Width": 1105,
+                "Height": 161
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 23,
+                "PositionY": 5,
+                "Height": 147,
+                "Width": 130,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "{Item.Position}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Top",
+                        "Foreground": "{white}",
+                        "FontName": "{Font_MediaPosition}",
+                        "FontSize": 94,
+                        "PaddingTop": 93
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "PositionX": 212,
+                "PositionY": 12,
+                "Width": 130,
+                "Height": 148,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[N°]",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Foreground": "{white}",
+                        "FontName": "{Font_MediaNumberation}",
+                        "FontSize": 25,
+                        "Opacity": 80
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "{Item.{CarNumber}}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Foreground": "{white}",
+                        "FontName": "{Font_MediaNumber}",
+                        "FontSize": 40,
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 345,
+                "PositionY": 23,
+                "Height": 125,
+                "Width": 150,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Item.Car.Vendor.LightLogotypePath}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Height": 80,
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeLight" },
+                            { "Trigger": "Team_LogotypeLight" },
+                            { "Trigger": "Team_LogotypeVendorLight" },
+                            { "Trigger": "WEC_Car_LightLogotype" },
+                            { "Trigger": "WEC_Team_LightLogotype" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 565,
+                "PositionY": 22,
+                "Height": 125,
+                "Width": 312,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Width": 312,
+                        "Height": 125,
+                        "FontSize": 24,
+                        "FontName": "{Font_MediaDriverName}",
+                        "Foreground": "{white}",
+                        "Padding": "5",
+                        "TextOptions": {
+                            "FontStyle": "Bold",
+                            "Wrap": true
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "<renderType2>",
+                                "ConditionValue": "driver",
+                                "Property": "Source",
+                                "Value": "{Item.Driver.{DriverName}, Converter=StringToUpperString}"
+                            },
+                            {
+                                "Condition": "<renderType2>",
+                                "ConditionValue": "team",
+                                "ConditionAnd": "{Season.LineupsBasedType}",
+                                "ConditionAndValue": "Teams",
+                                "Property": "Source",
+                                "Value": "{Item.Team.FullName, Converter=StringToUpperString}"
+                            },
+                            {
+                                "Condition": "<renderType2>",
+                                "ConditionValue": "team",
+                                "ConditionAnd": "{Season.LineupsBasedType}",
+                                "ConditionAndValue": "Cars",
+                                "Property": "Source",
+                                "Value": "{Item.Car.Name, Converter=StringToUpperString}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "PositionX": 905,
+                "PositionY": 48,
+                "Height": 70,
+                "Width": 153,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Bottom",
+                        "Height": 58,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "{Item.Points}",
+                                "FontName": "{Font_MediaPoints}",
+                                "FontSize": 37,
+                                "Padding": "5",
+                                "Foreground": "{white}",
+                                "VerticalAlignment": "Center"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[PTS]",
+                                "FontName": "{Font_MediaPTStext}",
+                                "FontSize": 14,
+                                "Padding": "5",
+                                "Foreground": "{darkPurple}",
+                                "VerticalAlignment": "Center"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
