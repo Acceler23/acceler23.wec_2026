@@ -1,4 +1,5 @@
 [
+    //Race
     {
         "ComponentName": "Media_RaceSession_P1",
         "BlockType": "canvas",
@@ -32,12 +33,7 @@
                     "IndexEnd": 3,
                     "ItemTemplate": {
                         "BlockType": "component",
-                        "Component": "MediaTable_RaceItem",
-                        "ComponentOptions": {
-                            "Vars": {
-                                "renderType2": "<renderType>"
-                            }
-                        }
+                        "Component": "MediaTable_RaceItem"
                     }
                 }
             },
@@ -49,6 +45,94 @@
             }
         ]
     },
+    //Qualy
+    {
+        "ComponentName": "Media_QualSession_P1",
+        "BlockType": "canvas",
+        "Height": 1500,
+        "Width": 1200,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Width": 1200,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "HorizontalAlignment": "Center",
+                        "BackgroundImage": "Media_items/qualy/header.png",
+                        "Height": 128,
+                        "Padding": "150, 0",
+                        "Width": "*",
+                        "Spacing": 10,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "rolex_clean",
+                                "Height": 50,
+                                "VerticalAlignment": "Center",
+                                "Colorize": {
+                                    "Color": "{white}"
+                                }
+                            },
+                            {
+                                "BlockType": "shape",
+                                "Height": 50,
+                                "Width": 1,
+                                "VerticalAlignment": "Center",
+                                "ShapeOptions": {
+                                    "Fill": "{white}"
+                                }
+                            },
+                            {
+                                "BlockType": "image",
+                                "Source": "{Season.LightLogotypePath}",
+                                "Height": 70,
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center"
+                            },
+                            {
+                                "BlockType": "component",
+                                "Component": "TrackHeader_Qualy",
+                                "VerticalAlignment": "Center"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_HeaderQualy",
+                "PositionY": 255
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_ClassHead_Qualy",
+                "PositionY": 532
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "PositionX": 66,
+                "PositionY": 698,
+                "Spacing": 14,
+                "ItemStackOptions": {
+                    "ItemSource": "{Session.Drivers}",
+                    "IndexEnd": 3,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "MediaTable_QualyItem"
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "MediaSession_BottomPages",
+                "PositionX": 0,
+                "PositionY": 1465
+            }
+        ]
+    },
+    //Standing
     {
         "ComponentName": "Media_Standings_P1",
         "BlockType": "canvas",

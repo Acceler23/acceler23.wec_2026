@@ -1,0 +1,195 @@
+[
+    //qualy
+    {
+        "ComponentName": "MediaQualy_SinglePage",
+        "BlockType": "stack",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "Media_QualSession_P1",
+                "RenderIf": "{TablePage, Converter=NumberEquals, Parameter=1}"
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_QualSession_P2",
+                "RenderIf": "{TablePage, Converter=NumberGreater, Parameter=1}"
+            }
+        ]
+    },
+    {
+        "ComponentName": "MediaQualy_MultiPage",
+        "Orientation": "Horizontal",
+        "BlockType": "stack",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "Media_QualSession_P1"
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_QualSession_P3",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=4}",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 4,
+                        "page2": 2
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_QualSession_P3",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=11}",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 11,
+                        "page2": 3
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_QualSession_P3",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=18}",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 18,
+                        "page2": 4
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=25}",
+                "Component": "Media_QualSession_P3",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 25,
+                        "page2": 5
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=32}",
+                "Component": "Media_QualSession_P3",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 32,
+                        "page2": 6
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=39}",
+                "Component": "Media_QualSession_P3",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 39,
+                        "page2": 7
+                    }
+                }
+            }
+        ]
+    },
+    //race
+    {
+        "ComponentName": "MediaRace_SinglePage",
+        "BlockType": "stack",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "Media_RaceSession_P1",
+                "RenderIf": "{TablePage, Converter=NumberEquals, Parameter=1}"
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_RaceSession_P2",
+                "RenderIf": "{TablePage, Converter=NumberGreater, Parameter=1}"
+            }
+        ]
+    },
+    {
+        "ComponentName": "MediaRace_MultiPage",
+        "BlockType": "stack",
+        "Orientation": "Horizontal",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "Media_RaceSession_P1",
+                "ComponentOptions": {
+                    "Vars": {
+                        "renderType": "driver"
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_RaceSession_P3",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=4}",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 4,
+                        "page2": 2
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_RaceSession_P3",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=11}",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 11,
+                        "page2": 3
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "Component": "Media_RaceSession_P3",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=18}",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 18,
+                        "page2": 4
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=25}",
+                "Component": "Media_RaceSession_P3",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 25,
+                        "page2": 5
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=32}",
+                "Component": "Media_RaceSession_P3",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 32,
+                        "page2": 6
+                    }
+                }
+            },
+            {
+                "BlockType": "component",
+                "RenderIf": "{Session.DriversCountConverter=NumberGreater, Parameter=39}",
+                "Component": "Media_RaceSession_P3",
+                "ComponentOptions": {
+                    "Vars": {
+                        "part": 39,
+                        "page2": 7
+                    }
+                }
+            }
+        ]
+    }
+]

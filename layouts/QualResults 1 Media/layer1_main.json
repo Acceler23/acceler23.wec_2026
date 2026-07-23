@@ -1,0 +1,17 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "MediaQualy_SinglePage",
+                "RenderIf": "{Media_ShowMultiPages, Converter=BoolReverse}"
+            },
+            {
+                "BlockType": "component",
+                "Component": "MediaQualy_MultiPage",
+                "RenderIf": "{Media_ShowMultiPages}"
+            }
+        ]
+    }
+}

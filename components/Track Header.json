@@ -44,7 +44,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{white}",
                                 "TextOptions": {
@@ -54,7 +54,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{lightBlue}",
                                 "TextOptions": {
@@ -66,7 +66,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[CHAMPIONSHIP]",
-                        "FontName": "{SeasonFontHeader}",
+                        "FontName": "{Archivo_Bold}",
                         "FontSize": 12,
                         "Foreground": "{white}",
                         "TextOptions": {
@@ -77,9 +77,9 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Session.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
                 "Foreground": "{white}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
                 "FontSize": "{TrackNameSize}",
                 "Height": 95,
@@ -99,12 +99,63 @@
                 "BlockType": "text",
                 "Source": "{Event.DateLocal, Converter=DateToYear}",
                 "Foreground": "{darkPurple}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "FontSize": 20,
                 "Width": 90,
                 "Padding": "5",
                 "PositionX": 35,
                 "PositionY": 171,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Center",
+                    "VerticalAlignment": "Center"
+                }
+            }
+        ]
+    },
+    //qualy
+    {
+        "ComponentName": "TrackHeader_Qualy",
+        "BlockType": "canvas",
+        //"Width": 341,
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "qualyHeader_cut",
+                "Height": 91,
+                "Colorize": {
+                    "Color": "{white}"
+                }
+            },
+            {
+                "BlockType": "text",
+                "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                "Foreground": "{whiteGray}",
+                "FontName": "{DrukWide_Bold_Itallic}",
+                "VerticalAlignment": "Center",
+                "FontSize": "{TrackNameSize, Converter=NumberDivide, Parameter=2}",
+                "Height": 63,
+                "Width": 205,
+                "PositionY": 3,
+                "TextOptions": {
+                    "Wrap": true,
+                    "TextAlignment": "Start",
+                    "VerticalAlignment": "Center"
+                },
+                "Triggers": [
+                    { "Trigger": "WEC_TrackName_CardHead_Qual" }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "{Event.DateLocal, Converter=DateToYear}",
+                "Foreground": "#00000e",
+                "FontName": "{DrukWide_Bold_Itallic}",
+                "FontSize": 12,
+                "Width": 90,
+                "Padding": "5",
+                "PositionX": 15,
+                "PositionY": 70,
                 "TextOptions": {
                     "Wrap": true,
                     "TextAlignment": "Center",
@@ -158,7 +209,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{white}",
                                 "TextOptions": {
@@ -168,7 +219,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{lightBlue}",
                                 "TextOptions": {
@@ -180,7 +231,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[CHAMPIONSHIP]",
-                        "FontName": "{SeasonFontHeader}",
+                        "FontName": "{Archivo_Bold}",
                         "FontSize": 12,
                         "Foreground": "{white}",
                         "TextOptions": {
@@ -191,9 +242,9 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Standings.LastEvent.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Source": "[{Standings.LastEvent.Track.CircuitFullName, Converter=StringToUpperString}]",
                 "Foreground": "{white}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
                 "FontSize": "{TrackNameSize}",
                 "Height": 95,
@@ -213,7 +264,7 @@
                 "BlockType": "text",
                 "Source": "{Standings.LastEvent.DateLocal, Converter=DateToYear}",
                 "Foreground": "{darkPurple}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "FontSize": 20,
                 "Width": 90,
                 "Padding": "5",
@@ -272,7 +323,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{white}",
                                 "TextOptions": {
@@ -282,7 +333,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{lightBlue}",
                                 "TextOptions": {
@@ -294,7 +345,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[CHAMPIONSHIP]",
-                        "FontName": "{SeasonFontHeader}",
+                        "FontName": "{Archivo_Bold}",
                         "FontSize": 12,
                         "Foreground": "{white}",
                         "TextOptions": {
@@ -305,9 +356,9 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Item.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Source": "[{Item.Track.CircuitFullName, Converter=StringToUpperString}]",
                 "Foreground": "{white}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
                 "FontSize": "{TrackNameSize}",
                 "Height": 95,
@@ -327,7 +378,7 @@
                 "BlockType": "text",
                 "Source": "{Item.DateLocal, Converter=DateToYear}",
                 "Foreground": "{darkPurple}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "FontSize": 20,
                 "Width": 90,
                 "Padding": "5",
@@ -386,7 +437,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{darkPurple}",
                                 "TextOptions": {
@@ -396,7 +447,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{lightBlue}",
                                 "TextOptions": {
@@ -408,7 +459,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[CHAMPIONSHIP]",
-                        "FontName": "{SeasonFontHeader}",
+                        "FontName": "{Archivo_Bold}",
                         "FontSize": 12,
                         "Foreground": "{darkPurple}",
                         "TextOptions": {
@@ -419,9 +470,9 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Item.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Source": "[{Item.Track.CircuitFullName, Converter=StringToUpperString}]",
                 "Foreground": "{darkPurple}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
                 "FontSize": "{TrackNameSize}",
                 "Height": 95,
@@ -441,7 +492,7 @@
                 "BlockType": "text",
                 "Source": "{Item.DateLocal, Converter=DateToYear}",
                 "Foreground": "{white}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "FontSize": 20,
                 "Width": 90,
                 "Padding": "5",
@@ -500,7 +551,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{darkPurple}",
                                 "TextOptions": {
@@ -510,7 +561,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{lightBlue}",
                                 "TextOptions": {
@@ -522,7 +573,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[CHAMPIONSHIP]",
-                        "FontName": "{SeasonFontHeader}",
+                        "FontName": "{Archivo_Bold}",
                         "FontSize": 12,
                         "Foreground": "{darkPurple}",
                         "TextOptions": {
@@ -533,9 +584,9 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Session.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
                 "Foreground": "{darkPurple}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
                 "FontSize": "{TrackNameSize}",
                 "Height": 95,
@@ -555,7 +606,7 @@
                 "BlockType": "text",
                 "Source": "{Event.DateLocal, Converter=DateToYear}",
                 "Foreground": "{white}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "FontSize": 20,
                 "Width": 90,
                 "Padding": "5",
@@ -614,7 +665,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{darkPurple}",
                                 "TextOptions": {
@@ -624,7 +675,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
-                                "FontName": "{SeasonFontHeader}",
+                                "FontName": "{Archivo_Bold}",
                                 "FontSize": 12,
                                 "Foreground": "{lightBlue}",
                                 "TextOptions": {
@@ -636,7 +687,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[CHAMPIONSHIP]",
-                        "FontName": "{SeasonFontHeader}",
+                        "FontName": "{Archivo_Bold}",
                         "FontSize": 12,
                         "Foreground": "{darkPurple}",
                         "TextOptions": {
@@ -649,7 +700,7 @@
                 "BlockType": "text",
                 "Source": "{Standings.LastEvent.Track.CircuitFullName, Converter=StringToUpperString}",
                 "Foreground": "{darkPurple}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
                 "FontSize": "{TrackNameSize}",
                 "Height": 95,
@@ -669,7 +720,7 @@
                 "BlockType": "text",
                 "Source": "{Standings.LastEvent.DateLocal, Converter=DateToYear}",
                 "Foreground": "{white}",
-                "FontName": "{TrackHeaderFont}",
+                "FontName": "{DrukWide_Bold_Itallic}",
                 "FontSize": 20,
                 "Width": 90,
                 "Padding": "5",

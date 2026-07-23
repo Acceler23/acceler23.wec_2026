@@ -1,7 +1,16 @@
-{
-    "ComponentName": "raceMedia_bg",
-    "BlockType": "image",
-    "Source": "Media_items/background.png",
-    "Height": 1500,
-    "Width": 1200
-}
+[
+    {
+        "ComponentName": "raceMedia_bg",
+        "BlockType": "image",
+        "Source": "Media_items/background.png",
+        "Height": 1500,
+        "Width": 1200
+    },
+    {
+        "ComponentName": "lineupMedia_bg",
+        "BlockType": "image",
+        "Source": "Media_items/background_invert.png",
+        "Height": 1500,
+        "Width": 1200
+    }
+]

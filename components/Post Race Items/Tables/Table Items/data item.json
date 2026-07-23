@@ -20,7 +20,7 @@
                 "PaddingRight": 15,
                 "Height": "{TableLineHeight}",
                 "FontSize": "{TableFontSizeDefalt}",
-                "FontName": "{DataTableFont}",
+                "FontName": "{Archivo_Bold_Itallic}",
                 "TextOptions": {
                     "FontStyle": "BoldItalic"
                 },
@@ -62,7 +62,7 @@
                 "PaddingRight": 15,
                 "Height": "{TableLineHeight}",
                 "FontSize": "{TableFontSizeDefalt}",
-                "FontName": "{DataTableFont}",
+                "FontName": "{Archivo_Bold_Itallic}",
                 "TextOptions": {
                     "FontStyle": "BoldItalic"
                 },
@@ -112,7 +112,7 @@
                 "Padding": "20, 0",
                 "Height": "{TableLineHeight}",
                 "FontSize": "{TableFontSizeDefalt}",
-                "FontName": "{DataTableFont}",
+                "FontName": "{Archivo_Bold_Itallic}",
                 "TextOptions": {
                     "FontStyle": "BoldItalic"
                 },

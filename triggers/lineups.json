@@ -1,0 +1,32 @@
+[
+    {
+        "TriggerName": "Lineup_TeamClassFilter",
+        "Condition": "{Lineup_RaceClass, Converter=StringNotEquals, Parameter=none}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+        "Setters": [
+            {
+                "Property": "ItemStackOptions.FilterMember",
+                "Value": "Team.Car.CarClass.Name"
+            },
+            {
+                "Property": "ItemStackOptions.FilterMemberValue",
+                "Value": "{Lineup_RaceClass}"
+            }
+        ]
+    },
+    {
+        "TriggerName": "Lineup_CarClassFilter",
+        "Condition": "{Lineup_RaceClass, Converter=StringNotEquals, Parameter=none}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+        "Setters": [
+            {
+                "Property": "ItemStackOptions.FilterMember",
+                "Value": "Car.CarClass.Name"
+            },
+            {
+                "Property": "ItemStackOptions.FilterMemberValue",
+                "Value": "{Lineup_RaceClass}"
+            }
+        ]
+    }
+]

@@ -37,7 +37,7 @@
                             "BlockType": "text",
                             "Source": "[THE OFFICIAL STREAMING APP]",
                             "Foreground": "{white}",
-                            "FontName": "{TableBottomFont}",
+                            "FontName": "{Archivo_SemiBold}",
                             "FontSize": 18,
                             "VerticalAlignment": "Center"
                         }
@@ -58,7 +58,7 @@
                             "BlockType": "text",
                             "Source": "[FIAWEC_OFFICIAL]",
                             "Foreground": "{white}",
-                            "FontName": "{TableBottomFont}",
+                            "FontName": "{Archivo_SemiBold}",
                             "FontSize": 18,
                             "VerticalAlignment": "Center",
                             "MarginLeft": 8
@@ -73,7 +73,7 @@
                             "BlockType": "text",
                             "Source": "[FIAWEC]",
                             "Foreground": "{white}",
-                            "FontName": "{TableBottomFont}",
+                            "FontName": "{Archivo_SemiBold}",
                             "FontSize": 18,
                             "VerticalAlignment": "Center",
                             "MarginLeft": 8
@@ -88,7 +88,7 @@
                             "BlockType": "text",
                             "Source": "[FIAWEC]",
                             "Foreground": "{white}",
-                            "FontName": "{TableBottomFont}",
+                            "FontName": "{Archivo_SemiBold}",
                             "FontSize": 18,
                             "VerticalAlignment": "Center",
                             "MarginLeft": 8

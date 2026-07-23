@@ -1,0 +1,83 @@
+{
+    "BlockRoot": {
+        "BlockType": "canvas",
+        "Width": 1200,
+        "Height": 1600,
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "Lineup_MediaHeader",
+                "PositionY": 92
+            },
+            {
+                "BlockType": "itemstack",
+                "RenderIf": "{Render_DriverTeam, Converter=BoolReverse}",
+                "Orientation": "Vertical",
+                "PositionX": 71,
+                "PositionY": 304,
+                "Spacing": 24,
+                "Triggers": [
+                    { "Trigger": "MediaTablePage_6" },
+                    { "Trigger": "Lineup_CarClassFilter" },
+                    { "Trigger": "Lineup_TeamClassFilter" }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.Lineups}",
+                    "SortMember": "{CarNumber}",
+                    "IndexStart": 0,
+                    "Limit": 6,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "Lineup_Media_Item",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "type": "driver"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "BlockType": "itemstack",
+                "RenderIf": "{Render_DriverTeam}",
+                "Orientation": "Vertical",
+                "PositionX": 71,
+                "PositionY": 304,
+                "Spacing": 24,
+                "Triggers": [
+                    { "Trigger": "MediaTablePage_6" },
+                    { "Trigger": "Lineup_TeamClassFilter" },
+                    {
+                        "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                        "ConditionAnd": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                        "Setters": [
+                            {
+                                "Property": "ItemStackOptions.ItemSource",
+                                "Value": "{Lineups.Lineups}"
+                            },
+                            {
+                                "Property": "ItemStackOptions.SortMember",
+                                "Value": "Car.Vendor.Name"
+                            }
+                        ]
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.Teams}",
+                    "SortMember": "Team.Abbreviration",
+                    "IndexStart": 0,
+                    "Limit": 6,
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "Lineup_Media_Item",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "type": "team"
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,11 +1,13 @@
 {
     "Categories": [
+        { "Name": "Global Options" },
         { "Name": "WEC Mode" },
         { "Name": "Drivers" },
-        { "Name": "Global Options" },
+        { "Name": "Media Information" },
         { "Name": "Calendar" },
+        { "Name": "Lineups" },
         { "Name": "Open Session Statistics" },
-        { "Name": "Open Standings Statistics" },
+        { "Name": "Open Standings Statistics" }
     ],
     "Properties": [
         {
@@ -14,6 +16,44 @@
             "Type": "Integer",
             "MinimumValue": 1,
             "DefaultValue": 1
+        },
+        //Globals
+        {
+            "Category": "Global Options",
+            "Name": "Render_DriverTeam",
+            "PublicName": "Render Team instead of driver",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Category": "Global Options",
+            "Name": "Media_ShowMultiPages",
+            "PublicName": "Render Multiple Pages for Media",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Category": "Global Options",
+            "Name": "ShowPosJump_Stats",
+            "PublicName": "Show Position Jump in Statistics",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "TrackNameSize",
+            "PublicName": "Card Track Name Size",
+            "Category": "Global Options",
+            "Type": "Integer",
+            "DefaultValue": 30,
+            "MinimumValue": 10
+        },
+        {
+            "Name": "PositionIndex",
+            "PublicName": "Replace Position",
+            "Category": "Global Options",
+            "Type": "Bool",
+            "Description": "NOT RECOMMENDED, Use only if positions are shown as null or 0",
+            "DefaultValue": false
         },
 
         //WEC Mode
@@ -42,6 +82,13 @@
             "Category": "WEC Mode",
             "Name": "Qualy_Rename",
             "PublicName": "WEC Qualy Names (Statistics only)",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Category": "WEC Mode",
+            "Name": "Lineup_Mode",
+            "PublicName": "WEC Lineups Format",
             "Type": "Bool",
             "DefaultValue": false
         },
@@ -76,22 +123,41 @@
             "DefaultValue": "Driver.RaceNumber"
         },
 
-        //Global Options
+        //Variable Info
         {
-            "Name": "TrackNameSize",
-            "PublicName": "Card Track Name Size",
-            "Category": "Global Options",
-            "Type": "Integer",
-            "DefaultValue": 30,
-            "MinimumValue": 10
-        },
-        {
-            "Name": "PositionIndex",
-            "PublicName": "Replace Position",
-            "Category": "Global Options",
-            "Type": "Bool",
-            "Description": "NOT RECOMMENDED, Use only if positions are shown as null or 0",
-            "DefaultValue": false
+            "Category": "Media Information",
+            "Name": "Media_SessionInfo",
+            "PublicName": "Media Session Single Information",
+            "Type": "Enum",
+            "EnumValues": [
+                "Time",
+                "IntervalRace",
+                "AbsoluteTime",
+                "FastestLapTime",
+                "FastestLapSector1",
+                "FastestLapSector2",
+                "FastestLapSector3",
+                "QualQ1Time",
+                "QualQ2Time",
+                "QualQ3Time",
+                "LapsCountQ1",
+                "LapsCountQ2",
+                "LapsCountQ3",
+                "PenaltyTimeTotal",
+                "PenaltyPosTotal",
+                "PenaltyPoints",
+                "DriverPoints",
+                "TeamPoints",
+                "LapsCount",
+                "PositionJump",
+                "PitsCount",
+                "OvertakesCount",
+                "LosePositionsCount",
+                "MaxSpeed",
+                "LeadLaps",
+                "LeadDistance",
+                "RaceDistancePercentage"
+            ]
         },
 
         //Calendar
@@ -119,13 +185,67 @@
             "DefaultValue": 1
         },
 
-        //Statistics
+        //Lineups
         {
-            "Name": "ShowPosJump_Stats",
-            "PublicName": "Show Position Jump in Statistics",
-            "Type": "Bool",
-            "DefaultValue": false
+            "Name": "Lineup_RaceClass",
+            "PublicName": "Race Class Display",
+            "Category": "Lineups",
+            "Type": "Enum",
+            "EnumValues": [
+                "none",
+                "Le Mans Hypercar",
+                "LMP2",
+                "LMP3",
+                "GT3",
+                "LMGTE",
+                "Formula 1",
+                "Formula 2",
+                "Formula 3",
+                "Formula 4",
+                "Formula Drift",
+                "Formula E",
+                "GT1",
+                "GT1 Classic",
+                "GT2",
+                "GT2 Classic",
+                "GT4",
+                "GTX SportCars",
+                "Hot Hatch",
+                "IndyCar",
+                "LMP1",
+                "NASCAR",
+                "Road Compact",
+                "Road Coupe",
+                "Road GT",
+                "Road Muscle",
+                "Road Touring",
+                "SuperCar",
+                "Touring Car",
+                "Track Day",
+                "Track Toy",
+                "Trans Am"
+            ]
         },
+        {
+            "Category": "Lineups",
+            "Name": "lineupHeight",
+            "PublicName": "Number of Rows",
+            "Type": "Integer",
+            "DefaultValue": 2,
+            "MinimumValue": 1,
+            "MaximumValue": 3
+        },
+        {
+            "Category": "Lineups",
+            "Name": "lineupSize",
+            "PublicName": "Number of Colluns",
+            "Type": "Integer",
+            "DefaultValue": 5,
+            "MinimumValue": 1,
+            "MaximumValue": 10
+        },
+
+        //Statistics
         {
             "Name": "RenderStints",
             "PublicName": "Show Stints in Statistics",

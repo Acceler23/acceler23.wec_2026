@@ -1,0 +1,460 @@
+[
+    {
+        "ComponentName": "VariableInfo_item1",
+        "BlockType": "canvas",
+        "Orientation": "Horizontal",
+        "Height": 338,
+        "Width": 1020,
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/info/leader_bg.png",
+                "PositionY": 91,
+                "Width": 1020,
+                "Height": 247,
+                "Colorize": {
+                    "Color": "{black}"
+                },
+                "Triggers": [
+                    { "Trigger": "CarColor_ImageColorize" },
+                    { "Trigger": "TeamColor_ImageColorize" },
+                    { "Trigger": "WEC_CarColor_ImageColorize" },
+                    { "Trigger": "WEC_TeamColor_ImageColorize" },
+                    { "Trigger": "WEC_CarTeamColor_ImageColorize" }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": -100,
+                "PositionY": 91,
+                "Width": 400,
+                "Height": 247,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Item.Car.Vendor.LogotypePath}",
+                        "Opacity": 30,
+                        "Height": 300,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeVendor" },
+                            { "Trigger": "WEC_Car_Logotype" },
+                            { "Trigger": "WEC_Team_Logotype" },
+                            { "Trigger": "WEC_TeamSession_Logotype" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Height": 338,
+                "Width": 400,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Item.Driver.LogotypePath}",
+                        "VerticalAlignment": "Top",
+                        "HorizontalAlignment": "Center",
+                        "Width": 400,
+                        "Triggers": [
+                            { "Trigger": "DriverImage_PlaceHolder" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "PositionY": 91,
+                "PositionX": 400,
+                "Height": 247,
+                "Width": 620,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Item.Car.Vendor.LogotypePath}",
+                        "Height": 90,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Right",
+                        "Margin": "0, 10, 33, 10",
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeVendor" },
+                            { "Trigger": "WEC_Car_Logotype" },
+                            { "Trigger": "WEC_Team_Logotype" },
+                            { "Trigger": "WEC_TeamSession_Logotype" }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Item.Driver.{DriverName}, Converter=StringToUpperString}]",
+                        "Foreground": "{white}",
+                        "HorizontalAlignment": "Right",
+                        "FontSize": 31,
+                        "Padding": "5,5,33,0",
+                        "FontName": "{Archivo_Expanded_Regular}",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        },
+                        "Triggers": [
+                            { "Trigger": "CarColor_SecondaryForeground" },
+                            { "Trigger": "TeamColor_SecondaryForeground" },
+                            { "Trigger": "WEC_Car_Foreground" },
+                            { "Trigger": "WEC_Team_Foreground" },
+                            { "Trigger": "WEC_CarTeam_Foreground" }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Right",
+                        "VerticalAlignment": "Bottom",
+                        "Spacing": -10,
+                        "MarginRight": 28,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Item.{Media_SessionInfo}, Converter=StringToUpperString}]",
+                                "Foreground": "{white}",
+                                "HorizontalAlignment": "Right",
+                                "VerticalAlignment": "Bottom",
+                                "FontSize": 100,
+                                "Padding": "5",
+                                "FontName": "{Archivo_Black_Itallic}",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                },
+                                "Triggers": [
+                                    { "Trigger": "CarColor_SecondaryForeground" },
+                                    { "Trigger": "TeamColor_SecondaryForeground" },
+                                    { "Trigger": "WEC_Car_Foreground" },
+                                    { "Trigger": "WEC_Team_Foreground" },
+                                    { "Trigger": "WEC_CarTeam_Foreground" },
+                                    {
+                                        "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=Time}",
+                                        "ConditionOr": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
+                                        "Property": "FontSize",
+                                        "Value": 80
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=IntervalRace}",
+                                        "Property": "Source",
+                                        "Value": "[LEADER]"
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
+                                        "ConditionAnd": "{Item.AbsoluteTimeMs, Converter=NumberGreater, Parameter=3599999}",
+                                        "Property": "Source",
+                                        "Value": "{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=3600000}[H]{{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=60000}, Converter=NumberDivide, Parameter=60}"
+                                        //"Value": "{Item.AbsoluteTimeMs}"
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
+                                        "ConditionAnd": "{Item.AbsoluteTimeMs, Converter=NumberLess, Parameter=3600000}",
+                                        "Property": "Source",
+                                        "Value": "{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=60000}[M]"
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=PenaltyTimeTotal}",
+                                        "Property": "Source",
+                                        "Value": "{Item.PenaltyTimeTotal}"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "RenderIf": false,
+                                "Source": "[{Item.{Media_SessionInfo}, Converter=StringToUpperString}]",
+                                "Foreground": "{white}",
+                                "HorizontalAlignment": "Right",
+                                "VerticalAlignment": "Bottom",
+                                "FontSize": 70,
+                                "Padding": "5",
+                                "MarginBottom": 5,
+                                "FontName": "{Archivo_Black_Itallic}",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                },
+                                "Triggers": [
+                                    { "Trigger": "CarColor_SecondaryForeground" },
+                                    { "Trigger": "TeamColor_SecondaryForeground" },
+                                    { "Trigger": "WEC_Car_Foreground" },
+                                    { "Trigger": "WEC_Team_Foreground" },
+                                    { "Trigger": "WEC_CarTeam_Foreground" },
+                                    {
+                                        "Condition": "{Media_SessionInfo}",
+                                        "ConditionValue": "MaxSpeed",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "[KM/H]"
+                                            },
+                                            {
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo}",
+                                        "ConditionValue": "PenaltyTimeTotal",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "[S]"
+                                            },
+                                            {
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo}",
+                                        "ConditionValue": "PenaltyPoints",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "[PTS]"
+                                            },
+                                            {
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo}",
+                                        "ConditionValue": "PenaltyPoints",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "[PEN PTS]"
+                                            },
+                                            {
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo}",
+                                        "ConditionValue": "TeamPoints",
+                                        "ConditionOr": "{Media_SessionInfo}",
+                                        "ConditionOrValue": "DriverPoints",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "[PTS]"
+                                            },
+                                            {
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Media_SessionInfo}",
+                                        "ConditionValue": "LapsCount",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "[LAPS]"
+                                            },
+                                            {
+                                                "Property": "RenderIf",
+                                                "Value": true
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "ComponentName": "VariableInfo_item2",
+        "BlockType": "dock",
+        "Orientation": "Horizontal",
+        "Height": 60,
+        "Width": 1020,
+        "Background": "{darkPurple}",
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Height": 60,
+                "Width": 123,
+                "Triggers": [
+                    { "Trigger": "CarColor_Background" },
+                    { "Trigger": "TeamColor_Background" },
+                    { "Trigger": "WEC_Car_ColorBG" },
+                    { "Trigger": "WEC_Team_ColorBG" },
+                    { "Trigger": "WEC_CarTeam_ColorBG" }
+                ],
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Item.Car.Vendor.LogotypePath}",
+                        "Height": 40,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeVendor" },
+                            { "Trigger": "Team_LogotypeDefault" },
+                            { "Trigger": "WEC_Car_Logotype" },
+                            { "Trigger": "WEC_Team_Logotype" },
+                            { "Trigger": "WEC_TeamSession_Logotype" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[{Item.Driver.{DriverName}, Converter=StringToUpperString}]",
+                "Foreground": "{white}",
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Left",
+                "FontSize": 28,
+                "Padding": "37, 5, 5, 5",
+                "FontName": "{Archivo_Expanded_Regular}",
+                "TextOptions": {
+                    "FontStyle": "Bold"
+                }
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "HorizontalAlignment": "Right",
+                "Margin": "0, 10, 38, 0",
+                "Spacing": -10,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Item.{Media_SessionInfo}, Converter=StringToUpperString}]",
+                        "Foreground": "{white}",
+                        "VerticalAlignment": "Bottom",
+                        "HorizontalAlignment": "Right",
+                        "FontSize": 35,
+                        "Padding": "5",
+                        "FontName": "{Archivo_Black_Itallic}",
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
+                                "ConditionAnd": "{Item.AbsoluteTimeMs, Converter=NumberGreater, Parameter=3599999}",
+                                "Property": "Source",
+                                "Value": "{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=3600000}[H]{{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=60000}, Converter=NumberDivide, Parameter=60}"
+                                //"Value": "{Item.AbsoluteTimeMs}"
+                            },
+                            {
+                                "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
+                                "ConditionAnd": "{Item.AbsoluteTimeMs, Converter=NumberLess, Parameter=3600000}",
+                                "Property": "Source",
+                                "Value": "{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=60000}[M]"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Item.{Media_SessionInfo}, Converter=StringToUpperString}]",
+                        "RenderIf": false,
+                        "Foreground": "{white}",
+                        "VerticalAlignment": "Bottom",
+                        "HorizontalAlignment": "Right",
+                        "FontSize": 25,
+                        "Padding": "5",
+                        "MarginBottom": 2,
+                        "FontName": "{Archivo_Black_Itallic}",
+                        "TextOptions": {
+                            "FontStyle": "Italic"
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "{Media_SessionInfo}",
+                                "ConditionValue": "MaxSpeed",
+                                "Setters": [
+                                    {
+                                        "Property": "Source",
+                                        "Value": "[KM/H]"
+                                    },
+                                    {
+                                        "Property": "RenderIf",
+                                        "Value": true
+                                    }
+                                ]
+                            },
+                            {
+                                "Condition": "{Media_SessionInfo}",
+                                "ConditionValue": "PenaltyTimeTotal",
+                                "Setters": [
+                                    {
+                                        "Property": "Source",
+                                        "Value": "[S]"
+                                    },
+                                    {
+                                        "Property": "RenderIf",
+                                        "Value": true
+                                    }
+                                ]
+                            },
+                            {
+                                "Condition": "{Media_SessionInfo}",
+                                "ConditionValue": "PenaltyPoints",
+                                "Setters": [
+                                    {
+                                        "Property": "Source",
+                                        "Value": "[PEN PTS]"
+                                    },
+                                    {
+                                        "Property": "RenderIf",
+                                        "Value": true
+                                    }
+                                ]
+                            },
+                            {
+                                "Condition": "{Media_SessionInfo}",
+                                "ConditionValue": "TeamPoints",
+                                "ConditionOr": "{Media_SessionInfo}",
+                                "ConditionOrValue": "DriverPoints",
+                                "Setters": [
+                                    {
+                                        "Property": "Source",
+                                        "Value": "[PTS]"
+                                    },
+                                    {
+                                        "Property": "RenderIf",
+                                        "Value": true
+                                    }
+                                ]
+                            },
+                            {
+                                "Condition": "{Media_SessionInfo}",
+                                "ConditionValue": "LapsCount",
+                                "Setters": [
+                                    {
+                                        "Property": "Source",
+                                        "Value": "[LAPS]"
+                                    },
+                                    {
+                                        "Property": "RenderIf",
+                                        "Value": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

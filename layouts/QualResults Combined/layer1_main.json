@@ -46,7 +46,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "[QUALYFING TIMES]",
-                                                "FontName": "{TableHeaderFont}",
+                                                "FontName": "{Druk_Medium_Itallic}",
                                                 "FontSize": 80,
                                                 "Padding": "5",
                                                 "Foreground": "{white}"
@@ -54,7 +54,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "[CLASSIFICATION]",
-                                                "FontName": "{TableHeaderFont}",
+                                                "FontName": "{Druk_Medium_Itallic}",
                                                 "FontSize": 80,
                                                 "Padding": "5",
                                                 "Foreground": "{lightBlue}"
@@ -86,7 +86,7 @@
                                         "Source": "[{Session.RacingClass.Name, Converter=StringToUpperString}]",
                                         //"Background": "{Session.RacingClass.Color}",
                                         "Foreground": "{Session.RacingClass.SecondaryColor}",
-                                        "FontName": "{MulticalssFont}",
+                                        "FontName": "{DrukWide_Medium_Italic}",
                                         "BackgroundImage": "PostRace/logo_bg",
                                         "ColorizeBackground": {
                                             "Color": "{Session.RacingClass.Color}"
@@ -96,13 +96,29 @@
                                         "Margin": "9,2,0,0",
                                         "VerticalAlignment": "Center",
                                         "HorizontalAlignment": "Left",
-                                        "Padding": "7,5,7,5"
+                                        "Padding": "7,5,7,5",
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Recolor_WEC}",
+                                                "ConditionAnd": "{Session.IsHaveRacingClass}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "ColorizeBackground.Color",
+                                                        "Value": "{{Session.RacingClass.FirstFactor.CarClass.Name}_Color}"
+                                                    },
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{white}"
+                                                    }
+                                                ]
+                                            }
+                                        ]
                                     },
                                     {
                                         "BlockType": "text",
                                         "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
                                         "Foreground": "{white}",
-                                        "FontName": "{TrackNameFont}",
+                                        "FontName": "{DrukWide_Medium_Italic}",
                                         "Height": 40,
                                         "FontSize": 29,
                                         "Margin": "0,2,0,0",
