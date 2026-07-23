@@ -107,7 +107,10 @@
                                         "BlockType": "image",
                                         "Source": "{Item.LiveryPath}",
                                         "Width": 341,
-                                        "HorizontalAlignment": "Center"
+                                        "HorizontalAlignment": "Center",
+                                        "Triggers": [
+                                            { "Trigger": "Livery_DrivertoCar" }
+                                        ]
                                     }
                                 ]
                             },
@@ -159,7 +162,7 @@
                         "Items": [
                             {
                                 "BlockType": "image",
-                                "Source": "Card_Images/wec/{Session.Track.CircuitOrigin}/{Item.Car.UniqueId}.png",
+                                "Source": "Card_Images/wec/{Item.Car.UniqueId}.png",
                                 "Height": 820,
                                 "HorizontalAlignment": "Center",
                                 "VerticalAlignment": "Center",
@@ -168,7 +171,7 @@
                                         "Condition": "{Season.LineupsBasedType}",
                                         "ConditionValue": "Teams",
                                         "Property": "Source",
-                                        "Value": "Card_Images/wec/{Session.Track.CircuitOrigin}/{Item.Team.Car.UniqueId}.png"
+                                        "Value": "Card_Images/wec/{Item.Team.Car.UniqueId}.png"
                                     }
                                 ]
                             }
@@ -249,7 +252,7 @@
                                     {
                                         "BlockType": "text",
                                         "Source": "{Item.{CarNumber}}",
-                                        "FontName": "{RaceNumberFont}",
+                                        "FontName": "{Archivo_Black_Itallic}",
                                         "VerticalAlignment": "Center",
                                         "FontSize": 80,
                                         "Padding": "10",
@@ -282,7 +285,7 @@
                                 "Source": "{Item.Team.FullName, Converter=StringToUpperString}",
                                 "Width": 301,
                                 "Foreground": "{white}",
-                                "FontName": "{CardTeamNameFont}",
+                                "FontName": "{Archivo_Black_Itallic}",
                                 "FontSize": 30,
                                 "Padding": "0,5",
                                 "Margin": "20, 0",
@@ -307,7 +310,7 @@
             {
                 "BlockType": "text",
                 "Source": "[WINNER]",
-                "FontName": "{CardIndoFont}",
+                "FontName": "{Druk_Medium_Itallic}",
                 "FontSize": 100,
                 "Width": 341,
                 "HorizontalAlignment": "Center",
@@ -323,7 +326,7 @@
                 "PositionY": 945,
                 "Source": "[#{Session.Track.Name, Converter=StringToUpperString}]",
                 "HorizontalAlignment": "Center",
-                "FontName": "{DataTableFont}",
+                "FontName": "{Archivo_Bold_Itallic}",
                 "Foreground": "{white}",
                 "Padding": "5",
                 "FontSize": 12
@@ -433,7 +436,7 @@
                                                 "BlockType": "text",
                                                 "Source": "{Item.Time}",
                                                 //"Source": "{Session.SessionTypeString}",
-                                                "FontName": "{DataTableFont}",
+                                                "FontName": "{Archivo_Bold_Itallic}",
                                                 "Foreground": "{white}",
                                                 "VerticalAlignment": "Center",
                                                 "FontSize": 32,
@@ -457,7 +460,7 @@
                                         "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
                                         "Width": 301,
                                         "Foreground": "{white}",
-                                        "FontName": "{CardTeamNameFont}",
+                                        "FontName": "{Archivo_Black_Itallic}",
                                         "FontSize": 25,
                                         "Padding": "0,5",
                                         "Margin": "20, 0",
@@ -498,7 +501,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Item.{CarNumber}}",
-                                                "FontName": "{RaceNumberFont}",
+                                                "FontName": "{Archivo_Black_Itallic}",
                                                 "Foreground": "{white}",
                                                 "VerticalAlignment": "Center",
                                                 "FontSize": 60,
@@ -515,7 +518,7 @@
             {
                 "BlockType": "text",
                 "Source": "[POLE POSITION]",
-                "FontName": "{CardIndoFont}",
+                "FontName": "{Druk_Medium_Itallic}",
                 "FontSize": 55,
                 "Width": 341,
                 "HorizontalAlignment": "Center",
@@ -539,7 +542,7 @@
                 "PositionY": 945,
                 "Source": "[#{Session.Track.Name, Converter=StringToUpperString}]",
                 "HorizontalAlignment": "Center",
-                "FontName": "{DataTableFont}",
+                "FontName": "{Archivo_Bold_Itallic}",
                 "Foreground": "{white}",
                 "Padding": "5",
                 "FontSize": 12
@@ -662,7 +665,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Item.{CarNumber}}",
-                                                "FontName": "{RaceNumberFont}",
+                                                "FontName": "{Archivo_Black_Itallic}",
                                                 "Foreground": "{white}",
                                                 "VerticalAlignment": "Center",
                                                 "FontSize": 90,
@@ -683,7 +686,7 @@
                                         "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
                                         "Width": 301,
                                         "Foreground": "{white}",
-                                        "FontName": "{CardTeamNameFont}",
+                                        "FontName": "{Archivo_Black_Itallic}",
                                         "FontSize": 30,
                                         "Padding": "0,5",
                                         "Margin": "20, 0",
@@ -707,7 +710,7 @@
                 "PositionY": 945,
                 "Source": "[#{Standings.LastEvent.Track.Name, Converter=StringToUpperString}]",
                 "HorizontalAlignment": "Center",
-                "FontName": "{DataTableFont}",
+                "FontName": "{Archivo_Bold_Itallic}",
                 "Foreground": "{white}",
                 "Padding": "5",
                 "FontSize": 12
@@ -782,7 +785,7 @@
                         "PositionZ": 4,
                         "Width": 341,
                         "HorizontalAlignment": "Center",
-                        "FontName": "{TableHeaderFont}",
+                        "FontName": "{Druk_Medium_Itallic}",
                         "FontSize": 80,
                         "Padding": "5",
                         "Foreground": "{lightBlue}"
@@ -798,7 +801,7 @@
                                 "BlockType": "text",
                                 "Source": "[day {Item.DateLocal, Converter=DateToDayOfMonth}] [Card {Item.DateLocal, Converter=DateToMonthInWords}]",
                                 "HorizontalAlignment": "Center",
-                                "FontName": "{TableHeaderFont}",
+                                "FontName": "{Druk_Medium_Itallic}",
                                 "FontSize": 80,
                                 "Padding": "5",
                                 "Foreground": "{white}"

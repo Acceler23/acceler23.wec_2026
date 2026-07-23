@@ -25,7 +25,7 @@
             "BlockType": "stack",
             "Orientation": "Horizontal",
             "PositionX": 55,
-            "Width": 960,
+            //"Width": 960,
             "Spacing": 70,
             "Height": 50,
             "Items": [
@@ -40,7 +40,7 @@
                             "HorizontalAlignment": "Right",
                             "Source": "{Item.FastestLapTime}",
                             "FontSize": "{TableFontSizeDefalt}",
-                            "FontName": "{FastestLapFont}",
+                            "FontName": "{Archivo_Bold_Itallic}",
                             "Foreground": "{white}",
                             "MarginTop": 11,
                             "Width": 140
@@ -50,7 +50,7 @@
                             "HorizontalAlignment": "Right",
                             "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
                             "FontSize": "{TableFontSizeDefalt}",
-                            "FontName": "{FastestLapFont}",
+                            "FontName": "{Archivo_Bold_Itallic}",
                             "Foreground": "{white}",
                             "MarginTop": 11
                         }
@@ -67,7 +67,7 @@
                             "HorizontalAlignment": "Right",
                             "Source": "{Item.{CarNumber}}",
                             "FontSize": "{TableFontSizeDefalt}",
-                            "FontName": "{TableFontDefault}",
+                            "FontName": "{Archivo_SemiExpanded_Itallic}",
                             "Foreground": "{white}",
                             "MarginTop": 11
                         },
@@ -85,7 +85,7 @@
                             "HorizontalAlignment": "Right",
                             "Source": "{Item.Team.FullName, Converter=StringToUpperString}",
                             "FontSize": "{TableFontSizeDefalt}",
-                            "FontName": "{TableFontDefault}",
+                            "FontName": "{Archivo_SemiExpanded_Itallic}",
                             "Foreground": "{white}",
                             "MarginTop": 11,
                             "Triggers": [
@@ -113,7 +113,7 @@
                     "HorizontalAlignment": "Right",
                     "Source": "[LAP] {Item.FastestLapNumLap}",
                     "FontSize": "{TableFontSizeDefalt}",
-                    "FontName": "{FastestLapFont}",
+                    "FontName": "{Archivo_Bold_Itallic}",
                     "Foreground": "{white}",
                     "MarginTop": 11
                 }

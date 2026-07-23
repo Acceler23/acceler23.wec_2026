@@ -1,0 +1,207 @@
+[
+    {
+        "ComponentName": "MediaSession_VariableInfo_P1",
+        "BlockType": "canvas",
+        "Width": 1200,
+        "Height": 1500,
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/info/header_circle.png",
+                "PositionX": 143,
+                "PositionY": 98
+            },
+            {
+                "BlockType": "dock",
+                "PositionY": 180,
+                "Height": 500,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "VerticalAlignment": "Bottom",
+                        "Width": 1200,
+                        "Spacing": -10,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[Head {Media_SessionInfo}]",
+                                "Width": 950,
+                                "FontSize": 120,
+                                "Foreground": "{white}",
+                                "FontName": "{DrukWide_Super}",
+                                "VerticalAlignment": "Bottom",
+                                "Padding": "5, 10",
+                                "MarginLeft": 90,
+                                "TextOptions": {
+                                    "Wrap": true,
+                                    "TextAlignment": "Center"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=DriverPoints}",
+                                        "Setters": [
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 70
+                                            },
+                                            {
+                                                "Property": "MarginBottom",
+                                                "Value": 20
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Bottom",
+                                "MarginTop": -40,
+                                "MarginLeft": -20,
+                                "Height": 138,
+                                "BackgroundImage": "Media_items/info/circle_subhead.png",
+                                "ColorizeBackground": {
+                                    "Color": "{whiteGray}"
+                                },
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[SubHead {Media_SessionInfo}]",
+                                        "FontSize": 110,
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{DrukWide_Super}",
+                                        "VerticalAlignment": "Top",
+                                        "HorizontalAlignment": "Center",
+                                        "Padding": "20, 5",
+                                        "MarginTop": 18,
+                                        "TextOptions": {
+                                            "Rotation": -1
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                                "FontName": "{Archivo_Expanded_Regular}",
+                                "Foreground": "{white}",
+                                "FontSize": 30,
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Bottom",
+                                "Padding": "5, 10",
+                                "Margin": "10",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "canvas",
+                "PositionY": 44,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "Media_items/trackHead.png",
+                        "Colorize": {
+                            "Color": "{white}"
+                        }
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Height": 105,
+                        "Width": 180,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Height": 90
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Height": 105,
+                        "Width": 240,
+                        "PositionX": 180,
+                        "PositionY": 5,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{Session.Track.LogotypePath}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Height": 100
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "itemstack",
+                "PositionX": 90,
+                "PositionY": 690,
+                "Orientation": "Vertical",
+                "Spacing": 1,
+                "Triggers": [
+                    {
+                        "Condition": "{SingleStatsSession_{Media_SessionInfo}}",
+                        "ConditionValue": "mili_asc",
+                        "Property": "ItemStackOptions.OrderBy",
+                        "Value": "{Media_SessionInfo}Ms"
+                    },
+                    {
+                        "Condition": "{SingleStatsSession_{Media_SessionInfo}}",
+                        "ConditionValue": "mili_desc",
+                        "Property": "ItemStackOptions.OrderByDescending",
+                        "Value": "{Media_SessionInfo}Ms"
+                    },
+                    {
+                        "Condition": "{SingleStatsSession_{Media_SessionInfo}}",
+                        "ConditionValue": "stat_asc",
+                        "Property": "ItemStackOptions.OrderBy",
+                        "Value": "{Media_SessionInfo}"
+                    },
+                    {
+                        "Condition": "{SingleStatsSession_{Media_SessionInfo}}",
+                        "ConditionValue": "stat_desc",
+                        "Property": "ItemStackOptions.OrderByDescending",
+                        "Value": "{Media_SessionInfo}"
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Session.Drivers}",
+                    "Limit": 8,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Items": [
+                            {
+                                "BlockType": "component",
+                                "Component": "VariableInfo_item1",
+                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}"
+                            },
+                            {
+                                "BlockType": "component",
+                                "Component": "VariableInfo_item2",
+                                "RenderIf": false,
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.{Media_SessionInfo}, Converter=EmptyObjectToFalse}",
+                                        "ConditionAnd": "{Item.Index, Converter=NumberGreater, Parameter=0}",
+                                        "Property": "RenderIf",
+                                        "Value": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+]

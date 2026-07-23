@@ -1,0 +1,11 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Items": [
+            {
+                "BlockType": "component",
+                "Component": "MediaSession_VariableInfo_P1"
+            }
+        ]
+    }
+}

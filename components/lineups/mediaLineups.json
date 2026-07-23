@@ -1,0 +1,297 @@
+[
+    //Media Header
+    {
+        "ComponentName": "Lineup_MediaHeader",
+        "BlockType": "canvas",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/lineups/Head.png",
+                "Colorize": {
+                    "Color": "{lightBlue}"
+                },
+                "Triggers": [
+                    {
+                        "Condition": "{Lineup_RaceClass, Converter=StringNotEquals, Parameter=none}",
+                        "ConditionAnd": "{Recolor_WEC}",
+                        "Property": "Colorize.Color",
+                        "Value": "{{Lineup_RaceClass}_Color}"
+                    }
+                ]
+            },
+            {
+                "BlockType": "image",
+                "Source": "Media_items/lineups/Head_cut.png"
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 13,
+                "Height": 117,
+                "Width": 300,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Height": 100
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 600,
+                "Height": 119,
+                "Width": 600,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.AlternativeLogotypePath}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Center",
+                        "Height": 119,
+                        "Colorize": {
+                            "Color": "{lightBlue}",
+                            "ColorBlendingMode": "HardLight"
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "{Lineup_RaceClass, Converter=StringNotEquals, Parameter=none}",
+                                "ConditionAnd": "{Recolor_WEC}",
+                                "Property": "Colorize.Color",
+                                "Value": "{{Lineup_RaceClass}_Color}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionX": 440,
+                "Height": 119,
+                "Width": 500,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[OVERALL]",
+                        "FontName": "{DrukWide_Medium}",
+                        "Foreground": "{white}",
+                        "FontSize": 77,
+                        "Padding": "0, 60, 0, 10",
+                        "VerticalAlignment": "Top",
+                        "HorizontalAlignment": "Left",
+                        "Triggers": [
+                            {
+                                "Condition": "{Lineup_RaceClass, Converter=StringNotEquals, Parameter=none}",
+                                "Property": "Source",
+                                "Value": "[{Lineup_RaceClass, Converter=StringToUpperString}]"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{Season.Name, Converter=StringToUpperString}]",
+                        "FontName": "{Archivo_Expanded_SemiBold}",
+                        "Foreground": "{white}",
+                        "FontSize": 20,
+                        "Padding": "0, 95, 0, 10",
+                        "VerticalAlignment": "Top",
+                        "HorizontalAlignment": "Right"
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "PositionY": 50,
+                "PositionX": 1105,
+                "Source": "{TablePage} / {{{Season.GridSize, Converter=NumberDivide, Parameter=3}, Converter=NumberDivide, Parameter=6}, Converter=NumberAdd, Parameter=1}",
+                "Foreground": "{white}",
+                "HorizontalAlignment": "Right",
+                "FontName": "{Archivo_Bold_Itallic}",
+                "Triggers": [
+                    {
+                        "Condition": "{Render_DriverTeam, Converter=BoolReverse}",
+                        "ConditionAnd": "{Season.LineupsBasedType}",
+                        "ConditionAndValue": "Cars",
+                        "Property": "Source",
+                        "Value": "{TablePage} / {{Season.GridSize, Converter=NumberDivide, Parameter=6}, Converter=NumberAdd, Parameter=1}"
+                    },
+                    {
+                        "Condition": "{Render_DriverTeam}",
+                        "ConditionAnd": "{Season.LineupsBasedType}",
+                        "ConditionAndValue": "Cars",
+                        "Property": "Source",
+                        "Value": "{TablePage} / {{Season.GridSize, Converter=NumberDivide, Parameter=6}, Converter=NumberAdd, Parameter=1}"
+                    },
+                    {
+                        "Condition": "{Render_DriverTeam, Converter=BoolReverse}",
+                        "ConditionAnd": "{Season.LineupsBasedType}",
+                        "ConditionAndValue": "Teams",
+                        "Property": "Source",
+                        "Value": "{TablePage} / {{Season.GridSize, Converter=NumberDivide, Parameter=6}, Converter=NumberAdd, Parameter=1}"
+                    },
+                    {
+                        "Condition": "{Render_DriverTeam}",
+                        "ConditionAnd": "{Season.LineupsBasedType}",
+                        "ConditionAndValue": "Teams",
+                        "Property": "Source",
+                        "Value": "{TablePage} / {{{Season.GridSize, Converter=NumberDivide, Parameter=3}, Converter=NumberDivide, Parameter=6}, Converter=NumberAdd, Parameter=1}"
+                    }
+                ]
+            }
+        ]
+    },
+    //Media Item
+    {
+        "ComponentName": "Lineup_Media_Item",
+        "BlockType": "canvas",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/lineups/team_color",
+                "Colorize": {
+                    "Color": "{Season.Color}"
+                },
+                "Triggers": [
+                    { "Trigger": "CarColor_ImageColorize" },
+                    { "Trigger": "TeamColor_ImageColorize" },
+                    { "Trigger": "WEC_TeamColor_ImageColorize" },
+                    { "Trigger": "WEC_CarColor_ImageColorize" },
+                ]
+            },
+            {
+                "BlockType": "image",
+                "Source": "Media_items/lineups/team_default"
+            },
+            {
+                "BlockType": "dock",
+                "PositionY": 8,
+                "Width": 255,
+                "Height": 159,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Item.Team.LogotypePath}",
+                        "Height": 120,
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "Car_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeDefault" },
+                            { "Trigger": "Team_LogotypeVendor" },
+                            { "Trigger": "WEC_Car_Logotype" },
+                            { "Trigger": "WEC_Team_Logotype" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "PositionY": 8,
+                "Width": 238,
+                "PositionX": 255,
+                "Height": 159,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Center",
+                        "Height": 159,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[N°]",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_ExtraCondensed_Thin}",
+                                "FontSize": 25,
+                                "Opacity": 80
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Item.Team.Abbreviation}]",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Top",
+                                "Foreground": "{white}",
+                                "FontName": "{DrukWide_Medium}",
+                                "FontSize": 97,
+                                "Padding": "15, 90, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "<type>",
+                                        "ConditionValue": "driver",
+                                        "Property": "Source",
+                                        "Value": "[{Item.{CarNumber}, Converter=StringToUpperString}]"
+                                    },
+                                    {
+                                        "Condition": "<type>",
+                                        "ConditionValue": "team",
+                                        "ConditionAnd": "{Season.LineupsBasedType}",
+                                        "ConditionAndValue": "Teams",
+                                        "Property": "Source",
+                                        "Value": "[{Item.Team.Abbreviation, Converter=StringToUpperString}]"
+                                    },
+                                    {
+                                        "Condition": "<type>",
+                                        "ConditionValue": "team",
+                                        "ConditionAnd": "{Season.LineupsBasedType}",
+                                        "ConditionAndValue": "Cars",
+                                        "Property": "Source",
+                                        "Value": "{Item.{CarNumber}, Converter=StringToUpperString}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[{Item.Team.FullName, Converter=StringToUpperString}]",
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Center",
+                "FontSize": 30,
+                "FontName": "{Archivo_SemiExpanded_Bold}",
+                "Foreground": "{white}",
+                "TextOptions": {
+                    "FontStyle": "Bold",
+                    "Wrap": true
+                },
+                "PositionY": 8,
+                "Width": 350,
+                "PositionX": 568,
+                "Height": 159,
+                "Triggers": [
+                    {
+                        "Condition": "<type>",
+                        "ConditionValue": "driver",
+                        "Property": "Source",
+                        "Value": "[{Item.Driver.{DriverName}, Converter=StringToUpperString}]"
+                    },
+                    {
+                        "Condition": "<type>",
+                        "ConditionValue": "team",
+                        "ConditionAnd": "{Season.LineupsBasedType}",
+                        "ConditionAndValue": "Teams",
+                        "Property": "Source",
+                        "Value": "[{Item.Team.FullName, Converter=StringToUpperString}]"
+                    },
+                    {
+                        "Condition": "<type>",
+                        "ConditionValue": "team",
+                        "ConditionAnd": "{Season.LineupsBasedType}",
+                        "ConditionAndValue": "Cars",
+                        "Property": "Source",
+                        "Value": "[{Item.Car.Name, Converter=StringToUpperString}]"
+                    }
+                ]
+            }
+        ]
+    }
+]

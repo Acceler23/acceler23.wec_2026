@@ -66,6 +66,13 @@
         "Value": "{Item.Car.SecondaryColor}"
     },
     {
+        "TriggerName": "CarColor_SecondaryForeground",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Cars",
+        "Property": "Foreground",
+        "Value": "{Item.Car.SecondaryColor}"
+    },
+    {
         "TriggerName": "Car_FullName",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Cars",

@@ -27,8 +27,8 @@
                         "Items": [
                             {
                                 "BlockType": "text",
-                                "Source": "{Item.Track.CircuitFullName, Converter=StringToUpperString}",
-                                "FontName": "{Font_CalendarNextHead}",
+                                "Source": "[{Item.Track.CircuitFullName, Converter=StringToUpperString}]",
+                                "FontName": "{DrukTextWide_Medium}",
                                 "FontSize": 64,
                                 "Width": 1288,
                                 "Foreground": "{darkPurple}",
@@ -41,7 +41,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[STARTING] [day {Item.DateLocal, Converter=DateToDayOfMonth}] [Card {Item.DateLocal, Converter=DateToMonthInWords}] [{Item.DateLocal, Converter=DateToYear}]",
-                                "FontName": "{Font_CalendarNextSubHead}",
+                                "FontName": "{Archivo_SemiExpanded_Bold}",
                                 "FontSize": 24,
                                 "Foreground": "{lightBlue}",
                                 "Padding": "0, 10",
@@ -80,7 +80,7 @@
                                                         "BlockType": "text",
                                                         "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
                                                         "Source": "[PRACTICE]",
-                                                        "FontName": "{Font_CalendarNextDateHead}",
+                                                        "FontName": "{Archivo_SemiBold}",
                                                         "FontSize": 24,
                                                         "Foreground": "{darkPurple}",
                                                         "Padding": "16, 16, 16, 40"
@@ -88,7 +88,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "[{Item.SessionType}]",
-                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{darkPurple}",
                                                         "Padding": "16, 0, 16, 5",
@@ -99,7 +99,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "[TBC]",
-                                                        "FontName": "{Font_CalendarNextSessionTime}",
+                                                        "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                         "FontSize": 16,
                                                         "Foreground": "{red}",
                                                         "Padding": "16, 5, 16, 5",
@@ -144,7 +144,7 @@
                                                                     {
                                                                         "BlockType": "text",
                                                                         "Source": "[LIVE]",
-                                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                         "Width": 231,
                                                                         "FontSize": 12,
                                                                         "Foreground": "{darkPurple}",
@@ -195,7 +195,7 @@
                                                                 "BlockType": "text",
                                                                 "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
                                                                 "Source": "[QUALIFYING]",
-                                                                "FontName": "{Font_CalendarNextDateHead}",
+                                                                "FontName": "{Archivo_SemiBold}",
                                                                 "FontSize": 24,
                                                                 "Foreground": "{darkPurple}",
                                                                 "Padding": "16, 16, 16, 40"
@@ -210,7 +210,7 @@
                                                             {
                                                                 "BlockType": "text",
                                                                 "Source": "[Qualifying] - [{Item.Name}]",
-                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                 "FontSize": 16,
                                                                 "Foreground": "{darkPurple}",
                                                                 "Padding": "16, 0, 16, 5",
@@ -221,7 +221,7 @@
                                                             {
                                                                 "BlockType": "text",
                                                                 "Source": "[TBC]",
-                                                                "FontName": "{Font_CalendarNextSessionTime}",
+                                                                "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                                 "FontSize": 16,
                                                                 "Foreground": "{red}",
                                                                 "Padding": "16, 5, 16, 5",
@@ -249,7 +249,7 @@
                                                                             {
                                                                                 "BlockType": "text",
                                                                                 "Source": "[RESULTS]",
-                                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                                "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                                 "Width": 231,
                                                                                 "FontSize": 12,
                                                                                 "Foreground": "{darkPurple}",
@@ -270,7 +270,7 @@
                                                             {
                                                                 "BlockType": "text",
                                                                 "Source": "[Qualifying 1] - [{Item.Name}]",
-                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                 "FontSize": 16,
                                                                 "Foreground": "{darkPurple}",
                                                                 "Padding": "16, 0, 16, 5",
@@ -288,7 +288,7 @@
                                                             {
                                                                 "BlockType": "text",
                                                                 "Source": "[TBC]",
-                                                                "FontName": "{Font_CalendarNextSessionTime}",
+                                                                "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                                 "FontSize": 16,
                                                                 "Foreground": "{red}",
                                                                 "Padding": "16, 5, 16, 5",
@@ -316,7 +316,7 @@
                                                                             {
                                                                                 "BlockType": "text",
                                                                                 "Source": "[RESULTS]",
-                                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                                "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                                 "Width": 231,
                                                                                 "FontSize": 12,
                                                                                 "Foreground": "{darkPurple}",
@@ -337,7 +337,7 @@
                                                             {
                                                                 "BlockType": "text",
                                                                 "Source": "[Qualifying 2] - [{Item.Name}]",
-                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                 "FontSize": 16,
                                                                 "Foreground": "{darkPurple}",
                                                                 "Padding": "16, 0, 16, 5",
@@ -355,7 +355,7 @@
                                                             {
                                                                 "BlockType": "text",
                                                                 "Source": "[TBC]",
-                                                                "FontName": "{Font_CalendarNextSessionTime}",
+                                                                "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                                 "FontSize": 16,
                                                                 "Foreground": "{red}",
                                                                 "Padding": "16, 5, 16, 5",
@@ -383,7 +383,7 @@
                                                                             {
                                                                                 "BlockType": "text",
                                                                                 "Source": "[RESULTS]",
-                                                                                "FontName": "{Font_CalendarNextSessionName}",
+                                                                                "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                                 "Width": 231,
                                                                                 "FontSize": 12,
                                                                                 "Foreground": "{darkPurple}",
@@ -423,7 +423,7 @@
                                                         "BlockType": "text",
                                                         "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
                                                         "Source": "[QUALIFYING]",
-                                                        "FontName": "{Font_CalendarNextDateHead}",
+                                                        "FontName": "{Archivo_SemiBold}",
                                                         "FontSize": 24,
                                                         "Foreground": "{darkPurple}",
                                                         "Padding": "16, 16, 16, 40"
@@ -431,7 +431,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "[{Item.SessionType}]",
-                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{darkPurple}",
                                                         "Padding": "16, 0, 16, 5",
@@ -458,7 +458,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "[TBC]",
-                                                        "FontName": "{Font_CalendarNextSessionTime}",
+                                                        "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                         "FontSize": 16,
                                                         "Foreground": "{red}",
                                                         "Padding": "16, 5, 16, 5",
@@ -503,7 +503,7 @@
                                                                     {
                                                                         "BlockType": "text",
                                                                         "Source": "[LIVE]",
-                                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                         "Width": 231,
                                                                         "FontSize": 12,
                                                                         "Foreground": "{darkPurple}",
@@ -550,7 +550,7 @@
                                                         "BlockType": "text",
                                                         "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}",
                                                         "Source": "[RACE]",
-                                                        "FontName": "{Font_CalendarNextDateHead}",
+                                                        "FontName": "{Archivo_SemiBold}",
                                                         "FontSize": 24,
                                                         "Foreground": "{lightBlue}",
                                                         "Padding": "16, 16, 16, 40"
@@ -558,7 +558,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "[{Item.SessionType}]",
-                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{darkPurple}",
                                                         "Padding": "16, 0, 16, 5",
@@ -569,7 +569,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "[TBC]",
-                                                        "FontName": "{Font_CalendarNextSessionTime}",
+                                                        "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                         "FontSize": 16,
                                                         "Foreground": "{red}",
                                                         "Padding": "16, 5, 16, 5",
@@ -614,7 +614,7 @@
                                                                     {
                                                                         "BlockType": "text",
                                                                         "Source": "[LIVE]",
-                                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                                         "Width": 231,
                                                                         "FontSize": 12,
                                                                         "Foreground": "{darkPurple}",
@@ -652,7 +652,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "[TRACK INFO]",
-                                                "FontName": "{Font_CalendarNextHead}",
+                                                "FontName": "{DrukTextWide_Medium}",
                                                 "FontSize": 16,
                                                 "Foreground": "{darkPurple}",
                                                 "Padding": "0, 40, 0, 0",
@@ -679,7 +679,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "[Length]",
-                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{darkPurple}",
                                                         "Padding": "0, 5, 0, 0",
@@ -690,7 +690,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "{Item.Track.Length, Converter=NumberGroupWithSeparator, Parameter=.} [Km]",
-                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{lightBlue}",
                                                         "Padding": "0, 5, 0, 0",
@@ -709,7 +709,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "{Item.Track.NumberTurns} [Turns]",
-                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{darkPurple}",
                                                         "Padding": "0, 5, 0, 0",
@@ -720,7 +720,7 @@
                                                     {
                                                         "BlockType": "text",
                                                         "Source": "{{Item.Track.Name}_Corners}",
-                                                        "FontName": "{Font_CalendarNextSessionName}",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{lightBlue}",
                                                         "Padding": "0, 5, 0, 0",

@@ -56,7 +56,7 @@
                     "Setters": [
                         {
                             "Property": "FontName",
-                            "Value": "{CountryFont}"
+                            "Value": "{Archivo_Black_Itallic}"
                         },
                         {
                             "Property": "FontSize",
@@ -97,7 +97,7 @@
                         {
                             "BlockType": "text",
                             "Source": "[{Item.Track.CountryName, Converter=StringToUpperString}]",
-                            "FontName": "{CountryFont}",
+                            "FontName": "{Archivo_Black_Itallic}",
                             "Foreground": "{white}",
                             "FontSize": 26,
                             "Padding": "0, 2"
@@ -115,7 +115,7 @@
                                     "Setters": [
                                         {
                                             "Property": "FontName",
-                                            "Value": "{CountryFont}"
+                                            "Value": "{Archivo_Black_Itallic}"
                                         },
                                         {
                                             "Property": "FontSize",
@@ -143,7 +143,7 @@
                             "Setters": [
                                 {
                                     "Property": "FontName",
-                                    "Value": "{CountryFont}"
+                                    "Value": "{Archivo_Black_Itallic}"
                                 },
                                 {
                                     "Property": "FontSize",

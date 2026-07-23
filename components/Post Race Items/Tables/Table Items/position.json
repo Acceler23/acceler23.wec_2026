@@ -39,7 +39,7 @@
                             "FontSize": 45,
                             "VerticalAlignment": "Center",
                             "HorizontalAlignment": "Center",
-                            "FontName": "{P1FontTable}"
+                            "FontName": "{Archivo_CondensedBlack_Itallic}"
                         },
                         {
                             "BlockType": "text",
@@ -47,7 +47,7 @@
                             "Foreground": "{white}",
                             "VerticalAlignment": "Center",
                             "HorizontalAlignment": "Center",
-                            "FontName": "{TableFontDefault}"
+                            "FontName": "{Archivo_SemiExpanded_Itallic}"
                         }
                     ]
                 }

@@ -1,0 +1,8 @@
+[
+    {
+        "TriggerName": "Livery_DrivertoCar",
+        "Condition": "{Item.LiveryPath, Converter=EmptyObjectToTrue}",
+        "Property": "Source",
+        "Value": "{Item.Car.LiveryPath}"
+    }
+]

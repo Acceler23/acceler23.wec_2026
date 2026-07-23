@@ -71,7 +71,7 @@
                 "Width": 80,
                 "Source": "[{Item.Car.Vendor.Name} Short]",
                 "Style": "DriverLineStyle",
-                "FontName": "{CardTeamNameFont}",
+                "FontName": "{Archivo_Black_Itallic}",
                 "TextOptions": {
                     "FontStyle": "BoldItalic"
                 },
@@ -95,6 +95,7 @@
         "BlockType": "dock",
         "Orientation": "Horizontal",
         "Background": "{darkPurple}",
+        "Height": 50,
         "Width": 78,
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
@@ -104,10 +105,16 @@
         ],
         "Items": [
             {
+                "BlockType": "shape",
+                "Width": 20,
+                "Height": 78,
+                "Margin": "-20,-78,0,0"
+            },
+            {
                 "BlockType": "text",
                 "Source": "[{Item.{CarNumber}}]",
                 "Style": "DriverLineStyle",
-                "FontName": "{RaceNumberFont}",
+                "FontName": "{Archivo_Black_Itallic}",
                 "HorizontalAlignment": "Center",
                 "Triggers": [
                     { "Trigger": "TeamColor_ForegroundP1" },
@@ -178,6 +185,8 @@
                             { "Trigger": "Team_LogotypeVendor" },
                             { "Trigger": "WEC_Car_Logotype" },
                             { "Trigger": "WEC_Team_Logotype" },
+                            { "Trigger": "WEC_TeamSession_Logotype" }
+
                         ]
                     }
                 ]

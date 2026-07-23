@@ -1,4 +1,5 @@
 [
+    //Logos
     {
         "ComponentName": "MediaRace_Logos",
         "BlockType": "canvas",
@@ -39,6 +40,7 @@
             }
         ]
     },
+    //Race Header
     {
         "ComponentName": "Media_HeaderRace",
         "BlockType": "dock",
@@ -49,7 +51,7 @@
             {
                 "BlockType": "text",
                 "Source": "[RACE]",
-                "FontName": "{Font_MediaHeader}",
+                "FontName": "{DrukWide_Super_Itallic}",
                 "Foreground": "{white}",
                 "FontSize": 115,
                 "Padding": "5",
@@ -61,7 +63,7 @@
             {
                 "BlockType": "text",
                 "Source": "[RESULTS]",
-                "FontName": "{Font_MediaHeader}",
+                "FontName": "{DrukWide_Super_Itallic}",
                 "Foreground": "{lightBlue}",
                 "FontSize": 115,
                 "Padding": "5",
@@ -72,6 +74,41 @@
             }
         ]
     },
+    //Qualy Header
+    {
+        "ComponentName": "Media_HeaderQualy",
+        "BlockType": "dock",
+        "Orientation": "Vertical",
+        "Width": 1200,
+        "Spacing": -11,
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[STARTING]",
+                "FontName": "{DrukWide_Super_Itallic}",
+                "Foreground": "{white}",
+                "FontSize": 115,
+                "Padding": "5",
+                "HorizontalAlignment": "Center",
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            },
+            {
+                "BlockType": "text",
+                "Source": "[GRID]",
+                "FontName": "{DrukWide_Super_Itallic}",
+                "Foreground": "{whiteGray}",
+                "FontSize": 115,
+                "Padding": "5",
+                "HorizontalAlignment": "Center",
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            }
+        ]
+    },
+    //Standings Head
     {
         "ComponentName": "Media_HeaderStandings",
         "BlockType": "dock",
@@ -82,7 +119,7 @@
             {
                 "BlockType": "text",
                 "Source": "[OVERALL]",
-                "FontName": "{Font_MediaHeader}",
+                "FontName": "{DrukWide_Super_Itallic}",
                 "Foreground": "{white}",
                 "FontSize": 115,
                 "Padding": "5",
@@ -99,7 +136,7 @@
             {
                 "BlockType": "text",
                 "Source": "[STANDINGS]",
-                "FontName": "{Font_MediaHeader}",
+                "FontName": "{DrukWide_Super_Itallic}",
                 "Foreground": "{lightBlue}",
                 "FontSize": 115,
                 "Padding": "5",
@@ -110,6 +147,7 @@
             }
         ]
     },
+    //Race Class Head
     {
         "ComponentName": "Media_ClassHead_Race",
         "BlockType": "canvas",
@@ -140,18 +178,18 @@
             },
             {
                 "BlockType": "text",
-                "Source": "[{Session.RacingClass.Name, Converter=StringToUpperString}]",
+                "Source": "[OVERALL]",
                 "Foreground": "{white}",
-                "FontName": "{MulticalssFont}",
+                "FontName": "{DrukWide_Medium_Italic}",
                 "FontSize": 28,
                 "Padding": "5",
                 "PositionX": 116,
                 "PositionY": 32,
                 "Triggers": [
                     {
-                        "Condition": "{Session.RacingClass.Name, Converter=EmptyObjectToTrue}",
+                        "Condition": "{Session.IsHaveRacingClass}",
                         "Property": "Source",
-                        "Value": "[OVERALL]"
+                        "Value": "[{Session.RacingClass.Name, Converter=StringToUpperString}]"
                     }
                 ]
             },
@@ -159,7 +197,7 @@
                 "BlockType": "text",
                 "Source": "[LAST]",
                 "Foreground": "{lightBlue}",
-                "FontName": "{MulticalssFont}",
+                "FontName": "{DrukWide_Medium_Italic}",
                 "FontSize": 28,
                 "Padding": "5",
                 "PositionX": 600,
@@ -175,7 +213,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[{Session.SessionName, Converter=StringToUpperString}]",
-                        "FontName": "{Font_MediaNextRaceDate}",
+                        "FontName": "{Druk_Medium_ItallicDate}",
                         "HorizontalAlignment": "Left",
                         "VerticalAlignment": "Center",
                         "FontSize": 57,
@@ -188,7 +226,7 @@
                     {
                         "BlockType": "text",
                         "Source": ":",
-                        "FontName": "{Font_MediaNextRaceAlt}",
+                        "FontName": "{Archivo_Bold_Itallic}",
                         "HorizontalAlignment": "Left",
                         "VerticalAlignment": "Top",
                         "FontSize": 40,
@@ -201,7 +239,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[day {Event.Date, Converter=DateToDayOfMonth}] [Card {Event.Date, Converter=DateToMonthInWords}]",
-                        "FontName": "{Font_MediaNextRaceDate}",
+                        "FontName": "{Druk_Medium_ItallicDate}",
                         "HorizontalAlignment": "Right",
                         "VerticalAlignment": "Center",
                         "FontSize": 57,
@@ -219,6 +257,142 @@
             },
         ]
     },
+    //Qualy Class Head
+    {
+        "ComponentName": "Media_ClassHead_Qualy",
+        "BlockType": "canvas",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/qualy/subheader.png"
+            },
+            {
+                "BlockType": "text",
+                "Source": "[OVERALL]",
+                "Foreground": "{white}",
+                "FontName": "{DrukWide_Medium_Italic}",
+                "FontSize": 28,
+                "Padding": "5",
+                "PositionX": 160,
+                "PositionY": 35,
+                "Triggers": [
+                    {
+                        "Condition": "{Session.IsHaveRacingClass}",
+                        "Property": "Source",
+                        "Value": "[{Session.RacingClass.Name, Converter=StringToUpperString}]"
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Horizontal",
+                "PositionX": 425,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[RACE]",
+                        "Foreground": "{white}",
+                        "FontName": "{DrukWide_Medium_Italic}",
+                        "FontSize": 28,
+                        "Padding": "0, 80, 5, 0",
+                        "VerticalAlignment": "Top",
+                        "PositionY": 35
+                    },
+                    {
+                        "BlockType": "stack",
+                        "VerticalAlignment": "Top",
+                        "MarginTop": 15,
+                        "Height": 90,
+                        "Width": 365,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[START]",
+                                "FontName": "{Druk_Medium_ItallicDate}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Center",
+                                "FontSize": 57,
+                                "Foreground": "{white}",
+                                "Padding": "5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": ":",
+                                "FontName": "{Archivo_Bold_Itallic}",
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Top",
+                                "FontSize": 40,
+                                "Foreground": "{white}",
+                                "Padding": "2,25,2,5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{Event.DateLocal, Converter=DateCustomFormat, Parameter=HH}",
+                                "FontName": "{Druk_Medium_ItallicDate}",
+                                "HorizontalAlignment": "Right",
+                                "VerticalAlignment": "Center",
+                                "FontSize": 57,
+                                "Foreground": "{whiteGray}",
+                                "Padding": "5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Margin": "-6, 0",
+                                "Source": "[:]",
+                                "FontName": "{Archivo_Bold_Itallic}",
+                                "HorizontalAlignment": "Right",
+                                "VerticalAlignment": "Top",
+                                "FontSize": 40,
+                                "Foreground": "{whiteGray}",
+                                "Padding": "0, 30, 0, 0",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{Event.DateLocal, Converter=DateCustomFormat, Parameter=mm}",
+                                "FontName": "{Druk_Medium_ItallicDate}",
+                                "HorizontalAlignment": "Right",
+                                "VerticalAlignment": "Center",
+                                "FontSize": 57,
+                                "Foreground": "{whiteGray}",
+                                "Padding": "5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Height": 105,
+                "Width": 340,
+                "PositionX": 860,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "fiawec_plus",
+                        "Height": 43,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Center"
+                    }
+                ]
+            }
+        ]
+    },
+    //Standing Class Head
     {
         "ComponentName": "Media_ClassHead_Standing",
         "BlockType": "canvas",
@@ -257,7 +431,7 @@
                         "BlockType": "text",
                         "Source": "[OVERALL]",
                         "Foreground": "{white}",
-                        "FontName": "{MulticalssFont}",
+                        "FontName": "{DrukWide_Medium_Italic}",
                         "FontSize": 28,
                         "Padding": "5",
                         "Triggers": [
@@ -268,7 +442,7 @@
                         "BlockType": "text",
                         "Source": "[PT]{TablePage}",
                         "Foreground": "{white}",
-                        "FontName": "{Font_MediaParts}",
+                        "FontName": "{Archivo_Bold_Itallic}",
                         "FontSize": 13,
                         "Padding": "5",
                         "VerticalAlignment": "Center"
@@ -276,39 +450,77 @@
                 ]
             },
             {
-                "BlockType": "text",
-                "Source": "[NEXT]",
-                "Foreground": "{lightBlue}",
-                "FontName": "{MulticalssFont}",
-                "FontSize": 28,
-                "Padding": "5",
-                "PositionX": 600,
-                "PositionY": 32
-            },
-            {
                 "BlockType": "stack",
-                "PositionX": 725,
+                "PositionX": 600,
                 "PositionY": 12,
                 "Height": 90,
-                "Width": 365,
+                //"Width": 365,
                 "Items": [
                     {
                         "BlockType": "text",
-                        "Source": "[RACE]",
-                        "FontName": "{Font_MediaNextRaceDate}",
+                        "Source": "[NEXT]",
+                        "Foreground": "{lightBlue}",
+                        "FontName": "{DrukWide_Medium_Italic}",
                         "HorizontalAlignment": "Left",
-                        "VerticalAlignment": "Center",
+                        "FontSize": 28,
+                        "MarginTop": 23,
+                        "Padding": "5",
+                        "Triggers": [
+                            {
+                                "Condition": "{Season.SeasonProgressPercent}",
+                                "ConditionValue": 100,
+                                "Setters": [
+                                    {
+                                        "Property": "Source",
+                                        "Value": "[CHAMPION]"
+                                    },
+                                    {
+                                        "Property": "FontSize",
+                                        "Value": 20
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[RACE]",
+                        "FontName": "{Druk_Medium_ItallicDate}",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
                         "FontSize": 57,
+                        "MarginTop": 11,
                         "Foreground": "{white}",
                         "Padding": "5",
                         "TextOptions": {
                             "FontStyle": "Italic"
-                        }
+                        },
+                        "Triggers": [
+                            {
+                                "Condition": "{Season.SeasonProgressPercent}",
+                                "ConditionValue": 100,
+                                "Setters": [
+                                    {
+                                        "Property": "Source",
+                                        "Value": "[{Season.SeasonLeader.{DriverName}, Converter=StringToUpperString}]"
+                                    },
+                                    {
+                                        "Property": "FontSize",
+                                        "Value": 45
+                                    },
+                                    {
+                                        "Property": "MarginTop",
+                                        "Value": 13
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     {
                         "BlockType": "text",
+                        "RenderIf": "{Season.SeasonProgressPercent, Converter=NumberLess, Parameter=100}",
                         "Source": ":",
-                        "FontName": "{Font_MediaNextRaceAlt}",
+                        "FontName": "{Archivo_Bold_Itallic}",
                         "HorizontalAlignment": "Left",
                         "VerticalAlignment": "Top",
                         "FontSize": 40,
@@ -320,6 +532,7 @@
                     },
                     {
                         "BlockType": "itemstack",
+                        "RenderIf": "{Season.SeasonProgressPercent, Converter=NumberLess, Parameter=100}",
                         "HorizontalAlignment": "Right",
                         "VerticalAlignment": "Center",
                         "ItemStackOptions": {
@@ -328,7 +541,7 @@
                             "ItemTemplate": {
                                 "BlockType": "text",
                                 "Source": "[day {Item.Date, Converter=DateToDayOfMonth}] [Card {Item.Date, Converter=DateToMonthInWords}]",
-                                "FontName": "{Font_MediaNextRaceDate}",
+                                "FontName": "{Druk_Medium_ItallicDate}",
                                 "HorizontalAlignment": "Right",
                                 "VerticalAlignment": "Center",
                                 "FontSize": 57,
@@ -348,6 +561,7 @@
             }
         ]
     },
+    //Session bottom
     {
         "ComponentName": "MediaSession_BottomPages",
         "BlockType": "dock",
@@ -360,10 +574,27 @@
                 "Foreground": "{white}",
                 "HorizontalAlignment": "Right",
                 "Opacity": 50,
-                "FontName": "{Font_MediaBottomPages}"
+                "FontName": "{Archivo_Bold_Itallic}"
             }
         ]
     },
+    {
+        "ComponentName": "MediaSession_BottomMultiPages",
+        "BlockType": "dock",
+        "Width": 1145,
+        "PositionY": 1465,
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "<page> / {{Session.DriversCount, Converter=NumberDivide, Parameter=7}, Converter=NumberAdd, Parameter=1}",
+                "Foreground": "{white}",
+                "HorizontalAlignment": "Right",
+                "Opacity": 50,
+                "FontName": "{Archivo_Bold_Itallic}"
+            }
+        ]
+    },
+    //Standing Bottom
     {
         "ComponentName": "MediaStandings_BottomPages",
         "BlockType": "dock",
@@ -376,7 +607,7 @@
                 "Foreground": "{white}",
                 "HorizontalAlignment": "Right",
                 "Opacity": 50,
-                "FontName": "{Font_MediaBottomPages}"
+                "FontName": "{Archivo_Bold_Itallic}"
             }
         ]
     }

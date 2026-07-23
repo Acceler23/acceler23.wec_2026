@@ -15,7 +15,8 @@
             },
             {
                 "BlockType": "image",
-                "Source": "Track_images/{Session.Track.CircuitOrigin}.png"
+                "Source": "Track_images/{Session.Track.CircuitOrigin}.png",
+                "Width": "{PostRaceWidth}"
             }
         ]
     },

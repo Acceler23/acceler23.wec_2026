@@ -6,7 +6,6 @@
         "TableOptions": {
             "ItemsSource": "{Standings.Drivers}",
             "OrderByDescending": "RaceDetails.FastestLapWinsCount",
-            "OrderBy2": "RaceDetails.AverageFastestLapGapToLeader",
             "HeaderTemplate": {
                 "BlockType": "text",
                 "Style": "TableStats_Header"

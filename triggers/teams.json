@@ -90,6 +90,13 @@
         "Value": "{Item.Team.SecondaryColor}"
     },
     {
+        "TriggerName": "TeamColor_SecondaryForeground",
+        "Condition": "{Season.LineupsBasedType}",
+        "ConditionValue": "Teams",
+        "Property": "Foreground",
+        "Value": "{Item.Team.SecondaryColor}"
+    },
+    {
         "TriggerName": "Team_FullName",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Teams",
