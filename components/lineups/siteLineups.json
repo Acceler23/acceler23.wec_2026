@@ -937,12 +937,14 @@
         "BlockType": "stack",
         "Orientation": "Vertical",
         "Spacing": 28,
+        "RenderIf": "{Item.IsDriverSet}",
         "Items": [
             {
                 "BlockType": "text",
                 "Source": "[{Item.Team.Name, Converter=StringToUpperString}]",
                 "Foreground": "{darkPurple}",
                 "FontSize": 32,
+                "Padding": "5",
                 "FontName": "{DrukWide_Bold}",
                 "HorizontalAlignment": "Center"
             },
