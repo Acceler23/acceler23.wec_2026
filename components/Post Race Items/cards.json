@@ -300,6 +300,14 @@
                                         "ConditionValue": "Cars",
                                         "Property": "Source",
                                         "Value": "{Item.Driver.{DriverName}, Converter=StringToUpperString}"
+                                    },
+                                    {
+                                        "Condition": "{DriverName}",
+                                        "ConditionValue": "Short First Name",
+                                        "ConditionAnd": "{Season.LineupsBasedType}",
+                                        "ConditionAndValue": "Cars",
+                                        "Property": "Source",
+                                        "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
                                     }
                                 ]
                             }

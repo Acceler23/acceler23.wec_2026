@@ -161,26 +161,70 @@
         "Value": "{Item.Car.Vendor.LogotypePath}"
     },
     {
-        "TriggerName": "WEC_Team_GrayLogotype",
+        "TriggerName": "WEC_Team_DarkAltLogotype",
         "Condition": "{ReplaceLogos}",
         "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
         "Property": "Source",
-        "Value": "{Item.Team.Car.Vendor.GrayedLogotypePath}"
+        "Value": "{Item.Team.Car.Vendor.AlternativeDarkLogotypePath}"
     },
     {
-        "TriggerName": "WEC_TeamSession_GrayLogotype",
+        "TriggerName": "WEC_TeamSession_DarkAltLogotype",
         "Condition": "{ReplaceLogos}",
-        "ConditionAnd": "{Item.Team.Car.Vendor.GrayedLogotypePath, Converter=EmptyObjectToTrue}",
+        "ConditionAnd": "{Item.Team.Car.Vendor.AlternativeDarkLogotypePath, Converter=EmptyObjectToTrue}",
         "Property": "Source",
-        "Value": "{Item.Car.Vendor.GrayedLogotypePath}"
+        "Value": "{Item.Car.Vendor.AlternativeDarkLogotypePath}"
     },
     {
-        "TriggerName": "WEC_Car_GrayLogotype",
+        "TriggerName": "WEC_Car_DarkAltLogotype",
         "Condition": "{ReplaceLogos}",
         "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
         "Property": "Source",
-        "Value": "{Item.Car.Vendor.GrayedLogotypePath}"
+        "Value": "{Item.Car.Vendor.AlternativeDarkLogotypePath}"
     },
+    {
+        "TriggerName": "WEC_Team_LightAltLogotype",
+        "Condition": "{ReplaceLogos}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "Source",
+        "Value": "{Item.Team.Car.Vendor.AlternativeLightLogotypePath}"
+    },
+    {
+        "TriggerName": "WEC_TeamSession_LightAltLogotype",
+        "Condition": "{ReplaceLogos}",
+        "ConditionAnd": "{Item.Team.Car.Vendor.AlternativeLightLogotypePath, Converter=EmptyObjectToTrue}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.AlternativeLightLogotypePath}"
+    },
+    {
+        "TriggerName": "WEC_Car_LightAltLogotype",
+        "Condition": "{ReplaceLogos}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.AlternativeLightLogotypePath}"
+    },
+    
+    {
+        "TriggerName": "WEC_Team_OutlineLogotype",
+        "Condition": "{ReplaceLogos}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+        "Property": "Source",
+        "Value": "{Item.Team.Car.Vendor.OutlineLogotypePath}"
+    },
+    {
+        "TriggerName": "WEC_TeamSession_OutlineLogotype",
+        "Condition": "{ReplaceLogos}",
+        "ConditionAnd": "{Item.Team.Car.Vendor.OutlineLogotypePath, Converter=EmptyObjectToTrue}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.OutlineLogotypePath}"
+    },
+    {
+        "TriggerName": "WEC_Car_OutlineLogotype",
+        "Condition": "{ReplaceLogos}",
+        "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+        "Property": "Source",
+        "Value": "{Item.Car.Vendor.OutlineLogotypePath}"
+    },
+    
     {
         "TriggerName": "WEC_Car_DarkLogotype",
         "Condition": "{ReplaceLogos}",

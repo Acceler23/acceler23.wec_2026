@@ -44,7 +44,7 @@
             "PublicName": "Card Track Name Size",
             "Category": "Global Options",
             "Type": "Integer",
-            "DefaultValue": 30,
+            "DefaultValue": 33,
             "MinimumValue": 10
         },
         {
@@ -101,11 +101,13 @@
             "Type": "Enum",
             "EnumValues": [
                 "Name",
+                "RealName",
                 "InGameName",
                 "DiscordName",
                 "SteamName",
                 "BadgeText",
-                "Description"
+                "Description",
+                "Short First Name"
             ],
             "DefaultValue": "Name"
         },
@@ -158,6 +160,104 @@
                 "LeadDistance",
                 "RaceDistancePercentage"
             ]
+        },
+        {
+            "Category": "Media Information",
+            "Name": "Media_StandingInfo",
+            "PublicName": "Media Standing Single Information",
+            "Type": "Enum",
+            "EnumValues": [
+                "PositionJump",
+                "Points",
+                "CountP1",
+                "CountP2",
+                "CountP3",
+                "BestPos1",
+                "BestPos2",
+                "BestPos3",
+                "RacesCount",
+                "QualCount",
+                "EventsCount",
+                "RaceFastestLapCount",
+                "RaceDriverDayCount",
+                "RaceBestMomentCount",
+                "RaceMostLapsLedCount",
+                //"CountQualP1",
+                //"BestPosQual",
+                "PenaltyPoints",
+                "CountDnf",
+                "CountDns",
+                "CountNotClassified",
+                "CountTop3",
+                "CountTop5",
+                "CountTop10",
+                //extras
+                //Race
+                "BestMaxSpeed",
+                "AverageMaxSpeed",
+                "TotalOvertakes",
+                "AverageOvertakesPerRace",
+                "TotalPositionsLost",
+                "AveragePositionsLostPerRace",
+                "TotalLaps",
+                "LapCompletionPercent",
+                "TotalLeadLaps",
+                "TotalLeadDistance",
+                "TotalPitStops",
+                "AveragePitStopsPerRace",
+                "TotalStintCount",
+                "TotalStintLaps",
+                "AverageStintLaps",
+                "MostUsedTyre",
+                //Qualy
+                "BestQualPosition",
+                "WorstQualPosition",
+                "AverageQualPosition",
+                "PoleCount",
+                "FrontRowCount",
+                //"CountTop3",
+                //"CountTop5",
+                //"CountTop10",
+                "TotalQualsCount",
+                //Participation
+                "EventsParticipated",
+                "EventCompletionRatePercent",
+                "TotalRacesCount",
+                "TotalRacesFinished",
+                "RaceCompletionRatePercent",
+                //"TotalQualsCount",
+                "TotalPracticesCount",
+                "TotalSessionsParticipated",
+                //Penalties
+                "TotalPenaltyPoints",
+                "TotalPenaltyTime",
+                "TotalPenaltyPositions",
+                //Positions
+                "BestAllRacePosition",
+                "WorstAllRacePosition",
+                "AverageAllRacePosition",
+                "BestAllQualPosition",
+                "WorstAllQualPosition",
+                "AverageAllQualPosition",
+                "AveragePositionChange",
+                "AveragePointsPerMajorRace",
+                "ScoringRatePercent",
+                //Discarding
+                "DiscardedEventsCount",
+                "DiscardedRacesCount",
+                "TotalDiscardedPoints",
+                //championship
+                "BestChampionshipPosition",
+                "RoundsLeading"
+            ]
+        },
+        {
+            "Category": "Media Information",
+            "Name": "Media_StandingInfoFix",
+            "PublicName": "Standing Start with",
+            "Type": "Integer",
+            "MinimumValue": 0,
+            "DefaultValue": 0
         },
 
         //Calendar

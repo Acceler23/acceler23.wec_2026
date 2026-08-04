@@ -82,7 +82,7 @@
                     }
                 },
                 {
-                    "Header": "[Lead \nlaps]",
+                    "Header": "[Lead\nlaps]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -95,7 +95,7 @@
                     }
                 },
                 {
-                    "Header": "[Lead \ndistance]",
+                    "Header": "[Lead\ndistance]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -108,7 +108,7 @@
                     }
                 },
                 {
-                    "Header": "[Race \ndistance (%)]",
+                    "Header": "[Race\ndistance (%)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -147,7 +147,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \n(pos)]",
+                    "Header": "[Penalty\n(pos)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -176,7 +176,7 @@
                     }
                 },
                 {
-                    "Header": "[Max. \n(km/h)]",
+                    "Header": "[Max.\n(km/h)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -262,7 +262,7 @@
                     }
                 },
                 {
-                    "Header": "[Driver \npoints]",
+                    "Header": "[Driver\npoints]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -275,7 +275,7 @@
                     }
                 },
                 {
-                    "Header": "[Team \npoints]",
+                    "Header": "[Team\npoints]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -530,7 +530,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \n(pos)]",
+                    "Header": "[Penalty\n(pos)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -551,7 +551,7 @@
                     }
                 },
                 {
-                    "Header": "[Max. \n(km/h)]",
+                    "Header": "[Max.\n(km/h)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -564,7 +564,7 @@
                     }
                 },
                 {
-                    "Header": "[Best lap \nnumber]",
+                    "Header": "[Best lap\nnumber]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -616,7 +616,7 @@
                     }
                 },
                 {
-                    "Header": "[Q1 \ntime]",
+                    "Header": "[Q1\ntime]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -629,7 +629,7 @@
                     }
                 },
                 {
-                    "Header": "[Q2 \ntime]",
+                    "Header": "[Q2\ntime]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -642,7 +642,7 @@
                     }
                 },
                 {
-                    "Header": "[Q3 \ntime]",
+                    "Header": "[Q3\ntime]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -655,7 +655,7 @@
                     }
                 },
                 {
-                    "Header": "[Driver \npoints]",
+                    "Header": "[Driver\npoints]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -668,7 +668,7 @@
                     }
                 },
                 {
-                    "Header": "[Team \npoints]",
+                    "Header": "[Team\npoints]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -843,7 +843,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \npoints]",
+                    "Header": "[Total\npoints]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "PointsTotal_Stats"
@@ -972,14 +972,14 @@
                     }
                 },
                 {
-                    "Header": "[Total \npoints]",
+                    "Header": "[Total\npoints]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "PointsTotal_Stats"
                     }
                 },
                 {
-                    "Header": "[Gap to \nleader]",
+                    "Header": "[Gap to\nleader]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -992,7 +992,7 @@
                     }
                 },
                 {
-                    "Header": "[Gap to \nabove]",
+                    "Header": "[Gap to\nabove]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1005,7 +1005,7 @@
                     }
                 },
                 {
-                    "Header": "[Best \nchamp pos]",
+                    "Header": "[Best\nchamp pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1018,7 +1018,7 @@
                     }
                 },
                 {
-                    "Header": "[Rounds \nleading]",
+                    "Header": "[Rounds\nleading]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1031,7 +1031,7 @@
                     }
                 },
                 {
-                    "Header": "[Best \npossible pos]",
+                    "Header": "[Best\npossible pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1044,7 +1044,7 @@
                     }
                 },
                 {
-                    "Header": "[Events \ndiscarded]",
+                    "Header": "[Events\ndiscarded]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1057,7 +1057,7 @@
                     }
                 },
                 {
-                    "Header": "[Races \ndiscarded]",
+                    "Header": "[Races\ndiscarded]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1070,7 +1070,7 @@
                     }
                 },
                 {
-                    "Header": "[Points \ndiscarded]",
+                    "Header": "[Points\ndiscarded]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1122,7 +1122,7 @@
                     }
                 },
                 {
-                    "Header": "[Best \npos]",
+                    "Header": "[Best\npos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1200,7 +1200,7 @@
                     }
                 },
                 {
-                    "Header": "[Best \nqualy]",
+                    "Header": "[Best\nqualy]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1213,7 +1213,7 @@
                     }
                 },
                 {
-                    "Header": "[Fastest \nlaps]",
+                    "Header": "[Fastest\nlaps]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1226,7 +1226,7 @@
                     }
                 },
                 {
-                    "Header": "[Driver of \nthe day]",
+                    "Header": "[Driver of\nthe day]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1239,7 +1239,7 @@
                     }
                 },
                 {
-                    "Header": "[Best \nmoment]",
+                    "Header": "[Best\nmoment]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1252,7 +1252,7 @@
                     }
                 },
                 {
-                    "Header": "[Most laps \nlead]",
+                    "Header": "[Most laps\nlead]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1426,7 +1426,7 @@
                     }
                 },
                 {
-                    "Header": "[Fastest \nlaps]",
+                    "Header": "[Fastest\nlaps]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1438,7 +1438,7 @@
                     }
                 },
                 {
-                    "Header": "[Fastest \nlap pos]",
+                    "Header": "[Fastest\nlap pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1450,7 +1450,7 @@
                     }
                 },
                 {
-                    "Header": "[Fastest \nlap gap]",
+                    "Header": "[Fastest\nlap gap]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1462,7 +1462,7 @@
                     }
                 },
                 {
-                    "Header": "[Top speed \n(km/h)]",
+                    "Header": "[Top speed\n(km/h)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1474,7 +1474,7 @@
                     }
                 },
                 {
-                    "Header": "[Avg top \nspeed (km/h)]",
+                    "Header": "[Avg top\nspeed (km/h)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1486,7 +1486,7 @@
                     }
                 },
                 {
-                    "Header": "[Top speed \nposition]",
+                    "Header": "[Top speed\nposition]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1498,7 +1498,7 @@
                     }
                 },
                 {
-                    "Header": "[Top speed \ngap (km/h)]",
+                    "Header": "[Top speed\ngap (km/h)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1510,7 +1510,7 @@
                     }
                 },
                 {
-                    "Header": "[Top \nspeeds]",
+                    "Header": "[Top\nspeeds]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1522,7 +1522,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \novertakes]",
+                    "Header": "[Total\novertakes]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1534,7 +1534,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \novertakes]",
+                    "Header": "[Average\novertakes]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1546,7 +1546,7 @@
                     }
                 },
                 {
-                    "Header": "[Best \novertakes]",
+                    "Header": "[Best\novertakes]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1558,7 +1558,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \npositions lost]",
+                    "Header": "[Total\npositions lost]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1570,7 +1570,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \npositions lost]",
+                    "Header": "[Average\npositions lost]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1582,7 +1582,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \nlaps]",
+                    "Header": "[Total\nlaps]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1606,7 +1606,7 @@
                     }
                 },
                 {
-                    "Header": "[Possible \nlaps]",
+                    "Header": "[Possible\nlaps]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1618,7 +1618,7 @@
                     }
                 },
                 {
-                    "Header": "[Lead \nlaps]",
+                    "Header": "[Lead\nlaps]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1630,7 +1630,7 @@
                     }
                 },
                 {
-                    "Header": "[Lead \ndistance]",
+                    "Header": "[Lead\ndistance]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1642,7 +1642,7 @@
                     }
                 },
                 {
-                    "Header": "[Lead \ndistance (km)]",
+                    "Header": "[Lead\ndistance (km)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1662,7 +1662,7 @@
                     }
                 },
                 {
-                    "Header": "[Pit \nstops]",
+                    "Header": "[Pit\nstops]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1674,7 +1674,7 @@
                     }
                 },
                 {
-                    "Header": "[Avg \nstops]",
+                    "Header": "[Avg\nstops]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1686,7 +1686,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \nstints]",
+                    "Header": "[Total\nstints]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1698,7 +1698,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \nstint laps]",
+                    "Header": "[Total\nstint laps]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1710,7 +1710,7 @@
                     }
                 },
                 {
-                    "Header": "[Avg \nstint laps]",
+                    "Header": "[Avg\nstint laps]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1722,7 +1722,7 @@
                     }
                 },
                 {
-                    "Header": "[Most \nused tyre]",
+                    "Header": "[Most\nused tyre]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1856,7 +1856,7 @@
                     }
                 },
                 {
-                    "Header": "[Best \nqualy pos]",
+                    "Header": "[Best\nqualy pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1868,7 +1868,7 @@
                     }
                 },
                 {
-                    "Header": "[Worst \nqualy pos]",
+                    "Header": "[Worst\nqualy pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1880,7 +1880,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \nqualy pos]",
+                    "Header": "[Average\nqualy pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1892,7 +1892,7 @@
                     }
                 },
                 {
-                    "Header": "[Pole \npositions]",
+                    "Header": "[Pole\npositions]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1904,7 +1904,7 @@
                     }
                 },
                 {
-                    "Header": "[Front \nrows]",
+                    "Header": "[Front\nrows]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1916,7 +1916,7 @@
                     }
                 },
                 {
-                    "Header": "[Top 3 \npositions]",
+                    "Header": "[Top 3\npositions]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1928,7 +1928,7 @@
                     }
                 },
                 {
-                    "Header": "[Top 5 \npositions]",
+                    "Header": "[Top 5\npositions]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1940,7 +1940,7 @@
                     }
                 },
                 {
-                    "Header": "[Top 10 \npositions]",
+                    "Header": "[Top 10\npositions]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1952,7 +1952,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \nquals]",
+                    "Header": "[Total\nquals]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -1964,7 +1964,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \nmain quals]",
+                    "Header": "[Total\nmain quals]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2122,7 +2122,7 @@
                     }
                 },
                 {
-                    "Header": "[Events \nexpected]",
+                    "Header": "[Events\nexpected]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2146,7 +2146,7 @@
                     }
                 },
                 {
-                    "Header": "[Races \nfinished]",
+                    "Header": "[Races\nfinished]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2170,7 +2170,7 @@
                     }
                 },
                 {
-                    "Header": "[Main \nraces]",
+                    "Header": "[Main\nraces]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2182,7 +2182,7 @@
                     }
                 },
                 {
-                    "Header": "[Main races \nfinished]",
+                    "Header": "[Main races\nfinished]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2218,7 +2218,7 @@
                     }
                 },
                 {
-                    "Header": "[Main \nquals]",
+                    "Header": "[Main\nquals]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2376,7 +2376,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \npoints]",
+                    "Header": "[Penalty\npoints]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2388,7 +2388,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \ngame (s)]",
+                    "Header": "[Penalty\ngame (s)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2400,7 +2400,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \nstewards (s)]",
+                    "Header": "[Penalty\nstewards (s)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2412,7 +2412,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \nseconds]",
+                    "Header": "[Penalty\nseconds]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2424,7 +2424,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \ngame (pos)]",
+                    "Header": "[Penalty\ngame (pos)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2436,7 +2436,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \nstewards (pos)]",
+                    "Header": "[Penalty\nstewards (pos)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2448,7 +2448,7 @@
                     }
                 },
                 {
-                    "Header": "[Penalty \nspositions]",
+                    "Header": "[Penalty\nspositions]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2606,7 +2606,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \npos change]",
+                    "Header": "[Average\npos change]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2618,7 +2618,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \npoints (main)]",
+                    "Header": "[Average\npoints (main)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2630,7 +2630,7 @@
                     }
                 },
                 {
-                    "Header": "[Scoring \nmain races]",
+                    "Header": "[Scoring\nmain races]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2642,7 +2642,7 @@
                     }
                 },
                 {
-                    "Header": "[Total \nmain races]",
+                    "Header": "[Total\nmain races]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2666,7 +2666,7 @@
                     }
                 },
                 {
-                    "Header": "[Best main \nrace pos]",
+                    "Header": "[Best main\nrace pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2678,7 +2678,7 @@
                     }
                 },
                 {
-                    "Header": "[Worst main \nrace pos]",
+                    "Header": "[Worst main\nrace pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2690,7 +2690,7 @@
                     }
                 },
                 {
-                    "Header": "[Average main \nrace pos]",
+                    "Header": "[Average main\nrace pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2702,7 +2702,7 @@
                     }
                 },
                 {
-                    "Header": "[Best all \nrace pos]",
+                    "Header": "[Best all\nrace pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2714,7 +2714,7 @@
                     }
                 },
                 {
-                    "Header": "[Worst all \nrace pos]",
+                    "Header": "[Worst all\nrace pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2726,7 +2726,7 @@
                     }
                 },
                 {
-                    "Header": "[Average all \nrace pos]",
+                    "Header": "[Average all\nrace pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2738,7 +2738,7 @@
                     }
                 },
                 {
-                    "Header": "[Best main \nqual pos]",
+                    "Header": "[Best main\nqual pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2750,7 +2750,7 @@
                     }
                 },
                 {
-                    "Header": "[Worst main \nqual pos]",
+                    "Header": "[Worst main\nqual pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2762,7 +2762,7 @@
                     }
                 },
                 {
-                    "Header": "[Average main \nqual pos]",
+                    "Header": "[Average main\nqual pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2774,7 +2774,7 @@
                     }
                 },
                 {
-                    "Header": "[Best all \nqual pos]",
+                    "Header": "[Best all\nqual pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2786,7 +2786,7 @@
                     }
                 },
                 {
-                    "Header": "[Worst all \nqual pos]",
+                    "Header": "[Worst all\nqual pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2798,7 +2798,7 @@
                     }
                 },
                 {
-                    "Header": "[Average all \nqual pos]",
+                    "Header": "[Average all\nqual pos]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2956,7 +2956,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \npace (pos)]",
+                    "Header": "[Average\npace (pos)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2968,7 +2968,7 @@
                     }
                 },
                 {
-                    "Header": "[Pace \n(races)]",
+                    "Header": "[Pace\n(races)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -2980,7 +2980,7 @@
                     }
                 },
                 {
-                    "Header": "[Pace \n(change)]",
+                    "Header": "[Pace\n(change)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3016,7 +3016,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \nconsistency (pos)]",
+                    "Header": "[Average\nconsistency (pos)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3028,7 +3028,7 @@
                     }
                 },
                 {
-                    "Header": "[Consistency \n(races)]",
+                    "Header": "[Consistency\n(races)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3040,7 +3040,7 @@
                     }
                 },
                 {
-                    "Header": "[Consistency \n(change)]",
+                    "Header": "[Consistency\n(change)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3077,7 +3077,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \nattack (pos)]",
+                    "Header": "[Average\nattack (pos)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3089,7 +3089,7 @@
                     }
                 },
                 {
-                    "Header": "[Attack \n(races)]",
+                    "Header": "[Attack\n(races)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3101,7 +3101,7 @@
                     }
                 },
                 {
-                    "Header": "[Attack \n(change)]",
+                    "Header": "[Attack\n(change)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3138,7 +3138,7 @@
                     }
                 },
                 {
-                    "Header": "[Average \ndefense (pos)]",
+                    "Header": "[Average\ndefense (pos)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3150,7 +3150,7 @@
                     }
                 },
                 {
-                    "Header": "[Defense \n(races)]",
+                    "Header": "[Defense\n(races)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",
@@ -3162,7 +3162,7 @@
                     }
                 },
                 {
-                    "Header": "[Defense \n(change)]",
+                    "Header": "[Defense\n(change)]",
                     "Template": {
                         "BlockType": "component",
                         "Component": "Generic_Stats",

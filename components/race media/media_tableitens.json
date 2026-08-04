@@ -113,9 +113,14 @@
                             { "Trigger": "Car_LogotypeLight" },
                             { "Trigger": "Team_LogotypeLight" },
                             { "Trigger": "Team_LogotypeVendorLight" },
-                            { "Trigger": "WEC_Car_LightLogotype" },
-                            { "Trigger": "WEC_Team_LightLogotype" },
-                            { "Trigger": "WEC_TeamSession_LightLogotype" }
+                            { "Trigger": "WEC_Car_LightAltLogotype" },
+                            { "Trigger": "WEC_Team_LightAltLogotype" },
+                            { "Trigger": "WEC_TeamSession_LightAltLogotype" },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "Property": "Height",
+                                "Value": 70
+                            }
                         ]
                     }
                 ]
@@ -143,6 +148,12 @@
                             "Wrap": true
                         },
                         "Triggers": [
+                            {
+                                "Condition": "{DriverName}",
+                                "ConditionValue": "Short First Name",
+                                "Property": "Source",
+                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
+                            },
                             {
                                 "Condition": "{Render_DriverTeam}",
                                 "ConditionAnd": "{Season.LineupsBasedType}",
@@ -280,9 +291,14 @@
                             { "Trigger": "Car_LogotypeLight" },
                             { "Trigger": "Team_LogotypeLight" },
                             { "Trigger": "Team_LogotypeVendorLight" },
-                            { "Trigger": "WEC_Car_LightLogotype" },
-                            { "Trigger": "WEC_Team_LightLogotype" },
-                            { "Trigger": "WEC_TeamSession_LightLogotype" }
+                            { "Trigger": "WEC_Car_LightAltLogotype" },
+                            { "Trigger": "WEC_Team_LightAltLogotype" },
+                            { "Trigger": "WEC_TeamSession_LightAltLogotype" },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "Property": "Height",
+                                "Value": 70
+                            }
                         ]
                     }
                 ]
@@ -309,6 +325,12 @@
                             "Wrap": true
                         },
                         "Triggers": [
+                            {
+                                "Condition": "{DriverName}",
+                                "ConditionValue": "Short First Name",
+                                "Property": "Source",
+                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
+                            },
                             {
                                 "Condition": "{Render_DriverTeam}",
                                 "ConditionAnd": "{Season.LineupsBasedType}",
@@ -436,8 +458,13 @@
                             { "Trigger": "Car_LogotypeLight" },
                             { "Trigger": "Team_LogotypeLight" },
                             { "Trigger": "Team_LogotypeVendorLight" },
-                            { "Trigger": "WEC_Car_LightLogotype" },
-                            { "Trigger": "WEC_Team_LightLogotype" }
+                            { "Trigger": "WEC_Car_LightAltLogotype" },
+                            { "Trigger": "WEC_Team_LightAltLogotype" },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "Property": "Height",
+                                "Value": 60
+                            }
                         ]
                     }
                 ]
@@ -470,6 +497,14 @@
                                 "ConditionValue": "driver",
                                 "Property": "Source",
                                 "Value": "{Item.Driver.{DriverName}, Converter=StringToUpperString}"
+                            },
+                            {
+                                "Condition": "{DriverName}",
+                                "ConditionValue": "Short First Name",
+                                "ConditionAnd": "<renderType2>",
+                                "ConditionAndValue": "driver",
+                                "Property": "Source",
+                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
                             },
                             {
                                 "Condition": "<renderType2>",

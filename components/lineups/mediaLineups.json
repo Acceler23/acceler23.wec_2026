@@ -276,6 +276,14 @@
                     },
                     {
                         "Condition": "<type>",
+                        "ConditionValue": "driver",
+                        "ConditionAnd": "{DriverName}",
+                        "ConditionAndValue": "Short First Name",
+                        "Property": "Source",
+                        "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
+                    },
+                    {
+                        "Condition": "<type>",
                         "ConditionValue": "team",
                         "ConditionAnd": "{Season.LineupsBasedType}",
                         "ConditionAndValue": "Teams",

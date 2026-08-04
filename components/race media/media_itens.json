@@ -165,7 +165,7 @@
                 "Items": [
                     {
                         "BlockType": "image",
-                        "Source": "{Season.GrayedLogotypePath}",
+                        "Source": "{Season.AlternativeDarkLogotypePath}",
                         "HorizontalAlignment": "Left",
                         "VerticalAlignment": "Center",
                         "Width": 600,
@@ -331,6 +331,7 @@
                                     "FontStyle": "Italic"
                                 }
                             },
+                            /*
                             {
                                 "BlockType": "text",
                                 "Source": "{Event.DateLocal, Converter=DateCustomFormat, Parameter=HH}",
@@ -344,31 +345,63 @@
                                     "FontStyle": "Italic"
                                 }
                             },
+                            */
                             {
-                                "BlockType": "text",
-                                "Margin": "-6, 0",
-                                "Source": "[:]",
-                                "FontName": "{Archivo_Bold_Itallic}",
-                                "HorizontalAlignment": "Right",
-                                "VerticalAlignment": "Top",
-                                "FontSize": 40,
-                                "Foreground": "{whiteGray}",
-                                "Padding": "0, 30, 0, 0",
-                                "TextOptions": {
-                                    "FontStyle": "Italic"
-                                }
-                            },
-                            {
-                                "BlockType": "text",
-                                "Source": "{Event.DateLocal, Converter=DateCustomFormat, Parameter=mm}",
-                                "FontName": "{Druk_Medium_ItallicDate}",
-                                "HorizontalAlignment": "Right",
-                                "VerticalAlignment": "Center",
-                                "FontSize": 57,
-                                "Foreground": "{whiteGray}",
-                                "Padding": "5",
-                                "TextOptions": {
-                                    "FontStyle": "Italic"
+                                "BlockType": "itemstack",
+                                        "VerticalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Event.Races}",
+                                    "FilterMember": "RaceType",
+                                    "FilterMemberValue": "Regular",
+                                    "Limit": 1,
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Horizontal",
+                                        "HorizontalAlignment":"Left",
+                                        "VerticalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.DateLocal, Converter=DateCustomFormat, Parameter=HH}",
+                                                "FontName": "{Druk_Medium_ItallicDate}",
+                                                "HorizontalAlignment": "Right",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 57,
+                                                "Foreground": "{whiteGray}",
+                                                "Padding": "5",
+                                                "TextOptions": {
+                                                    "FontStyle": "Italic"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Margin": "-6, 0",
+                                                "Source": "[:]",
+                                                "FontName": "{Archivo_Bold_Itallic}",
+                                                "HorizontalAlignment": "Right",
+                                                "VerticalAlignment": "Top",
+                                                "FontSize": 40,
+                                                "Foreground": "{whiteGray}",
+                                                "Padding": "0, 7, 0, 0",
+                                                "TextOptions": {
+                                                    "FontStyle": "Italic"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Item.DateLocal, Converter=DateCustomFormat, Parameter=mm}",
+                                                "FontName": "{Druk_Medium_ItallicDate}",
+                                                "HorizontalAlignment": "Right",
+                                                "VerticalAlignment": "Center",
+                                                "FontSize": 57,
+                                                "Foreground": "{whiteGray}",
+                                                "Padding": "5",
+                                                "TextOptions": {
+                                                    "FontStyle": "Italic"
+                                                }
+                                            }
+                                        ]
+                                    }
                                 }
                             }
                         ]
@@ -410,7 +443,7 @@
                 "Items": [
                     {
                         "BlockType": "image",
-                        "Source": "{Season.GrayedLogotypePath}",
+                        "Source": "{Season.AlternativeDarkLogotypePath}",
                         "HorizontalAlignment": "Left",
                         "VerticalAlignment": "Center",
                         "Width": 600,

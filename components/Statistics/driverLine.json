@@ -17,7 +17,7 @@
                 "Padding": "5",
                 "HorizontalAlignment": "Center",
                 "VerticalAlignment": "Center",
-                
+
                 "Triggers": [
                     {
                         "Condition": "{PositionIndex}",
@@ -46,7 +46,7 @@
                 "Padding": "5",
                 "HorizontalAlignment": "Center",
                 "VerticalAlignment": "Center",
-                
+
                 "Triggers": [
                     {
                         "Condition": "{PositionIndex}",
@@ -85,9 +85,14 @@
                             { "Trigger": "Car_LogotypeDark" },
                             { "Trigger": "Team_LogotypeDark" },
                             { "Trigger": "Team_LogotypeVendorDark" },
-                            { "Trigger": "WEC_Car_GrayLogotype" },
-                            { "Trigger": "WEC_Team_GrayLogotype" },
-                            { "Trigger": "WEC_TeamSession_GrayLogotype" }
+                            { "Trigger": "WEC_Car_DarkAltLogotype" },
+                            { "Trigger": "WEC_Team_DarkAltLogotype" },
+                            { "Trigger": "WEC_TeamSession_DarkAltLogotype" },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "Property": "Height",
+                                "Value": 56
+                            }
                         ]
                     }
                 ]
@@ -177,7 +182,15 @@
                     "Wrap": true,
                     "TextAlignment": "Start",
                     "HorizontalAlignment": "Left"
-                }
+                },
+                "Triggers": [
+                    {
+                        "Condition": "{DriverName}",
+                        "ConditionValue": "Short First Name",
+                        "Property": "Source",
+                        "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
+                    }
+                ]
             }
         ]
     },
@@ -232,9 +245,14 @@
                             { "Trigger": "Car_LogotypeDark" },
                             { "Trigger": "Team_LogotypeDark" },
                             { "Trigger": "Team_LogotypeVendorDark" },
-                            { "Trigger": "WEC_Car_GrayLogotype" },
-                            { "Trigger": "WEC_Team_GrayLogotype" },
-                            { "Trigger": "WEC_TeamSession_GrayLogotype" }
+                            { "Trigger": "WEC_Car_DarkAltLogotype" },
+                            { "Trigger": "WEC_Team_DarkAltLogotype" },
+                            { "Trigger": "WEC_TeamSession_DarkAltLogotype" },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "Property": "Height",
+                                "Value": 56
+                            }
                         ]
                     }
                 ]

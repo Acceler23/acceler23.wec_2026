@@ -3,7 +3,7 @@
   "Name": "FIA WEC 2026",
   "Author": "Acceler23",
   "Description": "Theme based on the 2026 FIA WEC media",
-  "Version": "1.3.1",
+  "Version": "1.4.0",
   "DefaultLocalizationId": "en-EU",
   "DisableUnspecifiedLocalization": false,
   "Links": [],
@@ -13,20 +13,24 @@
       "Alternative",
       "Dark",
       "Light",
-      "Grayed"
+      "AlternativeLight",
+      "AlternativeDark"
     ],
     "Team": 
     [
       "Alternative",
       "Dark",
       "Light",
-      "Grayed"
+      "AlternativeLight",
+      "AlternativeDark"
     ],
     "Vendor": [
       "Alternative",
       "Dark",
       "Light",
-      "Grayed"
+      "AlternativeLight",
+      "AlternativeDark",
+      "Outline"
     ],
     "Track": [
       "Alternative",
@@ -57,7 +61,14 @@
     },
     {
       "Category": "Team",
-      "Variant": "Grayed",
+      "Variant": "AlternativeLight",
+      "UseFallbackSource": true,
+      "UseFallbackVariant": true,
+      "SetVariantByDefault": false
+    },
+    {
+      "Category": "Team",
+      "Variant": "AlternativeDark",
       "UseFallbackSource": true,
       "UseFallbackVariant": true,
       "SetVariantByDefault": false
@@ -85,7 +96,21 @@
     },
     {
       "Category": "Vendor",
-      "Variant": "Grayed",
+      "Variant": "AlternativeLight",
+      "UseFallbackSource": true,
+      "UseFallbackVariant": true,
+      "SetVariantByDefault": false
+    },
+    {
+      "Category": "Vendor",
+      "Variant": "AlternativeDark",
+      "UseFallbackSource": true,
+      "UseFallbackVariant": true,
+      "SetVariantByDefault": false
+    },
+    {
+      "Category": "Vendor",
+      "Variant": "Outline",
       "UseFallbackSource": true,
       "UseFallbackVariant": true,
       "SetVariantByDefault": false
@@ -106,7 +131,14 @@
     },
     {
       "Category": "Championship",
-      "Variant": "Grayed",
+      "Variant": "AlternativeLight",
+      "UseFallbackSource": true,
+      "UseFallbackVariant": false,
+      "SetVariantByDefault": false
+    },
+    {
+      "Category": "Championship",
+      "Variant": "AlternativeDark",
       "UseFallbackSource": true,
       "UseFallbackVariant": false,
       "SetVariantByDefault": false

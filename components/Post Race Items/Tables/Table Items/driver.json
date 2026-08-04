@@ -16,11 +16,77 @@
                 "BlockType": "text",
                 "Source": "[{Item.Driver.{DriverName}, Converter=StringToUpperString}]",
                 "Style": "DriverLineStyle",
+                "RenderIf": true,
                 "Triggers": [
+                    {
+                        "Condition": "{DriverName}",
+                        "ConditionValue": "Short First Name",
+                        "ConditionOr": "{DriverName}",
+                        "ConditionOrValue": "RealName",
+                        "Property": "RenderIf",
+                        "Value": false
+                    },
                     { "Trigger": "TeamColor_ForegroundP1" },
                     { "Trigger": "CarColor_ForegroundP1" },
                     { "Trigger": "WEC_Team_ForegroundP1" },
                     { "Trigger": "WEC_Car_ForegroundP1" },
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[{Item.Driver.FirstName, Converter=StringToUpperString}]",
+                "Style": "DriverLineStyle",
+                "RenderIf": false,
+                "Triggers": [
+                    {
+                        "Condition": "{DriverName}",
+                        "ConditionValue": "RealName",
+                        "Property": "RenderIf",
+                        "Value": true
+                    },
+                    {
+                        "Condition": "{DriverName}",
+                        "ConditionValue": "Short First Name",
+                        "Setters": [
+                            {
+                                "Property": "RenderIf",
+                                "Value": true
+                            },
+                            {
+                                "Property": "Source",
+                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]."
+                            }
+                        ]
+                    },
+                    { "Trigger": "TeamColor_ForegroundP1" },
+                    { "Trigger": "CarColor_ForegroundP1" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "Source": "[{Item.Driver.LastName, Converter=StringToUpperString}]",
+                "Style": "DriverLineStyle",
+                "MarginLeft": -35,
+                "FontName": "{Archivo_SemiExpanded_BoldItallic}",
+                "TextOptions": {
+                    "FontStyle": "BoldItalic"
+                },
+                "RenderIf": false,
+                "Triggers": [
+                    {
+                        "Condition": "{DriverName}",
+                        "ConditionValue": "Short First Name",
+                        "ConditionOr": "{DriverName}",
+                        "ConditionOrValue": "RealName",
+                        "Property": "RenderIf",
+                        "Value": true
+                    },
+                    { "Trigger": "TeamColor_ForegroundP1" },
+                    { "Trigger": "CarColor_ForegroundP1" },
+                    { "Trigger": "WEC_Team_ForegroundP1" },
+                    { "Trigger": "WEC_Car_ForegroundP1" }
                 ]
             }
         ]

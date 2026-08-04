@@ -1,0 +1,162 @@
+[
+    //Session
+    {
+        "ComponentName": "MediaSession_VariableInfo_P2",
+        "BlockType": "canvas",
+        "Width": 1200,
+        "Height": 1500,
+        "Items": [
+            {
+                "BlockType": "itemstack",
+                "PositionX": 90,
+                "PositionY": 60,
+                "Orientation": "Vertical",
+                "Spacing": 1,
+                "Triggers": [
+                    {
+                        "Condition": "{SingleStatsSession_{Media_SessionInfo}}",
+                        "ConditionValue": "mili_asc",
+                        "Property": "ItemStackOptions.OrderBy",
+                        "Value": "{Media_SessionInfo}Ms"
+                    },
+                    {
+                        "Condition": "{SingleStatsSession_{Media_SessionInfo}}",
+                        "ConditionValue": "mili_desc",
+                        "Property": "ItemStackOptions.OrderByDescending",
+                        "Value": "{Media_SessionInfo}Ms"
+                    },
+                    {
+                        "Condition": "{SingleStatsSession_{Media_SessionInfo}}",
+                        "ConditionValue": "stat_asc",
+                        "Property": "ItemStackOptions.OrderBy",
+                        "Value": "{Media_SessionInfo}"
+                    },
+                    {
+                        "Condition": "{SingleStatsSession_{Media_SessionInfo}}",
+                        "ConditionValue": "stat_desc",
+                        "Property": "ItemStackOptions.OrderByDescending",
+                        "Value": "{Media_SessionInfo}"
+                    },
+                    {
+                        "Trigger": "MediaTablePage_stats"
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Session.Drivers}",
+                    "IndexStart": 8,
+                    "Limit": 23,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Items": [
+                            {
+                                "BlockType": "component",
+                                "Component": "VariableInfo_SessionItem2"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    //Standing
+    {
+        "ComponentName": "MediaStanding_VariableInfo_P2",
+        "BlockType": "canvas",
+        "Width": 1200,
+        "Height": 1500,
+        "Items": [
+            {
+                "BlockType": "itemstack",
+                "PositionX": 90,
+                "PositionY": 60,
+                "Orientation": "Vertical",
+                "Spacing": 1,
+                "Triggers": [
+                    {
+                        "Condition": "{SingleStatsStanding_{Media_StandingInfo}}",
+                        "ConditionValue": "stat_asc",
+                        "Property": "ItemStackOptions.OrderBy",
+                        "Value": "{Media_StandingInfo}"
+                    },
+                    {
+                        "Condition": "{SingleStatsStanding_{Media_StandingInfo}}",
+                        "ConditionValue": "stat_desc",
+                        "Property": "ItemStackOptions.OrderByDescending",
+                        "Value": "{Media_StandingInfo}"
+                    },
+                    {
+                        "Condition": "{SingleStatsStanding_{Media_StandingInfo}}",
+                        "ConditionValue": "stat_asc_extra",
+                        "Property": "ItemStackOptions.OrderBy",
+                        "Value": "{DetailsType_{Media_StandingInfo}}.{Media_StandingInfo}"
+                    },
+                    {
+                        "Condition": "{SingleStatsStanding_{Media_StandingInfo}}",
+                        "ConditionValue": "stat_desc_extra",
+                        "Property": "ItemStackOptions.OrderByDescending",
+                        "Value": "{DetailsType_{Media_StandingInfo}}.{Media_StandingInfo}"
+                    },
+                    {
+                        "Condition": "{Media_StandingInfo}",
+                        "ConditionValue": "BestPos1",
+                        "Setters": [
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending",
+                                "Value": "BestPos1"
+                            },
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending2",
+                                "Value": "BestPos1Count"
+                            }
+                        ]
+                    },
+                    {
+                        "Condition": "{Media_StandingInfo}",
+                        "ConditionValue": "BestPos2",
+                        "Setters": [
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending",
+                                "Value": "BestPos2"
+                            },
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending2",
+                                "Value": "BestPos2Count"
+                            }
+                        ]
+                    },
+                    {
+                        "Condition": "{Media_StandingInfo}",
+                        "ConditionValue": "BestPos3",
+                        "Setters": [
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending",
+                                "Value": "BestPos3"
+                            },
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending2",
+                                "Value": "BestPos3Count"
+                            }
+                        ]
+                    },
+                    {
+                        "Trigger": "MediaTablePage_stats"
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": 8,
+                    "Limit": 23,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Items": [
+                            {
+                                "BlockType": "component",
+                                "Component": "VariableInfo_StandingItem2"
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+]

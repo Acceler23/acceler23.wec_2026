@@ -61,8 +61,8 @@
                         "Margin": "57, 22, 120, 0",
                         "ItemStackOptions": {
                             "ItemSource": "{Session.Drivers}",
-                            "FilterMember": "Driver.{DriverName}",
-                            "FilterMemberValue": "{Session.FastestLapDriver.{DriverName}}",
+                            "FilterMember": "Driver.Name",
+                            "FilterMemberValue": "{Session.FastestLapDriver.Name}",
                             "ItemTemplate": {
                                 "BlockType": "component",
                                 "Component": "FastestLap"

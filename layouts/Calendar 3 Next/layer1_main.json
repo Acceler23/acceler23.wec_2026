@@ -98,10 +98,10 @@
                                                     },
                                                     {
                                                         "BlockType": "text",
-                                                        "Source": "[TBC]",
+                                                        "Source": "{Item.DateLocal, Converter=DateToTime}",
                                                         "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                         "FontSize": 16,
-                                                        "Foreground": "{red}",
+                                                        "Foreground": "{lightBlue}",
                                                         "Padding": "16, 5, 16, 5",
                                                         "TextOptions": {
                                                             "FontStyle": "Italic"
@@ -167,6 +167,7 @@
                                             }
                                         }
                                     },
+                                    /*
                                     {
                                         "BlockType": "itemstack",
                                         "Orientation": "Vertical",
@@ -220,10 +221,10 @@
                                                             },
                                                             {
                                                                 "BlockType": "text",
-                                                                "Source": "[TBC]",
+                                                                "Source": "[{Item.DateLocal, Converter=DateToTime}]",
                                                                 "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                                 "FontSize": 16,
-                                                                "Foreground": "{red}",
+                                                                "Foreground": "{lightBlue}",
                                                                 "Padding": "16, 5, 16, 5",
                                                                 "TextOptions": {
                                                                     "FontStyle": "Italic"
@@ -287,10 +288,10 @@
                                                             },
                                                             {
                                                                 "BlockType": "text",
-                                                                "Source": "[TBC]",
+                                                                "Source": "[{Item.DateLocal, Converter=DateToTime}]",
                                                                 "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                                 "FontSize": 16,
-                                                                "Foreground": "{red}",
+                                                                "Foreground": "{lightBlue}",
                                                                 "Padding": "16, 5, 16, 5",
                                                                 "TextOptions": {
                                                                     "FontStyle": "Italic"
@@ -354,10 +355,10 @@
                                                             },
                                                             {
                                                                 "BlockType": "text",
-                                                                "Source": "[TBC]",
+                                                                "Source": "[{Item.DateLocal, Converter=DateToTime}]",
                                                                 "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                                 "FontSize": 16,
-                                                                "Foreground": "{red}",
+                                                                "Foreground": "{lightBlue}",
                                                                 "Padding": "16, 5, 16, 5",
                                                                 "TextOptions": {
                                                                     "FontStyle": "Italic"
@@ -400,9 +401,10 @@
                                             }
                                         }
                                     },
+                                    */
                                     {
                                         "BlockType": "itemstack",
-                                        "RenderIf": "{Season.IsHaveMulticlassConfiguration, Converter=BoolReverse}",
+                                        //"RenderIf": "{Season.IsHaveMulticlassConfiguration, Converter=BoolReverse}",
                                         "ItemStackOptions": {
                                             "ItemSource": "{Item.Quals}",
                                             "ItemTemplate": {
@@ -457,10 +459,10 @@
                                                     },
                                                     {
                                                         "BlockType": "text",
-                                                        "Source": "[TBC]",
+                                                        "Source": "[{Item.DateLocal, Converter=DateToTime}]",
                                                         "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                         "FontSize": 16,
-                                                        "Foreground": "{red}",
+                                                        "Foreground": "{lightBlue}",
                                                         "Padding": "16, 5, 16, 5",
                                                         "TextOptions": {
                                                             "FontStyle": "Italic"
@@ -568,10 +570,10 @@
                                                     },
                                                     {
                                                         "BlockType": "text",
-                                                        "Source": "[TBC]",
+                                                        "Source": "[{Item.DateLocal, Converter=DateToTime}]",
                                                         "FontName": "{Archivo_SemiExpanded_Itallic}",
                                                         "FontSize": 16,
-                                                        "Foreground": "{red}",
+                                                        "Foreground": "{lightBlue}",
                                                         "Padding": "16, 5, 16, 5",
                                                         "TextOptions": {
                                                             "FontStyle": "Italic"
@@ -655,11 +657,11 @@
                                                 "FontName": "{DrukTextWide_Medium}",
                                                 "FontSize": 16,
                                                 "Foreground": "{darkPurple}",
+                                                "PaddingTop": 50,
                                                 "Padding": "0, 40, 0, 0",
                                             },
                                             {
                                                 "BlockType": "dock",
-                                                "PaddingTop": 32,
                                                 "Width": 350,
                                                 "Items": [
                                                     {

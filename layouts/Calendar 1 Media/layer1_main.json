@@ -4,6 +4,7 @@
         "BlockType": "stack",
         "Orientation": "Vertical",
         "Width": 1200,
+        "Height": 1500,
         "Items": [
             {
                 "BlockType": "stack",
@@ -75,21 +76,28 @@
                     },
                     {
                         "BlockType": "stack",
+                        "Background": "#ff0000",
+                        "Height": 110,
                         "PaddingLeft": 30,
                         "PaddingRight": 75,
-                        "PaddingTop": 10,
+                        //"PaddingTop": 20,
                         "Spacing": 10,
                         "HorizontalAlignment": "Right",
                         "Orientation": "Horizontal",
                         "Items": [
                             {
                                 "BlockType": "text",
-                                "Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
+                                "Background": "#00ff00",
+                                "Source": "[{Season.Name, Converter=StringToUpperString}]",
                                 "FontName": "{Druk_Bold}",
                                 "VerticalAlignment": "Center",
-                                "FontSize": 120,
-                                "PaddingTop": 20,
+                                "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}2}}",
+                                //"Height": 110,
                                 "Width": "*",
+                                //"Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
+                                //"FontSize": 120,
+                                "PaddingTop": 10,
+                                "MarginTop": 20,
                                 "Foreground": "{lightBlue}"
                             },
                             {
@@ -97,9 +105,12 @@
                                 "Source": "[CALENDAR]",
                                 "FontName": "{Druk_Bold}",
                                 "VerticalAlignment": "Center",
-                                "FontSize": 120,
-                                "PaddingTop": 20,
+                                "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}2}}",
+                                //"FontSize": 120,
+                                "PaddingTop": 10,
+                                "MarginTop": 20,
                                 "Foreground": "{white}",
+                                //"Height": 110,
                                 "Width": "*"
                             }
                         ]
@@ -111,8 +122,16 @@
                 "Orientation": "Vertical",
                 "Spacing": 10,
                 "Padding": "120, 50",
+                "Triggers": [
+                    {
+                        "Condition": "{TablePage, Converter=NumberGreater, Parameter=1}",
+                        "Property": "ItemStackOptions.IndexStart",
+                        "Value": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=8}"
+                    }
+                ],
                 "ItemStackOptions": {
                     "ItemSource": "{Events.Events}",
+                    "Limit": 8,
                     "ItemTemplate": {
                         "BlockType": "canvas",
                         "Items": [
@@ -173,6 +192,7 @@
                                 "Triggers": [
                                     {
                                         "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
+                                        "ConditionAnd": "{Item.Index, Converter=NumberLess, Parameter=2}",
                                         "Setters": [
                                             {
                                                 "Property": "Source",
@@ -188,7 +208,29 @@
                                             },
                                             {
                                                 "Property": "PositionX",
-                                                "Value": 50
+                                                "Value": 30
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
+                                        "ConditionAnd": "{Item.Index, Converter=NumberGreater, Parameter=2}",
+                                        "Setters": [
+                                            {
+                                                "Property": "Source",
+                                                "Value": "[OFFICIAL\nTEST DAY]"
+                                            },
+                                            {
+                                                "Property": "TextOptions.TextAlignment",
+                                                "Value": "Center"
+                                            },
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 17
+                                            },
+                                            {
+                                                "Property": "PositionX",
+                                                "Value": 30
                                             }
                                         ]
                                     }
@@ -267,7 +309,7 @@
                                 "Items": [
                                     {
                                         "BlockType": "stack",
-                                        "RenderIf": "{Item.CompletedStatus, Converter=EnumEquals, Parameter=InFuture}",
+                                        //"RenderIf": "{Item.CompletedStatus, Converter=EnumEquals, Parameter=InFuture}",
                                         "Orientation": "Horizontal",
                                         "HorizontalAlignment": "Center",
                                         "Items": [
@@ -294,7 +336,8 @@
                                     },
                                     {
                                         "BlockType": "text",
-                                        "RenderIf": "{Item.CompletedStatus, Converter=EnumEquals, Parameter=Completed}",
+                                        "RenderIf": false,
+                                        //"RenderIf": "{Item.CompletedStatus, Converter=EnumEquals, Parameter=Completed}",
                                         "VerticalAlignment": "Center",
                                         "HorizontalAlignment": "Center",
                                         "Source": "[{Item.WinnerString, Converter=StringToUpperString}]",

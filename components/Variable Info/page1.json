@@ -1,4 +1,5 @@
 [
+    //Session
     {
         "ComponentName": "MediaSession_VariableInfo_P1",
         "BlockType": "canvas",
@@ -73,7 +74,7 @@
                                         "FontName": "{DrukWide_Super}",
                                         "VerticalAlignment": "Top",
                                         "HorizontalAlignment": "Center",
-                                        "Padding": "20, 5",
+                                        "Padding": "40, 5",
                                         "MarginTop": 18,
                                         "TextOptions": {
                                             "Rotation": -1
@@ -176,18 +177,19 @@
                 ],
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
+                    "IndexStart": "{Media_StandingInfoFix}",
                     "Limit": 8,
                     "ItemTemplate": {
                         "BlockType": "stack",
                         "Items": [
                             {
                                 "BlockType": "component",
-                                "Component": "VariableInfo_item1",
+                                "Component": "VariableInfo_SessionItem1",
                                 "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}"
                             },
                             {
                                 "BlockType": "component",
-                                "Component": "VariableInfo_item2",
+                                "Component": "VariableInfo_SessionItem2",
                                 "RenderIf": false,
                                 "Triggers": [
                                     {
@@ -197,6 +199,286 @@
                                         "Value": true
                                     }
                                 ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    },
+    //Standing
+    {
+        "ComponentName": "MediaStanding_VariableInfo_P1",
+        "BlockType": "canvas",
+        "Width": 1200,
+        "Height": 1500,
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/info/header_circle.png",
+                "PositionX": 143,
+                "PositionY": 98
+            },
+            {
+                "BlockType": "dock",
+                "PositionY": 180,
+                "Height": 500,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "VerticalAlignment": "Bottom",
+                        "Width": 1200,
+                        "Spacing": -10,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[Head {Media_StandingInfo}]",
+                                "Width": 1200,
+                                //"FontSize": 120,
+                                "FontSize": "{120, {Subtracts}{{Media_StandingInfo, Converter=GetStringLength}, {Multiplys}0.4}}",
+                                "Foreground": "{white}",
+                                "FontName": "{DrukWide_Super}",
+                                "VerticalAlignment": "Bottom",
+                                "Padding": "5, 10",
+                                //"MarginLeft": 90,
+                                "TextOptions": {
+                                    "Wrap": true,
+                                    "TextAlignment": "Center"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Media_StandingInfo, Converter=StringEquals, Parameter=DriverPoints}",
+                                        "Setters": [
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 70
+                                            },
+                                            {
+                                                "Property": "MarginBottom",
+                                                "Value": 20
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Media_StandingInfo, Converter=StringEquals, Parameter=RaceDriverDayCount}",
+                                        "Setters": [
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 100
+                                            },
+                                            {
+                                                "Property": "MarginBottom",
+                                                "Value": 20
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Condition": "{Media_StandingInfo, Converter=StringEquals, Parameter=CountDns}",
+                                        "Setters": [
+                                            {
+                                                "Property": "FontSize",
+                                                "Value": 100
+                                            },
+                                            {
+                                                "Property": "MarginBottom",
+                                                "Value": 10
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Bottom",
+                                "MarginTop": -40,
+                                "MarginLeft": -20,
+                                "Height": 138,
+                                "BackgroundImage": "Media_items/info/circle_subhead.png",
+                                "ColorizeBackground": {
+                                    "Color": "{whiteGray}"
+                                },
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[SubHead {Media_StandingInfo}]",
+                                        "FontSize": 110,
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{DrukWide_Super}",
+                                        "VerticalAlignment": "Top",
+                                        "HorizontalAlignment": "Center",
+                                        "Padding": "40, 5",
+                                        "MarginTop": 18,
+                                        "TextOptions": {
+                                            "Rotation": -1
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Media_StandingInfo, Converter=StringEquals, Parameter=CountDnf}",
+                                                "Property": "FontSize",
+                                                "Value": 90
+                                            },
+                                            {
+                                                "Condition": "{Media_StandingInfo, Converter=StringEquals, Parameter=CountNotClassified}",
+                                                "Property": "FontSize",
+                                                "Value": 90
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.LeagueInfo.LeagueFullName, Converter=StringToUpperString}]",
+                                "FontName": "{Archivo_Expanded_Regular}",
+                                "Foreground": "{white}",
+                                "FontSize": 30,
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Bottom",
+                                "Padding": "5, 10",
+                                "Margin": "10",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "canvas",
+                "PositionY": 44,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "Media_items/trackHead.png",
+                        "Colorize": {
+                            "Color": "{white}"
+                        }
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Height": 105,
+                        "Width": 180,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Height": 90
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Height": 105,
+                        "Width": 240,
+                        "PositionX": 180,
+                        "PositionY": 5,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{Standings.LastEvent.Track.LogotypePath}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Height": 100
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "itemstack",
+                "PositionX": 90,
+                "PositionY": 690,
+                "Orientation": "Vertical",
+                "Spacing": 1,
+                "Triggers": [
+                    {
+                        "Condition": "{SingleStatsStanding_{Media_StandingInfo}}",
+                        "ConditionValue": "stat_asc",
+                        "Property": "ItemStackOptions.OrderBy",
+                        "Value": "{Media_StandingInfo}"
+                    },
+                    {
+                        "Condition": "{SingleStatsStanding_{Media_StandingInfo}}",
+                        "ConditionValue": "stat_desc",
+                        "Property": "ItemStackOptions.OrderByDescending",
+                        "Value": "{Media_StandingInfo}"
+                    },
+                    {
+                        "Condition": "{SingleStatsStanding_{Media_StandingInfo}}",
+                        "ConditionValue": "stat_asc_extra",
+                        "Property": "ItemStackOptions.OrderBy",
+                        "Value": "{DetailsType_{Media_StandingInfo}}.{Media_StandingInfo}"
+                    },
+                    {
+                        "Condition": "{SingleStatsStanding_{Media_StandingInfo}}",
+                        "ConditionValue": "stat_desc_extra",
+                        "Property": "ItemStackOptions.OrderByDescending",
+                        "Value": "{DetailsType_{Media_StandingInfo}}.{Media_StandingInfo}"
+                    },
+                    {
+                        "Condition": "{Media_StandingInfo}",
+                        "ConditionValue": "BestPos1",
+                        "Setters": [
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending",
+                                "Value": "BestPos1"
+                            },
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending2",
+                                "Value": "BestPos1Count"
+                            }
+                        ]
+                    },
+                    {
+                        "Condition": "{Media_StandingInfo}",
+                        "ConditionValue": "BestPos2",
+                        "Setters": [
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending",
+                                "Value": "BestPos2"
+                            },
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending2",
+                                "Value": "BestPos2Count"
+                            }
+                        ]
+                    },
+                    {
+                        "Condition": "{Media_StandingInfo}",
+                        "ConditionValue": "BestPos3",
+                        "Setters": [
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending",
+                                "Value": "BestPos3"
+                            },
+                            {
+                                "Property": "ItemStackOptions.OrderByDescending2",
+                                "Value": "BestPos3Count"
+                            }
+                        ]
+                    }
+                ],
+                "ItemStackOptions": {
+                    "ItemSource": "{Standings.Drivers}",
+                    "IndexStart": "{Media_StandingInfoFix}",
+                    "Limit": 8,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Items": [
+                            {
+                                "BlockType": "component",
+                                "Component": "VariableInfo_StandingItem1",
+                                "RenderIf": "{Item.Index, Converter=NumberEquals, Parameter=0}"
+                            },
+                            {
+                                "BlockType": "component",
+                                "Component": "VariableInfo_StandingItem2",
+                                "RenderIf": "{Item.Index, Converter=NumberGreater, Parameter=0}"
                             }
                         ]
                     }

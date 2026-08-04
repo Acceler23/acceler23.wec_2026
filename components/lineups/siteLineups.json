@@ -1,10 +1,10 @@
 [
-
     //Site Separator
     {
         "ComponentName": "lineup_separator",
         "BlockType": "dock",
         "Orientation": "Vertical",
+        "Width": 50,
         "Height": "*",
         "Items": [
             {
@@ -13,31 +13,6 @@
                 "Height": "*",
                 "HorizontalAlignment": "Center",
                 "VerticalAlignment": "Top",
-                "Background": "{darkPurple}",
-                "Items": [
-                    {
-                        "BlockType": "text",
-                        "Source": ".",
-                        "FontSize": 2,
-                        "Foreground": "{darkPurple}"
-                    }
-                ]
-            },
-            {
-                "BlockType": "image",
-                "Background": "{white}",
-                "HorizontalAlignment": "Center",
-                "VerticalAlignment": "Center",
-                "Padding": "5",
-                "Source": "{Season.LeagueInfo.LeagueLogo}",
-                "Width": 50
-            },
-            {
-                "BlockType": "stack",
-                "Width": 10,
-                "Height": "*",
-                "HorizontalAlignment": "Center",
-                "VerticalAlignment": "Bottom",
                 "Background": "{darkPurple}",
                 "Items": [
                     {
@@ -850,6 +825,12 @@
                 },
                 "Triggers": [
                     {
+                        "Condition": "{DriverName}",
+                        "ConditionValue": "Short First Name",
+                        "Property": "Source",
+                        "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
+                    },
+                    {
                         "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
                         "ConditionAnd": "{Render_DriverTeam}",
                         "Property": "Source",
@@ -873,7 +854,7 @@
                 "Items": [
                     {
                         "BlockType": "image",
-                        "Source": "{Item.Team.LiveryPath}",
+                        "Source": "{Item.LiveryPath}",
                         "Width": 380,
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Center"
@@ -890,7 +871,7 @@
                 "Items": [
                     {
                         "BlockType": "image",
-                        "Source": "{Item.Car.LiveryPath}",
+                        "Source": "{Item.LiveryPath}",
                         "Width": 380,
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Center"

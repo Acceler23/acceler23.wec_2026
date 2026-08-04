@@ -60,8 +60,7 @@
                 "Width": 1142,
                 "Height": 3,
                 "ShapeOptions": {
-                    "Fill": "{lightBlue}",
-                    "ShapeType": "ellipse"
+                    "Fill": "{lightBlue}"
                 }
             },
             {
@@ -108,12 +107,11 @@
                         "Foreground": "{white}",
                         "FontName": "{DrukWide_Medium_Italic}",
                         "Height": 40,
-                        "FontSize": 29,
+                        "FontSize": "{{TrackNameSize}, {Subtracts}{{Session.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.3}}",
                         "Margin": "0,2,0,0",
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Right",
                         "Padding": "7,5,7,0",
-
                         "Triggers": [
                             { "Trigger": "WEC_TrackName_Session" }
                         ]
@@ -198,8 +196,7 @@
                 "Width": 1142,
                 "Height": 3,
                 "ShapeOptions": {
-                    "Fill": "{lightBlue}",
-                    "ShapeType": "ellipse"
+                    "Fill": "{lightBlue}"
                 }
             },
             {
@@ -249,7 +246,7 @@
                         "Foreground": "{white}",
                         "FontName": "{DrukWide_Medium_Italic}",
                         "Height": 40,
-                        "FontSize": 29,
+                        "FontSize": "{{TrackNameSize}, {Subtracts}{{Session.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.3}}",
                         "Margin": "0,2,0,0",
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Right",
@@ -444,8 +441,7 @@
                 "Width": 1130,
                 "Height": 3,
                 "ShapeOptions": {
-                    "Fill": "{lightBlue}",
-                    "ShapeType": "ellipse"
+                    "Fill": "{lightBlue}"
                 }
             },
             {
@@ -543,8 +539,7 @@
                 "Width": 1142,
                 "Height": 3,
                 "ShapeOptions": {
-                    "Fill": "{lightBlue}",
-                    "ShapeType": "ellipse"
+                    "Fill": "{lightBlue}"
                 }
             }
         ]

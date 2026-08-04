@@ -48,11 +48,19 @@
                         {
                             "BlockType": "text",
                             "HorizontalAlignment": "Right",
-                            "Source": "{Item.Driver.{DriverName}, Converter=StringToUpperString}",
+                            "Source": "[{Item.Driver.{DriverName}, Converter=StringToUpperString}]",
                             "FontSize": "{TableFontSizeDefalt}",
                             "FontName": "{Archivo_Bold_Itallic}",
                             "Foreground": "{white}",
-                            "MarginTop": 11
+                            "MarginTop": 11,
+                            "Triggers": [
+                                {
+                                    "Condition": "{DriverName}",
+                                    "ConditionValue": "Short First Name",
+                                    "Property": "Source",
+                                    "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
+                                }
+                            ]
                         }
                     ]
                 },

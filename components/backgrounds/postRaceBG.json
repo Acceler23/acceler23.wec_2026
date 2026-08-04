@@ -16,7 +16,7 @@
             {
                 "BlockType": "image",
                 "Source": "Track_images/{Session.Track.CircuitOrigin}.png",
-                "Width": "{PostRaceWidth}"
+                "Height": "{PostRaceHeight}"
             }
         ]
     },

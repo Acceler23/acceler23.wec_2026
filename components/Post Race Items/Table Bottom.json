@@ -10,8 +10,7 @@
             "Width": 1228,
             "Height": 3,
             "ShapeOptions": {
-                "Fill": "{lightBlue}",
-                "ShapeType": "ellipse"
+                "Fill": "{lightBlue}"
             }
         },
         {
