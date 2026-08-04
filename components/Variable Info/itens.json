@@ -197,8 +197,8 @@
                                         "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
                                         "ConditionAnd": "{Item.AbsoluteTimeMs, Converter=NumberGreater, Parameter=3599999}",
                                         "Property": "Source",
-                                        "Value": "{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=3600000}[H]{{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=60000}, Converter=NumberDivide, Parameter=60}"
-                                        //"Value": "{Item.AbsoluteTimeMs}"
+                                        //"Value": "{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=3600000}[H]{{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=60000}, Converter=NumberDivide, Parameter=60}"
+                                        "Value": "{Item.AbsoluteTime}"
                                     },
                                     {
                                         "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
@@ -404,8 +404,8 @@
                                 "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
                                 "ConditionAnd": "{Item.AbsoluteTimeMs, Converter=NumberGreater, Parameter=3599999}",
                                 "Property": "Source",
-                                "Value": "{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=3600000}[H]{{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=60000}, Converter=NumberDivide, Parameter=60}"
-                                //"Value": "{Item.AbsoluteTimeMs}"
+                                //"Value": "{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=3600000}[H]{{Item.AbsoluteTimeMs, Converter=NumberDivide, Parameter=60000}, Converter=NumberDivide, Parameter=60}"
+                                "Value": "{Item.AbsoluteTime}"
                             },
                             {
                                 "Condition": "{Media_SessionInfo, Converter=StringEquals, Parameter=AbsoluteTime}",
