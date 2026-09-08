@@ -8,7 +8,7 @@
         "Items": [
             {
                 "BlockType": "stack",
-                "Width": 1200,
+                //"Width": 1200,
                 "PaddingTop": 75,
                 "Items": [
                     {
@@ -75,29 +75,23 @@
                         ]
                     },
                     {
-                        "BlockType": "stack",
-                        "Background": "#ff0000",
+                        "BlockType": "dock",
                         "Height": 110,
-                        "PaddingLeft": 30,
-                        "PaddingRight": 75,
-                        //"PaddingTop": 20,
-                        "Spacing": 10,
+                        "MarginLeft": 30,
+                        //"MarginRight": 75,
                         "HorizontalAlignment": "Right",
                         "Orientation": "Horizontal",
                         "Items": [
                             {
                                 "BlockType": "text",
-                                "Background": "#00ff00",
                                 "Source": "[{Season.Name, Converter=StringToUpperString}]",
                                 "FontName": "{Druk_Bold}",
                                 "VerticalAlignment": "Center",
                                 "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}2}}",
-                                //"Height": 110,
+                                "Height": 110,
                                 "Width": "*",
-                                //"Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
-                                //"FontSize": 120,
-                                "PaddingTop": 10,
-                                "MarginTop": 20,
+                                "PaddingTop": 20,
+                                "MarginTop": 15,
                                 "Foreground": "{lightBlue}"
                             },
                             {
@@ -106,11 +100,10 @@
                                 "FontName": "{Druk_Bold}",
                                 "VerticalAlignment": "Center",
                                 "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}2}}",
-                                //"FontSize": 120,
-                                "PaddingTop": 10,
-                                "MarginTop": 20,
+                                "PaddingTop": 20,
+                                "MarginTop": 15,
+                                "MarginLeft": 10,
                                 "Foreground": "{white}",
-                                //"Height": 110,
                                 "Width": "*"
                             }
                         ]
@@ -181,7 +174,7 @@
                                 "BlockType": "text",
                                 "PositionX": 50,
                                 "PositionY": 30,
-                                "Source": "[R]{Item.Position, Converter=NumberSubtract, Parameter={Season.SeasonOverallNumberEvents, Converter=NumberSubtract, Parameter={Season.SeasonOverallNumberEventsExcludingNonChampionship}}}",
+                                "Source": "[R]{Item.ChampionshipPosition}",
                                 "FontName": "{DrukWide_Bold_Itallic}",
                                 "Padding": "10",
                                 "Foreground": "{white}",
@@ -192,7 +185,7 @@
                                 "Triggers": [
                                     {
                                         "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
-                                        "ConditionAnd": "{Item.Index, Converter=NumberLess, Parameter=2}",
+                                        "ConditionAnd": "{Item.Index, Converter=NumberLess, Parameter=3}",
                                         "Setters": [
                                             {
                                                 "Property": "Source",
@@ -214,7 +207,7 @@
                                     },
                                     {
                                         "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
-                                        "ConditionAnd": "{Item.Index, Converter=NumberGreater, Parameter=2}",
+                                        "ConditionAnd": "{Item.Index, Converter=NumberGreater, Parameter=4}",
                                         "Setters": [
                                             {
                                                 "Property": "Source",
@@ -283,7 +276,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Width": 280,
-                                                "Source": "[{Item.Track.CircuitFullName, Converter=StringToUpperString}]",
+                                                "Source": "[{Item.{EventNameAs}, Converter=StringToUpperString}]",
                                                 "Foreground": "#90ffffff",
                                                 "VerticalAlignment": "Center",
                                                 "MarginTop": -10,
@@ -293,7 +286,14 @@
                                                 "TextOptions": {
                                                     "Wrap": true,
                                                     "VerticalAlignment": "Top"
-                                                }
+                                                },
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Track_Rename}",
+                                                        "Property": "Source",
+                                                        "Value": "[{Item.Track.CircuitOrigin, Converter=StringToLowerString}]"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }

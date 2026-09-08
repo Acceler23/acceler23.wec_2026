@@ -1,0 +1,58 @@
+{
+    "BlockRoot": {
+        "BlockType": "canvas",
+        "Height": 1350,
+        "Width": 1080,
+        "Items": [
+            {
+                "BlockType": "canvas",
+                "PositionY": 50,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "Media_items/trackHead.png",
+                        "Height": 78,
+                        "Colorize": {
+                            "Color": "{white}"
+                        }
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Height": 78,
+                        "Width": 140,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Height": 60
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Height": 73,
+                        "Width": 240,
+                        "PositionX": 110,
+                        "PositionY": 5,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{TrackStatistics.Track.LogotypePath}",
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Height": 60
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "component",
+                "PositionY": 162,
+                "Component": "{TrackStatMultSeason}_TrackStat_Component"
+            }
+        ]
+    }
+}

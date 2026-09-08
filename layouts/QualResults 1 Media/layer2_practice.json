@@ -1,0 +1,397 @@
+{
+    "BlockRoot": {
+        "BlockType": "canvas",
+        "Height": 1500,
+        "Width": 1200,
+        "RenderIf": "{Session.SessionType, Converter=StringEquals, Parameter=Practice}",
+        "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/practice/item_bg"
+            },
+            {
+                "BlockType": "text",
+                "Source": "[OVERALL]",
+                "PositionX": 182,
+                "PositionY": 118,
+                "Width": 280,
+                "Height": 64,
+                "Foreground": "{white}",
+                "FontName": "{DrukTextWide_Heavy_Italic}",
+                "FontSize": 25,
+                "TextOptions": {
+                    "FontStyle": "BoldItalic"
+                },
+                "Triggers": [
+                    {
+                        "Condition": "{Session.IsHaveRacingClass}",
+                        "Property": "Source",
+                        "Value": "{Session.RacingClass.Name, Converter=StringToUpperString}"
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Width": 575,
+                "PositionX": 408,
+                "PositionY": 150,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
+                        "Spacing": -7,
+                        "Width": 185,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[head1 {PracticeStat1}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Itallic}",
+                                "FontSize": 16,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[head2 {PracticeStat1}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Black_Itallic}",
+                                "FontSize": 22,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[head3 {PracticeStat1}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Itallic}",
+                                "FontSize": 16,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
+                        "Spacing": -7,
+                        "Width": 185,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[head1 {PracticeStat2}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Itallic}",
+                                "FontSize": 16,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[head2 {PracticeStat2}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Black_Itallic}",
+                                "FontSize": 22,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[head3 {PracticeStat2}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Itallic}",
+                                "FontSize": 16,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Left",
+                        "VerticalAlignment": "Top",
+                        "Spacing": -7,
+                        "Width": 185,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[head1 {PracticeStat3}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Itallic}",
+                                "FontSize": 16,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[head2 {PracticeStat3}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Black_Itallic}",
+                                "FontSize": 22,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[head3 {PracticeStat3}]",
+                                "HorizontalAlignment": "Right",
+                                "Foreground": "{white}",
+                                "FontName": "{Archivo_Itallic}",
+                                "FontSize": 16,
+                                "Padding": "5, 5, 15, 5",
+                                "TextOptions": {
+                                    "FontStyle": "Italic"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "table",
+                "PositionX": 211,
+                "PositionY": 222,
+                "Triggers": [
+                    {
+                        "Condition": "{Season.LineupsBasedType}",
+                        "ConditionValue": "Teams",
+                        "Property": "TableOptions.OrderBy",
+                        "Value": "Team.Name"
+                    },
+                    {
+                        "Condition": "{Season.LineupsBasedType}",
+                        "ConditionValue": "Cars",
+                        "ConditionOr": "{ForceCar}",
+                        "Property": "TableOptions.OrderBy",
+                        "Value": "Car.Name"
+                    }
+                ],
+                "TableOptions": {
+                    "ItemsSource": "{Session.Drivers}",
+                    "OrderBy2": "Driver.Name",
+                    "Limit": 18,
+                    "RowSpacing": 6,
+                    "ColSpacing": 6,
+                    "HeaderTemplate": {
+                        "BlockType": "stack"
+                    },
+                    "Columns": [
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "dock",
+                                "RenderIf": "{UseDriverName, Converter=BoolReverse}",
+                                "Width": 196,
+                                "Height": 58,
+                                "Background": "{white}",
+                                "Triggers": [
+                                    { "Trigger": "CarColor_Background" },
+                                    { "Trigger": "TeamColor_Background" },
+                                    { "Trigger": "WEC_Car_ColorBG" },
+                                    { "Trigger": "WEC_Team_ColorBG" },
+                                    { "Trigger": "WEC_CarTeam_ColorBG" }
+                                ],
+                                "Items": [
+                                    {
+                                        "BlockType": "dock",
+                                        "Height": 58,
+                                        "Width": 92,
+                                        "HorizontalAlignment": "Left",
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Source": "{Item.Car.Vendor.LogotypePath}",
+                                                "Height": 40,
+                                                "VerticalAlignment": "Center",
+                                                "HorizontalAlignment": "Center",
+                                                "Triggers": [
+                                                    { "Trigger": "Car_LogotypeDefault" },
+                                                    { "Trigger": "Team_LogotypeVendor" },
+                                                    { "Trigger": "Team_LogotypeDefault" },
+                                                    { "Trigger": "WEC_Car_Logotype" },
+                                                    { "Trigger": "WEC_Team_Logotype" },
+                                                    { "Trigger": "WEC_TeamSession_Logotype" }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Item.{CarNumber}}]",
+                                        "Foreground": "{black}",
+                                        "FontName": "{Archivo_Black_Itallic}",
+                                        "PaddingRight": 13,
+                                        "Height": 58,
+                                        "HorizontalAlignment": "Right",
+                                        "Triggers": [
+                                            { "Trigger": "CarColor_SecondaryForeground" },
+                                            { "Trigger": "TeamColor_SecondaryForeground" },
+                                            { "Trigger": "WEC_Car_Foreground" },
+                                            { "Trigger": "WEC_Team_Foreground" },
+                                            { "Trigger": "WEC_CarTeam_Foreground" }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "dock",
+                                "RenderIf": "{UseDriverName}",
+                                "Width": 196,
+                                "Height": 58,
+                                "Background": "{white}",
+                                "Triggers": [
+                                    { "Trigger": "CarColor_Background" },
+                                    { "Trigger": "TeamColor_Background" },
+                                    { "Trigger": "WEC_Car_ColorBG" },
+                                    { "Trigger": "WEC_Team_ColorBG" },
+                                    { "Trigger": "WEC_CarTeam_ColorBG" }
+                                ],
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Item.Driver.{DriverName}}]",
+                                        "Foreground": "{black}",
+                                        "FontName": "{Archivo_Black_Itallic}",
+                                        "PaddingLeft": 5,
+                                        "Height": 58,
+                                        "HorizontalAlignment": "Left",
+                                        "Triggers": [
+                                            { "Trigger": "CarColor_SecondaryForeground" },
+                                            { "Trigger": "TeamColor_SecondaryForeground" },
+                                            { "Trigger": "WEC_Car_Foreground" },
+                                            { "Trigger": "WEC_Team_Foreground" },
+                                            { "Trigger": "WEC_CarTeam_Foreground" },
+                                            {
+                                                "Condition": "{DriverName}",
+                                                "ConditionValue": "Short First Name",
+                                                "Property": "Source",
+                                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Width": 178,
+                                "Height": 58,
+                                "Background": "#1f1f21",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                        "Property": "Background",
+                                        "Value": "#030305"
+                                    }
+                                ],
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Right",
+                                        "Height": 58,
+                                        "PaddingRight": 20,
+                                        "FontSize": 24,
+                                        "FontName": "{Archivo_Regular}",
+                                        "Foreground": "{white}",
+                                        "Source": "{Item.{PracticeStat1}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Width": 178,
+                                "Height": 58,
+                                "Background": "#1f1f21",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                        "Property": "Background",
+                                        "Value": "#030305"
+                                    }
+                                ],
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Right",
+                                        "Height": 58,
+                                        "PaddingRight": 20,
+                                        "FontSize": 24,
+                                        "FontName": "{Archivo_Regular}",
+                                        "Foreground": "{white}",
+                                        "Source": "{Item.{PracticeStat2}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Header": "",
+                            "Template": {
+                                "BlockType": "dock",
+                                "Width": 178,
+                                "Height": 58,
+                                "Background": "#1f1f21",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
+                                        "Property": "Background",
+                                        "Value": "#030305"
+                                    }
+                                ],
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Right",
+                                        "Height": 58,
+                                        "PaddingRight": 20,
+                                        "FontSize": 24,
+                                        "FontName": "{Archivo_Regular}",
+                                        "Foreground": "{white}",
+                                        "Source": "{Item.{PracticeStat3}}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,233 @@
+{
+    "BlockRoot": {
+        "BlockType": "canvas",
+        "Width": 1500,
+        "Height": 1875,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "PositionY": 150,
+                "Width": 1500,
+                "Height": 1115,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 1115,
+                        "Source": "Track_images/{Penalty.Session.Track.CircuitOrigin}.png",
+                        "HorizontalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionY": 150,
+                "Width": 1500,
+                "Height": 1115,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Width": 1200,
+                        "Source": "{Penalty.DriverSession.LiveryPath}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "image",
+                "Source": "News/news_struc.png"
+            },
+            {
+                "BlockType": "text",
+                "Source": "[BREAKING]",
+                "PositionY": 15,
+                "Width": 460,
+                "Height": 180,
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Center",
+                "Foreground": "{white}",
+                "FontName": "{Druk_Bold_Itallic}",
+                "FontSize": 130,
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            },
+            {
+                "BlockType": "text",
+                "Source": "[NEWS]",
+                //"Background": "#dddddd",
+                "PositionY": 8,
+                "PositionX": 615,
+                "Width": 300,
+                "Height": 150,
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Left",
+                "Foreground": "{newsRed}",
+                "FontName": "{DrukTextWide_Medium_Italic}",
+                "FontSize": 59,
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            },
+            {
+                "BlockType": "stack",
+                "PositionX": 1090,
+                "Spacing": 40,
+                "Width": 390,
+                "Height": 150,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.LogotypePath}",
+                        "Height": 120,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Left"
+                    },
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "Height": 120,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Right"
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionY": 1270,
+                "Width": 1500,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 170,
+                        "Source": "{Penalty.DriverSession.Team.LightLogotypePath}",
+                        "HorizontalAlignment": "Center"
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "PositionY": 1500,
+                "Width": 1500,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Padding": "5",
+                        "Source": "[{Penalty.Driver.{DriverName}, Converter=StringToUpperString}]",
+                        "Foreground": "{white}",
+                        "FontName": "{DrukWide_Bold_Itallic}",
+                        "FontSize": 70,
+                        "VerticalAlignment": "Center",
+                        "TextOptions": { "FontStyle": "BoldItalic" },
+                        "Triggers": [
+                            {
+                                "Condition": "{DriverName}",
+                                "ConditionValue": "Short First Name",
+                                "Property": "Source",
+                                "Value": "[{Item.Driver.LastName, Converter=StringToUpperString}]"
+                            }
+                        ],
+                        "HorizontalAlignment": "Center"
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "HorizontalAlignment": "Center",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Penalty.PenaltyActions}",
+                            "Limit": 1,
+                            "ItemTemplate": {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[News Red {Item.TypeString}] {Item.Value} [News Red2 {Item.TypeString}]",
+                                        "Padding": "5",
+                                        "Foreground": "{newsRed}",
+                                        "FontName": "{DrukWide_Bold_Itallic}",
+                                        "FontSize": 70,
+                                        "VerticalAlignment": "Center",
+                                        "TextOptions": { "FontStyle": "BoldItalic" },
+                                        "HorizontalAlignment": "Center"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[News White {Item.TypeString}]",
+                                        "Padding": "5",
+                                        "Foreground": "{white}",
+                                        "FontName": "{DrukWide_Bold_Itallic}",
+                                        "FontSize": 70,
+                                        "VerticalAlignment": "Center",
+                                        "TextOptions": { "FontStyle": "BoldItalic" },
+                                        "HorizontalAlignment": "Center"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "RenderIf": "{Penalty.IsNoPunishment}",
+                        "Width": 1500,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[News Red no Penalty]",
+                                "Padding": "5",
+                                "Foreground": "{newsRed}",
+                                "FontName": "{DrukWide_Bold_Itallic}",
+                                "FontSize": 70,
+                                "VerticalAlignment": "Center",
+                                "TextOptions": { "FontStyle": "BoldItalic" },
+                                "HorizontalAlignment": "Center"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[News White no penalty]",
+                                "Padding": "5",
+                                "Foreground": "{white}",
+                                "FontName": "{DrukWide_Bold_Itallic}",
+                                "FontSize": 70,
+                                "VerticalAlignment": "Center",
+                                "TextOptions": { "FontStyle": "BoldItalic" },
+                                "HorizontalAlignment": "Center"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "RenderIf": "{Penalty.IsCancelled}",
+                        "Width": 1500,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[News Red cancelled]",
+                                "Padding": "5",
+                                "Foreground": "{newsRed}",
+                                "FontName": "{DrukWide_Bold_Itallic}",
+                                "FontSize": 70,
+                                "VerticalAlignment": "Center",
+                                "TextOptions": { "FontStyle": "BoldItalic" },
+                                "HorizontalAlignment": "Center"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[News White cancelled]",
+                                "Padding": "5",
+                                "Foreground": "{white}",
+                                "FontName": "{DrukWide_Bold_Itallic}",
+                                "FontSize": 70,
+                                "VerticalAlignment": "Center",
+                                "TextOptions": { "FontStyle": "BoldItalic" },
+                                "HorizontalAlignment": "Center"
+                            }
+                        ]
+                    }
+                ]
+            },
+        ]
+    }
+}

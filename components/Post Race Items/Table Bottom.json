@@ -8,7 +8,7 @@
             "BlockType": "shape",
             "Opacity": 80,
             "Width": 1228,
-            "Height": 3,
+            "Height": 2,
             "ShapeOptions": {
                 "Fill": "{lightBlue}"
             }
@@ -55,7 +55,7 @@
                         },
                         {
                             "BlockType": "text",
-                            "Source": "[FIAWEC_OFFICIAL]",
+                            "Source": "[{Instagram}]",
                             "Foreground": "{white}",
                             "FontName": "{Archivo_SemiBold}",
                             "FontSize": 18,
@@ -70,7 +70,7 @@
                         },
                         {
                             "BlockType": "text",
-                            "Source": "[FIAWEC]",
+                            "Source": "[{Youtube}]",
                             "Foreground": "{white}",
                             "FontName": "{Archivo_SemiBold}",
                             "FontSize": 18,
@@ -85,7 +85,7 @@
                         },
                         {
                             "BlockType": "text",
-                            "Source": "[FIAWEC]",
+                            "Source": "[{TikTok}]",
                             "Foreground": "{white}",
                             "FontName": "{Archivo_SemiBold}",
                             "FontSize": 18,

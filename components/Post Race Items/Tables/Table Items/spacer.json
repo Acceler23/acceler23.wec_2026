@@ -23,7 +23,7 @@
                     { "Trigger": "TeamColor_ShapeFill" },
                     { "Trigger": "CarColor_ShapeFill" },
                     { "Trigger": "WEC_Team_ShapeMain" },
-                    { "Trigger": "WEC_Car_ShapeMain" },
+                    { "Trigger": "WEC_Car_ShapeMain" }
                 ]
             }
         ]

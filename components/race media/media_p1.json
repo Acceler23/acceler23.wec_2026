@@ -53,6 +53,10 @@
         "Width": 1200,
         "Items": [
             {
+                "BlockType": "image",
+                "Source": "Media_items/qualy/qual_stripes"
+            },
+            {
                 "BlockType": "dock",
                 "Width": 1200,
                 "Items": [

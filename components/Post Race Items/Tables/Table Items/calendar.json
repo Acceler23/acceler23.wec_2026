@@ -41,7 +41,7 @@
         },
         {
             "BlockType": "text",
-            "Source": "[R]{Item.Position}",
+            "Source": "[R]{Item.ChampionshipPosition}",
             "Foreground": "{white}",
             "PositionX": 62,
             "Height": 65,
@@ -61,6 +61,50 @@
                         {
                             "Property": "FontSize",
                             "Value": 37
+                        }
+                    ]
+                },
+                {
+                    "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
+                    "ConditionAnd": "{Item.Index, Converter=NumberLess, Parameter=3}",
+                    "Setters": [
+                        {
+                            "Property": "Source",
+                            "Value": "[OFFICIAL\nPROLOGUE]"
+                        },
+                        {
+                            "Property": "TextOptions.TextAlignment",
+                            "Value": "Center"
+                        },
+                        {
+                            "Property": "FontSize",
+                            "Value": 15
+                        },
+                        {
+                            "Property": "PositionX",
+                            "Value": 27
+                        }
+                    ]
+                },
+                {
+                    "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
+                    "ConditionAnd": "{Item.Index, Converter=NumberGreater, Parameter=4}",
+                    "Setters": [
+                        {
+                            "Property": "Source",
+                            "Value": "[OFFICIAL\nTEST DAY]"
+                        },
+                        {
+                            "Property": "TextOptions.TextAlignment",
+                            "Value": "Center"
+                        },
+                        {
+                            "Property": "FontSize",
+                            "Value": 15
+                        },
+                        {
+                            "Property": "PositionX",
+                            "Value": 30
                         }
                     ]
                 }
@@ -104,7 +148,7 @@
                         },
                         {
                             "BlockType": "text",
-                            "Source": "[{Item.Track.CircuitFullName, Converter=StringToUpperString}]",
+                            "Source": "[{Item.{EventNameAs}, Converter=StringToUpperString}]",
                             "Foreground": "{white}",
                             "FontSize": 18,
                             "Padding": "0, 2",

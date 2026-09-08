@@ -52,6 +52,12 @@
                     ]
                 }
             ]
+        },
+        {
+            "BlockType": "shape",
+            "Width": 1,
+            "Height": 50,
+            "Opacity": 0
         }
     ]
 }

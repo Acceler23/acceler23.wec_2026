@@ -1,0 +1,22 @@
+{
+    "BlockRoot": {
+        "BlockType": "canvas",
+        "Width": 1200,
+        "Height": 1500,
+        "Items": [
+            {
+                "BlockType": "shape",
+                "Width": 1200,
+                "Height": 1500,
+                "ShapeOptions": {
+                    "Fill": "#1E3361"
+                }
+            },
+            {
+                "BlockType": "image",
+                "Source": "Track_images/{TrackStatistics.Track.CircuitOrigin}.png",
+                "Height": 1500
+            }
+        ]
+    }
+}

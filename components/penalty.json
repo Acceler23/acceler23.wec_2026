@@ -1,0 +1,587 @@
+[
+    {
+        "ComponentName": "penalty_component",
+        "BlockType": "stack",
+        "MinHeight": 450,
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[BULLETIN] [No.] {<Penalty>.PenaltyId}",
+                "Padding": "5",
+                "FontName": "{Univia_Medium}",
+                "FontSize": 24,
+                "HorizontalAlignment": "Center",
+                "Foreground": "{black}"
+            },
+            {
+                "BlockType": "shape",
+                "Height": 2,
+                "Width": 1024,
+                "HorizontalAlignment": "Center",
+                "ShapeOptions": {
+                    "ShapeType": "rectangle",
+                    "Fill": "{black}"
+                }
+            },
+            {
+                "BlockType": "dock",
+                "HorizontalAlignment": "Center",
+                "MarginTop": 10,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "HorizontalAlignment": "Left",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Width": 60,
+                                        "Source": "[From]:",
+                                        "FontName": "{Univia_Bold}",
+                                        "Foreground": "{black}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0",
+                                        "TextOptions": {
+                                            "FontStyle": "Bold"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[The Stewards]\n[{<Penalty>.Submitter.{DriverName}}]",
+                                        "FontName": "{Univia_Regular}",
+                                        "Foreground": "{black}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Foreground": "{black}",
+                                        "Width": 60,
+                                        "Source": "[To]:",
+                                        "FontName": "{Univia_Bold}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0",
+                                        "TextOptions": {
+                                            "FontStyle": "Bold"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[#][{<Penalty>.Team.Abbreviation}] [{<Penalty>.Team.FullName}]",
+                                                "FontName": "{Univia_Regular}",
+                                                "Foreground": "{black}",
+                                                "Padding": "0, 5, 0, 0",
+                                                "FontSize": 14,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                        "Property": "Source",
+                                                        "Value": "[{<Penalty>.Car.Name}] [#][{<Penalty>.{CarNumber}}]"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{<Penalty>.Driver.{DriverName}}]",
+                                                "FontName": "{Univia_Regular}",
+                                                "Foreground": "{black}",
+                                                "Padding": "0, 5, 0, 0",
+                                                "FontSize": 14
+                                            },
+                                            {
+                                                "BlockType": "itemstack",
+                                                "Orientation": "Vertical",
+                                                "ItemStackOptions": {
+                                                    "ItemSource": "{<Penalty>.DriversInvolved}",
+                                                    "ItemTemplate": {
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.{DriverName}}]",
+                                                        "FontName": "{Univia_Regular}",
+                                                        "Foreground": "{black}",
+                                                        "FontSize": 14,
+                                                        "Padding": "0, 5, 0, 0"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "HorizontalAlignment": "Right",
+                        "Margin": "0, 0, 60, 0",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Width": 65,
+                                        "Source": "[Date]:",
+                                        "FontName": "{Univia_Bold}",
+                                        "Foreground": "{black}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0",
+                                        "TextOptions": {
+                                            "FontStyle": "Bold"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{<Penalty>.Date, Converter=DateToDayOfMonth}] [{<Penalty>.Date, Converter=DateToMonthInWords}] [{<Penalty>.Date, Converter=DateToYear}]",
+                                        "FontName": "{Univia_Regular}",
+                                        "Foreground": "{black}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Width": 65,
+                                        "Source": "[Time]:",
+                                        "FontName": "{Univia_Bold}",
+                                        "Foreground": "{black}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0",
+                                        "TextOptions": {
+                                            "FontStyle": "Bold"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{<Penalty>.Date, Converter=DateCustomFormat, Parameter=hh:mm} hrs",
+                                        "FontName": "{Univia_Regular}",
+                                        "Foreground": "{black}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "Width": 65,
+                                        "Source": "[Session]:",
+                                        "FontName": "{Univia_Bold}",
+                                        "Foreground": "{black}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0",
+                                        "TextOptions": {
+                                            "FontStyle": "Bold"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{<Penalty>.Session.SessionTypeString}",
+                                        "FontName": "{Univia_Regular}",
+                                        "Foreground": "{black}",
+                                        "FontSize": 14,
+                                        "Padding": "0, 5, 0, 0"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "shape",
+                "HorizontalAlignment": "Center",
+                "Height": 2,
+                "Margin": "0, 5, 0, 0",
+                "Width": 1024,
+                "ShapeOptions": {
+                    "ShapeType": "rectangle",
+                    "Fill": "{black}"
+                }
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "MarginTop": 15,
+                "Spacing": 10,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Left",
+                        "Source": "[The Stewards notify] <{<Penalty>.Driver.{DriverName}}> [of the following]:",
+                        "Padding": "0, 5, 0, 0",
+                        "FontName": "{Univia_Regular}",
+                        "FontSize": 14,
+                        "Foreground": "{black}",
+                        "Width": 1024
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{<Penalty>.Offense}]",
+                        "HorizontalAlignment": "Left",
+                        "Padding": "0, 5, 0, 0",
+                        "FontName": "{Univia_Regular}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Width": 800
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[{<Penalty>.Description}]",
+                        "HorizontalAlignment": "Left",
+                        "Padding": "0, 5, 0, 0",
+                        "FontName": "{Univia_Regular}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Width": 900,
+                        "TextOptions": {
+                            "Wrap": true
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "HorizontalAlignment": "Left",
+                "Margin": "0, 10",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "HorizontalAlignment": "Left",
+                        "Margin": "20, 5, 0, 0",
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[Lap]:",
+                                "FontName": "{Univia_Bold}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 5, 0",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{<Penalty>.Lap}",
+                                "FontName": "{Univia_Regular}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 0, 0"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "HorizontalAlignment": "Left",
+                        "Margin": "100, 5, 0, 0",
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[Turn]:",
+                                "FontName": "{Univia_Bold}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 5, 0",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{<Penalty>.Turn}",
+                                "FontName": "{Univia_Regular}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 0, 0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Margin": "0, 20, 0, 0",
+                "HorizontalAlignment": "Left",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Width": 70,
+                        "Source": "[Veredict]:",
+                        "FontName": "{Univia_Bold}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Padding": "0, 5, 5, 0",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "{<Penalty>.Verdict}",
+                        "FontName": "{Univia_Regular}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Width": 900,
+                        "Padding": "0, 5, 0, 0",
+                        "TextOptions": {
+                            "Wrap": true
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Margin": "0, 20, 0, 0",
+                "HorizontalAlignment": "Left",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[Penalty]:",
+                        "Width": 70,
+                        "FontName": "{Univia_Bold}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Padding": "0, 5, 5, 0",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "HorizontalAlignment": "Left",
+                "Orientation": "Horizontal",
+                "Margin": "40, 20, 0, 0",
+                "Spacing": 50,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "RenderIf": "{<Penalty>.PenaltyPoints, Converter=NumberNotEquals, Parameter=0}",
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[Pen. Points]:",
+                                "FontName": "{Univia_Bold}",
+                                "FontSize": 14,
+                                "Foreground": "{black}",
+                                "Padding": "0, 5, 5, 0",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{<Penalty>.PenaltyPoints}",
+                                "FontName": "{Univia_Regular}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 0, 0"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "RenderIf": "{<Penalty>.PenaltySeconds, Converter=NumberNotEquals, Parameter=0}",
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[Pen. Seconds]:",
+                                "FontName": "{Univia_Bold}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 5, 0",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{<Penalty>.PenaltySeconds}",
+                                "FontName": "{Univia_Regular}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 0, 0"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "RenderIf": "{<Penalty>.PenaltyWarnings, Converter=NumberNotEquals, Parameter=0}",
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[Pen. Warnings]:",
+                                "FontName": "{Univia_Bold}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 5, 0",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "{<Penalty>.PenaltyWarnings}",
+                                "FontName": "{Univia_Regular}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 0, 0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "HorizontalAlignment": "Left",
+                "Margin": "0, 40, 0, 0",
+                "RenderIf": "{<Penalty>.IsDisqualified}",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[Decision]:",
+                        "FontName": "{Univia_Bold}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Padding": "0, 5, 5, 0",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[DESQUALIFIED]",
+                        "FontName": "{Univia_Regular}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Padding": "0, 5, 0, 0"
+                    }
+                ]
+            },
+            {
+                "BlockType": "itemstack",
+                "Margin": "40, 20, 0, 0",
+                "ItemStackOptions": {
+                    "ItemSource": "<{Penalty.PenaltyActions}>",
+                    "ItemTemplate": {
+                        "BlockType": "dock",
+                        "HorizontalAlignment": "Left",
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Item.TypeString}]:",
+                                "FontName": "{Univia_Bold}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 5, 0",
+                                "TextOptions": {
+                                    "FontStyle": "Bold"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Item.Value}] [{Item.ValueDescription}]",
+                                "FontName": "{Univia_Regular}",
+                                "Foreground": "{black}",
+                                "FontSize": 14,
+                                "Padding": "0, 5, 0, 0"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "BlockType": "dock",
+                "HorizontalAlignment": "Left",
+                "Margin": "0, 40, 0, 0",
+                "RenderIf": "{<Penalty>.IsNoPunishment}",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "[Decision]:",
+                        "FontName": "{Univia_Bold}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Padding": "0, 5, 5, 0",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "[No Futher Action]",
+                        "FontName": "{Univia_Regular}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Padding": "0, 5, 0, 0"
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "HorizontalAlignment": "Left",
+                "Margin": "0, 40, 0, 0",
+                "RenderIf": "{<Penalty>.IsCancelled}",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Source": "Decision:",
+                        "FontName": "{Univia_Bold}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Padding": "0, 5, 5, 0",
+                        "TextOptions": {
+                            "FontStyle": "Bold"
+                        }
+                    },
+                    {
+                        "BlockType": "text",
+                        "Source": "Revoked Penalty",
+                        "FontName": "{Univia_Regular}",
+                        "Foreground": "{black}",
+                        "FontSize": 14,
+                        "Padding": "0, 5, 0, 0"
+                    }
+                ]
+            }
+        ]
+    }
+]

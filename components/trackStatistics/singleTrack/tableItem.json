@@ -1,0 +1,353 @@
+[
+    {
+        "ComponentName": "Seasons Winners_TrackStat_Component",
+        "BlockType": "canvas",
+        "Orientation": "Vertical",
+        "Height": 1350,
+        "Width": 1080,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Width": 1080,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "Spacing": -10,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[season winners head]",
+                                "FontName": "{Druk_Heavy_Itallic}",
+                                "Foreground": "{white}",
+                                "FontSize": 120,
+                                "HorizontalAlignment": "Center",
+                                "Padding": "15",
+                                "TextOptions": {
+                                    "FontStyle": "Italic",
+                                    "TextAlignment": "Center"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "MaxWidth": 1000,
+                                "Source": "[season winners subhead]",
+                                "BackgroundImage": "Media_items/info/circle_subhead_extended.png",
+                                "BackgroundImageFitMode": "Stretch",
+                                "FontName": "{Druk_Heavy_Itallic}",
+                                "Foreground": "{lightBlue}",
+                                "FontSize": 120,
+                                "HorizontalAlignment": "Center",
+                                "Padding": "15",
+                                "TextOptions": {
+                                    "FontStyle": "Italic",
+                                    "TextAlignment": "Center"
+                                },
+                                "ColorizeBackground": {
+                                    "Color": "{darkPurple}"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionY": 200,
+                "Width": 1080,
+                "Items": [
+                    {
+                        "BlockType": "itemstack",
+                        "Spacing": 20,
+                        "HorizontalAlignment": "Center",
+                        "Orientation": "Vertical",
+                        "ItemStackOptions": {
+                            "ItemSource": "{TrackStatistics.Seasons}",
+                            "Limit": 9,
+                            "Reverse": true,
+                            "ItemTemplate": {
+                                "BlockType": "canvas",
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "PositionX": 70,
+                                        "Source": "Media_items/track_stats/item_bg.png"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.SeasonName, Converter=StringToUpperString}",
+                                        "Height": 69,
+                                        "Width": 200,
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{Archivo_SemiExpanded_SemiBold_Itallic}",
+                                        "FontSize": "{22, {Subtracts}{{Item.SeasonName, Converter=GetStringLength}, {Multiplys}0.3}}",
+                                        "TextOptions": {
+                                            "Wrap": true,
+                                            "TextAlignment": "Start",
+                                            "VerticalAlignment": "Center"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Item.Season.MainLeagueCategory.Name, Converter=StringToUpperString}]",
+                                        "PositionX": 219,
+                                        "PositionY": 10,
+                                        "Height": 60,
+                                        "Width": 180,
+                                        "Foreground": "{white}",
+                                        "FontName": "{Druk_Medium_Itallic}",
+                                        "FontSize": "{45, {Subtracts}{{Item.Season.MainLeagueCategory.Name, Converter=GetStringLength}, {Multiplys}1}}",
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Item.RaceWinnerDriver.{DriverName}, Converter=StringToUpperString}]",
+                                        "PositionX": 420,
+                                        "PositionY": 15,
+                                        "FontSize": 15,
+                                        "Foreground": "{darkPurple}",
+                                        "Height": 50,
+                                        "Width": 200,
+                                        "TextOptions": {
+                                            "Wrap": true,
+                                            "TextAlignment": "Center",
+                                            "VerticalAlignment": "Center"
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{DriverName}",
+                                                "ConditionValue": "RealName",
+                                                "Property": "Source",
+                                                "Value": "[{Item.Driver.FirstName, Converter=StringToUpperString}]"
+                                            },
+                                            {
+                                                "Condition": "{DriverName}",
+                                                "ConditionValue": "Short First Name",
+                                                "Property": "Source",
+                                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]."
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "Media_items/arrows.png",
+                                        "Height": 6,
+                                        "PositionX": 660,
+                                        "PositionY": 38,
+                                        "Colorize": {
+                                            "Color": "{darkPurple}",
+                                            "ColorBlendingMode": "Normal"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "PositionX": 680,
+                                        "PositionY": 10,
+                                        "Height": 60,
+                                        "Width": 100,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Height": 40,
+                                                "Source": "[{Item.RaceWinnerTeam.DarkLogotypePath}]",
+                                                "VerticalAlignment": "Center",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "text",
+                "PositionY": 1100,
+                "Width": 1080,
+                "Source": "[{TrackStatistics.MultiSeasonName, Converter=StringToUpperString}]",
+                "FontName": "{Archivo_Bold}",
+                "Foreground": "{white}",
+                "FontSize": 30,
+                "VerticalAlignment": "Bottom",
+                "HorizontalAlignment": "Center",
+                "Padding": "5",
+                "TextOptions": {
+                    "TextAlignment": "Center"
+                }
+            }
+        ]
+    },
+    {
+        "ComponentName": "Seasons Fastest Lap_TrackStat_Component",
+        "Orientation": "Vertical",
+        "BlockType": "canvas",
+        "Height": 1350,
+        "Width": 1080,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "Width": 1080,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Spacing": -10,
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "HorizontalAlignment": "Center",
+                                "Source": "[season fastests head]",
+                                "FontName": "{DrukWide_Super_Itallic}",
+                                "Foreground": "{white}",
+                                "FontSize": 80,
+                                "Padding": "5",
+                                "TextOptions": {
+                                    "Wrap": true,
+                                    "FontStyle": "Italic",
+                                    "TextAlignment": "Center"
+                                }
+                            },
+                            {
+                                "BlockType": "text",
+                                "MaxWidth": 1000,
+                                "HorizontalAlignment": "Center",
+                                "Source": "[season fastests subhead]",
+                                "BackgroundImage": "Media_items/info/circle_subhead_extended.png",
+                                "BackgroundImageFitMode": "Stretch",
+                                "FontName": "{DrukWide_Super_Itallic}",
+                                "Foreground": "{lightBlue}",
+                                "FontSize": 80,
+                                "Padding": "20, 15",
+                                "TextOptions": {
+                                    "FontStyle": "Italic",
+                                    "TextAlignment": "Center"
+                                },
+                                "ColorizeBackground": {
+                                    "Color": "{darkPurple}"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Width": 1080,
+                "PositionY": 200,
+                "Items": [
+                    {
+                        "BlockType": "itemstack",
+                        "Spacing": 20,
+                        "HorizontalAlignment": "Center",
+                        "Orientation": "Vertical",
+                        "ItemStackOptions": {
+                            "ItemSource": "{TrackStatistics.Seasons}",
+                            "Limit": 9,
+                            "Reverse": true,
+                            "ItemTemplate": {
+                                "BlockType": "canvas",
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "PositionX": 70,
+                                        "Source": "Media_items/track_stats/item_bg.png"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Item.SeasonName, Converter=StringToUpperString}]",
+                                        "Height": 69,
+                                        "Width": 200,
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{Archivo_SemiExpanded_SemiBold_Itallic}",
+                                        "FontSize": "{22, {Subtracts}{{Item.SeasonName, Converter=GetStringLength}, {Multiplys}0.3}}",
+                                        "TextOptions": {
+                                            "Wrap": true,
+                                            "TextAlignment": "Start",
+                                            "VerticalAlignment": "Center"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Item.FastestLapTime, Converter=StringToUpperString}]",
+                                        "PositionX": 219,
+                                        "PositionY": 5,
+                                        "Height": 60,
+                                        "Width": 180,
+                                        "Foreground": "{white}",
+                                        "FontName": "{Archivo_Black_Itallic}",
+                                        "FontSize": 30,
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "TextOptions": {
+                                            "FontStyle": "Italic"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Item.FastestLapDriver.{DriverName}, Converter=StringToUpperString}]",
+                                        "PositionX": 420,
+                                        "PositionY": 15,
+                                        "FontSize": 15,
+                                        "Foreground": "{darkPurple}",
+                                        "Height": 50,
+                                        "Width": 200,
+                                        "TextOptions": {
+                                            "Wrap": true,
+                                            "TextAlignment": "Center",
+                                            "VerticalAlignment": "Center"
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{DriverName}",
+                                                "ConditionValue": "RealName",
+                                                "Property": "Source",
+                                                "Value": "[{Item.Driver.FirstName, Converter=StringToUpperString}]"
+                                            },
+                                            {
+                                                "Condition": "{DriverName}",
+                                                "ConditionValue": "Short First Name",
+                                                "Property": "Source",
+                                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]."
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "Media_items/arrows.png",
+                                        "Height": 6,
+                                        "PositionX": 660,
+                                        "PositionY": 38,
+                                        "Colorize": {
+                                            "Color": "{darkPurple}",
+                                            "ColorBlendingMode": "Normal"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[{Item.Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
+                                        "PositionX": 685,
+                                        "PositionY": 10,
+                                        "Height": 60,
+                                        "Width": 80,
+                                        "Foreground": "{darkPurple}",
+                                        "FontSize": "{25, {Subtracts}{{Item.Season.MainLeagueCategory.ShortName, Converter=GetStringLength}, {Multiplys}1}}",
+                                        "FontName": "{Archivo_SemiBold_Itallic}",
+                                        "HorizontalAlignment": "Left",
+                                        "VerticalAlignment": "Center",
+                                        "TextOptions": {
+                                            "FontStyle": "Italic"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

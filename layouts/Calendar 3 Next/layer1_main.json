@@ -60,6 +60,7 @@
                                 "Items": [
                                     {
                                         "BlockType": "itemstack",
+                                        "Orientation": "Vertical",
                                         "ItemStackOptions": {
                                             "ItemSource": "{Item.Practices}",
                                             "ItemTemplate": {
@@ -87,7 +88,7 @@
                                                     },
                                                     {
                                                         "BlockType": "text",
-                                                        "Source": "[{Item.SessionType}]",
+                                                        "Source": "[{Item.SessionTypeString}]",
                                                         "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{darkPurple}",
@@ -405,6 +406,7 @@
                                     {
                                         "BlockType": "itemstack",
                                         //"RenderIf": "{Season.IsHaveMulticlassConfiguration, Converter=BoolReverse}",
+                                        "Orientation": "Vertical",
                                         "ItemStackOptions": {
                                             "ItemSource": "{Item.Quals}",
                                             "ItemTemplate": {
@@ -432,7 +434,7 @@
                                                     },
                                                     {
                                                         "BlockType": "text",
-                                                        "Source": "[{Item.SessionType}]",
+                                                        "Source": "[{Item.SessionTypeString}]",
                                                         "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{darkPurple}",
@@ -531,6 +533,7 @@
                                     {
                                         "BlockType": "itemstack",
                                         "Height": "*",
+                                        "Orientation": "Vertical",
                                         "Background": "{babyBlue}",
                                         "ItemStackOptions": {
                                             "ItemSource": "{Item.Races}",
@@ -559,7 +562,7 @@
                                                     },
                                                     {
                                                         "BlockType": "text",
-                                                        "Source": "[{Item.SessionType}]",
+                                                        "Source": "[{Item.SessionTypeString}]",
                                                         "FontName": "{Archivo_SemiExpanded_Regular}",
                                                         "FontSize": 16,
                                                         "Foreground": "{darkPurple}",
