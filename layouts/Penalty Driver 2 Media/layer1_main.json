@@ -125,7 +125,7 @@
                                 "Condition": "{DriverName}",
                                 "ConditionValue": "Short First Name",
                                 "Property": "Source",
-                                "Value": "[{Item.Driver.LastName, Converter=StringToUpperString}]"
+                                "Value": "[{Penalty.Driver.FirstName, Converter=MaxStringLength, Parameter=1}] [{Penalty.Driver.LastName, Converter=StringToUpperString}]"
                             }
                         ],
                         "HorizontalAlignment": "Center"
@@ -135,7 +135,7 @@
                         "HorizontalAlignment": "Center",
                         "ItemStackOptions": {
                             "ItemSource": "{Penalty.PenaltyActions}",
-                            "Limit": 1,
+                            "TakeItemIndex": "{TablePage, {Subs}1}",
                             "ItemTemplate": {
                                 "BlockType": "stack",
                                 "Orientation": "Vertical",
