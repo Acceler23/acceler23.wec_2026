@@ -144,7 +144,7 @@
                                 "Condition": "{DriverName}",
                                 "ConditionValue": "Short First Name",
                                 "Property": "Source",
-                                "Value": "[{Penalty.Driver.FirstName, Converter=MaxStringLength, Parameter=1}] [{Penalty.Driver.LastName, Converter=StringToUpperString}]"
+                                "Value": "[{Penalty.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Penalty.Driver.LastName, Converter=StringToUpperString}]"
                             }
                         ],
                         "HorizontalAlignment": "Center"
