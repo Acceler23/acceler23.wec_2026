@@ -120,13 +120,13 @@
                                                 "Condition": "{DriverName}",
                                                 "ConditionValue": "RealName",
                                                 "Property": "Source",
-                                                "Value": "[{Item.Driver.FirstName, Converter=StringToUpperString}]"
+                                                "Value": "[{Item.RaceWinnerDriver.FirstName, Converter=StringToUpperString}] [{Item.RaceWinnerDriver.LastName, Converter=StringToUpperString}]"
                                             },
                                             {
                                                 "Condition": "{DriverName}",
                                                 "ConditionValue": "Short First Name",
                                                 "Property": "Source",
-                                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]."
+                                                "Value": "[{Item.RaceWinnerDriver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.RaceWinnerDriver.LastName, Converter=StringToUpperString}]"
                                             }
                                         ]
                                     },
@@ -303,15 +303,9 @@
                                         "Triggers": [
                                             {
                                                 "Condition": "{DriverName}",
-                                                "ConditionValue": "RealName",
-                                                "Property": "Source",
-                                                "Value": "[{Item.Driver.FirstName, Converter=StringToUpperString}]"
-                                            },
-                                            {
-                                                "Condition": "{DriverName}",
                                                 "ConditionValue": "Short First Name",
                                                 "Property": "Source",
-                                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]."
+                                                "Value": "[{Item.FastestLapDriver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
                                             }
                                         ]
                                     },
