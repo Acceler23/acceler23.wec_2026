@@ -1,10 +1,7 @@
 {
     "BlockRoot": {
-        "Name": "mainStack",
         "BlockType": "stack",
         "Orientation": "Vertical",
-        "Width": 1200,
-        "Height": 1500,
         "Items": [
             {
                 "BlockType": "stack",
@@ -90,7 +87,7 @@
                                 "Source": "[{Season.Name, Converter=StringToUpperString}]",
                                 "FontName": "{Druk_Bold}",
                                 "VerticalAlignment": "Center",
-                                "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}2}}",
+                                "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}1}}",
                                 "Height": 110,
                                 "Width": "*",
                                 "PaddingTop": 20,
@@ -102,7 +99,7 @@
                                 "Source": "[CALENDAR]",
                                 "FontName": "{Druk_Bold}",
                                 "VerticalAlignment": "Center",
-                                "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}2}}",
+                                "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}1}}",
                                 "PaddingTop": 20,
                                 "MarginTop": 15,
                                 "MarginLeft": 10,
@@ -114,25 +111,53 @@
                 ]
             },
             {
-                "BlockType": "itemstack",
-                "Orientation": "Vertical",
-                "Spacing": 10,
-                "Padding": "120, 50",
-                "Triggers": [
+
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
                     {
-                        "Condition": "{TablePage, Converter=NumberGreater, Parameter=1}",
-                        "Property": "ItemStackOptions.IndexStart",
-                        "Value": "{{TablePage, Converter=NumberSubtract, Parameter=1}, Converter=NumberMultiply, Parameter=8}"
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "Padding": "120, 50, 20, 50",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Events.Events}",
+                                    "CollectionPart": "1/2",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "CalendarItemMedia"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "Padding": "20, 50, 120, 50",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Events.Events}",
+                                    "CollectionPart": "2/2",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "CalendarItemMedia"
+                                    }
+                                }
+                            }
+                        ]
                     }
-                ],
-                "ItemStackOptions": {
-                    "ItemSource": "{Events.Events}",
-                    "Limit": 8,
-                    "ItemTemplate": {
-                        "BlockType": "component",
-                        "Component": "CalendarItemMedia"
-                    }
-                }
+                ]
+
             }
         ]
     }
