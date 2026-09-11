@@ -1,6 +1,7 @@
 {
     "BlockRoot": {
         "BlockType": "stack",
+        "RenderIf": "{Session.SessionType, Converter=StringEquals, Parameter=Qualification}",
         "Items": [
             {
                 "BlockType": "component",

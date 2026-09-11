@@ -26,7 +26,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -78,11 +81,11 @@
             {
                 "BlockType": "text",
                 //"Background": "#aaff0000",
-                "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                "Source": "[{Event.{EventNameAs}, Converter=StringToUpperString}]",
                 "Foreground": "{white}",
                 "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
-                "FontSize": "{{TrackNameSize}, {Subtracts}{{Session.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.34}}",
+                "FontSize": "{{TrackNameSize}, {Subtracts}{{Event.{EventNameAs}, Converter=GetStringLength}, {Multiplys}0.34}}",
                 "Height": 95,
                 "Width": 270,
                 "PositionX": 30,
@@ -130,11 +133,11 @@
             },
             {
                 "BlockType": "text",
-                "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                "Source": "[{Event.{EventNameAs}, Converter=StringToUpperString}]",
                 "Foreground": "{whiteGray}",
                 "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
-                "FontSize": "{{{TrackNameSize}, {Subtracts}{{Session.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.34}}, {Multiplys}0.58}",
+                "FontSize": "{{{TrackNameSize}, {Subtracts}{{Event.{EventNameAs}, Converter=GetStringLength}, {Multiplys}0.34}}, {Multiplys}0.58}",
                 "Height": 63,
                 "Width": 205,
                 "PositionY": 3,
@@ -192,7 +195,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -243,11 +249,11 @@
             },
             {
                 "BlockType": "text",
-                "Source": "[{Standings.LastEvent.Track.CircuitFullName, Converter=StringToUpperString}]",
+                "Source": "[{Standings.LastEvent.{EventNameAs}, Converter=StringToUpperString}]",
                 "Foreground": "{white}",
                 "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
-                "FontSize": "{{TrackNameSize}, {Subtracts}{{Standings.LastEvent.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.34}}",
+                "FontSize": "{{TrackNameSize}, {Subtracts}{{Standings.LastEvent.{EventNameAs}, Converter=GetStringLength}, {Multiplys}0.34}}",
                 "Height": 95,
                 "Width": 270,
                 "PositionX": 30,
@@ -306,7 +312,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -357,11 +366,11 @@
             },
             {
                 "BlockType": "text",
-                "Source": "[{Item.Track.CircuitFullName, Converter=StringToUpperString}]",
+                "Source": "[{Item.{EventNameAs}, Converter=StringToUpperString}]",
                 "Foreground": "{white}",
                 "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
-                "FontSize": "{{TrackNameSize}, {Subtracts}{{Item.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.34}}",
+                "FontSize": "{{TrackNameSize}, {Subtracts}{{Item.{EventNameAs}, Converter=GetStringLength}, {Multiplys}0.34}}",
                 "Height": 95,
                 "Width": 270,
                 "PositionX": 30,
@@ -420,7 +429,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -534,7 +546,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -585,11 +600,11 @@
             },
             {
                 "BlockType": "text",
-                "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                "Source": "[{Event.{EventNameAs}, Converter=StringToUpperString}]",
                 "Foreground": "{darkPurple}",
                 "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
-                "FontSize": "{{TrackNameSize}, {Subtracts}{{Session.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.34}}",
+                "FontSize": "{{TrackNameSize}, {Subtracts}{{Event.{EventNameAs}, Converter=GetStringLength}, {Multiplys}0.34}}",
                 "Height": 95,
                 "Width": 270,
                 "PositionX": 30,
@@ -648,7 +663,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -699,11 +717,11 @@
             },
             {
                 "BlockType": "text",
-                "Source": "{Standings.LastEvent.Track.CircuitFullName, Converter=StringToUpperString}",
+                "Source": "{Standings.LastEvent.{EventNameAs}, Converter=StringToUpperString}",
                 "Foreground": "{darkPurple}",
                 "FontName": "{DrukWide_Bold_Itallic}",
                 "VerticalAlignment": "Center",
-                "FontSize": "{{TrackNameSize}, {Subtracts}{{Standings.LastEvent.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.34}}",
+                "FontSize": "{{TrackNameSize}, {Subtracts}{{Standings.LastEvent.{EventNameAs}, Converter=GetStringLength}, {Multiplys}0.34}}",
                 "Height": 95,
                 "Width": 270,
                 "PositionX": 30,

@@ -10,8 +10,11 @@
     "babyBlue": "#d9f5ff",
     "darkPurple": "#0a0032",
     "red": "#e21e19",
+    "newsRed": "#ff073b",
 
     "RolexColor": "#fcd227",
+
+    "CarNameShort": "{Item.Car.Vendor.Name, Converter=StringToUpperString}",
 
     //Operators
     "Adds": "Converter=NumberAdd, Parameter=",
@@ -22,6 +25,7 @@
     //class colors
     "Le Mans Hypercar_Color": "#E21E19",
     "GT3_Color": "#0B9314",
+    "LMGTE_Color": "#DFC800",
     "LMP2_Color": "#005096",
     "LMP3_Color": "#663366",
 
@@ -62,7 +66,7 @@
     "Lamborghini_SecondColor": "#FFFFFF",
     "Lexus_SecondColor": "#000000",
     "McLaren_SecondColor": "#FFFFFF",
-    "Mercedes_SecondColor": "#FFFFFF",
+    "Mercedes-Benz_SecondColor": "#FFFFFF",
     "Peugeot_SecondColor": "#000000",
     "Porsche AG_SecondColor": "#000000",
     "Toyota_SecondColor": "#FFFFFF",
@@ -138,6 +142,7 @@
 
     "FontNameDefault": "Archivo_SemiExpanded-Italic",
     "Archivo_Regular": "Archivo-Regular",
+    "Archivo_Itallic": "Archivo-Italic",
     "Archivo_Bold": "Archivo-Bold",
     "Archivo_Black_Itallic": "Archivo-BlackItalic",
     "Archivo_Bold_Itallic": "Archivo-BoldItalic",
@@ -146,27 +151,37 @@
     "Archivo_CondensedBlack_Itallic": "Archivo_Condensed-BlackItalic",
     "Archivo_Expanded_Regular": "Archivo_Expanded-Regular",
     "Archivo_Expanded_Bold": "Archivo_Expanded-Bold",
+    "Archivo_Expanded_Bold_Itallic": "Archivo_Expanded-BoldItalic",
     "Archivo_Expanded_SemiBold": "Archivo_Expanded-SemiBold",
     "Archivo_Expanded_ExtraBold": "Archivo_Expanded-ExtraBold",
+    "Archivo_Expanded_ExtraBold_Itallic": "Archivo_Expanded-ExtraBoldItalic",
     "Archivo_SemiExpanded_Regular": "Archivo_SemiExpanded-Regular",
     "Archivo_SemiExpanded_Bold": "Archivo_SemiExpanded-Bold",
     "Archivo_SemiExpanded_SemiBold_Itallic": "Archivo_SemiExpanded-SemiBoldItalic",
     "Archivo_SemiExpanded_BoldItallic": "Archivo_SemiExpanded-BoldItalic",
+    "Archivo_SemiExpanded_BlackItallic": "Archivo_SemiExpanded-BlackItalic",
     "Archivo_SemiExpanded_Itallic": "Archivo_SemiExpanded-Italic",
     "Archivo_ExtraCondensed_Thin": "Archivo_ExtraCondensed-Thin",
 
     "Druk_Medium": "Druk-Medium-Trial",
     "Druk_Bold": "Druk-Bold-Trial",
+    "Druk_Bold_Itallic": "Druk-BoldItalic-Trial",
+    "Druk_Heavy_Itallic": "Druk-HeavyItalic-Trial",
     "Druk_Medium_Itallic": "Druk-MediumItalic-Trial",
+    "DrukTextWide_Medium_Italic": "DrukTextWide-MediumItalic-Trial",
     "DrukWide_Medium_Italic": "DrukWide-MediumItalic-Trial",
     "DrukWide_Medium": "DrukText-Medium-Trial",
     "DrukWide_Bold": "DrukWide-Bold-Trial",
     "DrukWide_Bold_Itallic": "DrukWide-BoldItalic-Trial",
     "DrukTextWide_Medium": "DrukTextWide-Medium-Trial",
-    "Druk_Medium_ItallicDate": "Druk-HeavyItalic-Trial",
+    "DrukTextWide_Heavy_Italic": "DrukTextWide-HeavyItalic-Trial",
     "DrukWide_Super": "DrukWide-Super-Trial",
     "DrukWide_Super_Itallic": "DrukWide-SuperItalic-Trial",
 
+    "Univia_Bold": "UniviaPro-Bold",
+    "Univia_Regular": "UniviaPro-Regular",
+    "Univia_Book": "UniviaPro-Book",
+    "Univia_Medium": "UniviaPro-Medium",
 
     //SingleStats
     "SingleStatsSession_Time": "none",

@@ -8,7 +8,7 @@
         "Items": [
             {
                 "BlockType": "stack",
-                "Width": 1200,
+                //"Width": 1200,
                 "PaddingTop": 75,
                 "Items": [
                     {
@@ -57,7 +57,10 @@
                                         "Source": "{Season.LogotypePath}",
                                         "Height": 100,
                                         "HorizontalAlignment": "Right",
-                                        "VerticalAlignment": "Center"
+                                        "VerticalAlignment": "Center",
+                                        "Triggers": [
+                                            { "Trigger": "SeasonToLeagueLogo" }
+                                        ]
                                     }
                                 ]
                             },
@@ -75,29 +78,23 @@
                         ]
                     },
                     {
-                        "BlockType": "stack",
-                        "Background": "#ff0000",
+                        "BlockType": "dock",
                         "Height": 110,
-                        "PaddingLeft": 30,
-                        "PaddingRight": 75,
-                        //"PaddingTop": 20,
-                        "Spacing": 10,
+                        "MarginLeft": 30,
+                        //"MarginRight": 75,
                         "HorizontalAlignment": "Right",
                         "Orientation": "Horizontal",
                         "Items": [
                             {
                                 "BlockType": "text",
-                                "Background": "#00ff00",
                                 "Source": "[{Season.Name, Converter=StringToUpperString}]",
                                 "FontName": "{Druk_Bold}",
                                 "VerticalAlignment": "Center",
                                 "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}2}}",
-                                //"Height": 110,
+                                "Height": 110,
                                 "Width": "*",
-                                //"Source": "[{Season.MainLeagueCategory.ShortName, Converter=StringToUpperString}]",
-                                //"FontSize": 120,
-                                "PaddingTop": 10,
-                                "MarginTop": 20,
+                                "PaddingTop": 20,
+                                "MarginTop": 15,
                                 "Foreground": "{lightBlue}"
                             },
                             {
@@ -106,11 +103,10 @@
                                 "FontName": "{Druk_Bold}",
                                 "VerticalAlignment": "Center",
                                 "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}2}}",
-                                //"FontSize": 120,
-                                "PaddingTop": 10,
-                                "MarginTop": 20,
+                                "PaddingTop": 20,
+                                "MarginTop": 15,
+                                "MarginLeft": 10,
                                 "Foreground": "{white}",
-                                //"Height": 110,
                                 "Width": "*"
                             }
                         ]
@@ -133,222 +129,8 @@
                     "ItemSource": "{Events.Events}",
                     "Limit": 8,
                     "ItemTemplate": {
-                        "BlockType": "canvas",
-                        "Items": [
-                            {
-                                "BlockType": "image",
-                                "Source": "Media_items/calendar/calendar_type1",
-                                "Height": 110,
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.Index, Converter=NumberIsOdd}",
-                                        "Property": "Source",
-                                        "Value": "Media_items/calendar/calendar_type2"
-                                    }
-                                ]
-                            },
-                            {
-                                "BlockType": "dock",
-                                "PositionX": -100,
-                                "Width": 600,
-                                "Height": 110,
-                                //"Background": "#dddddd",
-                                "Items": [
-                                    {
-                                        "BlockType": "image",
-                                        "RenderIf": false,
-                                        "Source": "{Season.LogotypePath}",
-                                        "VerticalAlignment": "Center",
-                                        "HorizontalAlignment": "Left",
-                                        "Width": 600,
-                                        "Opacity": 10,
-                                        "Colorize": {
-                                            "Color": "{white}",
-                                            "ColorBlendingMode": "HardLight",
-                                            "BlendPercentage": 50
-                                        },
-                                        "Triggers": [
-                                            {
-                                                "Condition": "{Item.Index, Converter=NumberIsEven}",
-                                                "Property": "RenderIf",
-                                                "Value": true
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "BlockType": "text",
-                                "PositionX": 50,
-                                "PositionY": 30,
-                                "Source": "[R]{Item.Position, Converter=NumberSubtract, Parameter={Season.SeasonOverallNumberEvents, Converter=NumberSubtract, Parameter={Season.SeasonOverallNumberEventsExcludingNonChampionship}}}",
-                                "FontName": "{DrukWide_Bold_Itallic}",
-                                "Padding": "10",
-                                "Foreground": "{white}",
-                                "FontSize": 45,
-                                "TextOptions": {
-                                    "TextAlignment": "Start"
-                                },
-                                "Triggers": [
-                                    {
-                                        "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
-                                        "ConditionAnd": "{Item.Index, Converter=NumberLess, Parameter=2}",
-                                        "Setters": [
-                                            {
-                                                "Property": "Source",
-                                                "Value": "[OFFICIAL\nPROLOGUE]"
-                                            },
-                                            {
-                                                "Property": "TextOptions.TextAlignment",
-                                                "Value": "Center"
-                                            },
-                                            {
-                                                "Property": "FontSize",
-                                                "Value": 17
-                                            },
-                                            {
-                                                "Property": "PositionX",
-                                                "Value": 30
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "Condition": "{Item.IsChampionshipStatus, Converter=BoolReverse}",
-                                        "ConditionAnd": "{Item.Index, Converter=NumberGreater, Parameter=2}",
-                                        "Setters": [
-                                            {
-                                                "Property": "Source",
-                                                "Value": "[OFFICIAL\nTEST DAY]"
-                                            },
-                                            {
-                                                "Property": "TextOptions.TextAlignment",
-                                                "Value": "Center"
-                                            },
-                                            {
-                                                "Property": "FontSize",
-                                                "Value": 17
-                                            },
-                                            {
-                                                "Property": "PositionX",
-                                                "Value": 30
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "BlockType": "dock",
-                                "Height": 70,
-                                "Width": 110,
-                                "PositionX": 180,
-                                "PositionY": 20,
-                                "Items": [
-                                    {
-                                        "BlockType": "image",
-                                        "Source": "country/{Item.Track.Nation.Name}",
-                                        "Height": 50,
-                                        "HorizontalAlignment": "Center",
-                                        "VerticalAlignment": "Center"
-                                    }
-                                ]
-                            },
-                            {
-                                "BlockType": "image",
-                                "Source": "Media_items/calendar/triangle",
-                                "Height": 10,
-                                "PositionX": 300,
-                                "PositionY": 50
-                            },
-                            {
-                                "BlockType": "dock",
-                                "Height": 110,
-                                "PositionX": 330,
-                                "PositionY": 5,
-                                "Items": [
-                                    {
-                                        "BlockType": "stack",
-                                        "Orientation": "Vertical",
-                                        "VerticalAlignment": "Center",
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "Source": "[{Item.Track.CountryName, Converter=StringToUpperString}]",
-                                                "VerticalAlignment": "Center",
-                                                "Width": 350,
-                                                "FontName": "{Archivo_Expanded_ExtraBold}",
-                                                "Padding": "0,5,10,0",
-                                                "Foreground": "{white}",
-                                                "FontSize": 28
-                                            },
-                                            {
-                                                "BlockType": "text",
-                                                "Width": 280,
-                                                "Source": "[{Item.Track.CircuitFullName, Converter=StringToUpperString}]",
-                                                "Foreground": "#90ffffff",
-                                                "VerticalAlignment": "Center",
-                                                "MarginTop": -10,
-                                                "Padding": "0,15,10,0",
-                                                "FontName": "{Archivo_Regular}",
-                                                "FontSize": 18,
-                                                "TextOptions": {
-                                                    "Wrap": true,
-                                                    "VerticalAlignment": "Top"
-                                                }
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "BlockType": "dock",
-                                "Width": 230,
-                                "Orientation": "Vertical",
-                                //"Background": "#dddddd",
-                                "PositionX": 730,
-                                "PositionY": 40,
-                                "Items": [
-                                    {
-                                        "BlockType": "stack",
-                                        //"RenderIf": "{Item.CompletedStatus, Converter=EnumEquals, Parameter=InFuture}",
-                                        "Orientation": "Horizontal",
-                                        "HorizontalAlignment": "Center",
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "VerticalAlignment": "Center",
-                                                "Source": "[Calendar {Item.DateLocal, Converter=DateToMonthInWords}]",
-                                                "FontName": "{Archivo_Expanded_ExtraBold}",
-                                                "FontSize": 28,
-                                                "Foreground": "{white}",
-                                                "Padding": "5"
-                                            },
-                                            {
-                                                "BlockType": "text",
-                                                "MarginLeft": -3,
-                                                "VerticalAlignment": "Center",
-                                                "Source": "[day {Item.DateLocal, Converter=DateToDayOfMonth}]",
-                                                "FontName": "{Archivo_Expanded_SemiBold}",
-                                                "FontSize": 17,
-                                                "Padding": "3",
-                                                "Foreground": "{lightBlue}"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        "BlockType": "text",
-                                        "RenderIf": false,
-                                        //"RenderIf": "{Item.CompletedStatus, Converter=EnumEquals, Parameter=Completed}",
-                                        "VerticalAlignment": "Center",
-                                        "HorizontalAlignment": "Center",
-                                        "Source": "[{Item.WinnerString, Converter=StringToUpperString}]",
-                                        "FontName": "{Archivo_SemiBold_Itallic}",
-                                        "FontSize": 20,
-                                        "Foreground": "{white}",
-                                        "Padding": "5"
-                                    }
-                                ]
-                            }
-                        ]
+                        "BlockType": "component",
+                        "Component": "CalendarItemMedia"
                     }
                 }
             }

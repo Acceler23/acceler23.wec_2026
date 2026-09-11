@@ -60,7 +60,8 @@
                                 "ConditionAnd": "{Recolor_WEC}",
                                 "Property": "Colorize.Color",
                                 "Value": "{{Lineup_RaceClass}_Color}"
-                            }
+                            },
+                            { "Trigger": "SeasonToLeagueLogo" }
                         ]
                     }
                 ]
@@ -156,7 +157,7 @@
                     { "Trigger": "CarColor_ImageColorize" },
                     { "Trigger": "TeamColor_ImageColorize" },
                     { "Trigger": "WEC_TeamColor_ImageColorize" },
-                    { "Trigger": "WEC_CarColor_ImageColorize" },
+                    { "Trigger": "WEC_CarColor_ImageColorize" }
                 ]
             },
             {

@@ -88,6 +88,10 @@
         "Width": 1200,
         "Items": [
             {
+                "BlockType": "image",
+                "Source": "Media_items/qualy/qual_stripes"
+            },
+            {
                 "BlockType": "component",
                 "Component": "Media_ClassHead_Qualy",
                 "PositionY": 63
@@ -125,6 +129,10 @@
         "Height": 1500,
         "Width": 1200,
         "Items": [
+            {
+                "BlockType": "image",
+                "Source": "Media_items/qualy/qual_stripes"
+            },
             {
                 "BlockType": "component",
                 "Component": "Media_ClassHead_Qualy",

@@ -38,6 +38,12 @@
                     { "Trigger": "WEC_Team_ForegroundP1" },
                     { "Trigger": "WEC_Car_ForegroundP1" },
                 ]
+            },
+            {
+                "BlockType": "shape",
+                "Width": 1,
+                "Height": 50,
+                "Opacity": 0
             }
         ]
     },
@@ -87,6 +93,12 @@
                     { "Trigger": "WEC_Team_ShapeMain" },
                     { "Trigger": "WEC_Car_ShapeMain" }
                 ]
+            },
+            {
+                "BlockType": "shape",
+                "Width": 1,
+                "Height": 50,
+                "Opacity": 0
             }
         ]
     },
@@ -122,6 +134,12 @@
                     { "Trigger": "WEC_Team_ForegroundP1" },
                     { "Trigger": "WEC_Car_ForegroundP1" },
                 ]
+            },
+            {
+                "BlockType": "shape",
+                "Width": 1,
+                "Height": 50,
+                "Opacity": 0
             }
         ]
     }

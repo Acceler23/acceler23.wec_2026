@@ -1,0 +1,526 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Margin": "50",
+        "Items": [
+            {
+                "BlockType": "canvas",
+                "BackgroundImage": "lineup_shade.png",
+                "Width": 1288,
+                "Height": 350,
+                "ColorizeBackground": {
+                    "Color": "{DriverInfo.Team.Color}",
+                    "ColorBlendingMode": "Multiply"
+                },
+                "Items": [
+                    {
+                        "BlockType": "dock",
+                        "PositionX": 50,
+                        "PositionY": 18,
+                        "Height": 332,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{DriverInfo.Driver.LogotypePath}",
+                                "Height": 332,
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Bottom",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{DriverInfo.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                                        "Property": "Source",
+                                        "Value": "driver_placeholder"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Width": 1288,
+                        "Height": 350,
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "{DriverInfo.Team.LogotypePath}",
+                                "Height": 150,
+                                "HorizontalAlignment": "Center",
+                                "VerticalAlignment": "Center",
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Season.LineupsBasedType}",
+                                        "ConditionValue": "Cars",
+                                        "Property": "Source",
+                                        "Value": "{DriverInfo.Car.Vendor.LogotypePath}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "dock",
+                        "PositionX": 630,
+                        "PositionY": "{140, Converter=NumberSubtract, Parameter={{DriverInfo.{CarNumber}, Converter=GetStringLength}, Converter=NumberMultiply, Parameter=25}}",
+                        "Width": 670,
+                        "Height": 350,
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Width": 670,
+                                "Source": "[{DriverInfo.{CarNumber}}]",
+                                "HorizontalAlignment": "Right",
+                                "VerticalAlignment": "Bottom",
+                                "Foreground": "{white}",
+                                "FontName": "{DrukWide_Super_Itallic}",
+                                "FontSize": "{400, Converter=NumberSubtract, Parameter={{DriverInfo.{CarNumber}, Converter=GetStringLength}, Converter=NumberMultiply, Parameter=78.5}}",
+                                "Padding": "0, 25, 0, 0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Width": 1128,
+                "Margin": "80",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Left",
+                        "Items": [
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "Spacing": 16,
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "VerticalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{DriverInfo.Driver.{DriverName}, Converter=StringToUpperString}",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 24,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{DriverName}",
+                                                        "ConditionValue": "RealName",
+                                                        "Property": "Source",
+                                                        "Value": "{DriverInfo.Driver.FirstName, Converter=StringToUpperString}"
+                                                    },
+                                                    {
+                                                        "Condition": "{DriverName}",
+                                                        "ConditionValue": "Short First Name",
+                                                        "Property": "Source",
+                                                        "Value": "[{DriverInfo.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]."
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                //"Source": "{DriverInfo.Driver.{DriverName}, Converter=StringToUpperString}",
+                                                "Foreground": "{darkPurple}",
+                                                "FontName": "{DrukWide_Bold}",
+                                                "Padding": "0, 5",
+                                                "FontSize": 40,
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{DriverName}",
+                                                        "ConditionValue": "RealName",
+                                                        "Property": "Source",
+                                                        "Value": "{DriverInfo.Driver.LastName, Converter=StringToUpperString}"
+                                                    },
+                                                    {
+                                                        "Condition": "{DriverName}",
+                                                        "ConditionValue": "Short First Name",
+                                                        "Property": "Source",
+                                                        "Value": "[{DriverInfo.Driver.LastName, Converter=StringToUpperString}]"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "stack",
+                                        "Background": "{darkPurple}",
+                                        "VerticalAlignment": "Center",
+                                        "Padding": "2",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{Season.Name, Converter=StringToUpperString}]",
+                                                "FontSize": 15,
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "{darkPurple}",
+                                                "Background": "{white}",
+                                                "Padding": "14, 8",
+                                                "TextOptions": {
+                                                    "FontStyle": "Bold"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "Background": "#e8e8e8",
+                                "Spacing": 1,
+                                "Width": 568,
+                                "Items": [
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Horizontal",
+                                        "Background": "{white}",
+                                        "Spacing": 16,
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[NATIONALITY]",
+                                                "Foreground": "{darkPurple}",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "FontSize": 16,
+                                                "Padding": "0, 16",
+                                                "HorizontalAlignment": "Left"
+                                            },
+                                            {
+                                                "BlockType": "image",
+                                                "Source": "{DriverInfo.Driver.Nationality.LogotypePath}",
+                                                "Height": 30,
+                                                "HorizontalAlignment": "Right",
+                                                "VerticalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{DriverInfo.Driver.Nationality.Name}]",
+                                                "Foreground": "{darkPurple}",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "FontSize": 16,
+                                                "Padding": "0, 16",
+                                                "HorizontalAlignment": "Right"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Horizontal",
+                                        "Background": "{white}",
+                                        "Spacing": 16,
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[AGE]",
+                                                "Foreground": "{darkPurple}",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "FontSize": 16,
+                                                "Padding": "0, 16",
+                                                "HorizontalAlignment": "Left"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{DriverInfo.Driver.BirthYear}]",
+                                                "Foreground": "{darkPurple}",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "FontSize": 16,
+                                                "Padding": "0, 16",
+                                                "HorizontalAlignment": "Right"
+                                            },
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Horizontal",
+                                        "Background": "{white}",
+                                        "Spacing": 16,
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[CATEGORY]",
+                                                "Foreground": "{darkPurple}",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "FontSize": 16,
+                                                "Padding": "0, 16",
+                                                "HorizontalAlignment": "Left"
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "HorizontalAlignment": "Right",
+                                                "Padding": "0, 12",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[{DriverInfo.Team.Car.CarClass.Name}]",
+                                                        "Foreground": "{white}",
+                                                        "Background": "{{DriverInfo.Team.Car.CarClass.Name}_Color}",
+                                                        "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                        "Padding": "7, 4",
+                                                        "FontSize": 16,
+                                                        "HorizontalAlignment": "Right",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Horizontal",
+                                        "Background": "{white}",
+                                        "Spacing": 16,
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[DRIVER CATEGORISATION]",
+                                                "Foreground": "{darkPurple}",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "FontSize": 16,
+                                                "Padding": "0, 16",
+                                                "HorizontalAlignment": "Left"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{DriverInfo.Driver.PrimaryDriverFeature.Name}]",
+                                                "Foreground": "{darkPurple}",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "FontSize": 16,
+                                                "Padding": "0, 16",
+                                                "HorizontalAlignment": "Right"
+                                            },
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "canvas",
+                        "HorizontalAlignment": "Right",
+                        "Items": [
+                            {
+                                "BlockType": "shape",
+                                "PositionY": 30,
+                                "Width": 432,
+                                "Height": 360,
+                                "ShapeOptions": {
+                                    "Fill": "{darkPurple}",
+                                    "ShapeType": "rectangle"
+                                }
+                            },
+                            {
+                                "BlockType": "shape",
+                                "PositionX": 2,
+                                "PositionY": 32,
+                                "Width": 428,
+                                "Height": 356,
+                                "ShapeOptions": {
+                                    "Fill": "{white}",
+                                    "ShapeType": "rectangle"
+                                }
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Background": "{white}",
+                                "PositionX": 116,
+                                "PositionY": 0,
+                                "Width": 200,
+                                "Height": 60,
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "{DriverInfo.Team.DarkLogotypePath}",
+                                        "Height": 60,
+                                        "HorizontalAlignment": "Center",
+                                        "VerticalAlignment": "Center",
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Season.LineupsBasedType}",
+                                                "ConditionValue": "Cars",
+                                                "ConditionAnd": "{DriverInfo.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+                                                "Property": "Source",
+                                                "Value": "{DriverInfo.Car.Vendor.DarkLogotypePath}"
+                                            },
+                                            {
+                                                "Condition": "{Season.LineupsBasedType}",
+                                                "ConditionValue": "Teams",
+                                                "ConditionAnd": "{DriverInfo.Team.LogotypePath, Converter=EmptyObjectToFalse}",
+                                                "Property": "Source",
+                                                "Value": "{DriverInfo.Team.DarkLogotypePath}"
+                                            },
+                                            {
+                                                "Condition": "{Season.LineupsBasedType}",
+                                                "ConditionValue": "Teams",
+                                                "ConditionAnd": "{DriverInfo.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+                                                "Property": "Source",
+                                                "Value": "{DriverInfo.Team.Car.Vendor.DarkLogotypePath}"
+                                            },
+                                            {
+                                                "Condition": "{ReplaceLogos}",
+                                                "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                                                "Property": "Source",
+                                                "Value": "{DriverInfo.Car.Vendor.DarkLogotypePath}"
+                                            },
+                                            {
+                                                "Condition": "{ReplaceLogos}",
+                                                "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+                                                "Property": "Source",
+                                                "Value": "{DriverInfo.Team.Car.Vendor.DarkLogotypePath}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "PositionX": 66,
+                                "PositionY": 70,
+                                "Width": 300,
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "HorizontalAlignment": "Center",
+                                        "Orientation": "Horizontal",
+                                        "Items": [
+                                            {
+                                                "BlockType": "shape",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Background": "{DriverInfo.Team.SecondaryColor}",
+                                                "Height": 8,
+                                                "Width": 8,
+                                                "ShapeOptions": {
+                                                    "ShapeType": "rectangle",
+                                                    "Fill": "{{DriverInfo.Team.Car.CarClass.Name}_Color}"
+                                                },
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                        "Property": "ShapeOptions.Fill",
+                                                        "Value": "{{DriverInfo.Car.CarClass.Name}_Color}"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Source": "[{DriverInfo.Team.Car.CarClass.Name, Converter=StringToUpperString}]",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 12,
+                                                "FontName": "{Archivo_Expanded_SemiBold}",
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                        "Property": "Source",
+                                                        "Value": "[{DriverInfo.Car.CarClass.Name, Converter=StringToUpperString}]"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "text",
+                                "PositionX": 39,
+                                "PositionY": 100,
+                                "Source": "[{DriverInfo.Team.FullName, Converter=StringToUpperString}]",
+                                "Width": 350,
+                                "Foreground": "{darkPurple}",
+                                "FontName": "{DrukWide_Bold}",
+                                "FontSize": 25,
+                                "Padding": "5",
+                                "TextOptions": {
+                                    "Wrap": true,
+                                    "TextAlignment": "Center"
+                                },
+                                "Triggers": [
+                                    {
+                                        "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                        "Property": "Source",
+                                        "Value": "[{DriverInfo.Car.Name, Converter=StringToUpperString}]"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "RenderIf": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+                                "PositionX": 2,
+                                "PositionY": 180,
+                                "Width": 428,
+                                "Height": 150,
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "{DriverInfo.Team.LiveryPath}",
+                                        "Width": 380,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Center"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "RenderIf": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                                "PositionX": 2,
+                                "PositionY": 180,
+                                "Width": 428,
+                                "Height": 150,
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "{DriverInfo.LiveryPath}",
+                                        "Width": 380,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Center"
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "PositionY": 340,
+                                "PositionX": 2,
+                                "Width": 428,
+                                "Items": [
+                                    {
+                                        "BlockType": "stack",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[#]",
+                                                "Padding": "5,5,0,0",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 25,
+                                                "FontName": "{Archivo_Expanded_SemiBold}",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{DriverInfo.{CarNumber}}]",
+                                                "Padding": "0,5,5,0",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 25,
+                                                "FontName": "{Archivo_Expanded_SemiBold}",
+                                                "HorizontalAlignment": "Center"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

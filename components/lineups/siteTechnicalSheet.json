@@ -1,0 +1,1380 @@
+[
+    {
+        "ComponentName": "team_site",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Width": "*",
+        "Items": [
+            {
+                "BlockType": "itemstack",
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.Teams}",
+                    "TakeItemIndex": "{teamLineupNum, {Subtracts}1}",
+                    "Limit": 1,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Spacing": 40,
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "RenderIf": "{Lineup_Mode, Converter=BoolReverse}",
+                                "HorizontalAlignment": "Center",
+                                "Spacing": 20,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Item.Lines}",
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "HorizontalAlignment": "Center",
+                                                "RenderIf": "{Item.IsDriverSet}",
+                                                "BlockType": "canvas",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "PositionY": 30,
+                                                        "Width": 432,
+                                                        "Height": 360,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{darkPurple}",
+                                                            "ShapeType": "rectangle"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "PositionX": 2,
+                                                        "PositionY": 32,
+                                                        "Width": 428,
+                                                        "Height": 356,
+                                                        "ShapeOptions": {
+                                                            "Fill": "{white}",
+                                                            "ShapeType": "rectangle"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "Background": "{white}",
+                                                        "PositionX": 116,
+                                                        "PositionY": 0,
+                                                        "Width": 200,
+                                                        "Height": 60,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "image",
+                                                                "Source": "{Item.Team.DarkLogotypePath}",
+                                                                "Height": 60,
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Center",
+                                                                "Triggers": [
+                                                                    { "Trigger": "Team_LogotypeDark" },
+                                                                    { "Trigger": "WEC_Team_DarkLogotype" }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "PositionX": 66,
+                                                        "PositionY": 70,
+                                                        "Width": 300,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "stack",
+                                                                "HorizontalAlignment": "Center",
+                                                                "Orientation": "Horizontal",
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "shape",
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Background": "{Item.Team.SecondaryColor}",
+                                                                        "Height": 8,
+                                                                        "Width": 8,
+                                                                        "ShapeOptions": {
+                                                                            "ShapeType": "rectangle",
+                                                                            "Fill": "{{Item.Team.Car.CarClass.Name}_Color}"
+                                                                        },
+                                                                        "Triggers": [
+                                                                            {
+                                                                                "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                                                "Property": "ShapeOptions.Fill",
+                                                                                "Value": "{{Item.Car.CarClass.Name}_Color}"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "Padding": "5",
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "VerticalAlignment": "Center",
+                                                                        "Source": "[{Item.Team.Car.CarClass.Name, Converter=StringToUpperString}]",
+                                                                        "Foreground": "{darkPurple}",
+                                                                        "FontSize": 12,
+                                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                                        "Triggers": [
+                                                                            {
+                                                                                "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                                                "Property": "Source",
+                                                                                "Value": "[{Item.Car.CarClass.Name, Converter=StringToUpperString}]"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "PositionX": 39,
+                                                        "PositionY": 100,
+                                                        "Source": "[{Item.Driver.{DriverName}, Converter=StringToUpperString}]",
+                                                        "Width": 350,
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontName": "{DrukWide_Bold}",
+                                                        "FontSize": 25,
+                                                        "Padding": "5",
+                                                        "TextOptions": {
+                                                            "Wrap": true,
+                                                            "TextAlignment": "Center"
+                                                        },
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{DriverName}",
+                                                                "ConditionValue": "Short First Name",
+                                                                "Property": "Source",
+                                                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName, Converter=StringToUpperString}]"
+                                                            },
+                                                            {
+                                                                "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                                                                "ConditionAnd": "{Render_DriverTeam}",
+                                                                "Property": "Source",
+                                                                "Value": "[{Item.Team.FullName, Converter=StringToUpperString}]"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "PositionX": 2,
+                                                        "PositionY": 180,
+                                                        "Width": 428,
+                                                        "Height": 150,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "image",
+                                                                "Source": "{Item.LiveryPath}",
+                                                                "Width": 380,
+                                                                "VerticalAlignment": "Center",
+                                                                "HorizontalAlignment": "Center"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "PositionY": 340,
+                                                        "PositionX": 2,
+                                                        "Width": 428,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "stack",
+                                                                "HorizontalAlignment": "Center",
+                                                                "Items": [
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "Source": "[#]",
+                                                                        "Padding": "5,5,0,0",
+                                                                        "Foreground": "{darkPurple}",
+                                                                        "FontSize": 25,
+                                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                                        "HorizontalAlignment": "Center"
+                                                                    },
+                                                                    {
+                                                                        "BlockType": "text",
+                                                                        "Source": "[{Item.{CarNumber}}]",
+                                                                        "Padding": "0,5,5,0",
+                                                                        "Foreground": "{darkPurple}",
+                                                                        "FontSize": 25,
+                                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                                        "HorizontalAlignment": "Center"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType": "canvas",
+                                "HorizontalAlignment": "Center",
+                                "RenderIf": "{Lineup_Mode}",
+                                "Items": [
+                                    {
+                                        "BlockType": "shape",
+                                        "PositionY": 30,
+                                        "Width": 432,
+                                        "Height": 360,
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}",
+                                            "ShapeType": "rectangle"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "shape",
+                                        "PositionX": 2,
+                                        "PositionY": 32,
+                                        "Width": 428,
+                                        "Height": 356,
+                                        "ShapeOptions": {
+                                            "Fill": "{white}",
+                                            "ShapeType": "rectangle"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Background": "{white}",
+                                        "PositionX": 116,
+                                        "PositionY": 0,
+                                        "Width": 200,
+                                        "Height": 60,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Source": "{Item.Team.DarkLogotypePath}",
+                                                "Height": 60,
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Triggers": [
+                                                    { "Trigger": "Team_LogotypeDark" },
+                                                    { "Trigger": "WEC_Team_DarkLogotype" }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "PositionX": 66,
+                                        "PositionY": 70,
+                                        "Width": 300,
+                                        "Items": [
+                                            {
+                                                "BlockType": "stack",
+                                                "HorizontalAlignment": "Center",
+                                                "Orientation": "Horizontal",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Center",
+                                                        "Background": "{Item.Team.SecondaryColor}",
+                                                        "Height": 8,
+                                                        "Width": 8,
+                                                        "ShapeOptions": {
+                                                            "ShapeType": "rectangle",
+                                                            "Fill": "{{Item.Team.Car.CarClass.Name}_Color}"
+                                                        },
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                                "Property": "ShapeOptions.Fill",
+                                                                "Value": "{{Item.Car.CarClass.Name}_Color}"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Padding": "5",
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Center",
+                                                        "Source": "[{Item.Team.Car.CarClass.Name, Converter=StringToUpperString}]",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 12,
+                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                                "Property": "Source",
+                                                                "Value": "[{Item.Car.CarClass.Name, Converter=StringToUpperString}]"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "PositionX": 39,
+                                        "PositionY": 100,
+                                        "Source": "[{Item.Team.FullName, Converter=StringToUpperString}]",
+                                        "Width": 350,
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{DrukWide_Bold}",
+                                        "FontSize": 25,
+                                        "Padding": "5",
+                                        "TextOptions": {
+                                            "Wrap": true,
+                                            "TextAlignment": "Center"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "PositionX": 2,
+                                        "PositionY": 180,
+                                        "Width": 428,
+                                        "Height": 150,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Source": "{Item.Team.LiveryPath}",
+                                                "Width": 380,
+                                                "VerticalAlignment": "Center",
+                                                "HorizontalAlignment": "Center"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "PositionY": 340,
+                                        "PositionX": 2,
+                                        "Width": 428,
+                                        "Items": [
+                                            {
+                                                "BlockType": "stack",
+                                                "HorizontalAlignment": "Center",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[#]",
+                                                        "Padding": "5,5,0,0",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 25,
+                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                        "HorizontalAlignment": "Center"
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.Team.Abbreviation}]",
+                                                        "Padding": "0,5,5,0",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 25,
+                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                        "HorizontalAlignment": "Center"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Width": "*",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "shape",
+                                        "Height": 2,
+                                        "MinWidth": 290,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[TECHNICAL SHEET]",
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{DrukWide_Bold}",
+                                        "FontSize": 32,
+                                        "Padding": "20",
+                                        "HorizontalAlignment": "Center"
+                                    },
+                                    {
+                                        "BlockType": "shape",
+                                        "Height": 2,
+                                        "MinWidth": 290,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Right",
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Center",
+                                "Spacing": 30,
+                                "Items": [
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[COUNTRY]",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "#a7a7a7",
+                                                "FontSize": 12,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{Item.Team.Nation.Code}]",
+                                                "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 16,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontStyle": "Bold"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[CATEGORY]",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "#a7a7a7",
+                                                "FontSize": 12,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Horizontal",
+                                                "HorizontalAlignment": "Center",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Center",
+                                                        "Background": "{Item.Team.SecondaryColor}",
+                                                        "Height": 8,
+                                                        "Width": 8,
+                                                        "ShapeOptions": {
+                                                            "ShapeType": "rectangle",
+                                                            "Fill": "{{Item.Team.Car.CarClass.Name}_Color}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.Team.Car.CarClass.Name, Converter=StringToUpperString}]",
+                                                        "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 16,
+                                                        "Padding": "5",
+                                                        "HorizontalAlignment": "Center",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[CAR]",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "#a7a7a7",
+                                                "FontSize": 12,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{Item.Team.Car.Name, Converter=StringToUpperString}]",
+                                                "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 16,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontStyle": "Bold"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[FULL TEAM NAME]",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "#a7a7a7",
+                                                "FontSize": 12,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{Item.Team.FullName, Converter=StringToUpperString}]",
+                                                "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 16,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontStyle": "Bold"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                ]
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Center",
+                                "Width": 900,
+                                "Spacing": 15,
+                                "Items": [
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Horizontal",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "HorizontalAlignment": "Left",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[NUMBER]",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 12,
+                                                        "Padding": "5",
+                                                        "Width": 290,
+                                                        "HorizontalAlignment": "Center"
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "HorizontalAlignment": "Center",
+                                                        "MarginTop": 30,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Width": 100,
+                                                                "Height": 100,
+                                                                "Source": "{Item.Team.Abbreviation}",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Center",
+                                                                "Foreground": "{white}",
+                                                                "FontName": "{DrukWide_Super_Itallic}",
+                                                                "FontSize": "{35, Converter=NumberSubtract, Parameter={{Item.Team.Abbreviation, Converter=GetStringLength}, Converter=NumberMultiply, Parameter=4}}",
+                                                                "Background": "{{Item.Team.Car.CarClass.Name}_Color}",
+                                                                "Padding": "5"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "dock",
+                                                "Orientation": "Vertical",
+                                                "HorizontalAlignment": "Center",
+                                                "Width": 290,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[PRIVATE TEAM]",
+                                                        //"Source": "[OFFICIAL MANUFACTURER]",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 12,
+                                                        "Padding": "5",
+                                                        "HorizontalAlignment": "Center",
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Item.Team.Car.CarClass.Name}",
+                                                                "ConditionValue": "Le Mans Hypercar",
+                                                                "ConditionAnd": "{ReplaceLogos}",
+                                                                "Property": "Source",
+                                                                "Value": "[OFFICIAL MANUFACTURER]"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "image",
+                                                        "Source": "{Item.Team.DarkLogotypePath}",
+                                                        "HorizontalAlignment": "Center",
+                                                        "Height": 140,
+                                                        "MarginTop": 10,
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Item.Team.Car.CarClass.Name}",
+                                                                "ConditionValue": "Le Mans Hypercar",
+                                                                "ConditionAnd": "{ReplaceLogos}",
+                                                                "Property": "Source",
+                                                                "Value": "{Item.Team.Car.Vendor.LogotypePath}"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "dock",
+                                                "Orientation": "Vertical",
+                                                "HorizontalAlignment": "Right",
+                                                "Width": 290,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[TYRE PARTNER]",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 12,
+                                                        "Padding": "5",
+                                                        "HorizontalAlignment": "Center"
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "Height": 140,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "image",
+                                                                "Source": "logotypes/goodyear",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Center",
+                                                                "Width": 250,
+                                                                "Triggers": [
+                                                                    {
+                                                                        "Condition": "{Item.Team.Car.CarClass.Name}",
+                                                                        "ConditionValue": "Le Mans Hypercar",
+                                                                        "ConditionOr": "{Item.Team.Car.CarClass.Name}",
+                                                                        "ConditionOrValue": "LMP3",
+                                                                        "Property": "Source",
+                                                                        "Value": "logotypes/michelin"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Width": "*",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "shape",
+                                        "Height": 2,
+                                        "MinWidth": 350,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[DRIVERS]",
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{DrukWide_Bold}",
+                                        "FontSize": 32,
+                                        "Padding": "20",
+                                        "HorizontalAlignment": "Center"
+                                    },
+                                    {
+                                        "BlockType": "shape",
+                                        "Height": 2,
+                                        "MinWidth": 350,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Right",
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "itemstack",
+                                "Spacing": 24,
+                                "HorizontalAlignment": "Center",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Item.Lines}",
+                                    "ItemTemplate": {
+                                        "BlockType": "stack",
+                                        "Orientation": "Vertical",
+                                        "Items": [
+                                            {
+                                                "BlockType": "canvas",
+                                                "Height": 382,
+                                                "Width": 306,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "image",
+                                                        "Source": "lineup_shade",
+                                                        "Colorize": {
+                                                            "Color": "{Item.Team.Color}",
+                                                            "ColorBlendingMode": "Multiply"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "Height": 382,
+                                                        "Width": 306,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "image",
+                                                                "Source": "{Item.Driver.LogotypePath}",
+                                                                "Width": 244,
+                                                                "VerticalAlignment": "Bottom",
+                                                                "HorizontalAlignment": "Center",
+                                                                "Triggers": [
+                                                                    {
+                                                                        "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                                                                        "Property": "Source",
+                                                                        "Value": "driver_placeholder"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Padding": "5",
+                                                "FontSize": 16,
+                                                "Source": "[{Item.Driver.{DriverName}}]",
+                                                "Foreground": "{darkPurple}",
+                                                "Triggers": [
+                                                    {
+                                                        "Condition": "{DriverName}",
+                                                        "ConditionValue": "RealName",
+                                                        "Property": "Source",
+                                                        "Value": "[{Item.Driver.FirstName} {Item.Driver.LastName}]"
+                                                    },
+                                                    {
+                                                        "Condition": "{DriverName}",
+                                                        "ConditionValue": "Short First Name",
+                                                        "Property": "Source",
+                                                        "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName}]"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+
+        ]
+    },
+    {
+        "ComponentName": "car_site",
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Width": "*",
+        "Items": [
+            {
+                "BlockType": "itemstack",
+                "ItemStackOptions": {
+                    "ItemSource": "{Lineups.Lineups}",
+                    "TakeItemIndex": "{teamLineupNum, {Subtracts}1}",
+                    "Limit": 1,
+                    "ItemTemplate": {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Spacing": 40,
+                        "Items": [
+                            {
+                                "BlockType": "canvas",
+                                "HorizontalAlignment": "Center",
+                                "RenderIf": "{Lineup_Mode}",
+                                "Items": [
+                                    {
+                                        "BlockType": "shape",
+                                        "PositionY": 30,
+                                        "Width": 432,
+                                        "Height": 360,
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}",
+                                            "ShapeType": "rectangle"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "shape",
+                                        "PositionX": 2,
+                                        "PositionY": 32,
+                                        "Width": 428,
+                                        "Height": 356,
+                                        "ShapeOptions": {
+                                            "Fill": "{white}",
+                                            "ShapeType": "rectangle"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Background": "{white}",
+                                        "PositionX": 116,
+                                        "PositionY": 0,
+                                        "Width": 200,
+                                        "Height": 60,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Source": "{Item.Car.DarkLogotypePath}",
+                                                "Height": 60,
+                                                "HorizontalAlignment": "Center",
+                                                "VerticalAlignment": "Center",
+                                                "Triggers": [
+                                                    { "Trigger": "Car_LogotypeDark" },
+                                                    { "Trigger": "WEC_Car_DarkLogotype" }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "PositionX": 66,
+                                        "PositionY": 70,
+                                        "Width": 300,
+                                        "Items": [
+                                            {
+                                                "BlockType": "stack",
+                                                "HorizontalAlignment": "Center",
+                                                "Orientation": "Horizontal",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Center",
+                                                        "Background": "{Item.Car.SecondaryColor}",
+                                                        "Height": 8,
+                                                        "Width": 8,
+                                                        "ShapeOptions": {
+                                                            "ShapeType": "rectangle",
+                                                            "Fill": "{{Item.Car.CarClass.Name}_Color}"
+                                                        },
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                                "Property": "ShapeOptions.Fill",
+                                                                "Value": "{{Item.Car.CarClass.Name}_Color}"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Padding": "5",
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Center",
+                                                        "Source": "[{Item.Car.CarClass.Name, Converter=StringToUpperString}]",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 12,
+                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                                                                "Property": "Source",
+                                                                "Value": "[{Item.Car.CarClass.Name, Converter=StringToUpperString}]"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "PositionX": 39,
+                                        "PositionY": 100,
+                                        "Source": "[{Item.Car.Name, Converter=StringToUpperString}]",
+                                        "Width": 350,
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{DrukWide_Bold}",
+                                        "FontSize": 25,
+                                        "Padding": "5",
+                                        "TextOptions": {
+                                            "Wrap": true,
+                                            "TextAlignment": "Center"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "PositionX": 2,
+                                        "PositionY": 180,
+                                        "Width": 428,
+                                        "Height": 150,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Source": "{Item.Car.LiveryPath}",
+                                                "Width": 380,
+                                                "VerticalAlignment": "Center",
+                                                "HorizontalAlignment": "Center"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "PositionY": 340,
+                                        "PositionX": 2,
+                                        "Width": 428,
+                                        "Items": [
+                                            {
+                                                "BlockType": "stack",
+                                                "HorizontalAlignment": "Center",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[#]",
+                                                        "Padding": "5,5,0,0",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 25,
+                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                        "HorizontalAlignment": "Center"
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.Car.{CarNumber}}]",
+                                                        "Padding": "0,5,5,0",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 25,
+                                                        "FontName": "{Archivo_Expanded_SemiBold}",
+                                                        "HorizontalAlignment": "Center"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Width": "*",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "shape",
+                                        "Height": 2,
+                                        "MinWidth": 290,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[TECHNICAL SHEET]",
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{DrukWide_Bold}",
+                                        "FontSize": 32,
+                                        "Padding": "20",
+                                        "HorizontalAlignment": "Center"
+                                    },
+                                    {
+                                        "BlockType": "shape",
+                                        "Height": 2,
+                                        "MinWidth": 290,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Right",
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Center",
+                                "Spacing": 30,
+                                "Items": [
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[COUNTRY]",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "#a7a7a7",
+                                                "FontSize": 12,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{Item.Car.Vendor.Nation.Code}]",
+                                                "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 16,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontStyle": "Bold"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[CATEGORY]",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "#a7a7a7",
+                                                "FontSize": 12,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Horizontal",
+                                                "HorizontalAlignment": "Center",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "shape",
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Center",
+                                                        "Background": "{Item.Car.SecondaryColor}",
+                                                        "Height": 8,
+                                                        "Width": 8,
+                                                        "ShapeOptions": {
+                                                            "ShapeType": "rectangle",
+                                                            "Fill": "{{Item.Car.CarClass.Name}_Color}"
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.Car.CarClass.Name, Converter=StringToUpperString}]",
+                                                        "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 16,
+                                                        "Padding": "5",
+                                                        "HorizontalAlignment": "Center",
+                                                        "TextOptions": {
+                                                            "FontStyle": "Bold"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[CAR]",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "#a7a7a7",
+                                                "FontSize": 12,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{Item.Car.Name, Converter=StringToUpperString}]",
+                                                "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 16,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontStyle": "Bold"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    /*
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Vertical",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[FULL Car NAME]",
+                                                "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                "Foreground": "#a7a7a7",
+                                                "FontSize": 12,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center"
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "[{Item.Car.FullName, Converter=StringToUpperString}]",
+                                                "FontName": "{Archivo_SemiExpanded_Bold}",
+                                                "Foreground": "{darkPurple}",
+                                                "FontSize": 16,
+                                                "Padding": "5",
+                                                "HorizontalAlignment": "Center",
+                                                "TextOptions": {
+                                                    "FontStyle": "Bold"
+                                                }
+                                            }
+                                        ]
+                                    },*/
+                                ]
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Horizontal",
+                                "HorizontalAlignment": "Center",
+                                "Width": 900,
+                                "Spacing": 15,
+                                "Items": [
+                                    {
+                                        "BlockType": "dock",
+                                        "Orientation": "Horizontal",
+                                        "HorizontalAlignment": "Center",
+                                        "Items": [
+                                            {
+                                                "BlockType": "stack",
+                                                "Orientation": "Vertical",
+                                                "HorizontalAlignment": "Left",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[NUMBER]",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 12,
+                                                        "Padding": "5",
+                                                        "Width": 290,
+                                                        "HorizontalAlignment": "Center"
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "HorizontalAlignment": "Center",
+                                                        "MarginTop": 30,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Width": 100,
+                                                                "Height": 100,
+                                                                "Source": "{Item.{CarNumber}}",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Center",
+                                                                "Foreground": "{white}",
+                                                                "FontName": "{DrukWide_Super_Itallic}",
+                                                                "FontSize": "{35, Converter=NumberSubtract, Parameter={{Item.{CarNumber}, Converter=GetStringLength}, Converter=NumberMultiply, Parameter=4}}",
+                                                                "Background": "{{Item.Car.CarClass.Name}_Color}",
+                                                                "Padding": "5"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "dock",
+                                                "Orientation": "Vertical",
+                                                "HorizontalAlignment": "Center",
+                                                "Width": 290,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[OFFICIAL MANUFACTURER]",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 12,
+                                                        "Padding": "5",
+                                                        "HorizontalAlignment": "Center"
+                                                    },
+                                                    {
+                                                        "BlockType": "image",
+                                                        "Source": "{Item.Car.Vendor.DarkLogotypePath}",
+                                                        "HorizontalAlignment": "Center",
+                                                        "Height": 140,
+                                                        "MarginTop": 10
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType": "dock",
+                                                "Orientation": "Vertical",
+                                                "HorizontalAlignment": "Right",
+                                                "Width": 290,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "text",
+                                                        "Source": "[TYRE PARTNER]",
+                                                        "FontName": "{Archivo_SemiExpanded_Regular}",
+                                                        "Foreground": "{darkPurple}",
+                                                        "FontSize": 12,
+                                                        "Padding": "5",
+                                                        "HorizontalAlignment": "Center"
+                                                    },
+                                                    {
+                                                        "BlockType": "dock",
+                                                        "Height": 140,
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "image",
+                                                                "Source": "logotypes/goodyear",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Center",
+                                                                "Width": 250,
+                                                                "Triggers": [
+                                                                    {
+                                                                        "Condition": "{Item.Car.CarClass.Name}",
+                                                                        "ConditionValue": "Le Mans Hypercar",
+                                                                        "ConditionOr": "{Item.Car.CarClass.Name}",
+                                                                        "ConditionOrValue": "LMP3",
+                                                                        "Property": "Source",
+                                                                        "Value": "logotypes/michelin"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Width": "*",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType": "shape",
+                                        "Height": 2,
+                                        "MinWidth": 350,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}"
+                                        }
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "[DRIVERS]",
+                                        "Foreground": "{darkPurple}",
+                                        "FontName": "{DrukWide_Bold}",
+                                        "FontSize": 32,
+                                        "Padding": "20",
+                                        "HorizontalAlignment": "Center"
+                                    },
+                                    {
+                                        "BlockType": "shape",
+                                        "Height": 2,
+                                        "MinWidth": 350,
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Right",
+                                        "ShapeOptions": {
+                                            "Fill": "{darkPurple}"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "HorizontalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "BlockType": "canvas",
+                                        "Height": 382,
+                                        "Width": 306,
+                                        "Items": [
+                                            {
+                                                "BlockType": "image",
+                                                "Source": "lineup_shade",
+                                                "Colorize": {
+                                                    "Color": "{Item.Car.Color}",
+                                                    "ColorBlendingMode": "Multiply"
+                                                }
+                                            },
+                                            {
+                                                "BlockType": "dock",
+                                                "Height": 382,
+                                                "Width": 306,
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "image",
+                                                        "Source": "{Item.Driver.LogotypePath}",
+                                                        "Width": 244,
+                                                        "VerticalAlignment": "Bottom",
+                                                        "HorizontalAlignment": "Center",
+                                                        "Triggers": [
+                                                            {
+                                                                "Condition": "{Item.Driver.LogotypePath, Converter=EmptyObjectToTrue}",
+                                                                "Property": "Source",
+                                                                "Value": "driver_placeholder"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "Padding": "5",
+                                        "FontSize": 16,
+                                        "Source": "[{Item.Driver.{DriverName}}]",
+                                        "Foreground": "{darkPurple}",
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{DriverName}",
+                                                "ConditionValue": "RealName",
+                                                "Property": "Source",
+                                                "Value": "[{Item.Driver.FirstName} {Item.Driver.LastName}]"
+                                            },
+                                            {
+                                                "Condition": "{DriverName}",
+                                                "ConditionValue": "Short First Name",
+                                                "Property": "Source",
+                                                "Value": "[{Item.Driver.FirstName, Converter=MaxStringLength, Parameter=1}]. [{Item.Driver.LastName}]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+
+        ]
+    }
+]

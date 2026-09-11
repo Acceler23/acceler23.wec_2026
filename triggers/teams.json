@@ -51,7 +51,7 @@
         "TriggerName": "Team_LogotypeVendor",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Teams",
-        "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "ConditionAnd": "{Item.Team.LogotypePath, Converter=EmptyObjectToTrue}",
         "Property": "Source",
         "Value": "{Item.Team.Car.Vendor.LogotypePath}"
     },
@@ -59,7 +59,7 @@
         "TriggerName": "Team_LogotypeVendorLight",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Teams",
-        "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "ConditionAnd": "{Item.Team.LogotypePath, Converter=EmptyObjectToTrue}",
         "Property": "Source",
         "Value": "{Item.Team.Car.Vendor.LightLogotypePath}"
     },
@@ -67,7 +67,7 @@
         "TriggerName": "Team_LogotypeVendorDark",
         "Condition": "{Season.LineupsBasedType}",
         "ConditionValue": "Teams",
-        "ConditionAnd": "{Item.Team.Car.Vendor.LogotypePath, Converter=EmptyObjectToFalse}",
+        "ConditionAnd": "{Item.Team.LogotypePath, Converter=EmptyObjectToTrue}",
         "Property": "Source",
         "Value": "{Item.Team.Car.Vendor.DarkLogotypePath}"
     },

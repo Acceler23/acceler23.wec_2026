@@ -1,0 +1,164 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "stack",
+                //"Width": 1200,
+                "PaddingTop": 75,
+                "Items": [
+                    {
+                        "BlockType": "canvas",
+                        "HorizontalAlignment": "Left",
+                        "Items": [
+                            {
+                                "BlockType": "image",
+                                "Source": "Media_items/calendar/leader_info",
+                                "PositionX": -550,
+                                "Height": 110,
+                                "Width": 900,
+                                "Colorize": {
+                                    "Color": "{darkPurple}"
+                                }
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Width": 350,
+                                "Height": 110,
+                                //"Background": "#dddddd",
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "VerticalAlignment": "Center",
+                                        "HorizontalAlignment": "Left",
+                                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                        "Width": 300,
+                                        "Opacity": 10,
+                                        "Colorize": {
+                                            "Color": "{white}",
+                                            "ColorBlendingMode": "HardLight",
+                                            "BlendPercentage": 50
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "dock",
+                                "Width": 320,
+                                "Height": 110,
+                                //"Background": "#dddddd",
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "{Season.LogotypePath}",
+                                        "Height": 100,
+                                        "HorizontalAlignment": "Right",
+                                        "VerticalAlignment": "Center",
+                                        "Triggers": [
+                                            { "Trigger": "SeasonToLeagueLogo" }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "BlockType": "image",
+                                "Source": "Media_items/calendar/triangle",
+                                "PositionY": 50,
+                                "PositionX": 355,
+                                "Height": 15,
+                                "Width": 5,
+                                "Colorize": {
+                                    "Color": "{white}"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "dock",
+                        "Height": 110,
+                        "MarginLeft": 30,
+                        //"MarginRight": 75,
+                        "HorizontalAlignment": "Right",
+                        "Orientation": "Horizontal",
+                        "Items": [
+                            {
+                                "BlockType": "text",
+                                "Source": "[{Season.Name, Converter=StringToUpperString}]",
+                                "FontName": "{Druk_Bold}",
+                                "VerticalAlignment": "Center",
+                                "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}1}}",
+                                "Height": 110,
+                                "Width": "*",
+                                "PaddingTop": 20,
+                                "MarginTop": 15,
+                                "Foreground": "{lightBlue}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "Source": "[CALENDAR]",
+                                "FontName": "{Druk_Bold}",
+                                "VerticalAlignment": "Center",
+                                "FontSize": "{120, {Subtracts}{{Season.Name, Converter=GetStringLength}, {Multiplys}1}}",
+                                "PaddingTop": 20,
+                                "MarginTop": 15,
+                                "MarginLeft": 10,
+                                "Foreground": "{white}",
+                                "Width": "*"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "Padding": "120, 50, 20, 50",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Events.Events}",
+                                    "CollectionPart": "1/2",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "CalendarItemMedia"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Items": [
+                            {
+                                "BlockType": "itemstack",
+                                "Orientation": "Vertical",
+                                "Spacing": 10,
+                                "Padding": "20, 50, 120, 50",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Events.Events}",
+                                    "CollectionPart": "2/2",
+                                    "ItemTemplate": {
+                                        "BlockType": "component",
+                                        "Component": "CalendarItemMedia"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+
+            }
+        ]
+    }
+}

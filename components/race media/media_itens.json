@@ -172,7 +172,10 @@
                         "Colorize": {
                             "Color": "#010c22",
                             "ColorBlendingMode": "Darken"
-                        }
+                        },
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -213,7 +216,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[{Session.SessionName, Converter=StringToUpperString}]",
-                        "FontName": "{Druk_Medium_ItallicDate}",
+                        "FontName": "{Druk_Medium_Itallic}",
                         "HorizontalAlignment": "Left",
                         "VerticalAlignment": "Center",
                         "FontSize": 57,
@@ -238,8 +241,8 @@
                     },
                     {
                         "BlockType": "text",
-                        "Source": "[day {Event.Date, Converter=DateToDayOfMonth}] [Card {Event.Date, Converter=DateToMonthInWords}]",
-                        "FontName": "{Druk_Medium_ItallicDate}",
+                        "Source": "[day {Event.Date, Converter=DateToDayOfMonth}] [Calendar {Event.Date, Converter=DateToMonthInWords}]",
+                        "FontName": "{Druk_Medium_Itallic}",
                         "HorizontalAlignment": "Right",
                         "VerticalAlignment": "Center",
                         "FontSize": 57,
@@ -308,7 +311,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "[START]",
-                                "FontName": "{Druk_Medium_ItallicDate}",
+                                "FontName": "{Druk_Medium_Itallic}",
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Center",
                                 "FontSize": 57,
@@ -335,7 +338,7 @@
                             {
                                 "BlockType": "text",
                                 "Source": "{Event.DateLocal, Converter=DateCustomFormat, Parameter=HH}",
-                                "FontName": "{Druk_Medium_ItallicDate}",
+                                "FontName": "{Druk_Medium_Itallic}",
                                 "HorizontalAlignment": "Right",
                                 "VerticalAlignment": "Center",
                                 "FontSize": 57,
@@ -363,7 +366,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Item.DateLocal, Converter=DateCustomFormat, Parameter=HH}",
-                                                "FontName": "{Druk_Medium_ItallicDate}",
+                                                "FontName": "{Druk_Medium_Itallic}",
                                                 "HorizontalAlignment": "Right",
                                                 "VerticalAlignment": "Center",
                                                 "FontSize": 57,
@@ -390,7 +393,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Item.DateLocal, Converter=DateCustomFormat, Parameter=mm}",
-                                                "FontName": "{Druk_Medium_ItallicDate}",
+                                                "FontName": "{Druk_Medium_Itallic}",
                                                 "HorizontalAlignment": "Right",
                                                 "VerticalAlignment": "Center",
                                                 "FontSize": 57,
@@ -450,7 +453,10 @@
                         "Colorize": {
                             "Color": "#010c22",
                             "ColorBlendingMode": "Darken"
-                        }
+                        },
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -518,7 +524,7 @@
                     {
                         "BlockType": "text",
                         "Source": "[RACE]",
-                        "FontName": "{Druk_Medium_ItallicDate}",
+                        "FontName": "{Druk_Medium_Itallic}",
                         "HorizontalAlignment": "Left",
                         "VerticalAlignment": "Top",
                         "FontSize": 57,
@@ -574,7 +580,7 @@
                             "ItemTemplate": {
                                 "BlockType": "text",
                                 "Source": "[day {Item.Date, Converter=DateToDayOfMonth}] [Card {Item.Date, Converter=DateToMonthInWords}]",
-                                "FontName": "{Druk_Medium_ItallicDate}",
+                                "FontName": "{Druk_Medium_Itallic}",
                                 "HorizontalAlignment": "Right",
                                 "VerticalAlignment": "Center",
                                 "FontSize": 57,

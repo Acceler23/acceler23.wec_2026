@@ -6,8 +6,10 @@
         { "Name": "Media Information" },
         { "Name": "Calendar" },
         { "Name": "Lineups" },
+        { "Name": "Practice Session" },
         { "Name": "Open Session Statistics" },
-        { "Name": "Open Standings Statistics" }
+        { "Name": "Open Standings Statistics" },
+        { "Name": "Multiseason Track Statistics" }
     ],
     "Properties": [
         {
@@ -54,6 +56,27 @@
             "Type": "Bool",
             "Description": "NOT RECOMMENDED, Use only if positions are shown as null or 0",
             "DefaultValue": false
+        },
+        {
+            "Name": "Instagram",
+            "PublicName": "Instagram",
+            "Category": "Global Options",
+            "Type": "String",
+            "DefaultValue": "FIAWEC_OFFICIAL"
+        },
+        {
+            "Name": "Youtube",
+            "PublicName": "Youtube",
+            "Category": "Global Options",
+            "Type": "String",
+            "DefaultValue": "FIAWEC"
+        },
+        {
+            "Name": "TikTok",
+            "PublicName": "TikTok",
+            "Category": "Global Options",
+            "Type": "String",
+            "DefaultValue": "FIAWEC"
         },
 
         //WEC Mode
@@ -117,15 +140,23 @@
             "PublicName": "Car Number as",
             "Type": "Enum",
             "EnumValues": [
+                "RaceNumber",
                 "Driver.RaceNumber",
                 "Driver.TextBadge",
                 "Driver.Description",
                 "Team.Abbreviation"
             ],
-            "DefaultValue": "Driver.RaceNumber"
+            "DefaultValue": "RaceNumber"
         },
 
         //Variable Info
+        {
+            "Category": "Media Information",
+            "Name": "NewsString",
+            "PublicName": "News Text",
+            "Type": "String",
+            "DefaultValue": "YOUR NEWS HERE"
+        },
         {
             "Category": "Media Information",
             "Name": "Media_SessionInfo",
@@ -262,6 +293,18 @@
 
         //Calendar
         {
+            "Name": "EventNameAs",
+            "PublicName": "Event Name as",
+            "Category": "Calendar",
+            "Type": "Enum",
+            "EnumValues": [
+                "Name",
+                "Track.Name",
+                "Track.CircuitFullName",
+                "Track.LocationName"
+            ]
+        },
+        {
             "Name": "CalendarNextOnly",
             "PublicName": "Show Only Next Event",
             "Category": "Calendar",
@@ -343,6 +386,81 @@
             "DefaultValue": 5,
             "MinimumValue": 1,
             "MaximumValue": 10
+        },
+        {
+            "Category": "Lineups",
+            "Name": "teamLineupNum",
+            "PublicName": "Team Position Lineup",
+            "Type": "Integer",
+            "DefaultValue": 1,
+            "MinimumValue": 1
+        },
+
+        //Practice Session
+        {
+            "Name": "ForceCar",
+            "PublicName": "Force Car Order",
+            "Category": "Practice Session",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "UseDriverName",
+            "PublicName": "Use Driver Name",
+            "Category": "Practice Session",
+            "Type": "Bool",
+            "DefaultValue": false
+        },
+        {
+            "Name": "PracticeStat1",
+            "PublicName": "Practice Stat 1",
+            "Category": "Practice Session",
+            "Type": "Enum",
+            "EnumValues": [
+                "FastestLapTime",
+                "FastestLapNumLap",
+                "FastestLapSector1",
+                "FastestLapSector2",
+                "FastestLapSector3",
+                "LapsCount",
+                "PitsCount",
+                "MaxSpeed"
+            ],
+            "DefaultValue": "MaxSpeed"
+        },
+        {
+            "Name": "PracticeStat2",
+            "PublicName": "Practice Stat 2",
+            "Category": "Practice Session",
+            "Type": "Enum",
+            "EnumValues": [
+                "FastestLapTime",
+                "FastestLapNumLap",
+                "FastestLapSector1",
+                "FastestLapSector2",
+                "FastestLapSector3",
+                "LapsCount",
+                "PitsCount",
+                "MaxSpeed"
+            ],
+            "DefaultValue": "FastestLapTime"
+        },
+        {
+            "Name": "PracticeStat3",
+            "PublicName": "Practice Stat 3",
+            "Category": "Practice Session",
+            "Type": "Enum",
+            "EnumValues": [
+                "FastestLapTime",
+                "FastestLapNumLap",
+                "FastestLapSector1",
+                "FastestLapSector2",
+                "FastestLapSector3",
+                "LapsCount",
+                "PitsCount",
+                "MaxSpeed"
+            ],
+            "DefaultValue": "LapsCount"
         },
 
         //Statistics
@@ -624,5 +742,42 @@
             "Type": "Bool",
             "DefaultValue": false
         },
+
+        //Multiseason Track Statistics
+        {
+            "Name": "TrackStatMultSeason",
+            "PublicName": "Multiseason Statistic",
+            "Category": "Multiseason Track Statistics",
+            "Type": "Enum",
+            "EnumValues": [
+                //General
+                "Seasons",
+                "Events",
+                "Races",
+                "Qualifications",
+                //"First Visit",
+                //"Last Visit",
+                "Top Speed",
+                //Race
+                "Most Wins",
+                "Most Podiums",
+                "Lap Record",
+                "Seasons Fastest Lap",
+                "Seasons Winners",
+                "Avg Pitstops",
+                "Most Podiums",
+                //Qual
+                "Most Poles",
+                "Race Pole Lap",
+                "Seasons Pole Lap",
+                //Records
+                "Closest Win",
+                "Largest Win",
+                "Total Safety Cars",
+                "Total VSC",
+                //"Avg Safety Car",
+                //"Avg VSC"
+            ]
+        }
     ]
 }

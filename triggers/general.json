@@ -1,0 +1,8 @@
+[
+    {
+        "TriggerName": "SeasonToLeagueLogo",
+        "Condition": "{Season.LogotypePath, Converter=EmptyObjectToTrue}",
+        "Property": "Source",
+        "Value": "{Season.LeagueInfo.LeagueLogo}"
+    }
+]

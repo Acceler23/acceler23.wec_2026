@@ -103,11 +103,11 @@
                     },
                     {
                         "BlockType": "text",
-                        "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                        "Source": "[{Event.{EventNameAs}, Converter=StringToUpperString}]",
                         "Foreground": "{white}",
                         "FontName": "{DrukWide_Medium_Italic}",
                         "Height": 40,
-                        "FontSize": "{{TrackNameSize}, {Subtracts}{{Session.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.3}}",
+                        "FontSize": "{{TrackNameSize}, {Subtracts}{{Event.{EventNameAs}, Converter=GetStringLength}, {Multiplys}0.3}}",
                         "Margin": "0,2,0,0",
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Right",
@@ -242,11 +242,11 @@
                     },
                     {
                         "BlockType": "text",
-                        "Source": "[{Session.Track.CircuitFullName, Converter=StringToUpperString}]",
+                        "Source": "[{Event.{EventNameAs}, Converter=StringToUpperString}]",
                         "Foreground": "{white}",
                         "FontName": "{DrukWide_Medium_Italic}",
                         "Height": 40,
-                        "FontSize": "{{TrackNameSize}, {Subtracts}{{Session.Track.CircuitFullName, Converter=GetStringLength}, {Multiplys}0.3}}",
+                        "FontSize": "{{TrackNameSize}, {Subtracts}{{Event.{EventNameAs}, Converter=GetStringLength}, {Multiplys}0.3}}",
                         "Margin": "0,2,0,0",
                         "VerticalAlignment": "Center",
                         "HorizontalAlignment": "Right",
@@ -255,7 +255,7 @@
                         "Triggers": [
                             {
                                 "Condition": "{Session.SessionTypeString}",
-                                "ConditionValue": "Regular",
+                                "ConditionValue": "Qual",
                                 "ConditionOr": "{Session.SessionTypeString}",
                                 "ConditionOrValue": "Q2",
                                 "Property": "RenderIf",

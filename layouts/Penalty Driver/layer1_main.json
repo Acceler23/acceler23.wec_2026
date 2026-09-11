@@ -1,0 +1,59 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Margin": "60, 40",
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "HorizontalAlignment": "Right",
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "HorizontalAlignment": "Right",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "Height": 150
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "[{Season.LeagueInfo.LeagueName}]",
+                        "Foreground": "{black}",
+                        "FontName": "{Univia_Regular}",
+                        "FontSize": 14,
+                        "PaddingTop": 5
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "[{Season.Name}]",
+                        "Foreground": "{black}",
+                        "FontName": "{Univia_Regular}",
+                        "FontSize": 14,
+                        "PaddingTop": 5
+                    },
+                    {
+                        "BlockType": "text",
+                        "HorizontalAlignment": "Right",
+                        "Source": "[{Penalty.Session.Track.CircuitFullName}] [{Penalty.Date, Converter=DateToYear}]",
+                        "Foreground": "{black}",
+                        "FontName": "{Univia_Regular}",
+                        "FontSize": 14,
+                        "PaddingTop": 5
+                    }
+                ]
+            },
+            {
+                "BlockType": "component",
+                "Component": "penalty_component",
+                "Height": "*",
+                "ComponentOptions": {
+                    "Vars": {
+                        "Penalty": "Penalty"
+                    }
+                }
+            }
+        ]
+    }
+}

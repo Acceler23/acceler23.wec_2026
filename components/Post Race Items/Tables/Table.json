@@ -9,6 +9,7 @@
             {
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -23,6 +24,7 @@
             {
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -37,6 +39,7 @@
             {
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -51,6 +54,7 @@
             {
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -66,6 +70,7 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "RenderIf": "{Session.SessionType, Converter=EnumEquals, Parameter=Qualification}",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -81,6 +86,7 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "RenderIf": "<renderDriver>",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -96,6 +102,7 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "RenderIf": "<renderTeam>",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -111,6 +118,7 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "Width": "*",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",
@@ -127,6 +135,7 @@
                 "BlockType": "itemstack",
                 "Orientation": "Vertical",
                 "HorizontalAlignment": "Right",
+        "Height": 590,
                 "Spacing": 10,
                 "ItemStackOptions": {
                     "ItemSource": "{Session.Drivers}",

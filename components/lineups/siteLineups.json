@@ -703,14 +703,7 @@
     //Site Livery
     {
         "ComponentName": "Livery_lineup",
-        "RenderIf": false,
-        "Triggers": [
-            {
-                "Condition": "{Item.IsDriverSet}",
-                "Property": "RenderIf",
-                "Value": true
-            }
-        ],
+        "RenderIf": "{Item.IsDriverSet}",
         "BlockType": "canvas",
         "Items": [
             {

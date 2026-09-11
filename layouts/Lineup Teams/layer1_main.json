@@ -1,0 +1,28 @@
+{
+    "BlockRoot": {
+        "BlockType": "stack",
+        "Orientation": "Vertical",
+        "Margin": "50",
+        "Items": [
+            {
+                "BlockType": "text",
+                "Source": "[TECHNICAL SHEET]",
+                "Foreground": "{darkPurple}",
+                "FontName": "{DrukWide_Bold}",
+                "FontSize": 64,
+                "Padding": "20",
+                "HorizontalAlignment": "Center"
+            },
+            {
+                "BlockType": "component",
+                "Component": "team_site",
+                "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}"
+            },
+            {
+                "BlockType": "component",
+                "Component": "car_site",
+                "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}"
+            }
+        ]
+    }
+}

@@ -5,11 +5,12 @@
         "Orientation": "Horizontal",
         "Background": "{darkPurple}",
         "Width": "*",
+        "Height": 50,
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
             { "Trigger": "CarColor_BackgroundP1" },
             { "Trigger": "WEC_Team_BackgroundP1" },
-            { "Trigger": "WEC_Car_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" }
         ],
         "Items": [
             {
@@ -88,6 +89,12 @@
                     { "Trigger": "WEC_Team_ForegroundP1" },
                     { "Trigger": "WEC_Car_ForegroundP1" }
                 ]
+            },
+            {
+                "BlockType": "shape",
+                "Width": 1,
+                "Height": 50,
+                "Opacity": 0
             }
         ]
     },
@@ -96,6 +103,7 @@
         "BlockType": "stack",
         "Orientation": "Horizontal",
         "Background": "{darkPurple}",
+        "Height": 50,
         "Width": "*",
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
@@ -116,6 +124,12 @@
                     { "Trigger": "WEC_Team_ForegroundP1" },
                     { "Trigger": "WEC_Car_ForegroundP1" },
                 ]
+            },
+            {
+                "BlockType": "shape",
+                "Width": 1,
+                "Height": 50,
+                "Opacity": 0
             }
         ]
     },
@@ -124,18 +138,19 @@
         "BlockType": "stack",
         "Orientation": "Horizontal",
         "Background": "{darkPurple}",
+        "Height": 50,
         "Width": "*",
         "Triggers": [
             { "Trigger": "TeamColor_BackgroundP1" },
             { "Trigger": "CarColor_BackgroundP1" },
             { "Trigger": "WEC_Team_BackgroundP1" },
-            { "Trigger": "WEC_Car_BackgroundP1" },
+            { "Trigger": "WEC_Car_BackgroundP1" }
         ],
         "Items": [
             {
                 "BlockType": "text",
                 "Width": 80,
-                "Source": "[{Item.Car.Vendor.Name} Short]",
+                "Source": "[{{Item.Car.Vendor.Name, Converter=MaxStringLength, Parameter=3}, Converter=StringToUpperString}]",
                 "Style": "DriverLineStyle",
                 "FontName": "{Archivo_Black_Itallic}",
                 "TextOptions": {
@@ -150,9 +165,22 @@
                         "Condition": "{Season.LineupsBasedType}",
                         "ConditionValue": "Teams",
                         "Property": "Source",
-                        "Value": "[{Item.Team.Car.Vendor.Name} Short]"
+                        "Value": "[{{Item.Team.Car.Vendor.Name, Converter=MaxStringLength, Parameter=3}, Converter=StringToUpperString}]"
+                    },
+                    {
+                        "Condition": "{Season.LineupsBasedType}",
+                        "ConditionValue": "Teams",
+                        "ConditionAnd": "{Item.Team.Car.Vendor.Name, Converter=EmptyObjectToTrue}",
+                        "Property": "Source",
+                        "Value": "[{{Item.Car.Vendor.Name, Converter=MaxStringLength, Parameter=3}, Converter=StringToUpperString}]"
                     }
                 ]
+            },
+            {
+                "BlockType": "shape",
+                "Width": 1,
+                "Height": 50,
+                "Opacity": 0
             }
         ]
     },
@@ -170,12 +198,6 @@
             { "Trigger": "WEC_Car_BackgroundP1" },
         ],
         "Items": [
-            {
-                "BlockType": "shape",
-                "Width": 20,
-                "Height": 78,
-                "Margin": "-20,-78,0,0"
-            },
             {
                 "BlockType": "text",
                 "Source": "[{Item.{CarNumber}}]",
@@ -203,6 +225,12 @@
                         ]
                     }
                 ]
+            },
+            {
+                "BlockType": "shape",
+                "Width": 1,
+                "Height": 50,
+                "Opacity": 0
             }
         ]
     },
@@ -223,6 +251,7 @@
     },
     {
         "ComponentName": "tableLogo",
+        "Height": 50,
         "BlockType": "canvas",
         "Items": [
             {
@@ -237,7 +266,7 @@
                     { "Trigger": "CarColor_ImageBg" },
                     { "Trigger": "TeamColor_ImageBg" },
                     { "Trigger": "WEC_Team_ImageBG" },
-                    { "Trigger": "WEC_Car_ImageBG" },
+                    { "Trigger": "WEC_Car_ImageBG" }
                 ],
                 "Items": [
                     {
@@ -247,15 +276,21 @@
                         "VerticalAlignment": "Center",
                         "Triggers": [
                             { "Trigger": "Car_LogotypeDefault" },
-                            { "Trigger": "Team_LogotypeDefault" },
                             { "Trigger": "Team_LogotypeVendor" },
+                            { "Trigger": "Team_LogotypeDefault" },
                             { "Trigger": "WEC_Car_Logotype" },
                             { "Trigger": "WEC_Team_Logotype" },
-                            { "Trigger": "WEC_TeamSession_Logotype" }
+                            { "Trigger": "WEC_TeamSession_Logotype" },
 
                         ]
                     }
                 ]
+            },
+            {
+                "BlockType": "shape",
+                "Width": 1,
+                "Height": 50,
+                "Opacity": 0
             }
         ]
     }
