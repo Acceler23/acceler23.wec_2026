@@ -1,0 +1,10 @@
+{
+    "BlockRoot": {
+        "BlockType": "shape",
+        "Width": "{PostRaceWidth}",
+        "Height": "{PostRaceHeight}",
+        "ShapeOptions": {
+            "Fill": "#1E3361"
+        }
+    }
+}

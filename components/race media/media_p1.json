@@ -92,7 +92,10 @@
                                 "Source": "{Season.LightLogotypePath}",
                                 "Height": 70,
                                 "HorizontalAlignment": "Center",
-                                "VerticalAlignment": "Center"
+                                "VerticalAlignment": "Center",
+                                "Triggers": [
+                                    { "Trigger": "SeasonToLeagueLogo" }
+                                ]
                             },
                             {
                                 "BlockType": "component",
@@ -159,7 +162,10 @@
                                 "Source": "{Season.LightLogotypePath}",
                                 "Height": 140,
                                 "HorizontalAlignment": "Center",
-                                "VerticalAlignment": "Center"
+                                "VerticalAlignment": "Center",
+                                "Triggers": [
+                                    { "Trigger": "SeasonToLeagueLogo" }
+                                ]
                             }
                         ]
                     }

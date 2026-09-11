@@ -1,0 +1,158 @@
+{
+    "BlockRoot": {
+        "BlockType": "canvas",
+        "Width": 1500,
+        "Height": 1875,
+        "Items": [
+            {
+                "BlockType": "dock",
+                "PositionY": 250,
+                "Width": 1500,
+                "Height": 1015,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 1115,
+                        "Source": "{DriverInfo.Driver.LogotypePath}",
+                        "HorizontalAlignment": "Center",
+                        "VerticalAlignment": "Top"
+                    }
+                ]
+            },
+            {
+                "BlockType": "image",
+                "Source": "News/news_struc.png"
+            },
+            {
+                "BlockType": "text",
+                "Source": "[BREAKING]",
+                "PositionY": 15,
+                "Width": 460,
+                "Height": 180,
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Center",
+                "Foreground": "{white}",
+                "FontName": "{Druk_Bold_Itallic}",
+                "FontSize": 130,
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            },
+            {
+                "BlockType": "text",
+                "Source": "[NEWS]",
+                "PositionY": 8,
+                "PositionX": 615,
+                "Width": 300,
+                "Height": 150,
+                "VerticalAlignment": "Center",
+                "HorizontalAlignment": "Left",
+                "Foreground": "{newsRed}",
+                "FontName": "{DrukTextWide_Medium_Italic}",
+                "FontSize": 59,
+                "TextOptions": {
+                    "FontStyle": "Italic"
+                }
+            },
+            {
+                "BlockType": "stack",
+                "PositionX": 1090,
+                "Spacing": 40,
+                "Width": 390,
+                "Height": 150,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.LogotypePath}",
+                        "Height": 120,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Left"
+                    },
+                    {
+                        "BlockType": "image",
+                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                        "Height": 120,
+                        "VerticalAlignment": "Center",
+                        "HorizontalAlignment": "Right"
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "PositionY": 1150,
+                "Width": 1500,
+                "Items": [
+                    {
+                        "BlockType": "image",
+                        "Height": 200,
+                        "Source": "{DriverInfo.Team.LightLogotypePath}",
+                        "HorizontalAlignment": "Center",
+                        "Triggers": [
+                            {
+                                "Condition": "{DriverInfo.Team.LogotypePath, Converter=EmptyObjectToTrue}",
+                                "Property": "Source",
+                                "Value": "{DriverInfo.Car.Vendor.LightLogotypePath}"
+                            },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+                                "Property": "Source",
+                                "Value": "{DriverInfo.Team.Car.Vendor.AlternativeLightLogotypePath}"
+                            },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                                "Property": "Source",
+                                "Value": "{DriverInfo.Car.Vendor.AlternativeLightLogotypePath}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation": "Vertical",
+                "PositionY": 1400,
+                "Width": 1500,
+                "Spacing": -5,
+                "Items": [
+                    {
+                        "BlockType": "text",
+                        "Padding": "5",
+                        "Source": "[{DriverInfo.Driver.{DriverName}, Converter=StringToUpperString}]",
+                        "Foreground": "{newsRed}",
+                        "FontName": "{DrukWide_Bold_Itallic}",
+                        "FontSize": "{110, {Subtracts}{{DriverInfo.Driver.{DriverName}, Converter=GetStringLength}, {Multiplys}1}}",
+                        "VerticalAlignment": "Center",
+                        "TextOptions": { "FontStyle": "BoldItalic" },
+                        "Triggers": [
+                            {
+                                "Condition": "{DriverName}",
+                                "ConditionValue": "Short First Name",
+                                "Property": "Source",
+                                "Value": "[{DriverInfo.Driver.FirstName, Converter=MaxStringLength, Parameter=1}] [{DriverInfo.Driver.LastName, Converter=StringToUpperString}]"
+                            }
+                        ],
+                        "HorizontalAlignment": "Center"
+                    },
+                    {
+                        "BlockType": "text",
+                        "Margin": "150, 0",
+                        "Width": 1200,
+                        "Source": "{NewsString, Converter=StringToUpperString}",
+                        "Padding": "10",
+                        "Foreground": "{white}",
+                        "FontName": "{DrukWide_Bold_Itallic}",
+                        "FontSize": "{110, {Subtracts}{{NewsString, Converter=GetStringLength}, {Multiplys}1}}",
+                        "VerticalAlignment": "Center",
+                        "TextOptions": {
+                            "FontStyle": "BoldItalic",
+                            "Wrap": true,
+                            "TextAlignment": "Center"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

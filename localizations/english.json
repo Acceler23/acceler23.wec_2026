@@ -134,6 +134,14 @@
         "Qual 1": "Qualifying",
         "Qual 2": "Hyperpole",
         "Qual 3": "Qualifying",
+        "part1 winner": "WIN",
+        "part2 winner": "NER",
+        "part1 pole": "HYPER",
+        "part2 pole": "POLE",
+        "WTRO 1": "WATCH",
+        "WTRO 2": "THE",
+        "WTRO 3": "RACE",
+        "WTRO 4": "ON",
 
         //track stats
         "ALL SEASONS": "ALL TIME",
@@ -173,6 +181,12 @@
         "sebring": "1000 MILES OF SEBRING",
         "silverstone": "GOODYEAR 4 HOURS OF SILVERSTONE",
         "spa-francorchamps": "TOTALENERGIES 6 HOURS OF SPA-FRANCORCHAMPS",
+        "daytona": "ROLEX 24 AT DAYTONA",
+        "laguna seca": "WEATHERTECH RACEWAY LAGUNA SECA",
+
+        //hour
+        "time AM": "AM",
+        "time PM": "PM",
 
         //days
         "day 01": "1",
@@ -246,6 +260,19 @@
         "Calendar October": "OCT",
         "Calendar November": "NOV",
         "Calendar December": "DEC",
+
+        "Pole January": "JAN.",
+        "Pole February": "FEB.",
+        "Pole March": "MARCH",
+        "Pole April": "APRIL",
+        "Pole May": "MAY",
+        "Pole June": "JUNE",
+        "Pole July": "JULY",
+        "Pole August": "AUG.",
+        "Pole September": "SEPT.",
+        "Pole October": "OCT.",
+        "Pole November": "NOV.",
+        "Pole December": "DEC.",
 
         //Practice
         "head1 FastestLapTime": "BEST",
@@ -480,5 +507,30 @@
         //Championship
         "SubHead BestChampionshipPosition": "SEASON",
         "SubHead RoundsLeading": "LEADING",
+
+        "#": "#",
+        "BREAKING": "BREAKING",
+        "BULLETIN": "BULLETIN",
+        "DESQUALIFIED": "DESQUALIFIED",
+        "Date": "Date",
+        "Decision": "Decision",
+        "From": "From",
+        "Lap": "Lap",
+        "NEWS": "NEWS",
+        "No Futher Action": "No Futher Action",
+        "No.": "No.",
+        "Pen. Points": "Pen. Points",
+        "Pen. Seconds": "Pen. Seconds",
+        "Pen. Warnings": "Pen. Warnings",
+        "Penalty": "Penalty",
+        "Session": "Session",
+        "TECHNICAL SHEET": "TECHNICAL SHEET",
+        "The Stewards": "The Stewards",
+        "The Stewards notify": "The Stewards notify",
+        "Time": "Time",
+        "To": "To",
+        "Turn": "Turn",
+        "Veredict": "Veredict",
+        "of the following": "of the following"
     }
 }

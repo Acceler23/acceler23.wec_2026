@@ -172,7 +172,10 @@
                         "Colorize": {
                             "Color": "#010c22",
                             "ColorBlendingMode": "Darken"
-                        }
+                        },
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -450,7 +453,10 @@
                         "Colorize": {
                             "Color": "#010c22",
                             "ColorBlendingMode": "Darken"
-                        }
+                        },
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },

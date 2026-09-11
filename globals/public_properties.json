@@ -152,6 +152,13 @@
         //Variable Info
         {
             "Category": "Media Information",
+            "Name": "NewsString",
+            "PublicName": "News Text",
+            "Type": "String",
+            "DefaultValue": "YOUR NEWS HERE"
+        },
+        {
+            "Category": "Media Information",
             "Name": "Media_SessionInfo",
             "PublicName": "Media Session Single Information",
             "Type": "Enum",

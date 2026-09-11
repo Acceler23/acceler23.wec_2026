@@ -26,7 +26,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -192,7 +195,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -306,7 +312,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -420,7 +429,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -534,7 +546,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },
@@ -648,7 +663,10 @@
                         "Height": 24,
                         "Source": "{Season.AlternativeLogotypePath}",
                         "HorizontalAlignment": "Right",
-                        "VerticalAlignment": "Center"
+                        "VerticalAlignment": "Center",
+                        "Triggers": [
+                            { "Trigger": "SeasonToLeagueLogo" }
+                        ]
                     }
                 ]
             },

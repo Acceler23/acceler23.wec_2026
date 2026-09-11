@@ -57,7 +57,10 @@
                                         "Source": "{Season.LogotypePath}",
                                         "Height": 100,
                                         "HorizontalAlignment": "Right",
-                                        "VerticalAlignment": "Center"
+                                        "VerticalAlignment": "Center",
+                                        "Triggers": [
+                                            { "Trigger": "SeasonToLeagueLogo" }
+                                        ]
                                     }
                                 ]
                             },
@@ -165,7 +168,8 @@
                                                 "Condition": "{Item.Index, Converter=NumberIsEven}",
                                                 "Property": "RenderIf",
                                                 "Value": true
-                                            }
+                                            },
+                                            { "Trigger": "SeasonToLeagueLogo" }
                                         ]
                                     }
                                 ]

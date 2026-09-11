@@ -94,14 +94,33 @@
             },
             {
                 "BlockType": "dock",
-                "PositionY": 1270,
+                "PositionY": 1280,
                 "Width": 1500,
                 "Items": [
                     {
                         "BlockType": "image",
                         "Height": 170,
                         "Source": "{Penalty.DriverSession.Team.LightLogotypePath}",
-                        "HorizontalAlignment": "Center"
+                        "HorizontalAlignment": "Center",
+                        "Triggers": [
+                            {
+                                "Condition": "{Penalty.DriverSession.Team.LogotypePath, Converter=EmptyObjectToTrue}",
+                                "Property": "Source",
+                                "Value": "{Penalty.DriverSession.Car.Vendor.LightLogotypePath}"
+                            },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Teams}",
+                                "Property": "Source",
+                                "Value": "{Penalty.DriverSession.Team.Car.Vendor.AlternativeLightLogotypePath}"
+                            },
+                            {
+                                "Condition": "{ReplaceLogos}",
+                                "ConditionAnd": "{Season.LineupsBasedType, Converter=EnumEquals, Parameter=Cars}",
+                                "Property": "Source",
+                                "Value": "{Penalty.DriverSession.Car.Vendor.AlternativeLightLogotypePath}"
+                            }
+                        ]
                     }
                 ]
             },
