@@ -150,7 +150,7 @@
             {
                 "BlockType": "text",
                 "Width": 80,
-                "Source": "[{{Item.Car.Vendor.Name, Converter=MaxStringLength, Parameter=3}, Converter=StringToUpperString}]",
+                //"Source": "[{{Item.Car.Vendor.Name, Converter=MaxStringLength, Parameter=3}, Converter=StringToUpperString}]",
                 "Style": "DriverLineStyle",
                 "FontName": "{Archivo_Black_Itallic}",
                 "TextOptions": {
@@ -164,12 +164,13 @@
                     {
                         "Condition": "{Season.LineupsBasedType}",
                         "ConditionValue": "Teams",
+                        "ConditionAnd": "{Item.Team.Car.Vendor.Name, Converter=EmptyObjectToFalse}",
                         "Property": "Source",
                         "Value": "[{{Item.Team.Car.Vendor.Name, Converter=MaxStringLength, Parameter=3}, Converter=StringToUpperString}]"
                     },
                     {
                         "Condition": "{Season.LineupsBasedType}",
-                        "ConditionValue": "Teams",
+                        "ConditionValue": "Cars",
                         "ConditionAnd": "{Item.Team.Car.Vendor.Name, Converter=EmptyObjectToTrue}",
                         "Property": "Source",
                         "Value": "[{{Item.Car.Vendor.Name, Converter=MaxStringLength, Parameter=3}, Converter=StringToUpperString}]"
@@ -204,6 +205,7 @@
                 "Style": "DriverLineStyle",
                 "FontName": "{Archivo_Black_Itallic}",
                 "HorizontalAlignment": "Center",
+                "FontSize": "{30, Converter=NumberSubtract, Parameter={{Item.{CarNumber}, Converter=GetStringLength}, Converter=NumberMultiply, Parameter=1.4}}",
                 "Triggers": [
                     { "Trigger": "TeamColor_ForegroundP1" },
                     { "Trigger": "CarColor_ForegroundP1" },
